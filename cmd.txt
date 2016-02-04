@@ -2164,8 +2164,8 @@ com_07210="pki crl file"
 ##pp always-on##
 com_07220="pp always-on"
 
-##pp auth accept 198,##
-com_07230="pp auth accept 198,"
+##pp auth accept##
+com_07230="pp auth accept"
 
 ##pp auth multi connect prohibit##
 com_07240="pp auth multi connect prohibit"
@@ -2173,8 +2173,8 @@ com_07240="pp auth multi connect prohibit"
 ##pp auth myname##
 com_07250="pp auth myname"
 
-##pp auth request 198,##
-com_07260="pp auth request 198,"
+##pp auth request##
+com_07260="pp auth request"
 
 ##pp auth username##
 com_07270="pp auth username"
