@@ -1,0 +1,750 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+  <head>
+    <title>
+      Utility for YAMAHA RT-Series
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
+    <meta http-equiv="Content-Language" content="ja">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <style type="text/css">
+      h.header1 { height: 8px; width: 80%; text-align: center; }
+      h.header2 { height: 10px; width: 60%; text-align: center; }
+      .center { text-align: center; }
+      .right { text-align: right; }
+      li.a { margin-bottom: 1em; }
+    </style>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+
+  <body>
+<!-- Google Tag Manager -->
+<script>dataLayer=[];</script><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5HLMR3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5HLMR3');</script>
+<!-- End Google Tag Manager -->
+    
+
+    <hr class="header1">
+    <div class="center">
+      <h2>
+	RTシリーズ用ユーティリティ
+      </h2>
+      <hr class="header2">
+	<blockquote>
+[ <a href="index.html">ユーティリティ</a>
+/ <a href="/RT/firmware/index.html">ファームウェア配布</a>
+]<BR>
+</blockquote>
+<blockquote>
+ユーザ作品<BR>
+[ <a href="of-by-for-win32.html">Win32用</a>
+/ <a href="of-by-for-mac.html">Mac用</a>
+/ <a href="of-by-for-unix.html">UNIX用</a>
+]<BR>
+</blockquote>
+
+    </div>
+    <hr class="header">
+
+    <div class="right">
+      <table>
+	<tr>
+	  <td>
+	    作成日
+	  </td>
+	  <td>
+	    1999/Jan/13 
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    最終変更日
+	  </td>
+	  <td>
+	    2015/Sep/17
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    文書サイズ
+	  </td>
+	  <td>
+	     18KB
+	  </td>
+	</tr>
+      </table>
+    </div>
+
+    <hr>
+
+    <p>
+      [ 目次 ]
+    </p>
+    <ul>
+      <li>
+	<a href="index.html#support">
+	  動作対応表
+	</a>
+      <li>
+	<a href="index.html#by-yamaha">
+	  ヤマハが作ったユーティリティ
+	</a>
+      <li>
+	<a href="index.html#by-user">
+	  RTシリーズのユーザさんが作ってくれたユーティリティの紹介
+	</a>
+      <li>
+	<a href="index.html#public">
+	  RTシリーズ管理/ネットワーク管理に使えるユーティリティの紹介
+	</a>
+    </ul>
+
+    <hr>
+
+<h2><a name="support">動作対応表</a></h2>
+以下の表では各ユーティリティについて各OSの対応状況を示しており、
+<ul>
+<li>動作するOSには "○"
+<li>動作しないOSには "×"
+</ul>
+を記しています。<br>
+動作確認中のOSについては、"※"を記しています。
+
+<br>
+<br>
+
+<table border="1">
+  <tr>
+    <th rowspan="2" colspan="2">ユーティリティ</th>
+    <th colspan="5">OS</th>
+    <th rowspan="2">備考</th>
+  </tr>
+<tr>
+    <th>Windows 10</th>
+    <th>Windows 8.1</th>
+    <th>Windows 8</th>
+    <th>Windows 7</th>
+    <th>Windows Vista</th>
+</tr>
+
+  <tr>
+    <td rowspan="6" nowrap>VPNクライアントソフト</td>
+    <td>YMS-VPN8</td>
+    <td class="center">※</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td>YMS-VPN8-CP</td>
+    <td class="center">※</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td>YMS-VPN7</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td>YMS-VPN7-CP</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td>YMS-VPN1</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td>YMS-VPN1-CP</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">SWX設定アプリケーション</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">RT-RevUpper</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">RT-Tftp Client</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">RT-Vdefender</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">RT-FileGuard</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">FWX-ConfigConverter</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">QAC/TM Agent</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">○</td>
+    <td class="center">○</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">パソコンセットアップ</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">RTAssist</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td>　</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">USBアンインストーラ</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td class="center">×</td>
+    <td>　</td>
+  </tr>
+
+</table>
+
+    <hr>
+
+    <h3 id="by-yamaha">
+      ヤマハが作ったユーティリティ
+    </h3>
+
+    <p>
+      [ 配布 ]
+    </p>
+
+    <ul>
+      <li class="a">
+	SWX設定アプリケーション[対象機種：SWX2200-8G/SWX2200-24G/SWX2200-8PoE]
+	<ul>
+	  <li>
+	    <a href="http://jp.yamaha.com/products/network/downloads/utility/swx_app/">
+	       SWX設定ツール(Windows)
+	    </a>
+	  </li>
+	  <li>
+	    <a href="./SWX_Application/ReleaseNote_ver.1.4.0.8.txt">
+	      リリースノート
+	    </a>
+	  <li>
+	    <a href="./SWX_Application/Users.pdf">
+	      取扱説明書
+	    </a>
+	</ul>
+      </li>
+
+      <li class="a">
+	ヤマハVPNクライアント YMS-VPN8
+	<ul>
+	  <li>
+	    <a href="http://jp.yamaha.com/products/network/downloads/utility/vpn_client8/">
+	       30日限定お試し版のダウンロード
+	    </a>
+	  </li>
+	  <li>
+	    <a href="../docs/example/vpnclient/ymsvpn8.html">
+	      設定例
+	    </a>
+	</ul>
+      </li>
+
+      <li class="a">
+	RTシリーズ共通ユーティリティ
+	<ul>
+          <li>
+            <a href="./FWX-ConfigConverter/FWX-ConfigConverter.exe">
+	      FWX-ConfigConverter.exe (Windows)
+	    </a>  
+            <a href="./FWX-ConfigConverter/Readme.txt">
+              (使い方)
+            </a>
+            <br>
+            *:SRT100のGUIで作成したコンフィグをFWX120のGUIで表示・設定できるように、一定のルールにしたがってコマンドを変換するツールです。
+          </li>
+          <li>
+	    <a href="./RT-FileGuard/RT-FileGuard.msi">
+	      RT-FileGuard.exe (Windows)
+	    </a>  
+            <a href="./RT-FileGuard/Readme.txt">
+	      (使い方)
+	    </a>
+            <br>
+	    *:ファイルの暗号化・複合化を行うためのツールです。
+	  </li>
+          <li>
+	    <a href="./lua/lua-rt.exe">
+	      Lua スクリプト Windows用シミュレーター  lua-rt.exe
+	    </a>
+	    <a href="./lua/readme.txt">
+	      (使い方)
+	    </a>
+            <br>
+	    *:<a href="http://www.rtpro.yamaha.co.jp/RT/docs/lua/index.html">Lua スクリプト機能</a>で使用する Lua スクリプトをシミュレートするツールです。
+	  </li>
+          <li>
+	    <a name="qac-tm-agent" href="./QACTM/QAC_TM_Agent.MSI">
+	      QAC/TM エージェント (Windows)
+	    </a>
+        <a href="./QACTM/Readme.txt">
+	      (使い方)
+	    </a>
+            <br>
+	    *:<a href="http://www.rtpro.yamaha.co.jp/RT/docs/qac_tm/index.html">QAC/TM</a>のクライアント用<a href="http://www.rtpro.yamaha.co.jp/RT/docs/qac_tm/qac_tm_agent.html">アップデートエージェント</a>です。
+	  </li>
+          <li>
+	    <a href="./RT-VDefender/RT-VDefender.exe">
+	      RT-VDefender.exe (Windows)
+	    </a>  
+            <a href="./RT-VDefender/readme.txt">
+	      (使い方)
+	    </a>
+            <br>
+	    *:<a href="http://www.rtpro.yamaha.co.jp/RT/FAQ/Security/JVN88575577.html">WWWブラウザによる設定におけるクロスサイト・リクエスト・フォージェリの脆弱性</a>対策、<a href="http://www.rtpro.yamaha.co.jp/RT/FAQ/Security/VU347812.html">UPnP機能に関する脆弱性</a>対策
+のため、httpd serviceコマンド、upnp useコマンドの設定を行うことができます。
+	  </li>
+          <li>
+	    <a href="rt-tftp.html">
+	      RT-Tftp Client (Windows, Macintosh)
+	    </a>
+	    <br>
+	    *: RT-Monitor、RT-Switcherにつきましては、配布を中止致しました。
+	  </li>
+          <li>
+	    <a href="md5sum/">
+	      MD5方式によるファームウェア確認ユーティリティ
+	    </a>
+	    <br>
+	    対応: Windows,MS-DOS,Source
+	  </li>
+	</ul>
+      </li>
+
+      <li class="a">
+	ネットボランチ シリーズ共通ユーティリティ
+	<ul>
+	  <li>
+	    USBアンインストーラ[対象機種：RTA55i/RTW65i/RTW65b/RTA54i]
+	    <br>
+	    <a href="NetVolanteU/UnUSB/UnUSBTA.exe">
+	      UnUSBTA.exe
+	    </a>
+	    <a href="NetVolanteU/UnUSB/readme.txt">
+	      (使い方)
+	    </a>
+	  </li>
+	  <li>
+	    機器間アナログ通話ユーティリティ[対象機種：RT56v/RTA55i/RTW65i/RTA54i/RT60w]
+	    <br>
+	    <a href="NetVolanteU/KikiAnaApl/KikikanAnalogApl_096.exe">
+	      KikikanAnalogApl_096.exe
+	    </a>
+	    <a href="NetVolanteU/KikiAnaApl/Readme.txt">
+	      (使い方)
+	    </a>
+	  </li>
+	</ul>
+      </li>
+
+	 <li class="a">
+	  ネットボランチ NVR500
+	専用ユーティリティ
+	<ul>
+	  <li>
+	    <a href="./RT-RevUpper/UsageNVR500.html">
+	      リビジョンアップ・プログラム
+	    </a>
+	    <ul>
+	      <li>RT-RevUpper (NVR500を特定のリビジョンに変更してくれる)</li>
+	    </ul>
+	  </li> 
+	</ul>
+	
+	      <li class="a">
+	  ネットボランチ RT58i
+	専用ユーティリティ
+	<ul>
+	  <li>
+	    <a href="./RT-RevUpper/UsageRT58i.html">
+	      リビジョンアップ・プログラム
+	    </a>
+	    <ul>
+	      <li>RT-RevUpper (RT58iを特定のリビジョンに変更してくれる)</li>
+	    </ul>
+       </li>
+	</ul>
+	
+
+      <li class="a">
+	<a href="/RTA50i/index.html">
+	  ネットボランチ RTA50i
+	</a>
+	専用ユーティリティ
+	<ul>
+          <li>
+	    <a href="/RTA50i/RevUpper.html">
+	      リビジョンアップ・プログラム
+	    </a>
+	  <ul>
+	    <li>RT-RevUpper (RTA50iを特定のリビジョンに変更してくれる)</li>
+	  </ul>
+	  <li>
+	    <a href="/RTA50i/utility.html">
+	      専用ユーティリティ・プログラム
+	    </a>
+	    <ul>
+	      <li>かんたんパソコン設定〜配布版〜</li>
+	    </ul>
+	  </li>
+	</ul>
+      </li>
+
+      <li class="a">
+	<a href="/RTA52i/index.html">
+	  ネットボランチ RTA52i
+	</a>
+	専用ユーティリティ
+	<ul>
+	  <li>
+	    <a href="/RTA52i/RevUpper.html">
+	      リビジョンアップ・プログラム
+	    </a>
+	    <ul>
+	      <li>RT-RevUpper (RTA52iを特定のリビジョンに変更してくれる)</li>
+	    </ul>
+	  <li>
+	    <a href="/RTA52i/utility.html">
+	      専用ユーティリティ・プログラム
+	    </a>
+	  <ul>
+	    <li>パソコンセットアップユーティリティ〜Windows2000対応版(配布版)〜</li>
+	  </ul>
+	</ul>
+      </li>
+
+      <li class="a">
+	<a href="/RTA54i/index.html">
+	  ネットボランチ RTA54i
+	</a>
+	専用ユーティリティ
+	<ul>
+	  <li>
+	    <a href="/RTA54i/RevUpper.html">
+	      リビジョンアップ・プログラム
+	    </a>
+	    <ul>
+	      <li>RT-RevUpper (RTA54iを特定のリビジョンに変更してくれる)</li>
+	    </ul>
+	  <li>
+	    <a href="/RTA54i/utility.html">
+	      専用ユーティリティ・プログラム
+	    </a>
+	  <ul>
+	    <li>USBアンインストーラ</li>
+	    <li>パソコンセットアップユーティリティ〜Windows XP対応版(配布版)〜</li>
+	    <li>RT Assistユーティリティ〜Windows XP対応版(配布版)〜</li>
+	  </ul>
+	</ul>
+      </li>
+
+      <li class="a">
+	<a href="/RT60w/index.html">
+	  ネットボランチ RT60w
+	</a>
+	専用ユーティリティ
+	<ul>
+	  <li>
+	    <a href="/RT60w/RevUpper.html">
+	      リビジョンアップ・プログラム
+	    </a>
+	    <ul>
+	      <li>RT-RevUpper (RT60wを特定のリビジョンに変更してくれる)</li>
+	    </ul>
+	  <li>
+	    <a href="/RT60w/utility.html">
+	      専用ユーティリティ・プログラム
+	    </a>
+	    <ul>
+	      <li>パソコンセットアップユーティリティ〜Windows XP対応版(配布版)〜</li>
+	    </ul>
+	</ul>
+      <li>
+	ファームウェアのバイナリの正しさを確認するユーティリティ
+	<ul>
+	  <li>
+	    <a href="md5sum/">
+	      (汎用) MD5方式による確認ユーティリティ (Windows,MS-DOS,Source)
+	    </a>
+	  </li>
+	  <li>
+	    <a href="ckrt100i/">
+	      (RT100i専用) 確認ユーティリティ (MS-DOS,Macintosh,Source)
+	    </a>
+	  </li>
+	</ul>
+      </li>
+        <li>
+	    <a name="lua_kconv">Lua kconv 漢字コード変換ライブラリ</a> 
+	    <a href="./lua/kconv/readme.txt">
+	      (使い方)
+	    </a>
+            <br>
+	    *:<a href="http://www.rtpro.yamaha.co.jp/RT/docs/lua/index.html">Lua スクリプト機能</a>で文字列の漢字コードを変換するライブラリです。
+          <ul>
+              <li><a href="./lua/kconv/kconv.lua">kconv.lua</a></li>
+              <li><a href="./lua/kconv/kconv_utable.lua">kconv_utable.lua</a></li>
+          </ul>
+	  </li>
+    </ul>
+
+    <hr>
+
+    <h3 id="by-user">
+      RTシリーズのユーザさんが作ってくれたユーティリティの紹介
+      <br>
+      utility of the user, by the user, for the user
+    </h3>
+
+    <p>
+      [ ユーティリティ/ツール紹介 ]
+    </p>
+
+    <ul>
+      <li>
+	<a href="of-by-for-win32.html">
+	  Windowsで使えるRTシリーズのためのユーティリティ紹介
+	</a>
+      </li>
+      <li>
+	<a href="of-by-for-mac.html">
+	  Macintoshで使えるRTシリーズのためのユーティリティ紹介
+	</a>
+      </li>
+      <li>
+	<a href="of-by-for-unix.html">
+	  UNIXで使えるRTシリーズのためのユーティリティ紹介
+	</a>
+      </li>
+    </ul>
+
+    <p>
+      ※
+      <a href="/RT/FAQ/Users/index.html">
+	rt100i-users
+      </a>
+      で紹介された情報を元に編集されております。
+    </p>
+
+    <hr>
+
+    <h3 id="public">
+      RTシリーズ管理/ネットワーク管理に使えるユーティリティの紹介
+    </h3>
+
+    <p>
+      [ ユーティリティ/ツール紹介 ]
+    </p>
+
+    <ul>
+      <li>
+	<a href="/RT/FAQ/Windows/tcpip-tools.html">
+	  Windowsに附属するTCP/IPツールは、何が用意されていますか？
+	</a>
+	<ul>
+	  <li>
+	    <a href="/RT/FAQ/Windows/hypertrm-exe.html">
+	      Windows附属のターミナルソフト(ハイパーターミナル)
+	    </a>
+	  </li>
+	  <li>
+	    <a href="/RT/FAQ/Windows/telnet-exe.html">
+	      Windows附属のtelnetクライアント
+	    </a>
+	  </li>
+	  <li>
+	    <a href="/RT/FAQ/Windows/ping-exe.html">
+	      Windows附属のpingツール
+	    </a>
+	  </li>
+	  <li>
+	    <a href="/RT/FAQ/Windows/tracert-exe.html">
+	      Windows附属のtracerouteツール
+	    </a>
+	  </li>
+	</ul>
+      </li>
+      <li>
+	<a href="/RT/FAQ/Windows/archive.html">
+	  ネットワーク管理に良く使われるフリーウェア/シェアウェア (Windows用)
+	</a>
+      </li>
+      <li>
+	<a href="/RT/FAQ/Macintosh/archive.html">
+	  ネットワーク管理に良く使われるフリーウェア/シェアウェア (Macintosh用)
+	</a>
+	<ul>
+	  <li>
+	    <a href="/RT/FAQ/Macintosh/telnet.html">
+	      Macintosh用telnetクライアント
+	    </a>
+	  </li>
+	  <li>
+	    <a href="/RT/FAQ/Macintosh/ping.html">
+	      Macintosh用ping,traceroute,nslookupツール
+	    </a>
+	  </li>
+	</ul>
+      </li>
+    </ul>
+    <p>
+      ※
+      <a href="/RT/FAQ/Users/index.html">
+	rt100i-users
+      </a>
+      で紹介された情報や開発者の経験などを元に編集されております。
+    </p>
+
+    <hr>
+    <ul>
+      <li>
+	<a href="/RT/FAQ/RTPRO/index.html">FAQ
+	</a>
+	for www.rtpro.yamaha.co.jp
+      </li>
+      <li>
+	<a href="/RT/FAQ/Users/index.html">
+	  FAQ
+	</a>
+	for rt100i-users mailing-list (rt100i-users@iijnet.or.jp)
+      </li>
+    </ul>
+
+    <hr>
+    <table>
+  <tr>
+    <td width="10%"><br></td>
+    <td width="80%">
+      <form>
+	<input type="button" value="&lt;&lt;戻る" onClick="history.back()">
+	<input type="button" value="再表示" onClick="location.reload()">
+	<input type="button" value="進む&gt;&gt;" onClick="history.forward()">
+	<span style="font-size: x-small">
+	  ※「戻る/進む」はブラウザの履歴が使用されます
+	</span>
+      </form>
+
+      <div style="font-size: x-small">
+	[ <a href="/index.html">ヤマハルーター</a>
+	/ <a href="http://NetVolante.jp/">ネットボランチ</a>
+	/ <a href="/RT/search/">検索</a>
+	/ <a href="http://rfc.netvolante.jp/">RFC</a>
+	/ <a href="/RT/docs/index.html">技術資料</a>
+	/ <a href="/RT/docs/example/index.html">設定例集</a>
+	/ <a href="/RT/FAQ/index.html">RT's FAQ</a>
+	]
+      </div>
+
+      <br>
+
+      <div style="font-size: x-small; font-weight: bold;">
+	<script type="text/javascript" language="JavaScript">
+	  <!--
+	      document.write("Copyright (C) 1995〜",
+	      	       (new Date()).getFullYear(),
+	       	       ", Yamaha Corporation.");
+	    -->
+	</script>
+      </div>
+
+    </td>
+  </tr>
+</table>
+
+
+  </body>
+</html>

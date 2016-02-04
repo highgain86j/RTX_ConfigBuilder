@@ -1,0 +1,4 @@
+# robots.txt for http://www.rtpro.yamaha.co.jp/
+
+User-agent: *
+Disallow: /cgi-bin/            # This is a CGI directory

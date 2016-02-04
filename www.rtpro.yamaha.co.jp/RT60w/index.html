@@ -1,0 +1,446 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>YAMAHA ISDN Remote Router NetVolante RT60w</title>
+<META HTTP-EQUIV="Content-Language" content="ja">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-2022-jp">
+<META HTTP-EQUIV="Content-Script-Type" CONTENT="text/javascript">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/ccs">
+<STYLE type="text/css">
+<!--
+ SUP.new { color: #cc3300; background-color: #ffff99; }
+-->
+</STYLE>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+
+<body bgcolor="white">
+<!-- Google Tag Manager -->
+<script>dataLayer=[];</script><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5HLMR3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5HLMR3');</script>
+<!-- End Google Tag Manager -->
+<LINK REL="SHORTCUT ICON" href="../ico/rta52i.ico">
+
+<CENTER>
+<hr SIZE=20 ALIGN=CENTER WIDTH="80%">
+<p>
+<font size="+3">YAMAHA ISDN リモートルータ<BR><BR>
+ネットボランチ『ＲＴ６０ｗ』</font>
+</p>
+<hr SIZE=20 ALIGN=CENTER WIDTH="80%">
+<p>
+<blockquote><small>
+[ <a href="../../RT/FAQ/WirelessLAN/rt60w-interop.html">無線LANカード</a>
+(<a href="../../RT/FAQ/WirelessLAN/card-config.html">設定情報</a>)
+]<BR>
+[ <a href="FAQ/apply-catv-and-adsl.html">CATV回線とADSL回線接続対応と注意事項について</a>
+]<BR>
+<BR>
+[ <a href="beta-release/index.html">公開β版ファームウェア(Rev.5.02.22b)を
+配布中</a><sup class="new">NEW</sup>]<BR>
+<BR>
+[ <a href="index.html">RT60w</a>
+/ <a href="FAQ/index.html">RT60w's FAQ</a>
+(<a href="FAQ/files.html">files</a>)
+/ <a href="example/index.html">RT60wの設定例集</a>
+]<BR>
+[ <a href="RevUpper.html">リビジョンアップの御案内</a>
+]<BR>
+[ <a href="manual.html">マニュアル</a>
+/ <a href="/RT/firmware/index.html">ファームウェア</a>
+(<a href="beta-release/index.html">β版</a><sup class="new">NEW</sup>)
+/ <a href="utility.html">ユーティリティ</a>
+]<BR>
+[  <a href="http://NetVolante.jp/">ネットボランチ・ホームページ</a>
+/ <a href="http://NetVolante.jp/support/">お問い合せ先</a> ]<BR>
+</small></blockquote>
+
+</p>
+<hr SIZE=20 ALIGN=CENTER WIDTH="80%">
+<p>
+<TABLE BORDER>
+<CAPTION><font size="+2"><B><A HREF="RevUpper.html"
+        >最新ファームウェア</A></B></font></CAPTION>
+<TR BGCOLOR="#cccccc">
+<TH>機種</TH>
+<TH>使用可能Rev</TH>
+<TH>Rev.5系</TH>
+</TR>
+<TR>
+<TD>RT60w</TD>
+<TD>Rev.5.00.10〜</TD>
+<TH>Rev.5.02.13</TH>
+</TR>
+</TABLE>
+</p>
+</CENTER>
+
+<hr>
+
+<A NAME="introduction"></A>
+<font size="+2">NET VOLANTE RT60wの紹介</font>
+
+<ul>
+
+<LI><A HREF="/RT/news-release/index.html"
+	>ニュースリリース</A>
+<p>
+  <ul>
+  <li> <a href="http://www.yamaha.co.jp/news/00101001.html"
+	>ネットボランチ RT60w (2000年10月10日)</A>
+(<a href="/RT/news-release/20001010.html"
+	>テキスト版</a>)<BR>
+※RT60wは、11月10日に発売されました。<BR>
+  </UL>
+</p>
+
+<li><A HREF="/RT/pict/index.html"
+	>外観写真</A>
+<p>
+  <UL>
+  <LI><a href="/RT/pict/rt60w.jpg"
+	><IMG ALIGN=TOP SRC="/RT/pict/rt60w.jpg" width=100 BORDER=0>
+RT60w</a>(JPEG, 211x300ピクセル, 13648バイト)<BR>
+  </UL>
+</p>
+
+<LI><a href="../RT/catalog/index.html"
+	>カタログ</a>
+<p>
+  <UL>
+  <li><a href="../RT/catalog/rt60w/index.html"
+	>NetVolante RT60wカタログ</a>
+
+<LI><a href="../RT/catalog/rt60w/html/index.html"
+	>HTML版カタログ</A>
+<table border="1">
+  <tr>
+    <td>
+      <a href="../RT/catalog/rt60w/html/index.html" target="_top">
+	<img src="../RT/catalog/rt60w/html/image/thumb_01.gif" border="0" alt="RT60wHTMLカタログP1">
+      </a>
+    </td>
+    <td>
+      <a href="../RT/catalog/rt60w/html/index2.html" target="_top">
+	<img src="../RT/catalog/rt60w/html/image/thumb_02.gif" border="0" alt="RT60wHTMLカタログP2">
+       </a>
+    </td>
+    <td>
+      <a href="../RT/catalog/rt60w/html/index3.html" target="_top">
+	<img src="../RT/catalog/rt60w/html/image/thumb_03.gif" border="0" alt="RT60wHTMLカタログP3">
+      </a>
+    </td>
+    <td>
+      <a href="../RT/catalog/rt60w/html/index4.html" target="_top">
+	<img src="../RT/catalog/rt60w/html/image/thumb_00.gif" border="0" alt="RT60wHTMLカタログP4">
+      </a>
+    </td>
+  </tr>
+</table>
+
+  </UL>
+</p>
+
+<LI><A HREF="/RT/hardware/index.html"
+	>ハードウェア仕様</A>
+<p>
+  <UL>
+  <LI> <A HREF="/RT/hardware/RT60w.html"
+	>NetVolante RT60w</A>
+(2002年5月16日)
+  <LI> <A HREF="/RT/hardware/s8.html"
+	>RT60wとRTA52iの簡単な比較</A>
+  </UL>
+</p>
+
+<LI><A HREF="http://NetVolante.jp/"
+	>ネットボランチのホームページ</A>
+<p>
+<UL>
+<LI><A HREF="http://NetVolante.jp/products/rt60w/index.html"
+	>RT60wページ</A>
+</UL>
+</p>
+
+<LI>ネットボランチRT60w向け各種配布ページ情報
+<p>
+  <UL>
+  <li><IMG SRC="RevUpper/Icon16.jpg"><A HREF="RevUpper.html"
+	>リビジョンアップの御案内</A>(RT-RevUpper紹介とファームウェア配布)
+  <li><A HREF="/RT/firmware/index.html"
+	>ファームウェア配布ページ</A>
+  <li><A HREF="manual.html"
+	>RT60w用マニュアル配布ページ</A>
+  </UL>
+</p>
+
+<LI><p>
+<A HREF="FAQ/index.html"
+	>NetVolante RT60w専用FAQ</A> (<A HREF="FAQ/files.html">files</A>)
+</p>
+
+<LI><p>
+<A HREF="example/index.html"
+	>ネットボランチRT60wの設定例集</A>
+<UL>
+<LI><A HREF="example/help/index.html"
+	>ヘルプ画面</A>
+</UL>
+</p>
+
+
+<LI>
+NetVolante RT60wの機能構成 (内蔵DSU機能を使用する場合…DSUは切り離せます)
+<p>
+<table border cellspacing=0 cellpadding=10><TR><TD>
+<pre>
+  ISDN回線 or 高速デジタル専用線       ISDNデジタル端末(G4FAXなど)
+           │                                │
+           │ISDN U点ポート                  │ISDN S/T点ポート
+ ┏━━━┳┷┳━━━━━━━━━━━━━━┳┷┳━━━━━━━━┓
+ ┃      ┃  ┃                            ┃  ┃                ┃
+ ┃      ┗┯┛                            ┗┯┛                ┃
+ ┃        │                                │                  ┃
+ ┃      DSU機能 'ON'                        │↑ 'OUT'          ┃
+ ┃        │                                │                  ┃
+ ┃============================================================= ┃
+ ┃        │                                │                  ┃
+ ┃        │                       LAN1     │     LAN2         ┃
+ ┃   アナログ機能                 ┌──ルータ機能……┐        ┃
+ ┃        │                      │                  │        ┃
+ ┃        │                      ├─(ブリッジ機能)─┤        ┃
+ ┃        │          'X'&lt;-&gt;'='   │                  │        ┃
+ ┃  ┏━┳┷┳━┓      切替┏━┳┷┳━┳━┓  ┏━━┷━━┓  ┃
+ ┃  ┃#1┃#2┃#3┃          ┃1 ┃2X┃3X┃4X┃  ┃ 無線LAN  ┃  ┃
+ ┗━┻┯┻┯┻┯┻━━━━━┻┯┻┯┻┯┻┯┻━┻━━━━━┻━┛RT60w
+       │  │  │              │  │  │  │       ‡ ‡ ‡
+        アナログ               │  │  │  │      ‡  ‡  ‡
+        電話/FAX            [有線LAN/10BASE-T] [無線LAN] [RT60w]
+</pre>
+
+</TD></TR></TABLE>
+</p>
+
+</ul>
+
+<!-- ------------------------------ -->
+<hr>
+<font size="+2"><a href="/RT/index.html">RTシリーズの紹介</a></font>
+<ul>
+<LI> <font size="+1"><A HREF="/RT/FAQ/index.html">FAQ集(HTML版)</A></font>
+ <UL>
+ <LI><a href="/RT/FAQ/Intro/index.html"
+	>使い方、役割の説明</a><BR>
+ <LI><A HREF="/RT/FAQ/Install/revision-up.html"
+	>リビジョンアップの具体的手順の紹介</A><BR>
+ <LI><A HREF="/RT/FAQ/RTPRO/www/text-picture-broken.html"
+	>テキストで書かれた図(構成図等)が崩れて意味がわからない！</A><BR>
+ </UL>
+<LI> <font size="+1"><A HREF="/RT/docs/index.html">資料集/事例集(HTML版)</A></font>
+ <UL>
+ <LI><a href="/RT/docs/nat/index.html"
+	>NATとIPマスカレード</a>の技術解説<BR>
+ <LI><a href="/RT/docs/ipsec/index.html"
+	>セキュリティゲートウェイ機能</a>の技術解説<BR>
+ <LI><a href="/RT/docs/example/dialup.html"
+	>ダイヤルアップ接続の事例集</a><BR>
+ <LI><a href="/RT/docs/example/ocn.html"
+	>OCN/プロバイダ接続の事例集</a><BR>
+ <LI><a href="/RT/docs/example/local.html"
+	>ローカルルータの設定事例集</a><BR>
+ <li><a href="/RT/docs/game/index.html"
+	>ネットワークゲームのための設定ヒント</a>
+ </UL>
+<LI> <A HREF="/RT/interoperate/cisco0.html"
+	>Cisco との相互接続の例 </A>
+</ul>
+
+
+<!-- ------------------------------ -->
+<hr>
+<A NAME="download"></A>
+<font size="+2">ダウンロード/配布</font>
+<ul>
+<li><p><IMG SRC="RevUpper/Icon16.jpg"><A HREF="RevUpper.html">リビジョンアップの御案内</A></p>
+<li><p><A HREF="/RT/firmware/index.html">ファームウェア配布ページ(統合版)</A></p>
+<!--
+<li><p><A HREF="utility.html">RT60w専用ユーティリティ配布ページ</A></p>
+-->
+
+<li><A HREF="manual.html">マニュアル配布</A>
+
+<LI><A HREF="/RT/utility/index.html" NAME="utility">ユーティリティ</A>
+
+<!--
+<li> <a href="http://www.clubweb.or.jp/smc/manual.html"
+	>マニュアル販売のお知らせ</a><BR>
+-->
+
+</ul>
+
+<!-- ------------------------------ -->
+<hr>
+<A NAME="announce"></A>
+<font size="+2">お知らせ</font>
+<UL>
+<li><a href="/RT/users.html"
+	>rt100i-usersメーリングリストの紹介</a>
+<li><a href="/RT/FAQ/Intro/rt-book.html"
+	>RTシリーズの参考書紹介</a>
+
+<li>商品の技術的なお問い合わせ先<BR>
+<div style="width: 80%; border: solid black 2px; padding: 20px;">
+  <b>
+    <a href="http://NetVolante.jp/support/index.html">
+      ネットボランチ・コールセンター
+    </a>
+  </b>
+
+  <ul>
+
+    <li>
+      <p>
+	ネットボランチ専用サービス窓口
+	<br>
+	電話番号：<font size="+3">03-5715-0350</font>
+	<br>
+	土・日・祝日、年末年始を除く 9:00〜12:00、13:00〜17:00
+      </p>
+    </li>
+
+    <li>
+      <p>
+	ネットボランチコールセンターインターネット電話番号
+	<br>
+	電話番号：<font size="+3">##62594341</font>
+	<br>
+	土・日・祝日、年末年始を除く 9:00〜12:00、13:00〜17:00
+      </p>
+      <blockquote>
+	インターネット電話で正常に通話できない場合は、
+	<a href="http://www.rtpro.yamaha.co.jp/RT/FAQ/VoIP/index.html">
+	  インターネット電話機能FAQ
+	</a>
+	の[トラブルシューティング]をご参照の上、無料インターネット電話
+	確認用番号(##21574061)にて動作をご確認下さい。それでも問題が解
+	決しない場合は、通常の電話または
+	<a href="https://netvolante.jp/support/contact/">
+	  お問い合わせフォーム
+	</a>
+	にてお問い合わせ下さい。
+      </blockquote>
+    </li>
+
+<li>
+<p>
+     <font color="#ff0000">2009年4月1日よりネットボランチ・コールセンターの営業時間が次のように変更になりましたので、ご案内致します。</font>
+ <br>
+  ご相談受付時間　　9:00〜12:00　13:00〜17:00
+  <br>
+ (土・日・祝日、年末年始は休業とさせていただきます。)
+  </p>
+    </li>
+
+    <li>
+      お問い合わせフォームでの受付
+      <br>
+      <p>
+	<ol>
+	  <form id="form1" name="form1" method="get" action="https://netvolante.jp/support/contact/">
+          <input type="submit" value="お問合わせフォームを開く"></form>
+	</ol>
+      </p>
+      <p>
+	<li>対象機種
+	  <ul>
+	    <li>RTV01</li>
+	    <li>RTV700</li>
+	    <li>RT58i</li>
+	    <li>RT57i</li>
+	    <li>RT56v</li>
+	    <li>RTA55i</li>
+	    <li>RTW65i</li>
+	    <li>RTW65b</li>
+	    <li>RTA54i</li>
+	    <li>RT60w</li>
+	    <li>RTA50i、RTA52i、RT80i</li>
+	  </ul>
+      </p>
+    </li>
+  </ul>
+
+</div>
+
+<li><b><a href="/RT/catalog/index.html">カタログ</A></b>
+</UL>
+
+<!-- ------------------------------ -->
+<hr>
+<p><blockquote><small>
+[ <a href="../../RT/FAQ/WirelessLAN/rt60w-interop.html">無線LANカード</a>
+(<a href="../../RT/FAQ/WirelessLAN/card-config.html">設定情報</a>)
+]<BR>
+[ <a href="FAQ/apply-catv-and-adsl.html">CATV回線とADSL回線接続対応と注意事項について</a>
+]<BR>
+<BR>
+[ <a href="beta-release/index.html">公開β版ファームウェア(Rev.5.02.22b)を
+配布中</a><sup class="new">NEW</sup>]<BR>
+<BR>
+[ <a href="index.html">RT60w</a>
+/ <a href="FAQ/index.html">RT60w's FAQ</a>
+(<a href="FAQ/files.html">files</a>)
+/ <a href="example/index.html">RT60wの設定例集</a>
+]<BR>
+[ <a href="RevUpper.html">リビジョンアップの御案内</a>
+]<BR>
+[ <a href="manual.html">マニュアル</a>
+/ <a href="/RT/firmware/index.html">ファームウェア</a>
+(<a href="beta-release/index.html">β版</a><sup class="new">NEW</sup>)
+/ <a href="utility.html">ユーティリティ</a>
+]<BR>
+[  <a href="http://NetVolante.jp/">ネットボランチ・ホームページ</a>
+/ <a href="http://NetVolante.jp/support/">お問い合せ先</a> ]<BR>
+</small></blockquote>
+</p>
+<p><table>
+  <tr>
+    <td width="10%"><br></td>
+    <td width="80%">
+      <form>
+	<input type="button" value="&lt;&lt;戻る" onClick="history.back()">
+	<input type="button" value="再表示" onClick="location.reload()">
+	<input type="button" value="進む&gt;&gt;" onClick="history.forward()">
+	<span style="font-size: x-small">
+	  ※「戻る/進む」はブラウザの履歴が使用されます
+	</span>
+      </form>
+
+      <div style="font-size: x-small">
+	[ <a href="/index.html">ヤマハルーター</a>
+	/ <a href="http://NetVolante.jp/">ネットボランチ</a>
+	/ <a href="/RT/search/">検索</a>
+	/ <a href="http://rfc.netvolante.jp/">RFC</a>
+	/ <a href="/RT/docs/index.html">技術資料</a>
+	/ <a href="/RT/docs/example/index.html">設定例集</a>
+	/ <a href="/RT/FAQ/index.html">RT's FAQ</a>
+	]
+      </div>
+
+      <br>
+
+      <div style="font-size: x-small; font-weight: bold;">
+	<script type="text/javascript" language="JavaScript">
+	  <!--
+	      document.write("Copyright (C) 1995〜",
+	      	       (new Date()).getFullYear(),
+	       	       ", Yamaha Corporation.");
+	    -->
+	</script>
+      </div>
+
+    </td>
+  </tr>
+</table>
+</p>
+
+</body>
+</html>

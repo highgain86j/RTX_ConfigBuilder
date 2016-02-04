@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/ccs">
+    <link rel="stylesheet" href="default.css" type="text/css">
+    <link rel="SHORTCUT ICON" href="/ico/yamaha-isdn.ico">
+    <title>RTpro - Yamaha Network Products Home Page</title>
+    <style type="text/css">
+    <!--
+      li {
+        margin-bottom: 3px;
+      }
+    -->
+    </style>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+  <body class="white">
+<!-- Google Tag Manager -->
+<script>dataLayer=[];</script><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5HLMR3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5HLMR3');</script>
+<!-- End Google Tag Manager -->
+    <div align="center">
+      <table summary="">
+	<tbody>
+	  <tr>
+	    <td align="center">
+	      <h3>ヤマハネットワーク周辺機器<br>技術情報ページ</h3>
+	    </td>
+	    <td width="5%"><br></td>
+	    <td nowrap="nowrap">
+	      <form method="get" action="http://www.google.co.jp/search">
+		<input type="text" name="q" size="27" maxlength="255" value="" />
+		<input type="hidden" name="ie" value="Shift_JIS">
+		<input type="hidden" name="oe" value="Shift_JIS">
+		<input type="hidden" name="hl" value="ja">
+		<input type="submit" name="btnG" value="サイト内検索(Google)">
+		<input type="hidden" name="domains" value="www.rtpro.yamaha.co.jp">
+		<input type="hidden" name="sitesearch" value="http://www.rtpro.yamaha.co.jp">
+	      </form>
+	    </td>
+	  </tr>
+	</tbody>
+      </table>
+    </div>
+    <hr class="h16">
+
+    <div class="title"><a name="information">
+      重要なご案内
+    </a></div>
+
+    <div class="list">
+    <ul>
+
+      <li><a href="./srv_info/nvdns/index.html">ネットボランチDNSサービスにおいて、2016年1月4日(月) 0:50から2016年1月5日(火) 10:16の間、断続的に名前解決を行うことができない障害が発生しました。</a></li>
+
+      <li><a href="./RT/FAQ/Security/JVN48135658.html">「複数ルータにおけるクリックジャッキング対策の不備の脆弱性」について</a></li>
+
+      <li>
+        RTX5000/RTX3500 Rev.14.00.08からファームウェアのリビジョンアップを行う際のご注意<br>
+        Rev.14.00.08にはRev.14.00.12で修正された以下の不具合が存在します。<br>
+		<a href="RT/docs/relnote/Rev.14.00/relnote_14_00_12.html">RTX5000/RTX3500 Rev.14.00.12 リリースノート</a>より、<br>
+		<blockquote>
+  		  <p>12. syslog debugコマンドとipsec log illegal-spiコマンドの両方にonが設定されているとき、IPsecでSPI値が無効なパケットを受信するとリブートもしくはハングアップが発生することがあるバグを修正した。</p>
+		</blockquote>
+		この不具合がファームウェアのリビジョンアップ中に発生すると、ファームウェア（execファイル）が消失する可能性があります。<br>
+		お手数をおかけいたしますが、Rev.14.00.08からファームウェアのリビジョンアップを行う際、ipsec log illegal-spi on が設定されている場合には、ipsec log illegal-spi offを設定したのちに実施していただくよう、お願いいたします。
+		<br>
+      </li>
+    
+	<li><a href="/RT/FAQ/Security/index.html">セキュリティに関する問題について</a><br>
+          <a href="./RT/FAQ/Security/JVN48135658.html"><font size="2">「複数ルータにおけるクリックジャッキング対策の不備の脆弱性」について</font></a><br/>
+          <a href="./RT/FAQ/Security/JVN91445763.html"><font size="2">「TLS プロトコルにおける暗号アルゴリズムのダウングレード攻撃を実行される脆弱性(Logjam)」を含む「OpenSSL の複数の脆弱性」についての情報を公開しました。</font></a><br/>
+          <a href="./RT/FAQ/Security/JVN99125992.html"><font size="2">「SSL/TLS の実装が輸出グレードの RSA 鍵を受け入れる問題 (FREAK 攻撃)」を含む「OpenSSL の複数の脆弱性」についての情報を公開しました。</font></a><br/>
+          <a href="./RT/FAQ/Security/VU96605606.html"><font size="2">ntpdの脆弱性(VU#96605606)についての情報を公開しました。</font></a><br/>
+          <a href="./RT/FAQ/Security/JVN98283300.html"><font size="2">「SSLv3/TLSプロトコルに暗号化データを解読される脆弱性」および「メモリリークによるサービス運用妨害 (DoS) の脆弱性」についての情報を更新しました。</font></a><br/>
+	</li>
+	<li>
+	<a href="http://netvolante.jp/news/2010/0225.html">ファイアウォールルーター　SRT100不具合のお知らせ<br>
+	<font size="2">製造番号N1Y020851～N1Y022250の一部におきまして設定(config)の保存ができない等の不具合が発生することが判明しました。</font></a>
+	</li>
+      </ul>
+    </div>
+
+    <hr class="16">
+
+    <div class="title"><a name="topics">
+      最近の話題
+    </a></div>
+    <div class="list">
+    <ul>
+
+    <li>DHCPサーバー機能の追加、および無線接続ログを改善した<a href="RT/firmware/index.php#wlx302">WLX302用最新版ファームウェア(Rev.12.00.17)</a>の配布を始めました。</li>
+    <li>NVR500のコマンドリファレンス(<a href="/RT/manual/nvr500/Cmdref.pdf">PDF</a>：3.0MB, <a href="/RT/manual/nvr500/index.html">HTML</a>)を更新しました。</li>
+    <li>RTX/RT/SRTシリーズのコマンドリファレンス(<a href="/RT/manual/rt-common/Cmdref.pdf">PDF</a>：3.3MB, <a href="/RT/manual/rt-common/index.html">HTML</a>)を更新しました。</li>
+    <li>スイッチ制御機能でSWX2100に対応、およびモバイルインターネット機能でデータ通信端末の対応機種を追加した<a href="RT/firmware/index.php#netvolante">NVR500用最新版ファームウェア（Rev.11.00.28）</a>の配布を始めました。</li>
+    <li>スイッチ制御機能でSWX2100に対応、およびモバイルインターネット機能でデータ通信端末の対応機種を追加した<a href="RT/firmware/index.php#rtx1200">RTX1200用最新版ファームウェア（Rev.10.01.65）</a>の配布を始めました。</li>
+    <li>Web GUIの拡充を行った<a href="RT/firmware/index.php#swx2300">SWX2300用最新版ファームウェア（Rev.2.00.05）</a>の配布を始めました。<br>
+        また、最新版ファームウェアに対応したSWX2300の<a href="/SW/docs/swx2300/index.html">技術資料</a>およびコマンドリファレンス(<a href="/RT/manual/swx2300/Cmdref.pdf">PDF</a>：0.9MB, <a href="/RT/manual/swx2300/cmdref/index.html">HTML</a>)を公開しました。</li>
+    <li>FWX120のコマンドリファレンス(<a href="/RT/manual/fwx120/Cmdref.pdf">PDF</a>：3.6MB, <a href="/RT/manual/fwx120/index.html">HTML</a>)を更新しました。</li>
+    <li>メールセキュリティー機能を追加した<a href="RT/firmware/index.php#fwx120">FWX120用最新版ファームウェア（Rev.11.03.13）</a>の配布を始めました。</li>
+    <li>スイッチ制御機能でSWX2100に対応、およびモバイルインターネット機能でデータ通信端末の対応機種を追加した<a href="RT/firmware/index.php#rtx810">RTX810用最新版ファームウェア（Rev.11.01.25）</a>の配布を始めました。</li>
+    <li>WLX302のコマンドリファレンス(<a href="/RT/manual/wlx302/Cmdref.pdf">PDF</a>：0.9MB, <a href="/RT/manual/wlx302/index.html">HTML</a>)を更新しました。</li>
+    <li>LANマップをはじめWeb GUIの拡充を行った<a href="RT/firmware/index.php#rtx1210">RTX1210用最新版ファームウェア（Rev.14.01.09）</a>の配布を始めました。</li>
+    <li>CPUスケジューリング(パケット転送)機能を追加した<a href="RT/firmware/index.php#rtx5000">RTX5000/RTX3500用最新版ファームウェア（Rev.14.00.13）</a>の配布を始めました。</li>
+    <li>VPNクライアントソフトYMS-VPN8/YMS-VPN8-CPに対応した<a href="RT/firmware/index.php#rtx3000">RTX3000用最新版ファームウェア（Rev.9.00.60）</a>の配布を始めました。</li>
+    <li>OSPFの脆弱性対策を反映した<a href="RT/firmware/index.php#fwx120">FWX120用最新版ファームウェア（Rev.11.03.05）</a>、<a href="RT/firmware/index.php#rtx1100">RTX1100/RTX1500/RT107e用最新版ファームウェア（Rev.8.03.94）</a>、<a href="RT/firmware/index.php#rt250i">RT250i用最新版ファームウェア（Rev.8.02.53）</a>、<a href="RT/firmware/index.php#rt300i">RT300i用最新版ファームウェア（Rev.6.03.40）</a>の配布を始めました。</li>
+    <li>VPNクライアントソフトYMS-VPN8に対応した<a href="RT/firmware/index.php#srt100">SRT100用最新版ファームウェア（Rev.10.00.61）</a>の配布を始めました。</li>
+    </ul>
+    </div>
+
+    <hr class="h16">
+
+    <div class="title"><p><a name="fw_release">
+      ファームウェア更新情報
+    </a></p></div>
+
+    <div align="center">無線LANアクセスポイント</div>
+    <table border="1" summary="" align="center">
+      <tbody>
+      <tr>
+	    <td align="center">WLX302</td>
+	    <td>
+	      Rev.12.00.17
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/ap/Rev.12.00/relnote_12_00_17.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#wlx302">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+    <div align="center">L2スイッチ</div>
+    <table border="1" summary="" align="center">
+      <tbody>
+      <tr>
+	    <td align="center">SWX2300-8G/16G/24G</td>
+	    <td>
+	      Rev.2.00.05
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/sw/Rev.02.00/relnote_02_00_05.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#swx2300">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+      <tr>
+	    <td align="center">SWX2200-8G/24G</td>
+	    <td>
+	      Rev.1.00.08
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/sw/Rev.01.00/relnote_01_00_08.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#swx2200">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+    <div align="center">ルーター / ファイアウォール</div>
+    <table border="1" summary="" align="center">
+	<tbody>
+	  <tr>
+	    <td align="center">RTX1210</td>
+	    <td>
+	      Rev.14.01.09
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.14.01/relnote_14_01_09.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx1210">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+	  <tr>
+	    <td align="center">RTX5000</td>
+	    <td>
+	      Rev.14.00.13
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.14.00/relnote_14_00_13.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx5000">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RTX3500</td>
+	    <td>
+	      Rev.14.00.13
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.14.00/relnote_14_00_13.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx3500">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">FWX120</td>
+	    <td>
+	      Rev.11.03.13
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.11.03/relnote_11_03_13.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#fwx120">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RTX810</td>
+	    <td>
+	      Rev.11.01.25
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.11.01/relnote_11_01_25.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx810">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">NVR500</td>
+	    <td>
+	      Rev.11.00.28
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/NVR500/relnote_11_00_28.txt">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#netvolante">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RTX1200</td>
+	    <td>
+	      Rev.10.01.65
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.10.01/relnote_10_01_65.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx1200">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">SRT100</td>
+	    <td>
+	      Rev.10.00.61
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.10.00/relnote_10_00_61.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#srt100">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RTX3000</td>
+	    <td>
+	      Rev.9.00.60
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.09.00/relnote_09_00_60.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx3000">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RTX1100</td>
+	    <td>
+	      Rev.8.03.94
+	      <br>
+	      Rev.8.02.43
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.08.03/relnote_08_03_94.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx1100">
+		ファームウェア
+	      </a>
+	      <br>
+	      <a href="RT/docs/relnote/Rev.08.02/relnote_08_02_43.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx1100">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RTX1500</td>
+	    <td>
+	      Rev.8.03.94
+	      <br>
+	      Rev.8.02.43
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.08.03/relnote_08_03_94.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx1500">
+		ファームウェア
+	      </a>
+	      <br>
+	      <a href="RT/docs/relnote/Rev.08.02/relnote_08_02_43.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx1500">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RT107e</td>
+	    <td>
+	      Rev.8.03.94
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.08.03/relnote_08_03_94.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rt107e">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RT250i</td>
+	    <td>
+	      Rev.8.02.53
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.08.02/relnote_08_02_53.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rt250i">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RTV01</td>
+	    <td>Rev.1.00.12</td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.01.00/relnote_01_00_12.txt">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtv01">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RT58i</td>
+	    <td>Rev.9.01.51
+	        <br>
+	        Rev.9.01.48
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/RT58i/relnote_09_01_51.txt">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#netvolante">
+		ファームウェア
+	      </a>
+	      <br>
+	      <a href="RT/docs/relnote/RT58i/relnote_09_01_48.txt">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#netvolante">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RTX1000</td>
+	    <td>
+	      Rev.7.01.55
+	      <br>
+	      Rev.8.01.29
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.07.01/relnote_07_01_55.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx1000">
+		ファームウェア
+	      </a>
+	      <br>
+	      <a href="RT/docs/relnote/Rev.08.01/relnote_08_01_29.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx1000">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RTX2000</td>
+	    <td>
+	      Rev.7.01.55
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.07.01/relnote_07_01_55.html">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtx2000">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RTV700</td>
+	    <td>
+	      Rev.8.00.94
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.08.00/relnote_08_00_94.txt">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rtv700">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RT57i</td>
+	    <td>Rev.8.00.95</td>
+	    <td>
+	      <a href="RT/docs/relnote/RT57i/relnote_08_00_95.txt">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#netvolante">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	  <tr>
+	    <td align="center">RT300i</td>
+	    <td>
+	      Rev.6.03.40
+	    </td>
+	    <td>
+	      <a href="RT/docs/relnote/Rev.06.03/relnote_06_03_40.txt">
+		リリースノート
+	      </a>,
+	      <a href="RT/firmware/index.php#rt300i">
+		ファームウェア
+	      </a>
+	    </td>
+	  </tr>
+
+	</tbody>
+      </table>
+
+    <div class="list">
+      <ul>
+	<li>
+	  その他の
+	  <a href="RT/docs/relnote/">
+	    リリースノート
+	  </a>, <a href="RT/firmware/index.php"> ファームウェア </a>
+	</li>
+      </ul>
+    </div>
+
+    <hr class="h16">
+
+    <div class="center">
+      [ <a href="RT/news-release/">ニュースリリース</a>
+      / <a href="RT/catalog/">カタログ</a>
+      / <a href="RT/hardware/">ハードウェア仕様</a>
+      / <a href="RT/support/">お問い合せ先</a>
+      / <a href="RT/FAQ/Security/index.html">セキュリティ</a>
+      / <a href="srv_info/common/index.html">サーバーメンテナンス・障害情報</a>
+      ]
+      <br>
+      [ <a href="RT/firmware/index.php">ファームウェア</a>
+      / <a href="RT/manual.html">マニュアル</a>
+      / <a href="RT/docs/relnote/">リリースノート</a>
+      / <a href="RT/docs/">技術資料</a>
+      / <a href="RT/docs/example/">設定例集</a>
+      / <a href="RT/FAQ/">FAQ</a>
+      / <a href="RT/utility/">ユーティリティ</a>
+      ]
+      <br>
+      [ <a href="http://jp.yamaha.com/products/network/routers/rtx5000/">RTX5000</a>
+      / <a href="http://jp.yamaha.com/products/network/routers/rtx3500/">RTX3500</a>
+      / <a href="http://jp.yamaha.com/products/network/routers/rtx3000/">RTX3000</a>
+      / <a href="http://jp.yamaha.com/products/network/routers/rt250i/">RT250i</a>
+      / <a href="http://jp.yamaha.com/products/network/routers/rtx1210/">RTX1210</a>
+      / <a href="http://jp.yamaha.com/products/network/routers/rtx1200/">RTX1200</a>
+      / <a href="http://jp.yamaha.com/products/network/routers/rtx810/">RTX810</a>
+      / <a href="http://jp.yamaha.com/products/network/routers/rt107e/">RT107e</a>
+      / <a href="http://jp.yamaha.com/products/network/firewalls/fwx120/">FWX120</a>
+      / <a href="http://jp.yamaha.com/products/network/routers/nvr500/">NVR500</a>
+      / <a href="http://jp.yamaha.com/products/network/network_options/address_book_server/rtv01/">RTV01</a><br>
+      / <a href="http://jp.yamaha.com/products/network/switches/">L2スイッチ(SWX2100、SWX2200、SWX2300)</a>
+      / <a href="http://jp.yamaha.com/products/network/wireless_lan/wlx302/">WLX302</a>
+      ]
+    </div>
+
+    <hr>
+
+    <table width="100%" summary="">
+      <tr>
+	<td width="50%" align="center">
+	  <a href="http://jp.yamaha.com/">楽器や音楽、ＡＶ機器についてはヤマハホームページへ</a>
+	</td>
+	<td width="50%" align="center">
+	  <a href="http://www.yamaha-motor.co.jp/">バイク、電動ハイブリッド自転車、ボート、産業用ロボットなどはヤマハ発動機株式会社へ</a>
+	</td>
+      </tr>
+    </table>
+
+    <hr>
+
+    <div style="margin-left: 5%;">
+      <div style="font-size: smaller;">
+	<div style="font-weight: bold;">
+	  リンクフリー
+	</div>
+	<p>
+	  法と公序良俗に反する目的でない限り、
+	  <a href="http://www.rtpro.yamaha.co.jp/">www.rtpro.yamaha.co.jp</a>
+	  内および
+	  <a href="http://jp.yamaha.com/products/network/">jp.yamaha.com/products/network</a>
+	  内のWWWページへのリンクは自由に行って下さい。事前/事後の連絡は一切不要です。また、リンク用のバナーファイル、ロゴ画像データなどは用意していません。社名、商品名は通常のフォントを用いて表示してください。
+	</p>
+      </div>
+
+      <p style="font-size: x-small">
+	This WWW site is documented in Japanese only. There is no English page.
+      </p>
+
+      <div style="font-size: x-small; font-weight: bold;">
+	<script type="text/javascript" language="JavaScript">
+	  <!--
+	      document.write("Copyright (C) 1995～",
+	                     (new Date()).getFullYear(),
+			     ", Yamaha Corporation.");
+	    -->
+	</script>
+      </div>
+
+    </div>
+
+  </body>
+</html>

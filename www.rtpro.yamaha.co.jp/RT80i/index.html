@@ -1,0 +1,378 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>YAMAHA ISDN remote router RT80i</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-2022-jp">
+<META HTTP-EQUIV="Content-Language" content="ja">
+
+<STYLE type="text/css">
+<!--
+ SUP { color: #cc3300; background-color: #ffff99; }
+-->
+</STYLE>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+
+<body bgcolor="white">
+<!-- Google Tag Manager -->
+<script>dataLayer=[];</script><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5HLMR3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5HLMR3');</script>
+<!-- End Google Tag Manager -->
+
+<CENTER>
+<hr SIZE=20 ALIGN=CENTER WIDTH=80%>
+<p>
+<font size="+3">YAMAHA ISDN リモートルータ RT80i</font>
+</p>
+<hr SIZE=10 ALIGN=CENTER WIDTH=60%>
+<p>
+<blockquote>
+[ <a href="../RT/FAQ/TCPIP/www-server-vulnerability.html">WWWサーバ機能の脆弱性について</a>
+ ]<BR>
+<!--
+[ <a href="beta-release/index.html">公開β版ファームウェア(Rev.3.00.46β)を配布中</a> <SUP>NEW</SUP>
+ ]<BR>
+-->
+<BR>
+[ <a href="index.html">RT80i</a>
+/ <a href="FAQ/index.html">RT80i's FAQ</a>
+(<a href="FAQ/files.html">files</a>)
+/ <a href="firmware.html">ファームウェア</a> <!--(<a href="beta-release/index.html">β版</a>)-->
+/ <a href="manual.html">マニュアル</a>
+]<BR>
+[ <a href="/RT/firmware/index.html">ファームウェア配布(統合版)</a>
+]<BR>
+[ <a href="http://NetVolante.jp/support/">ネットボランチのお問い合せ先</a> ]<BR>
+</blockquote>
+
+</p>
+<hr SIZE=20 ALIGN=CENTER WIDTH=80%>
+<p>
+<TABLE BORDER>
+<CAPTION><font size="+2"><B>
+<a href="/RT/firmware/index.html">最新ファームウェア</A></B></font></CAPTION>
+<TR BGCOLOR="#cccccc">
+<TH>機種</TH>
+<TH>使用可能Rev</TH>
+<TH><a href="/RT/firmware/Rev2.html">Rev.2系</A></TH>
+<TH><a href="/RT/firmware/Rev3.html">Rev.3系</A></TH>
+</TR>
+<TR>
+<TD>RT80i</TD>
+<TD>Rev.2.02.15〜</TD>
+<TH>Rev.2.02.46</TH>
+<TH>Rev.3.00.47</TH>
+</TR>
+</TABLE>
+</p>
+
+</CENTER>
+
+<hr>
+
+<A NAME="introduction"></A>
+<font size="+2">RT80iの紹介</font>
+
+<ul>
+<LI><p><A HREF="/RT/news-release/index.html"
+	>ニュースリリース</A>
+  <ul>
+  <li> <a href="http://www.yamaha.co.jp/news/97091701.html"
+	>RT80i/RT140i (1997年9月17日)</A>
+…<A HREF="/RT/news-release/97091701-errata.html"
+	>正誤表</A> (<a href="/RT/news-release/19970917.html"
+	>テキスト版</a>)<BR>
+  </UL>
+</p>
+
+<li><p><A HREF="/RT/index.html#picture"
+	>外観写真</A>
+  <UL>
+  <li> <a href="/RT/pict/rt80i.jpg"
+	>RT80i</a><BR>
+  </UL>
+</p>
+
+<LI><p><A HREF="/RT/hardware/index.html"
+	>ハードウェア仕様</A>
+  <UL>
+  <LI> <A HREF="/RT/hardware/RT80i.html"
+	>RT80i</A>
+(2000/Oct/20) [生産終了]<BR>
+  </UL>
+</p>
+
+<LI><A HREF="/RT/index.html#software"
+	>ファームウェア/ソフトウェア仕様</A>
+<p>
+製品の最新トータル仕様は、<A HREF="/RT/index.html#hardware"
+	>ハードウェア仕様</A>と<A HREF="/RT/index.html#software"
+	>ソフトウェア仕様</A>の組み合わせにより決まります。
+</p>
+
+<LI> <A HREF="/RT/www/RT80i.html"
+	>WWW設定画面のデモンストレーション</A><BR>
+<li><a href="/RT/docs/example/easysetup.html"
+	>WWW設定(簡単設定)の接続事例集</a>
+(2003/Feb/26)<BR>
+
+<LI><p>
+<A HREF="FAQ/index.html"
+	>RT80i専用FAQ</A>
+<UL>
+<LI><A HREF="FAQ/files.html">files</A>
+</UL>
+</p>
+
+<LI><p>RT80iの機能構成 (内蔵DSUを使用する場合)
+<pre>
+  ISDN回線 or 高速デジタル専用線    ISDNデジタル端末(G4FAXなど)
+           │                        │
+           │ISDN U点ポート          │  ISDN S/T点ポート
+ ┏━━━┳┷┳━━━━━━━━━━┳┷┳━━━━━━━━━━━━┓
+ ┃      ┃  ┃                    ┃  ┃                        ┃ 
+ ┃      ┗┯┛                    ┗┯┛                        ┃ 
+ ┃        │                        │                          ┃ 
+ ┃      DSU機能                     │↑ 'OUT'                  ┃ 
+ ┃        │                        │                          ┃ 
+ ┃============================================================= ┃ 
+ ┃        │                                  │                ┃ 
+ ┃   <A HREF="../RT/FAQ/Analog/index.html">アナログ機能</A>                         ルータ機能            ┃ 
+ ┃        │                                  │                ┃ 
+ ┃      ┏┷┳━┓                          ┏┷┓              ┃ 
+ ┃      ┃#1┃#2┃                          ┃  ┃              ┃ 
+ ┗━━━┻┯┻┯┻━━━━━━━━━━━━━┻┯┻━━━━━━━┛
+           │  │                              │
+          アナログ                        パソコン/ハブ
+          電話/FAX                         (10BASE-T)
+</pre>
+
+</ul>
+
+<HR>
+<font size="+2"><a href="/RT/index.html">RTシリーズの紹介</a></font>
+<ul>
+<LI> <font size="+1"><A HREF="/RT/FAQ/index.html">FAQ集(HTML版)</A></font>
+ <UL>
+ <LI><a href="/RT/FAQ/Intro/index.html"
+	>使い方、役割の説明</a><BR>
+ <LI><A HREF="/RT/FAQ/Install/revision-up.html"
+	>リビジョンアップの具体的手順の紹介</A><BR>
+ <LI><A HREF="/RT/FAQ/RTPRO/www/text-picture-broken.html"
+	>テキストで書かれた図(構成図等)が崩れて意味がわからない！</A><BR>
+ </UL>
+<LI> <font size="+1"><A HREF="/RT/docs/index.html">資料集/事例集(HTML版)</A></font>
+ <UL>
+ <LI><a href="/RT/docs/nat/index.html"
+	>NATとIPマスカレード</a>の技術解説<BR>
+ <LI><a href="/RT/docs/ipsec/index.html"
+	>セキュリティゲートウェイ機能</a>の技術解説<BR>
+ <LI><a href="/RT/docs/example/dialup.html"
+	>ダイヤルアップ接続の事例集</a><BR>
+ <LI><a href="/RT/docs/example/ocn.html"
+	>OCN/プロバイダ接続の事例集</a><BR>
+ <LI><a href="/RT/docs/example/local.html"
+	>ローカルルータの設定事例集</a><BR>
+ <li><a href="/RT/docs/game/index.html"
+	>ネットワークゲームのための設定ヒント</a>
+ </UL>
+<LI> <A HREF="/RT/interoperate/cisco0.html"
+	>Cisco との相互接続の例 </A>
+</ul>
+
+
+<hr>
+<A NAME="download"></A>
+<font size="+2">ダウンロード/配布</font>
+<ul>
+<li><p><A HREF="/RT/firmware/index.html">ファームウェア配布ページ(統合版)</A></p>
+<li><p><A HREF="firmware.html">ファームウェア配布ページ(製品毎版)</A></p>
+
+<li>
+<p>
+<A HREF="manual.html">マニュアル配布(PDF & PostScript, 
+対応リビジョン：
+Rev.6.03.18 / Rev.7.00.19 / Rev.7.01.05
+)</A><BR>
+</p>
+
+
+<LI><A HREF="/RT/utility/index.html" NAME="utility">ユーティリティ</A>
+<p>
+<UL>
+<li><A HREF="ftp://ftp.rtpro.yamaha.co.jp/pub/util/md5sum/"
+	>MD5チェックサムを取るユーティリティ (Windows,MS-DOS,Source)</A><BR>
+<li><A HREF="ftp://ftp.rtpro.yamaha.co.jp/pub/util/RTU/Win95/"
+	>RTシリーズ共通ユーティリティ (RT-Monitor,RT-Tftp) for Windows95</A><BR>
+<li><A HREF="ftp://ftp.rtpro.yamaha.co.jp/pub/util/RTU/Mac/"
+	>RTシリーズ共通ユーティリティ (RT-Monitor,RT-Tftp) for Macintosh</A><BR>
+<li><A HREF="ftp://ftp.rtpro.yamaha.co.jp/pub/util/ckrt100i/"
+	>RT100iのバイナリの正しさを確認するユーティリティ (MS-DOS,Macintosh,Source)</A><BR>
+</UL>
+
+</p>
+
+<!--
+<li> <a href="http://www.clubweb.or.jp/smc/manual.html"
+	>マニュアル販売のお知らせ</a><BR>
+-->
+</ul>
+
+<hr>
+<A NAME="announce"></A>
+<font size="+2">お知らせ</font>
+<UL>
+<li><a href="/RT/users.html"
+	>rt100i-usersメーリングリストの紹介</a>
+<li><a href="/RT/FAQ/Intro/rt-book.html"
+	>RTシリーズの参考書紹介</a>
+
+<li>商品の技術的なお問い合わせ先<BR>
+<div style="width: 80%; border: solid black 2px; padding: 20px;">
+  <b>
+    <a href="http://NetVolante.jp/support/index.html">
+      ネットボランチ・コールセンター
+    </a>
+  </b>
+
+  <ul>
+
+    <li>
+      <p>
+	ネットボランチ専用サービス窓口
+	<br>
+	電話番号：<font size="+3">03-5715-0350</font>
+	<br>
+	土・日・祝日、年末年始を除く 9:00〜12:00、13:00〜17:00
+      </p>
+    </li>
+
+    <li>
+      <p>
+	ネットボランチコールセンターインターネット電話番号
+	<br>
+	電話番号：<font size="+3">##62594341</font>
+	<br>
+	土・日・祝日、年末年始を除く 9:00〜12:00、13:00〜17:00
+      </p>
+      <blockquote>
+	インターネット電話で正常に通話できない場合は、
+	<a href="http://www.rtpro.yamaha.co.jp/RT/FAQ/VoIP/index.html">
+	  インターネット電話機能FAQ
+	</a>
+	の[トラブルシューティング]をご参照の上、無料インターネット電話
+	確認用番号(##21574061)にて動作をご確認下さい。それでも問題が解
+	決しない場合は、通常の電話または
+	<a href="https://netvolante.jp/support/contact/">
+	  お問い合わせフォーム
+	</a>
+	にてお問い合わせ下さい。
+      </blockquote>
+    </li>
+
+<li>
+<p>
+     <font color="#ff0000">2009年4月1日よりネットボランチ・コールセンターの営業時間が次のように変更になりましたので、ご案内致します。</font>
+ <br>
+  ご相談受付時間　　9:00〜12:00　13:00〜17:00
+  <br>
+ (土・日・祝日、年末年始は休業とさせていただきます。)
+  </p>
+    </li>
+
+    <li>
+      お問い合わせフォームでの受付
+      <br>
+      <p>
+	<ol>
+	  <form id="form1" name="form1" method="get" action="https://netvolante.jp/support/contact/">
+          <input type="submit" value="お問合わせフォームを開く"></form>
+	</ol>
+      </p>
+      <p>
+	<li>対象機種
+	  <ul>
+	    <li>RTV01</li>
+	    <li>RTV700</li>
+	    <li>RT58i</li>
+	    <li>RT57i</li>
+	    <li>RT56v</li>
+	    <li>RTA55i</li>
+	    <li>RTW65i</li>
+	    <li>RTW65b</li>
+	    <li>RTA54i</li>
+	    <li>RT60w</li>
+	    <li>RTA50i、RTA52i、RT80i</li>
+	  </ul>
+      </p>
+    </li>
+  </ul>
+
+</div>
+
+</UL>
+<hr>
+<p>
+<blockquote>
+[ <a href="../RT/FAQ/TCPIP/www-server-vulnerability.html">WWWサーバ機能の脆弱性について</a>
+ ]<BR>
+<!--
+[ <a href="beta-release/index.html">公開β版ファームウェア(Rev.3.00.46β)を配布中</a> <SUP>NEW</SUP>
+ ]<BR>
+-->
+<BR>
+[ <a href="index.html">RT80i</a>
+/ <a href="FAQ/index.html">RT80i's FAQ</a>
+(<a href="FAQ/files.html">files</a>)
+/ <a href="firmware.html">ファームウェア</a> <!--(<a href="beta-release/index.html">β版</a>)-->
+/ <a href="manual.html">マニュアル</a>
+]<BR>
+[ <a href="/RT/firmware/index.html">ファームウェア配布(統合版)</a>
+]<BR>
+[ <a href="http://NetVolante.jp/support/">ネットボランチのお問い合せ先</a> ]<BR>
+</blockquote>
+
+</p>
+<table>
+  <tr>
+    <td width="10%"><br></td>
+    <td width="80%">
+      <form>
+	<input type="button" value="&lt;&lt;戻る" onClick="history.back()">
+	<input type="button" value="再表示" onClick="location.reload()">
+	<input type="button" value="進む&gt;&gt;" onClick="history.forward()">
+	<span style="font-size: x-small">
+	  ※「戻る/進む」はブラウザの履歴が使用されます
+	</span>
+      </form>
+
+      <div style="font-size: x-small">
+	[ <a href="/index.html">ヤマハルーター</a>
+	/ <a href="http://NetVolante.jp/">ネットボランチ</a>
+	/ <a href="/RT/search/">検索</a>
+	/ <a href="http://rfc.netvolante.jp/">RFC</a>
+	/ <a href="/RT/docs/index.html">技術資料</a>
+	/ <a href="/RT/docs/example/index.html">設定例集</a>
+	/ <a href="/RT/FAQ/index.html">RT's FAQ</a>
+	]
+      </div>
+
+      <br>
+
+      <div style="font-size: x-small; font-weight: bold;">
+	<script type="text/javascript" language="JavaScript">
+	  <!--
+	      document.write("Copyright (C) 1995〜",
+	      	       (new Date()).getFullYear(),
+	       	       ", Yamaha Corporation.");
+	    -->
+	</script>
+      </div>
+
+    </td>
+  </tr>
+</table>
+
+
+</body>
+</html>
