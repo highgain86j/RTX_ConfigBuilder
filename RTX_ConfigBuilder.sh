@@ -23,3 +23,5 @@ write_pppoe () {
 	${com_03210} ${var_14} \\n \
 	${com_07340} ${var_1} \\n \
 }
+
+write_pppoe
