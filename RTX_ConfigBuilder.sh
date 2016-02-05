@@ -2,7 +2,7 @@
 
 . ./cmd.txt
 
-. ./write_pppoe.import
+. ./import.write_pppoe
 
 #wan_select () {
 #}
