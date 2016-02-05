@@ -1,0 +1,5 @@
+write_ipmasq () {
+nat descriptor type 1000 nat-masquerade
+nat descriptor address outer 1000 ipcp
+nat descriptor address inner 1000 auto
+}
