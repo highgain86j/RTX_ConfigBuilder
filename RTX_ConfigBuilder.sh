@@ -20,7 +20,8 @@ ${cmd_03210} ${var_14} \\n\
 ${cmd_03430} in ${var_15} \\n\
 ${cmd_03430} out ${var_16} \\n\
 ${cmd_03210} ${var_17} \\n\
-${cmd_07340} ${var_1} \\n
+${cmd_07340} ${var_1} \\n\
+${cmd_07400} none \\n
 
 #pp select 1
 #pp always-on on
@@ -37,6 +38,7 @@ ${cmd_07340} ${var_1} \\n
 #ip pp secure filter out #
 #ip pp nat descriptor 1000
 #pp enable 1
+#pp select none
 
 }
 
