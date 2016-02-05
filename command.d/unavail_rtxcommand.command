@@ -227,4 +227,3 @@ tunnel
 tunnel dtcp
 tunnel dtcp connect
 tunnel dtcp disconnect
-pp bind  
