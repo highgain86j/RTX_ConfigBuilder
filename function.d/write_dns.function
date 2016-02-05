@@ -3,5 +3,4 @@ write_dns () {
 ${cmd_01520} pp 1
 ${cmd_01520} select 500001 pp 1 any . restrict pp 1
 ${cmd_01510} on
-dns private name ${cmd_08780}up.netvolante.jp
 }
