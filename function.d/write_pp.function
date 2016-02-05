@@ -1,4 +1,4 @@
 
-write_pp_SPACING_()_SPACING_{
-pp_SPACING_disable_SPACING_all
+write_pp () {
+${cmd_07330} all
 }

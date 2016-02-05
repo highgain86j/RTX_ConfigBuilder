@@ -1,7 +1,7 @@
 
-write_system_SPACING_()_SPACING_{
-login_SPACING_password_SPACING_PaSsWoRd
-administrator_SPACING_password_SPACING_PaSsWoRd
-console_SPACING_character_SPACING_ascii
-console_SPACING_lines_SPACING_infinity
+write_system () {
+${cmd_06080} PaSsWoRd
+${cmd_00030} password PaSsWoRd
+${cmd_00910} ascii
+${cmd_00940} infinity
 }

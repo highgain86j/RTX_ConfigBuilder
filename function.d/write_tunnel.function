@@ -1,4 +1,4 @@
 
-write_tunnel_SPACING_()_SPACING_{
-tunnel_SPACING_disable_SPACING_all
+write_tunnel () {
+${cmd_12320} all
 }

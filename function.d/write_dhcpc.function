@@ -1,3 +1,3 @@
 
-write_dhcpc_SPACING_()_SPACING_{
+write_dhcpc () {
 }

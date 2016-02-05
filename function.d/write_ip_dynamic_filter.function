@@ -1,10 +1,10 @@
 
-write_ip_dynamic_filter_SPACING_()_SPACING_{
-ip_SPACING_filter_SPACING_dynamic_SPACING_100080_SPACING__SPACING__SPACING_**ftp
-ip_SPACING_filter_SPACING_dynamic_SPACING_100081_SPACING__SPACING__SPACING_**domain
-ip_SPACING_filter_SPACING_dynamic_SPACING_100082_SPACING__SPACING__SPACING_**www
-ip_SPACING_filter_SPACING_dynamic_SPACING_100083_SPACING__SPACING__SPACING_**smtp
-ip_SPACING_filter_SPACING_dynamic_SPACING_100084_SPACING__SPACING__SPACING_**pop3
-ip_SPACING_filter_SPACING_dynamic_SPACING_100098_SPACING__SPACING__SPACING_**tcp
-ip_SPACING_filter_SPACING_dynamic_SPACING_100099_SPACING__SPACING__SPACING_**udp
+write_ip_dynamic_filter () {
+${cmd_02260} dynamic 100080   **ftp
+${cmd_02260} dynamic 100081   **domain
+${cmd_02260} dynamic 100082   **www
+${cmd_02260} dynamic 100083   **smtp
+${cmd_02260} dynamic 100084   **pop3
+${cmd_02260} dynamic 100098   **tcp
+${cmd_02260} dynamic 100099   **udp
 }

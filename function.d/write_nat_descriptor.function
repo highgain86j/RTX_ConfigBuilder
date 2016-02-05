@@ -1,4 +1,4 @@
 
-write_nat_descriptor_SPACING_()_SPACING_{
-nat_SPACING_descriptor_SPACING_type_SPACING_1000_SPACING_masquerade
+write_nat_descriptor () {
+${cmd_06670} 1000 masquerade
 }

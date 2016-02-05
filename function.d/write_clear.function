@@ -1,4 +1,4 @@
 
-write_clear_SPACING_()_SPACING_{
-clear_SPACING_configuration
+write_clear () {
+clear configuration
 }

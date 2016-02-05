@@ -1,5 +1,5 @@
-write_ipmasq_SPACING_()_SPACING_{
-nat_SPACING_descriptor_SPACING_type_SPACING_1000_SPACING_nat-masquerade
-nat_SPACING_descriptor_SPACING_address_SPACING_outer_SPACING_1000_SPACING_ipcp
-nat_SPACING_descriptor_SPACING_address_SPACING_inner_SPACING_1000_SPACING_auto
+write_ipmasq () {
+${cmd_06670} 1000 nat-masquerade
+${cmd_06510} 1000 ipcp
+${cmd_06500} 1000 auto
 }

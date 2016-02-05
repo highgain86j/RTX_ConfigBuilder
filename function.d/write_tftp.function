@@ -1,4 +1,4 @@
 
-write_tftp_SPACING_()_SPACING_{
-tftp_SPACING_host_SPACING_any
+write_tftp () {
+${cmd_12240} any
 }

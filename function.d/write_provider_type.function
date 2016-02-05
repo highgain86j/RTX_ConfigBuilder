@@ -1,7 +1,7 @@
 
-write_provider_type_SPACING_()_SPACING_{
-provider_SPACING_type_SPACING_isdn-terminal
-provider_SPACING_filter_SPACING_routing_SPACING_connection
-provider_SPACING_lan1_SPACING_name_SPACING_LAN:
-provider_SPACING_lan2_SPACING_name_SPACING_PPPoE/0/1/6/0/0/0:ISP
+write_provider_type () {
+${cmd_08230} isdn-terminal
+${cmd_08140} ${cmd_00880}ion
+provider lan1 name LAN:
+provider lan2 name PPPoE/0/1/6/0/0/0:ISP
 }
