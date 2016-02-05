@@ -711,7 +711,7 @@ less file list
 less log
 line masterclock
 line type
-line type 98,
+line type 
 login password
 login password encrypted
 login radius use
@@ -872,19 +872,19 @@ pki crl file
 port
 pp always-on
 pp auth accept
-pp auth accept 133,
+pp auth accept 
 pp auth multi connect prohibit
 pp auth myname
 pp auth request
-pp auth request 133,
+pp auth request 
 pp auth username
 pp backup
 pp backup pp
 pp backup recovery time
 pp backup tunnel
 pp bind
-pp bind 100, 122, 301,
-pp bind 82, 175,
+pp bind   
+pp bind  
 pp connect count threshold
 pp connect time threshold
 pp disable
@@ -980,7 +980,7 @@ provider isdn auto disconnect off
 provider isdn disconnect daytime
 provider isdn disconnect interval daytime
 provider isdn disconnect interval nighttime
-provider isdn disconnect interval nighttime 207
+provider isdn disconnect interval nighttime 
 provider isdn disconnect nighttime
 provider netvolante-dns hostname sip
 provider ntp server
