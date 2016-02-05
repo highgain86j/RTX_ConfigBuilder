@@ -1,4 +1,4 @@
 
-write_tftp () {
-tftp host any
+write_tftp***()***{
+tftp***host***any
 }

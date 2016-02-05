@@ -1,20 +1,20 @@
 
-write_pp_1 () {
-pp select 1
-pp name PRV/1/1/6/0/0/0:ISP
-pp always-on on
-pppoe use lan2
-pppoe auto disconnect off
-pppoe call prohibit auth-error count off
-pp auth accept pap chap
-pp auth myname UsEr@PrOvIdEr.Jp PaSsWoRd
-ppp lcp mru on 1454
-ppp ipcp ipaddress on
-ppp ipcp msext on
-ppp ccp type none
-ip pp mtu 1454
-ip pp secure filter in 910001 910002 910003 910004 910005 910006 910007 910008 910009 910010 910011 910012
-ip pp secure filter out 900001 900002 900003 900004 900011 900012 900013 900014 900015 900016 900021 900022 900099 dynamic 930001 930002 930003 930004 930005 930006 930007 
-ip pp nat descriptor 1000
-pp enable 1
+write_pp_1***()***{
+pp***select***1
+pp***name***PRV/1/1/6/0/0/0:ISP
+pp***always-on***on
+pppoe***use***lan2
+pppoe***auto***disconnect***off
+pppoe***call***prohibit***auth-error***count***off
+pp***auth***accept***pap***chap
+pp***auth***myname***UsEr@PrOvIdEr.Jp***PaSsWoRd
+ppp***lcp***mru***on***1454
+ppp***ipcp***ipaddress***on
+ppp***ipcp***msext***on
+ppp***ccp***type***none
+ip***pp***mtu***1454
+ip***pp***secure***filter***in***910001***910002***910003***910004***910005***910006***910007***910008***910009***910010***910011***910012
+ip***pp***secure***filter***out***900001***900002***900003***900004***900011***900012***900013***900014***900015***900016***900021***900022***900099***dynamic***930001***930002***930003***930004***930005***930006***930007***
+ip***pp***nat***descriptor***1000
+pp***enable***1
 }

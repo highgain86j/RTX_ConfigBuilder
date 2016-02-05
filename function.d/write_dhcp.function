@@ -1,6 +1,6 @@
 
-write_dhcp () {
-dhcp service server
-dhcp server rfc2131 compliant except remain-silent
-dhcp scope 1 192.168.159.1-192.168.159.100/24
+write_dhcp***()***{
+dhcp***service***server
+dhcp***server***rfc2131***compliant***except***remain-silent
+dhcp***scope***1***192.168.159.1-192.168.159.100/24
 }
