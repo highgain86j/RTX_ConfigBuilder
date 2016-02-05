@@ -2,6 +2,10 @@
 
 . ./cmd.txt
 
+#wan_select () {
+#}
+
+
 write_pppoe () {
 var_1=$1
 echo -e \
