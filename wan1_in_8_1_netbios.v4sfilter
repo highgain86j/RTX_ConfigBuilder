@@ -1,0 +1,6 @@
+tcp,udp|135|*
+tcp,udp|*|135
+tcp,udp|netbios_ns-netbios_ssn|*
+tcp,udp|*|netbios_ns-netbios_ssn
+tcp,udp|445|*
+tcp,udp|*|445
