@@ -1,5 +1,5 @@
 
-#write_provider_type () {
+write_provider_type () {
 provider type isdn-terminal
 provider filter routing connection
 provider lan1 name LAN:

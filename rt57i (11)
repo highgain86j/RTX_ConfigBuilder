@@ -1,5 +1,5 @@
 
-#write_pp_1 () {
+write_pp_1 () {
 pp select 1
 pp name PRV/1/1/6/0/0/0:ISP
 pp always-on on

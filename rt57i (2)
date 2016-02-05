@@ -1,4 +1,4 @@
 
-#write_clear () {
+write_clear () {
 clear configuration
 }

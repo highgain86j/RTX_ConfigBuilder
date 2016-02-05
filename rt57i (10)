@@ -1,4 +1,4 @@
 
-#write_pp () {
+write_pp () {
 pp disable all
 }

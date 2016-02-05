@@ -1,4 +1,4 @@
 
-#write_tunnel () {
+write_tunnel () {
 tunnel disable all
 }
