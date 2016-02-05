@@ -1,0 +1,1 @@
+***#write_tftp () {***tftp host any***}

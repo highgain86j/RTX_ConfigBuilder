@@ -1,0 +1,1 @@
+***#write_ip () {***ip route default gateway pp 1 filter 500000 gateway pp 1***}

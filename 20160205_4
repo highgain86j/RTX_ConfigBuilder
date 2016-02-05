@@ -1,0 +1,1 @@
+***#write_lan () {***ip lan1 address 192.168.159.254/24***ip lan1 secure filter in 110099***ip lan1 secure filter out 100099***}

@@ -1,0 +1,1 @@
+***#write_analog () {***analog supplementary-service pseudo call-waiting***analog extension dial prefix line***analog extension dial prefix sip prefix="9#"***}

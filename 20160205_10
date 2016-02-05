@@ -1,0 +1,1 @@
+***#write_provider_information () {***provider set 1 ISP***provider dns server pp 1 1***provider select 1***}
