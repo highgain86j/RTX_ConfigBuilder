@@ -1,4 +1,4 @@
 
-write_ip***()***{
-ip***route***default***gateway***pp***1***filter***500000***gateway***pp***1
+write_ip_SPACING_()_SPACING_{
+ip_SPACING_route_SPACING_default_SPACING_gateway_SPACING_pp_SPACING_1_SPACING_filter_SPACING_500000_SPACING_gateway_SPACING_pp_SPACING_1
 }

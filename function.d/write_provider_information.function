@@ -1,6 +1,6 @@
 
-write_provider_information***()***{
-provider***set***1***ISP
-provider***dns***server***pp***1***1
-provider***select***1
+write_provider_information_SPACING_()_SPACING_{
+provider_SPACING_set_SPACING_1_SPACING_ISP
+provider_SPACING_dns_SPACING_server_SPACING_pp_SPACING_1_SPACING_1
+provider_SPACING_select_SPACING_1
 }

@@ -1,6 +1,6 @@
 
-write_lan***()***{
-ip***lan1***address***192.168.159.254/24
-ip***lan1***secure***filter***in***110099
-ip***lan1***secure***filter***out***100099
+write_lan_SPACING_()_SPACING_{
+ip_SPACING_lan1_SPACING_address_SPACING_192.168.159.254/24
+ip_SPACING_lan1_SPACING_secure_SPACING_filter_SPACING_in_SPACING_110099
+ip_SPACING_lan1_SPACING_secure_SPACING_filter_SPACING_out_SPACING_100099
 }

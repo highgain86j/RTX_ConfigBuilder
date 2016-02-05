@@ -1,6 +1,6 @@
 
-write_analog***()***{
-analog***supplementary-service***pseudo***call-waiting
-analog***extension***dial***prefix***line
-analog***extension***dial***prefix***sip***prefix="9#"
+write_analog_SPACING_()_SPACING_{
+analog_SPACING_supplementary-service_SPACING_pseudo_SPACING_call-waiting
+analog_SPACING_extension_SPACING_dial_SPACING_prefix_SPACING_line
+analog_SPACING_extension_SPACING_dial_SPACING_prefix_SPACING_sip_SPACING_prefix="9#"
 }
