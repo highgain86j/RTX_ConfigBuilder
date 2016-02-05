@@ -604,7 +604,7 @@ less exec list
 less file list
 less log
 line masterclock
-line type 98,
+line type
 login password
 login password encrypted
 login radius use
@@ -729,7 +729,7 @@ pp backup
 pp backup pp
 pp backup recovery time
 pp backup tunnel
-pp bind 100, 122, 301,
+pp bind
 pp disable
 pp enable
 pp encapsulation

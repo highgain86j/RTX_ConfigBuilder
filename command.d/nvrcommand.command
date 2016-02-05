@@ -544,9 +544,9 @@ pp always-on
 pp auth accept 133,
 pp auth multi connect prohibit
 pp auth myname
-pp auth request 133,
+pp auth request
 pp auth username
-pp bind 82, 175,
+pp bind
 pp connect count threshold
 pp connect time threshold
 pp disable
