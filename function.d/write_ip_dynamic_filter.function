@@ -1,0 +1,10 @@
+
+write_ip_dynamic_filter () {
+ip filter dynamic 100080 * * ftp
+ip filter dynamic 100081 * * domain
+ip filter dynamic 100082 * * www
+ip filter dynamic 100083 * * smtp
+ip filter dynamic 100084 * * pop3
+ip filter dynamic 100098 * * tcp
+ip filter dynamic 100099 * * udp
+}
