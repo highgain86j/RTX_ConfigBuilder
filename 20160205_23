@@ -1,1 +1,7 @@
-***#write_dns () {***dns server pp 1***dns server select 500001 pp 1 any . restrict pp 1***dns private address spoof on***dns private name setup.netvolante.jp***}
+
+#write_dns () {
+dns server pp 1
+dns server select 500001 pp 1 any . restrict pp 1
+dns private address spoof on
+dns private name setup.netvolante.jp
+}

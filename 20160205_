@@ -1,1 +1,4 @@
-***#write_clear () {***clear configuration***}
+
+#write_clear () {
+clear configuration
+}

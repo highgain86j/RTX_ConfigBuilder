@@ -1,1 +1,7 @@
-***#write_system () {***login password PaSsWoRd***administrator password PaSsWoRd***console character ascii***console lines infinity***}
+
+#write_system () {
+login password PaSsWoRd
+administrator password PaSsWoRd
+console character ascii
+console lines infinity
+}
