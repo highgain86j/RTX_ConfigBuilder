@@ -1,4 +1,0 @@
-
-write_tunnel () {
-tunnel disable all
-}
