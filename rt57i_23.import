@@ -1,0 +1,7 @@
+
+write_provider_type () {
+provider type isdn-terminal
+provider filter routing connection
+provider lan1 name LAN:
+provider lan2 name PPPoE/0/1/6/0/0/0:ISP
+}

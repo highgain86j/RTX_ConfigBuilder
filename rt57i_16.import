@@ -1,0 +1,4 @@
+
+write_pp () {
+pp disable all
+}
