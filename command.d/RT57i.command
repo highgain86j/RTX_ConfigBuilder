@@ -78,9 +78,9 @@ clear ipv6 neighbor cache
 clear log
 clear mail-check info
 clear nat descriptor dynamic
-clear nat descriptor _if_ dynamic
-clear nat descriptor _if_ dynamic
-clear nat descriptor _if_ dynamic pp
+clear nat descriptor interface dynamic
+clear nat descriptor interface dynamic
+clear nat descriptor interface dynamic pp
 cold start
 connect
 console character
@@ -131,8 +131,8 @@ httpd host
 httpd listen
 httpd service
 httpd timeout
-_if_ reset
-_if_ reset pp
+interface reset
+interface reset pp
 ip filter
 ip filter directed-broadcast
 ip filter dynamic
@@ -151,25 +151,25 @@ ip icmp redirect send
 ip icmp time-exceeded send
 ip icmp timestamp-reply send
 ip icmp unreachable send
-ip _if_ address
-ip _if_ arp queue length
-ip _if_ dhcp lease time
-ip _if_ dhcp retry
-ip _if_ intrusion detection
-ip _if_ mtu
-ip _if_ nat descriptor
-ip _if_ proxyarp
-ip _if_ rip auth key
-ip _if_ rip auth type
-ip _if_ rip filter
-ip _if_ rip hop
-ip _if_ rip receive
-ip _if_ rip send
-ip _if_ rip trust gateway
-ip _if_ secondary address
-ip _if_ secure filter
-ip _if_ tcp mss limit
-ip _if_ wol relay
+ip interface address
+ip interface arp queue length
+ip interface dhcp lease time
+ip interface dhcp retry
+ip interface intrusion detection
+ip interface mtu
+ip interface nat descriptor
+ip interface proxyarp
+ip interface rip auth key
+ip interface rip auth type
+ip interface rip filter
+ip interface rip hop
+ip interface rip receive
+ip interface rip send
+ip interface rip trust gateway
+ip interface secondary address
+ip interface secure filter
+ip interface tcp mss limit
+ip interface wol relay
 ip pp address
 ip pp intrusion detection
 ip pp mtu
@@ -254,21 +254,21 @@ ipv6 icmp redirect receive
 ipv6 icmp redirect send
 ipv6 icmp time-exceeded send
 ipv6 icmp unreachable send
-ipv6 _if_ address
-ipv6 _if_ dad retry count
-ipv6 _if_ dhcp service
-ipv6 _if_ mld static group
-ipv6 _if_ mld type
-ipv6 _if_ mtu
-ipv6 _if_ prefix
-ipv6 _if_ rip filter
-ipv6 _if_ rip hop
-ipv6 _if_ rip receive
-ipv6 _if_ rip send
-ipv6 _if_ rip trust gateway
-ipv6 _if_ rtadv send
-ipv6 _if_ secure filter
-ipv6 _if_ tcp mss limit
+ipv6 interface address
+ipv6 interface dad retry count
+ipv6 interface dhcp service
+ipv6 interface mld static group
+ipv6 interface mld type
+ipv6 interface mtu
+ipv6 interface prefix
+ipv6 interface rip filter
+ipv6 interface rip hop
+ipv6 interface rip receive
+ipv6 interface rip send
+ipv6 interface rip trust gateway
+ipv6 interface rtadv send
+ipv6 interface secure filter
+ipv6 interface tcp mss limit
 ipv6 multicast routing process mode
 ipv6 pp address
 ipv6 pp dhcp service
@@ -495,8 +495,8 @@ provider auto connect forced disable
 provider dns server
 provider dns server pp
 provider filter routing
-provider _if_ dns server
-provider _if_ name
+provider interface dns server
+provider interface name
 provider ipv6 connect pp
 provider isdn account nighttime
 provider isdn auto disconnect off
@@ -513,10 +513,10 @@ provider set
 provider sip 050-number
 provider type
 queue class filter
-queue _if_ class filter list
-queue _if_ default class
-queue _if_ length
-queue _if_ type
+queue interface class filter list
+queue interface default class
+queue interface length
+queue interface type
 queue pp class filter list
 queue pp default class
 queue pp length
@@ -563,9 +563,9 @@ show ipv6 rip table
 show ipv6 route
 show log
 show nat descriptor address
-show nat descriptor _if_ address
-show nat descriptor _if_ address pp
-show nat descriptor _if_ bind
+show nat descriptor interface address
+show nat descriptor interface address pp
+show nat descriptor interface bind
 show pp connect time
 show status
 show status analog

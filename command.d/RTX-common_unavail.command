@@ -1,6 +1,3 @@
-_if_ reset
-_if_ reset pp
-_if_ transmit timeout
 address
 alarm connection analog
 alarm connection data
@@ -96,13 +93,11 @@ clear account sip
 clear acl
 clear analog account
 clear mail-check info
-clear nat descriptor dynamic
-clear nat descriptor interface dynamic
-dhcp client client-identifier _if_ primary
-dhcp client client-identifier _if_ secondary
+dhcp client client-identifier interface primary
+dhcp client client-identifier interface secondary
 dhcp client client-identifier type
-dhcp client hostname _if_ primary
-dhcp client hostname _if_ secondary
+dhcp client hostname interface primary
+dhcp client hostname interface secondary
 dhcp delete scope
 dhcp scope unbind
 dhcp server duplicate check
@@ -110,48 +105,21 @@ dhcp server rfc2131 compliant
 dns private name
 dns server select delete
 dns static delete
-ethernet filter
 execute at-command
 httpd frame use
-ip _if_ broadcast
-ip _if_ netmask
-ip _if_ rip listen
-ip _if_ routing protocol
-ip arp timer
-ip filter
+interface transmit timeout
 ip filter comment
 ip filter comment delete
 ip filter delete
-ip filter directed-broadcast
-ip filter dynamic
 ip filter dynamic comment
 ip filter dynamic comment delete
 ip filter dynamic delete
-ip filter dynamic timer
-ip filter set
-ip filter source-route
-ip flow limit
-ip flow timer
-ip forward filter
-ip fragment remove df-bit
 ip fragment remove df-bit filter
-ip host
 ip host delete
-ip icmp echo-reply send
-ip icmp echo-reply send-only-linkup
-ip icmp error-decrypted-ipsec send
-ip icmp log
-ip icmp mask-reply send
-ip icmp parameter-problem send
-ip icmp redirect receive
-ip icmp redirect send
-ip icmp time-exceeded send
-ip icmp timestamp-reply send
-ip icmp unreachable send
-ip icmp unreachable-for-truncated send
-ip implicit-route preference
-ip inbound filter
-ip policy _if_ group
+ip interface broadcast
+ip interface netmask
+ip interface rip listen
+ip interface routing protocol
 ip pp hide static route
 ip pp hold routing
 ip pp local address
@@ -161,37 +129,13 @@ ip pp routing protocol
 ip route delete
 ip routing cache
 ipsec ipcomp type
-ipv6 _if_ mld static group
-ipv6 _if_ mld type
-ipv6 filter
 ipv6 filter delete
-ipv6 filter dynamic
 ipv6 filter dynamic delete
-ipv6 icmp echo-reply send
-ipv6 icmp echo-reply send-only-linkup
-ipv6 icmp error-decrypted-ipsec send
-ipv6 icmp log
-ipv6 icmp packet-too-big send
-ipv6 icmp packet-too-big-for-truncated send
-ipv6 icmp parameter-problem send
-ipv6 icmp redirect receive
-ipv6 icmp redirect send
-ipv6 icmp time-exceeded send
-ipv6 icmp unreachable send
-ipv6 inbound filter
-ipv6 interface address
 ipv6 interface addrress delete
-ipv6 interface mtu
-ipv6 interface prefix
+ipv6 interface mld static group
+ipv6 interface mld type
 ipv6 interface prefix delete
-ipv6 interface rip filter
-ipv6 interface rip receive
-ipv6 interface rip send
-ipv6 interface rip trust gateway
-ipv6 interface rtadv send
-ipv6 interface secure filter
 ipv6 multicast routing process mode
-ipv6 policy _if_ group
 ipv6 route delete
 isdn arrive global permit
 isdn arrive inumber-port
@@ -255,7 +199,7 @@ onfs sharing host
 onfs sharing service
 onfs sharing user
 packetdump
-packetdump _if_
+packetdump interface
 packetdump pp
 password reenter
 port
@@ -270,9 +214,6 @@ pp default
 pppoe
 pppoe call prohibit auth-error count
 pptp clear hostname
-provider _if_ bind
-provider _if_ dns server
-provider _if_ name
 provider isdn account nighttime
 provider isdn auto disconnect off
 provider isdn disconnect daytime
@@ -298,7 +239,6 @@ pstn ringing signal frequency
 pstn ringing signal threshold
 pstn supplementary-service
 pstn use
-queue class filter
 reject
 ringer
 schedule delete
@@ -321,17 +261,14 @@ show dhcp status
 show dhcpc status
 show dns
 show dns static
-show ip _if_
 show ip filter
 show ip filter list
 show ip host
 show ip icmp
+show ip interface
 show ip pp
 show mail-check status
-show nat descriptor address
 show nat descriptor config
-show nat descriptor interface address
-show nat descriptor interface bind
 show pp config
 show pp queue
 show ppp ccp
@@ -342,10 +279,10 @@ show ppp mscbcp
 show ppp pap
 show schedule
 show ssl public key
-show status _if_
 show status analog
 show status analog extension
 show status dtcp
+show status interface
 show status isdn switch
 show status mail-check
 show status onfs
@@ -385,5 +322,3 @@ tunnel dtcp
 tunnel dtcp connect
 tunnel dtcp disconnect
 tunnel endpoint clear name
-tunnel ngn _if_
-url _if_ filter

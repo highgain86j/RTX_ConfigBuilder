@@ -60,13 +60,13 @@ console info
 console lines
 console prompt
 date
-dhcp client client-identifier _if_ primary
-dhcp client client-identifier _if_ secondary
+dhcp client client-identifier interface primary
+dhcp client client-identifier interface secondary
 dhcp client client-identifier pool
 dhcp client client-identifier pp
 dhcp client client-identifier type
-dhcp client hostname _if_ primary
-dhcp client hostname _if_ secondary
+dhcp client hostname interface primary
+dhcp client hostname interface secondary
 dhcp client hostname pool
 dhcp client hostname pp
 dhcp delete scope
@@ -123,22 +123,22 @@ ip icmp redirect send
 ip icmp time-exceeded send
 ip icmp timestamp-reply send
 ip icmp unreachable send
-ip _if_ address
-ip _if_ broadcast
-ip _if_ dhcp lease time
-ip _if_ dhcp retry
-ip _if_ intrusion detection
-ip _if_ mtu
-ip _if_ nat descriptor
-ip _if_ netmask
-ip _if_ proxyarp
-ip _if_ rip auth key
-ip _if_ rip auth type
-ip _if_ rip filter
-ip _if_ rip listen
-ip _if_ routing protocol
-ip _if_ secondary address
-ip _if_ secure filter
+ip interface address
+ip interface broadcast
+ip interface dhcp lease time
+ip interface dhcp retry
+ip interface intrusion detection
+ip interface mtu
+ip interface nat descriptor
+ip interface netmask
+ip interface proxyarp
+ip interface rip auth key
+ip interface rip auth type
+ip interface rip filter
+ip interface rip listen
+ip interface routing protocol
+ip interface secondary address
+ip interface secure filter
 ip pp hide static route
 ip pp hold routing
 ip pp intrusion detection
@@ -202,7 +202,7 @@ ipv6 route
 ipv6 route delete
 ipv6 routing
 ipv6 stealth
-_if_ transmit timeout
+interface transmit timeout
 lan1 type auto-crossover
 lan2 type
 less config
@@ -262,7 +262,7 @@ netvolante-dns timeout pp
 netvolante-dns use
 netvolante-dns use pp
 ntpdate
-packetdump _if_
+packetdump interface
 packetdump pp
 password reenter
 ping
@@ -336,8 +336,8 @@ provider dns server
 provider dns server pp
 provider filter routing
 provider ipv6 connect pp
-provider _if_ dns server
-provider _if_ name
+provider interface dns server
+provider interface name
 provider netvolante-dns hostname sip
 provider ntp server
 provider ntpdate
@@ -383,7 +383,7 @@ show ip filter list
 show ip host
 show ip icmp
 show ip intrusion detection
-show ip _if_
+show ip interface
 show ip pp
 show ip route
 show ipv6 address
@@ -408,7 +408,7 @@ show ppp mscbcp
 show ppp pap
 show schedule
 show status analog
-show status _if_
+show status interface
 show status netvolante-dns
 show status netvolante-dns pp
 show status pp

@@ -68,10 +68,8 @@ clear account
 clear account analog
 clear account pp
 clear mail-check info
-clear nat descriptor dynamic
-clear nat descriptor _if_ dynamic
-clear nat descriptor _if_ dynamic
-clear nat descriptor _if_ dynamic pp
+clear nat descriptor interface dynamic
+clear nat descriptor interface dynamic pp
 delete config
 description
 dhcp client client-identifier
@@ -88,45 +86,18 @@ http revision-up proxy
 http revision-up timeout
 http revision-up url
 httpd timeout
-_if_ reset
-_if_ reset pp
-ip filter
-ip filter directed-broadcast
-ip filter dynamic
-ip filter dynamic timer
+interface reset
+interface reset pp
 ip filter set
-ip filter source-route
 ip fragment remove df-bit filter
-ip host
-ip icmp echo-reply send
 ip icmp error-decrypted-ipsec send
-ip icmp log
-ip icmp mask-reply send
-ip icmp parameter-problem send
-ip icmp redirect receive
-ip icmp redirect send
-ip icmp time-exceeded send
-ip icmp timestamp-reply send
-ip icmp unreachable send
-ip _if_ address
-ip _if_ arp queue length
-ip _if_ dhcp lease time
-ip _if_ dhcp retry
-ip _if_ intrusion detection
-ip _if_ mtu
-ip _if_ nat descriptor
-ip _if_ proxyarp
-ip _if_ rip auth key
-ip _if_ rip auth type
-ip _if_ rip filter
-ip _if_ rip hop
-ip _if_ rip receive
-ip _if_ rip send
-ip _if_ rip trust gateway
-ip _if_ secondary address
-ip _if_ secure filter
-ip _if_ tcp mss limit
-ip _if_ wol relay
+ip interface arp queue length
+ip interface rip hop
+ip interface rip receive
+ip interface rip send
+ip interface rip trust gateway
+ip interface tcp mss limit
+ip interface wol relay
 ip pp address
 ip pp rip hold routing
 ip pp rip receive
@@ -180,32 +151,13 @@ ipsec transport
 ipsec tunnel
 ipsec tunnel outer df-bit
 ipsec use
-ipv6 filter
-ipv6 filter dynamic
-ipv6 icmp echo-reply send
 ipv6 icmp error-decrypted-ipsec send
-ipv6 icmp log
-ipv6 icmp packet-too-big send
-ipv6 icmp parameter-problem send
-ipv6 icmp redirect receive
-ipv6 icmp redirect send
-ipv6 icmp time-exceeded send
-ipv6 icmp unreachable send
-ipv6 _if_ address
-ipv6 _if_ dad retry count
-ipv6 _if_ dhcp service
-ipv6 _if_ mld static group
-ipv6 _if_ mld type
-ipv6 _if_ mtu
-ipv6 _if_ prefix
-ipv6 _if_ rip filter
-ipv6 _if_ rip hop
-ipv6 _if_ rip receive
-ipv6 _if_ rip send
-ipv6 _if_ rip trust gateway
-ipv6 _if_ rtadv send
-ipv6 _if_ secure filter
-ipv6 _if_ tcp mss limit
+ipv6 interface dad retry count
+ipv6 interface dhcp service
+ipv6 interface mld static group
+ipv6 interface mld type
+ipv6 interface rip hop
+ipv6 interface tcp mss limit
 ipv6 multicast routing process mode
 ipv6 pp address
 ipv6 pp dhcp service
@@ -330,8 +282,7 @@ pptp call-id mode
 pptp service
 pptp syslog
 provider auto connect forced disable
-provider _if_ dns server
-provider _if_ name
+provider ipv6 connect pp
 provider isdn account nighttime
 provider isdn auto disconnect off
 provider isdn disconnect daytime
@@ -343,10 +294,10 @@ provider ppp mp use on
 provider set
 provider sip 050-number
 queue class filter
-queue _if_ class filter list
-queue _if_ default class
-queue _if_ length
-queue _if_ type
+queue interface class filter list
+queue interface default class
+queue interface length
+queue interface type
 queue pp class filter list
 queue pp default class
 queue pp length
@@ -365,6 +316,7 @@ show config list
 show file list
 show ip connection pp
 show ip connection tunnel
+show ip intrusion detection
 show ip intrusion detection pp
 show ip intrusion detection tunnel
 show ip rip table
@@ -372,10 +324,7 @@ show ipsec sa
 show ipsec sa gateway
 show ipv6 connection pp
 show ipv6 connection tunnel
-show nat descriptor address
-show nat descriptor _if_ address
-show nat descriptor _if_ address pp
-show nat descriptor _if_ bind
+show nat descriptor interface address pp
 show status
 show status analog
 show status boot
