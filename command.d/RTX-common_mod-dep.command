@@ -334,9 +334,7 @@ no ip pp address ${ip_address} /${mask}
 no ip ${loopback} address ${ip_address} /${mask} 
 no ip ${bridge_interface} address ${ip_address}/${mask} broadcast ${broadcast_ip} 
 no ip ${bridge_interface} address dhcp 
-ip ${interface} arp log ${switch}
 no ip ${interface} arp log ${switch} 
-ip ${interface} arp queue length ${len}
 no ip ${interface} arp queue length ${len} 
 ip ${interface} arp static ${ip_address} ${mac_address} mtu=${mtu} 
 no ip ${interface} arp static ${ip_address} ${opt} 
@@ -360,31 +358,25 @@ ip tunnel igmp static ${group} ${filter_mode} ${source} ${opt}
 no ip ${interface} igmp static ${group} ${filter_mode} ${source} ${opt} 
 no ip pp igmp static ${group} ${filter_mode} ${source} ${opt} 
 no ip tunnel igmp static ${group} ${filter_mode} ${source} ${opt} 
-ip ${interface} intrusion detection ${direction} ${type} ${switch} ${option} 
 ip pp intrusion detection ${direction} ${type} ${switch} ${option} 
 ip tunnel intrusion detection ${direction} ${type} ${switch} ${option} 
 no ip ${interface} intrusion detection ${direction} ${type} ${switch} ${option} 
 no ip pp intrusion detection ${direction} ${type} ${switch} ${option} 
 no ip tunnel intrusion detection ${direction} ${type} ${switch} ${option} 
-ip ${interface} intrusion detection notice-interval ${frequency}
 ip pp intrusion detection notice-interval ${frequency}
 ip tunnel intrusion detection notice-interval ${frequency}
 no ip ${interface} intrusion detection notice-interval
-ip ${interface} intrusion detection repeat-control ${time}
 ip pp intrusion detection repeat-control ${time}
 ip tunnel intrusion detection repeat-control ${time}
 no ip ${interface} intrusion detection repeat-control
-ip ${interface} intrusion detection report ${num}
 ip pp intrusion detection report ${num}
 ip tunnel intrusion detection report ${num}
 no ip ${interface} intrusion detection report
-ip ${interface} intrusion detection threshold ${type} ${count}
 ip pp intrusion detection threshold ${type} ${count}
 ip tunnel intrusion detection threshold ${type} ${count}
 no ip ${interface} intrusion detection threshold ${type}
 no ip pp intrusion detection threshold ${type}
 no ip tunnel intrusion detection threshold ${type}
-ip ${interface} mtu ${mtu0}
 ip pp mtu ${mtu1}
 ip tunnel mtu ${mtu2}
 no ip ${interface} mtu ${mtu0} 
@@ -396,72 +388,57 @@ ip tunnel pim sparse ${switch} ${option} ${opt}
 no ip ${interface} pim sparse ${switch} ${option} ${opt} 
 no ip pp pim sparse ${switch} ${option} ${opt} 
 no ip tunnel pim sparse ${switch} ${option} ${opt} 
-ip ${interface} proxyarp ${proxyarp}
 ip ${interface} proxyarp vrrp ${vrid}
 no ip ${interface} proxyarp ${proxyarp} 
-ip ${interface} rebound ${switch}
 ip pp rebound ${switch}
 ip tunnel rebound ${switch}
 no ip ${interface} rebound ${switch} 
 no ip pp rebound ${switch} 
 no ip tunnel rebound ${switch} 
-ip ${interface} rip auth key ${hex_key}
 ip pp rip auth key ${hex_key}
 ip tunnel rip auth key ${hex_key}
-ip ${interface} rip auth key text ${text_key}
 ip pp rip auth key text ${text_key}
 ip tunnel rip auth key text ${text_key}
 no ip ${interface} rip auth key
 no ip ${interface} rip auth key text
-ip ${interface} rip auth type ${type}
 ip pp rip auth type ${type}
 ip tunnel rip auth type ${type}
 no ip ${interface} rip auth type ${type} 
 no ip pp rip auth type ${type} 
 no ip tunnel rip auth type ${type} 
-ip ${interface} rip filter ${direction} ${filter_list}
 ip pp rip filter ${direction} ${filter_list}
 ip tunnel rip filter ${direction} ${filter_list}
 no ip ${interface} rip filter ${direction} ${filter_list} 
 no ip pp rip filter ${direction} ${filter_list}
 no ip tunnel rip filter ${direction} ${filter_list}
-ip ${interface} rip force-to-advertise ${ip-address}/${netmask} metric ${metric} 
 ip pp rip force-to-advertise ${ip-address}/${netmask} metric ${metric} 
 ip tunnel rip force-to-advertise ${ip-address}/${netmask} metric ${metric} 
 no ip ${interface} rip force-to-advertise ${ip-address}/${netmask} metric ${metric} 
 no ip pp rip force-to-advertise ${ip-address}/${netmask} metric ${metric} 
 no ip tunnel rip force-to-advertise ${ip-address}/${netmask} metric ${metric} 
-ip ${interface} rip hop ${direction} ${hop}
 ip pp rip hop ${direction} ${hop}
 ip tunnel rip hop ${direction} ${hop}
 no ip ${interface} rip hop ${direction} ${hop}
 no ip pp rip hop ${direction} ${hop}
 no ip tunnel rip hop ${direction} ${hop}
-ip ${interface} rip receive ${receive} version ${version} ${version} 
 ip pp rip receive ${receive} version ${version} ${version} 
 ip tunnel rip receive ${receive} version ${version} ${version} 
 no ip ${interface} rip receive ${receive} ${opt} 
 no ip pp rip receive ${receive} ${opt} 
 no ip tunnel rip receive ${receive} ${opt} 
-ip ${interface} rip send ${send} version ${version} ${broadcast} 
 ip pp rip send ${send} version ${version} ${broadcast} 
 ip tunnel rip send ${send} version ${version} ${broadcast} 
 no ip ${interface} rip send ${send} ${opt} 
 no ip pp rip send ${send} ${opt} 
 no ip tunnel rip send ${send} ${opt} 
-ip ${interface} rip trust gateway except ${gateway} ${gateway} ${opt} 
 ip pp rip trust gateway except ${gateway} ${gateway} ${opt} 
 ip tunnel rip trust gateway except ${gateway} ${gateway} ${opt} 
 no ip ${interface} rip trust gateway except ${gateway} ${gateway} ${opt} 
 no ip pp rip trust gateway except ${gateway} ${gateway} ${opt} 
 no ip tunnel rip trust gateway except ${gateway} ${gateway} ${opt} 
-ip ${interface} secondary address ${ip_address} /${mask} 
-ip ${interface} secondary address dhcp
 no ip ${interface} secondary address ${ip_address}/${mask} 
-ip ${interface} secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} ${opt} 
 ip pp secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} ${opt} 
 ip tunnel secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} ${opt} 
-ip ${interface} secure filter name ${set_name}
 ip pp secure filter name ${set_name}
 ip tunnel secure filter name ${set_name}
 no ip ${interface} secure filter ${direction} ${filter_list} 
@@ -470,7 +447,6 @@ no ip tunnel secure filter ${direction} ${filter_list}
 no ip ${interface} secure filter name ${set_name} 
 no ip pp secure filter name ${set_name} 
 no ip tunnel secure filter name ${set_name} 
-ip ${interface} tcp mss limit ${mss}
 ip pp tcp mss limit ${mss}
 ip tunnel tcp mss limit ${mss}
 no ip ${interface} tcp mss limit ${mss} 
@@ -513,25 +489,15 @@ ip pp remote address dhcpc ${interface}
 no ip pp remote address ${ip_address} 
 ip pp remote address pool ${ip_address} ${ip_address} ${opt} 
 ip pp remote address pool ${ip_address-ip_address}
-ip pp remote address pool dhcpc ${interface} 
 ip pp rip backup interface ${switch}
-ip pp rip connect interval ${time}
 no ip pp rip connect interval ${time} 
-ip pp rip connect send ${rip_action}
 no ip pp rip connect send ${rip_action} 
-ip pp rip disconnect interval ${time}
 no ip pp rip disconnect interval ${time} 
-ip pp rip disconnect send ${rip_action}
 no ip pp rip disconnect send ${rip_action} 
-ip pp rip hold routing ${rip_hold}
 no ip pp rip hold routing ${rip_hold} 
-ip route ${network} gateway ${gateway1} ${parameter} gateway ${gateway2} ${parameter} ${opt} 
 no ip route ${network} gateway ${opt} 
-ip route change log ${log}
 no ip route change log ${log} 
-ip routing ${routing}
 no ip routing ${routing} 
-ip simple-service ${service}
 no ip simple-service ${service} 
 ip tos supersede ${id} ${tos} precedence=${precedence} ${filter_num} ${filter_num_list} 
 no ip tos supersede ${id} ${tos} 
@@ -707,9 +673,6 @@ no ipv6 filter ${filter_num} ${pass_reject}
 ipv6 filter dynamic ${dyn_filter_num} ${srcaddr} /${prefix_len} ${dstaddr} /${prefix_len} ${protocol} ${option} ${opt} 
 ipv6 filter dynamic ${dyn_filter_num} ${srcaddr} /${prefix_len} ${dstaddr} /${prefix_len} filter ${filter_list} in ${filter_list} out ${filter_list} ${option} ${opt} 
 no ipv6 filter dynamic ${dyn_filter_num} ${srcaddr} ${opt} 
-ipv6 ${interface} address ${ipv6_address}/${prefix_len} ${address_type} 
-ipv6 ${interface} address auto
-ipv6 ${interface} address dhcp
 ipv6 ${interface} address ${proxy}
 ipv6 pp address ${ipv6_address}/${prefix_len} ${address_type} 
 ipv6 pp address ${proxy}
@@ -723,35 +686,27 @@ no ipv6 pp address ${ipv6_address}/${prefix_len} ${address_type}
 no ipv6 pp address ${proxy}
 no ipv6 tunnel address ${ipv6_address}/${prefix_len} ${address_type} 
 no ipv6 tunnel address ${proxy}
-ipv6 ${interface} dad retry count ${count}
 ipv6 pp dad retry count ${count}
 no ipv6 ${interface} dad retry count ${count} 
 no ipv6 pp dad retry count ${count} 
-ipv6 ${interface} dhcp service ${type}
-ipv6 ${interface} dhcp service client ir=${value} 
 ipv6 pp dhcp service ${type}
 ipv6 pp dhcp service client ir=${value} 
 ipv6 tunnel dhcp service ${type}
 ipv6 tunnel dhcp service client ir=${value} 
 no ipv6 ${interface} dhcp service
-ipv6 ${interface} mld ${type} ${option} ${opt} 
 ipv6 pp mld ${type} ${option} ${opt} 
 ipv6 tunnel mld ${type} ${option} ${opt} 
 no ipv6 ${interface} mld ${type} ${option} ${opt} 
 no ipv6 pp mld ${type} ${option} ${opt} 
 no ipv6 tunnel mld ${type} ${option} ${opt} 
-ipv6 ${interface} mld static ${group} ${filter_mode} ${source} ${opt} 
 ipv6 pp mld static ${group} ${filter_mode} ${source} ${opt} 
 ipv6 tunnel mld static ${group} ${filter_mode} ${source} ${opt} 
 no ipv6 ${interface} mld static ${group} ${filter_mode} ${source} ${opt} 
 no pv6 pp mld static ${group} ${filter_mode} ${source} ${opt} 
 no ipv6 tunnel mld static ${group} ${filter_mode} ${source} ${opt} 
-ipv6 ${interface} mtu ${mtu}
 ipv6 pp mtu ${mtu}
 no ipv6 ${interface} mtu ${mtu} 
 no ipv6 pp mtu ${mtu} 
-ipv6 ${interface} prefix ${ipv6_prefix}/${prefix_len}
-ipv6 ${interface} prefix ${proxy}
 ipv6 pp prefix ${ipv6_prefix}/${prefix_len}
 ipv6 pp prefix ${proxy}
 ipv6 tunnel prefix ${ipv6_prefix}/${prefix_len}
@@ -762,44 +717,35 @@ no ipv6 pp prefix ${ipv6_prefix}/${prefix_len}
 no ipv6 pp prefix ${proxy}
 no ipv6 tunnel prefix ${ipv6_prefix}/${prefix_len}
 no ipv6 tunnel prefix ${proxy}
-ipv6 ${interface} prefix change log ${log}
 ipv6 pp prefix change log ${log}
 ipv6 tunnel prefix change log ${log}
 no ipv6 ${interface} prefix change log ${log}
 no ipv6 pp prefix change log ${log}
 no ipv6 tunnel prefix change log ${log}
-ipv6 ${interface} rip filter ${direction} ${filter_list} ${filter_list} ${opt} 
 ipv6 pp rip filter ${direction} ${filter_list} ${filter_list} ${opt} 
 ipv6 tunnel rip filter ${direction} ${filter_list} ${filter_list} ${opt} 
 no ipv6 ${interface} rip filter ${direction}
 no ipv6 pp rip filter ${direction}
 no ipv6 tunnel rip filter ${direction}
-ipv6 ${interface} rip hop ${direction} ${hop}
 ipv6 pp rip hop ${direction} ${hop}
 no ipv6 ${interface} rip hop ${direction}
 no ipv6 pp rip hop ${direction}
-ipv6 ${interface} rip receive ${receive}
 ipv6 pp rip receive ${receive}
 ipv6 tunnel rip receive ${receive}
 no ipv6 ${interface} rip receive
-ipv6 ${interface} rip send ${send}
 ipv6 pp rip send ${send}
 ipv6 tunnel rip send ${send}
 no ipv6 ${interface} rip send
-ipv6 ${interface} rip trust gateway except ${gateway} ${gateway} ${opt} 
 ipv6 pp rip trust gateway except ${gateway} ${gateway} ${opt} 
 no ipv6 ${interface} rip trust gateway except ${gateway} ${gateway} ${opt} 
 no ipv6 pp rip trust gateway except ${gateway} ${gateway} ${opt} 
-ipv6 ${interface} rtadv send ${prefix_id} ${prefix_id} ${opt} ${option}=${value} ${opt} 
 ipv6 pp rtadv send ${prefix_id} ${prefix_id} ${opt} ${option}=${value} ${opt} 
 no ipv6 ${interface} rtadv send ${opt} 
-ipv6 ${interface} secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} 
 ipv6 pp secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} 
 ipv6 tunnel secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} 
 no ipv6 ${interface} secure filter ${direction}
 no ipv6 pp secure filter ${direction}
 no ipv6 tunnel secure filter ${direction}
-ipv6 ${interface} tcp mss limit ${mss}
 ipv6 pp tcp mss limit ${mss}
 ipv6 tunnel tcp mss limit ${mss}
 no ipv6 ${interface} tcp mss limit ${mss} 
@@ -813,28 +759,13 @@ ipv6 ${interface} vrrp shutdown trigger ${vrid} route ${network} ${nexthop}
 no ipv6 ${interface} vrrp shutdown trigger ${vrid} ${interface}
 no ipv6 ${interface} vrrp shutdown trigger ${vrid} pp ${peer_num} ${opt} 
 no ipv6 ${interface} vrrp shutdown trigger ${vrid} route ${network}
-ipv6 max auto address ${max}
 no ipv6 max auto address ${max} 
 ipv6 multicast routing process ${mode}
-ipv6 nd ns-trigger-dad on ${option}=${value} 
-ipv6 pp rip connect interval ${time}
-ipv6 pp rip connect send ${action}
-ipv6 pp rip disconnect interval ${time}
-ipv6 pp rip disconnect send ${action}
-ipv6 pp rip hold routing ${hold}
-ipv6 prefix ${prefix_id} ${prefix}/${prefix_len} preferred_lifetime=${time} valid_lifetime=${time} l_flag=${switch} a_flag=${switch} 
-ipv6 prefix ${prefix_id} ${proxy} preferred_lifetime=${time} valid_lifetime=${time} l_flag=${switch} a_flag=${switch} 
 no ipv6 prefix ${prefix_id}
-ipv6 rh0 discard ${switch}
 ipv6 rip preference ${preference}
 no ipv6 rip preference ${preference} 
-ipv6 rip use ${use}
-ipv6 route ${network} gateway ${gateway} ${parameter} gateway ${gateway} ${parameter} 
 no ipv6 route ${network} gateway ${opt} 
-ipv6 routing ${routing}
 no ipv6 routing ${routing} 
-ipv6 routing process ${process}
-ipv6 source address selection rule ${rule}
 no ipv6 source address selection rule ${rule} 
 account threshold ${interface} ${yen}
 account threshold pp ${yen}
@@ -843,60 +774,35 @@ no account threshold ${yen}
 no account threshold pp ${yen} 
 isdn arrive permit ${arrive} vrrp ${interface} ${vrid} slave 
 no isdn arrive permit ${arrive} 
-isdn auto connect ${auto}
 no isdn auto connect ${auto} 
-isdn call block time ${time}
 no isdn call block time ${time} 
-isdn call permit ${permit}
 no isdn call permit ${permit} 
-isdn call prohibit time ${time}
 no isdn call prohibit time ${time} 
-isdn callback mscbcp user-specify ${specify}
 no no isdn callback mscbcp user-specify ${specify} 
-isdn callback permit ${callback_permit}
 no isdn callback permit ${callback_permit} 
-isdn callback permit type ${type1} ${type2} 
 no isdn callback permit type ${type1} ${type2} 
-isdn callback request ${callback_request}
 no isdn callback request ${callback_request} 
-isdn callback request type ${type}
 no isdn callback request type ${type} 
-isdn callback response time ${type} ${time}
 no isdn callback response time ${type} 
-isdn callback wait time ${time}
 no isdn callback wait time ${time} 
-isdn disconnect input time ${time}
 no isdn disconnect input time ${time} 
-isdn disconnect interval time ${unit} ${watch} ${spare}
 no isdn disconnect interval time ${unit} ${watch} ${spare} 
-isdn disconnect output time ${time}
 no isdn disconnect output time ${time} 
-isdn disconnect policy ${type}
 no isdn disconnect policy ${type} 
-isdn disconnect time ${time}
 no isdn disconnect time ${time} 
 isdn dsu ${interface} ${switch}
 no isdn dsu ${interface} ${switch} 
-isdn fast disconnect time ${time}
 no no isdn fast disconnect time ${time} 
-isdn forced disconnect time ${time}
 no isdn forced disconnect time ${time} 
 line type ${interface} ${line} ${channels} 
 no line type ${interface} ${line} ${channels} 
-isdn local address ${interface} ${isdn_num} /${sub_address} 
-isdn local address ${interface} /${sub_address}
 noisdn local address ${interface}
-isdn piafs arrive ${arrive}
 no isdn piafs arrive ${arrive} 
-isdn piafs call ${speed} ${64kmode} 
 no isdn piafs call ${speed} ${64kmode} 
-isdn piafs control ${switch}
 pp bind ${interface} ${interface} 
 no pp bind ${interface} 
 isdn remote address ${call_arrive} ${isdn_num} /${sub_address} ${isdn_num_list} 
-isdn remote address ${call_arrive} ${isdn_num} ${isdn_num_list} 
 no isdn remote address ${call_arrive} ${isdn_num} /${sub_address} ${isdn_num_list} 
-isdn remote call order ${order}
 no isdn remote call order ${order} 
 isdn terminator ${interface} ${terminator}
 no isdn terminator ${interface} ${terminator} 
@@ -954,15 +860,10 @@ mail notify ${id} ${template_id} trigger intrusion ${if_i} ${range_i} ${dir_i} $
 mail notify ${id} ${template_id} trigger qac-tm ${qac_type}
 mail notify ${id} ${template_id} trigger lan-map
 no mail notify ${id} ${opt} 
-mail server name ${id} ${name}
 no mail server name ${id} ${name} 
-mail server pop ${id} ${address} port=${port} ${protocol} ${username} ${password}
 no mail server pop ${id} ${opt} 
-mail server smtp ${id} ${address} port=${port} smtp-auth ${username} ${password} ${auth_protocol} pop-before-smtp 
 no mail server smtp ${id} ${opt} 
-mail server timeout ${id} ${timeout}
 no mail server timeout ${id} ${timeout} 
-mail template ${template_id} ${mailserver_id} From:${from_address} To:${to_address} Subject:${subject} Date:${date} MIME-Version:${mime_version} Content-Type:${content_type} notify-log=${switch} notify-wait-time=${sec} 
 no mail template ${template_id} ${opt} 
 alarm mobile ${switch}
 no alarm mobile ${switch} 
@@ -971,38 +872,22 @@ clear mobile access limitation pp ${peer_num}
 execute at-command ${interface} ${command}
 mobile access-point name ${apn} cid=${cid} pdp=${type} 
 no mobile access-point name ${apn} cid=${cid} 
-mobile access limit connection length ${length} alert=${alert} 
 no mobile access limit connection length ${length} 
-mobile access limit connection time ${time} alert=${alert} 
 no mobile access limit connection time ${time} 
-mobile access limit duration ${duration}
 no mobile access limit duration ${duration} 
-mobile access limit length ${length} alert=${alert} ,${alert_cancel} 
 no mobile access limit length ${length} 
-mobile access limit time ${time} alert=${alert} ,${alert_cancel} unit=${unit} 
 no mobile access limit time ${time} 
-mobile auto connect ${auto}
 no mobile auto connect ${auto} 
-mobile call prohibit auth-error count ${count}
 no mobile call prohibit auth-error count ${count} 
-mobile dial number ${dial_string}
 no mobile dial number ${dial_string} 
-mobile disconnect input time ${time}
 no mobile disconnect input time ${time} 
-mobile disconnect output time ${time}
 no mobile disconnect output time ${time} 
-mobile disconnect time ${time}
 no mobile disconnect time ${time} 
-mobile display caller id ${switch}
 no mobile display caller id ${switch} 
 pp bind ${interface}
 no pp bind ${interface} 
-mobile pin code ${interface} ${pin}
 no mobile pin code ${interface} ${pin} 
-mobile signal-strength ${switch} ${option}=${value} 
-mobile syslog ${switch}
 no mobile syslog ${switch} 
-mobile use ${interface} ${use} first-connect-wait-time=${time} 
 no mobile use ${interface} ${use} 
 ppp lcp accm ${accm}
 no ppp lcp accm ${accm} 
@@ -1038,85 +923,44 @@ ip tunnel nat descriptor ${nat_descriptor_list} reverse ${nat_descriptor_list}
 no ip ${interface} nat descriptor ${nat_descriptor_list} reverse ${nat_descriptor_list} 
 no ip pp nat descriptor ${nat_descriptor_list} reverse ${nat_descriptor_list} 
 no ip tunnel nat descriptor ${nat_descriptor_list} reverse ${nat_descriptor_list} 
-nat descriptor address inner ${nat_descriptor} ${inner_ipaddress_list}
 no nat descriptor address inner ${nat_descriptor} ${inner_ipaddress_list} 
-nat descriptor address outer ${nat_descriptor} ${outer_ipaddress_list}
 no nat descriptor address outer ${nat_descriptor} ${outer_ipaddress_list} 
 nat descriptor backward-compatibility ${type}
 no nat descriptor backward-compatibility ${type} 
-nat descriptor ftp port ${nat_descriptor} ${port} ${port} ${opt} 
 no nat descriptor ftp port ${nat_descriptor} ${port} ${opt} 
-nat descriptor log ${switch}
-nat descriptor masquerade incoming ${nat_descriptor} ${action} ${ip_address} 
 no nat descriptor masquerade incoming ${nat_descriptor}
 nat descriptor masquerade port range ${nat_descriptor} ${port_range1} ${port_range2} ${port_range3} ${port_range4} 
 no nat descriptor masquerade port range ${nat_descriptor} ${port_range1} ${port_range2} ${port_range3} ${port_range4} 
-nat descriptor masquerade remove df-bit ${remove}
 no nat descriptor masquerade remove df-bit ${remove} 
-nat descriptor masquerade rlogin ${nat_descriptor} ${use}
 no nat descriptor masquerade rlogin ${nat_descriptor} ${use} 
-nat descriptor masquerade session limit ${nat_descriptor} ${id} ${limit}
 no nat descriptor masquerade session limit ${nat_descriptor} ${id}
 nat descriptor masquerade session limit total ${nat_descriptor} ${limit}
 no nat descriptor masquerade session limit total ${nat_descriptor}
-nat descriptor masquerade static ${nat_descriptor} ${id} ${inner_ip} ${protocol} ${outer_port}= ${inner_port}
 no nat descriptor masquerade static ${nat_descriptor} ${id} ${inner_ip} ${protocol} ${outer_port}= ${inner_port} 
 nat descriptor masquerade ttl hold ${type}
 nat descriptor masquerade unconvertible port ${nat_descriptor} if-possible
-nat descriptor masquerade unconvertible port ${nat_descriptor} ${protocol} ${port}
 no nat descriptor masquerade unconvertible port ${nat_descriptor} ${protocol} ${port} 
-nat descriptor sip ${nat_descriptor} ${sip}
 no nat descriptor sip ${nat_descriptor}
-nat descriptor static ${nat_descriptor} ${id} ${outer_ip}=${inner_ip} ${count} 
-nat descriptor static ${nat_descriptor} ${id} ${outer_ip}=${inner_ip}/${netmask}
 no nat descriptor static ${nat_descriptor} ${id} ${outer_ip}=${inner_ip} ${count} 
-nat descriptor timer ${nat_descriptor} ${time}
-nat descriptor timer ${nat_descriptor} protocol=${protocol} port=${port_range} ${time}
-nat descriptor timer ${nat_descriptor} tcpfin ${time2}
 no nat descriptor timer ${nat_descriptor} ${time} 
 no nat descriptor timer ${nat_descriptor} protocol=${protocol} port=${port_range} ${time} 
 no nat descriptor timer ${nat_descriptor} tcpfin ${time2} 
-nat descriptor type ${nat_descriptor} ${type}
 no nat descriptor type ${nat_descriptor} ${type} 
-netvolante-dns auto hostname ${interface} ${switch}
-netvolante-dns auto hostname pp ${switch}
 no netvolante-dns auto hostname ${interface} ${switch} 
 no netvolante-dns auto hostname pp ${switch} 
-netvolante-dns auto save server=${server_num} ${file}
 no netvolante-dns auto save server=${server_num} 
-netvolante-dns delete go ${interface} ${host} 
-netvolante-dns delete go pp ${peer_num} ${host} 
-netvolante-dns get hostname list ${interface}
-netvolante-dns get hostname list pp ${peer_num}
-netvolante-dns go ${interface}
-netvolante-dns go pp ${peer_num}
-netvolante-dns hostname host ${interface} ${host} duplicate 
-netvolante-dns hostname host pp ${host} duplicate 
 no netvolante-dns hostname host ${interface} ${host} duplicate 
 no netvolante-dns hostname host pp ${host} duplicate 
-netvolante-dns port ${port}
 no netvolante-dns port ${port} 
-netvolante-dns register timer server=${server_num} ${time}
 no netvolante-dns register timer server=${server_num} 
-netvolante-dns retry interval ${interface} ${interval} ${count}
-netvolante-dns retry interval pp ${interval} ${count}
 no netvolante-dns retry interval ${interface} ${interval} ${count} 
 no netvolante-dns retry interval pp ${interval} ${count} 
-netvolante-dns server ${ip_address}
-netvolante-dns server ${name}
 no netvolante-dns server ${ip_address} 
 no netvolante-dns server ${name} 
-netvolante-dns server update address port server=${server_num} ${port}
 no netvolante-dns server update address port server=${server_num} 
-netvolante-dns server update address use server=${server_num} ${switch}
 no netvolante-dns server update address use server=${server_num} 
-netvolante-dns set hostname ${interface} serial
-netvolante-dns timeout ${interface} ${time}
-netvolante-dns timeout pp ${time}
 no netvolante-dns timeout ${interface} ${time} 
 no netvolante-dns timeout pp ${time} 
-netvolante-dns use ${interface} ${switch}
-netvolante-dns use pp ${switch}
 no netvolante-dns use ${interface} ${switch} 
 no netvolante-dns use pp ${switch} 
 clear account ${interface}
@@ -1342,19 +1186,12 @@ no ppp lcp mru ${mru} ${length}
 no ppp lcp pfc ${pfc} 
 no ppp lcp restart ${time} 
 no ppp lcp silent ${switch} 
-ppp mp control ${type}
 no ppp mp control ${type} 
-ppp mp divide ${divide}
 no ppp mp divide ${divide} 
-ppp mp load threshold ${call_load} ${call_count} ${disc_load} ${disc_count}
 no ppp mp load threshold ${call_load} ${call_count} ${disc_load} ${disc_count} 
-ppp mp maxlink ${number}
 no ppp mp maxlink ${number} 
-ppp mp minlink ${number}
 no ppp mp minlink ${number} 
-ppp mp timer ${time}
 no ppp mp timer ${time} 
-ppp mp use ${use}
 no ppp mp use ${use} 
 no ppp mscbcp maxretry ${count} 
 no ppp mscbcp restart ${time} 

@@ -147,9 +147,6 @@ clear status pp ${peer_num}
 clear status tunnel ${tunnel_num}
 clear switching-hub macaddress ${interface} 
 clear url filter ${interface} 
-clear url filter https-proxy ${interface} 
-clear url filter https-proxy pp ${peer_num} 
-clear url filter https-proxy tunnel ${tunnel_num} 
 clear url filter pp ${peer_num} 
 clear url filter tunnel ${tunnel_num} 
 connect ${interface}
@@ -215,8 +212,6 @@ httpd service ${switch}
 httpd timeout ${time}
 interface reset ${interface} ${interface} ${opt} 
 interface reset pp ${peer_num} 
-ip ${bridge_interface} secondary address ${ip_address}/${mask}
-ip ${bridge_interface} secondary address dhcp
 ip ${interface} address ${ip_address}/${mask} broadcast ${broadcast_ip} 
 ip ${interface} address dhcp
 ip ${interface} arp mtu discovery ${sw} minimum=${min_mtu} 
@@ -228,7 +223,6 @@ ip ${interface} inbound filter list ${id} ${opt}
 ip ${interface} nat descriptor ${nat_descriptor_list} reverse ${nat_descriptor_list} 
 ip ${interface} ospf area ${area} ${parameters} ${opt} 
 ip ${interface} ospf neighbor ${ip_address} eligible 
-ip ${interface} vrrp shutdown trigger ${vrid} pp ${peer_num}
 ip ${interface} wol relay ${relay}
 ip ${loopback} address ${ip_address} /${mask} 
 ip arp timer ${timer} ${retry} 
@@ -333,16 +327,13 @@ ip tunnel secure filter name ${set_name}
 ip tunnel tcp mss limit ${mss}
 ip tunnel traffic list ${sw}
 ip tunnel traffic list threshold ${value}
-ipsec ike keepalive use ${gateway_id} ${switch} down=disconnect 
 ipsec ike keepalive use ${gateway_id} ${switch} dpd ${interval} ${count} ${upwait} 
-ipsec ike keepalive use ${gateway_id} ${switch} heartbeat ${interval} ${count} ${upwait} down=disconnect 
 ipsec ike local address ${gateway_id} ipv6 prefix ${prefix} on ${interface}
 ipsec ike local address ${gateway_id} vrrp ${interface} ${vrid}
 ipsec ike mode-cfg address pool ${pool_id} ${ip_address} /${mask} 
 ipv6 ${interface} address ${proxy}
 ipv6 ${interface} inbound filter list ${id} ${opt}
 ipv6 ${interface} ospf area ${area} ${parameters} ${opt} 
-ipv6 ${interface} vrrp shutdown trigger ${vrid} pp ${peer_num}
 ipv6 filter ${filter_num} ${pass_reject} ${src_addr} /${prefix_len} ${dest_addr} /${prefix_len} ${protocol} ${src_port_list} ${dest_port_list} 
 ipv6 filter dynamic ${dyn_filter_num} ${srcaddr} /${prefix_len} ${dstaddr} /${prefix_len} ${protocol} ${option} ${opt} 
 ipv6 filter dynamic ${dyn_filter_num} ${srcaddr} /${prefix_len} ${dstaddr} /${prefix_len} filter ${filter_list} in ${filter_list} out ${filter_list} ${option} ${opt} 
@@ -357,7 +348,6 @@ ipv6 icmp redirect receive ${action}
 ipv6 icmp redirect send ${send}
 ipv6 icmp time-exceeded send ${send} rebound=${sw} 
 ipv6 icmp unreachable send ${send} rebound=${sw} 
-ipv6 inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol6} ${src_port} ${dst_port6} 
 ipv6 inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol} ${src_port} ${dst_port} 
 ipv6 ospf area ${area} stub cost=${cost} 
 ipv6 ospf area network ${area} ${ipv6_prefix}/${prefix_len} restrict 
@@ -424,7 +414,6 @@ isdn call prohibit auth-error count ${count}
 isdn call prohibit mp-error count ${times}
 isdn remote address ${call_arrive} ${isdn_num} /${sub_address} ${isdn_num_list} 
 isdn use ${interface} ${use}
-l2tp service ${service}
 lan backup ${interface} ${backup_interface} ${ip_address}
 lan backup ${interface} none
 lan backup ${interface} pp ${peer_num}
@@ -480,21 +469,6 @@ mail notify ${id} ${template_id} trigger route ${route} ${route} ${opt}
 mail notify ${id} ${template_id} trigger status ${type} ${type} ${opt} 
 mail notify account exec ${id}
 mail notify status exec ${id}
-mail security max size ${size}
-mail security port pop ${list}
-mail security port smtp ${list}
-mail security prefix ${type} ${prefix}
-mail security smtp detect illegal mail ${action}
-mail security smtp from address ${account}
-mail security smtp from address ${address}
-mail security smtp size overflow ${type}
-mail security smtp to address ${account}
-mail security smtp to address ${address}
-mail security spam level ${level}
-mail security use ${sw}
-mail security white-list pattern ${id} from=${keyword} to=${keyword} 
-mail security white-list set ${id} ${list_num} ${opt}
-mail security white-list set enable ${id}
 mail-notify status from ${address}
 mail-notify status server ${server}
 mail-notify status subject ${subject}
@@ -504,7 +478,6 @@ mail-notify status type ${info} ${info} ${opt}
 mail-notify status use ${use}
 make directory ${path}
 mobile access-point name ${apn} cid=${cid} pdp=${type} 
-nat descriptor masquerade port range ${nat_descriptor} ${port_range1} ${port_range2} ${port_range3} 
 nat descriptor masquerade port range ${nat_descriptor} ${port_range}
 nat descriptor masquerade unconvertible port ${nat_descriptor} if-possible
 netvolante-dns sip use ${interface} server=${server_num} ${switch} duplicate 
@@ -530,15 +503,12 @@ no account threshold ${interface} ${yen}
 no account threshold ${yen} 
 no account threshold pp ${yen} 
 no administrator radius auth ${use} 
-no alarm batch ${switch} 
-no alarm entire ${switch} 
 no alarm http revision-up ${switch} 
 no alarm http upload ${switch} 
 no alarm lua ${switch} 
 no alarm mobile ${switch} 
 no alarm sd ${switch} 
 no alarm startup ${switch} 
-no alarm usbhost ${switch} 
 no analog arrive another-device permit ${port}
 no analog arrive global permit ${port}
 no analog arrive ignore-subaddress permit ${port}
@@ -716,12 +686,9 @@ no httpd custom-gui api password ${password}
 no httpd custom-gui api use ${use} 
 no httpd custom-gui use ${use} 
 no httpd custom-gui user ${user} ${opt} 
-no httpd listen ${port} 
-no httpd service ${switch} 
 no httpd timeout ${time} 
 no ip ${bridge_interface} address ${ip_address}/${mask} broadcast ${broadcast_ip} 
 no ip ${bridge_interface} address dhcp 
-no ip ${bridge_interface} secondary address ${ip_address}/${mask} 
 no ip ${interface} address ${ip_address}/${mask} broadcast ${broadcast_ip} 
 no ip ${interface} address dhcp 
 no ip ${interface} arp log ${switch} 
@@ -870,7 +837,6 @@ no ip tunnel tcp mss limit ${mss}
 no ip tunnel traffic list ${sw} 
 no ip tunnel traffic list threshold ${value} 
 no ipsec auto refresh ${gateway_id} 
-no ipsec ike always-on ${gateway_id}
 no ipsec ike auth method ${gateway_id} ${method} 
 no ipsec ike backward-compatibility ${gateway_id} ${type} 
 no ipsec ike duration ${sa} ${gateway_id} ${second} ${kbytes} rekey ${rekey} 
@@ -957,7 +923,6 @@ no ipv6 icmp redirect receive ${action}
 no ipv6 icmp redirect send ${send} 
 no ipv6 icmp time-exceeded send ${send} rebound=${sw} 
 no ipv6 icmp unreachable send ${send} rebound=${sw} 
-no ipv6 inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol6} ${src_port} ${dst_port6} 
 no ipv6 inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol} ${src_port} ${dst_port} 
 no ipv6 max auto address ${max} 
 no ipv6 ospf area ${area} stub cost=${cost} 
@@ -1045,7 +1010,6 @@ no l2tp keepalive use ${switch} ${opt}
 no l2tp local router-id ${ipv4_address} 
 no l2tp remote end-id ${end-id} 
 no l2tp remote router-id ${ipv4_address} 
-no l2tp service ${service} 
 no l2tp service ${service} ${version} ${version} 
 no l2tp syslog ${syslog} 
 no l2tp tunnel auth ${switch} ${opt} 
@@ -1073,17 +1037,6 @@ no login timer ${time}
 no login user ${user} ${password} 
 no lua use ${switch} 
 no mail notify ${id} ${opt} 
-no mail security max size ${size} 
-no mail security port pop ${list} 
-no mail security port smtp ${list} 
-no mail security prefix ${type} ${prefix} 
-no mail security smtp detect illegal mail ${action} 
-no mail security smtp size overflow ${type} 
-no mail security spam level ${level} 
-no mail security use ${sw} 
-no mail security white-list pattern ${id} ${opt} 
-no mail security white-list set ${id} ${list_num} ${opt} 
-no mail security white-list set enable ${id} 
 no mail server name ${id} ${name} 
 no mail server pop ${id} ${opt} 
 no mail server smtp ${id} ${opt} 
@@ -1111,7 +1064,6 @@ no nat descriptor address outer ${nat_descriptor} ${outer_ipaddress_list}
 no nat descriptor backward-compatibility ${type} 
 no nat descriptor ftp port ${nat_descriptor} ${port} ${opt} 
 no nat descriptor masquerade incoming ${nat_descriptor}
-no nat descriptor masquerade port range ${nat_descriptor} ${port_range1} ${port_range2} ${port_range3} 
 no nat descriptor masquerade port range ${nat_descriptor} ${port_range1} ${port_range2} ${port_range3} ${port_range4} 
 no nat descriptor masquerade port range ${nat_descriptor} ${port_range} 
 no nat descriptor masquerade remove df-bit ${remove} 
@@ -1189,7 +1141,6 @@ no pp enable ${peer_num}
 no pp encapsulation ${type} 
 no pp keepalive interval ${interval} ${count} 
 no pp keepalive log ${log} 
-no pp name ${name} 
 no ppp bacp maxconfigure ${count} 
 no ppp bacp maxfailure ${count} 
 no ppp bacp maxterminate ${count} 
@@ -1280,7 +1231,6 @@ no queue ${interface} default class secondary primary=${primary_class} ${opt}
 no queue ${interface} length ${len1} ${opt} 
 no queue ${interface} length secondary primary=${primary_class} ${opt} 
 no queue ${interface} type ${type} 
-no queue class filter ${num} ${class1} ${opt} 
 no queue class filter ${num} ${opt} 
 no queue pp class filter list ${filter_list} 
 no queue pp class property ${class} bandwidth=${bandwidth} ${opt} 
@@ -1407,7 +1357,6 @@ no timezone ${timezone}
 no tunnel enable ${tunnel_num}
 no tunnel endpoint address ${local} ${remote} 
 no tunnel endpoint name ${local_name} ${remote_name} ${type} 
-no tunnel name ${name} 
 no tunnel ngn arrive permit ${permit} 
 no tunnel ngn bandwidth ${bandwidth} arrivepermit=${switch} 
 no tunnel ngn bandwidth ${bandwidth} arrivepermit=${sw} 
@@ -1418,7 +1367,6 @@ no tunnel ngn interface ${lan}
 no upnp external address refer ${interface} 
 no upnp external address refer pp ${peer_num} 
 no url ${interface} filter
-no url ${interface} proxy filter
 no url filter ${id}
 no url filter reject ${action} 
 no usbhost config filename ${from} ${to} 
@@ -1435,9 +1383,6 @@ no user attribute ${user} ${opt}
 no vlan ${interface}/${sub_interface} 802.1q
 no vlan port mapping ${sw_port} ${vlan_interface} 
 no wins server ${server1} ${server2} 
-no ysc connection timeout ${time} 
-no ysc request timeout ${time} 
-no ysc retry ${count} 
 noisdn local address ${interface}
 nslookup ${host}
 ntp backward-compatibility ${comp}
@@ -1549,11 +1494,8 @@ pstn supplementary-service ${sw}
 pstn use ${sw}
 qac-tm client_port ${port} ${port} ${opt} 
 queue ${interface} length ${len1} ${len2} ${opt}${len4} 
-queue ${interface} length ${len1} ${len2} ${opt}${lenN} 
 queue class filter ${num} ${class1} /${class2} cos=${cos} ip ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
 queue class filter ${num} ${class1} /${class2} cos=${cos} ipv6 ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
-queue class filter ${num} ${class1} cos=${cos} ip ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
-queue class filter ${num} ${class1} cos=${cos} ipv6 ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
 queue class filter ${num} ${class} cos=${cos} ip ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
 queue class filter ${num} ${class} cos=${cos} ipv6	 ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
 queue class filter ${num} dscp cos=${cos} ip ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
@@ -1618,15 +1560,12 @@ show ipv6 connection ${interface} ${direction} ${ipv6_address}
 show ipv6 connection pp ${peer_num} ${direction} ${ipv6_address} 
 show ipv6 connection tunnel ${tunnel_num} ${direction} ${ipv6_address} 
 show log external-memory backup ${fileid} 
-show pki crl ${crl_id} 
 show show pki crl ${crl_id} 
 show status analog ${port} 
 show status ethernet filter ${type} ${scope} 
 show status heartbeat2 id ${recv_id}
 show status heartbeat2 name ${string}
-show status ip policy filter all ${type}
 show status ipv6 inbound filter ${type} 
-show status ipv6 policy filter all ${type}
 show status lua ${info} 
 show status mobile signal-strength ${interface} reverse 
 show status onfs ${info} 
@@ -1634,9 +1573,6 @@ show status sip server ${server_num}
 show status tunnel ${tunnel_num} 
 show status usbhost ${port} 
 show status usbhost modem ${port} 
-show url filter https-proxy ${interface}
-show url filter https-proxy pp ${peer_num} 
-show url filter https-proxy tunnel ${tunnel_num} 
 sip arrive address check ${SW}
 sip arrive name-display default ${mode}
 sip codec permit ${interface} ${codec} ${codec} ${opt} 
@@ -1767,18 +1703,9 @@ tunnel ngn radius auth ${use}
 tunnel select ${tunnel_num}
 tunnel template ${tunnel} ${tunnel} ${opt} 
 url ${interface} filter ${dir} ${list}
-url ${interface} proxy filter ${dir} ${list}
-url filter https-proxy listen ${port}
-url filter https-proxy use ${switch}
-url filter https-proxy_curl ${url} dhcp-scope=${scope_num} ${opt} 
-url pp proxy filter ${dir} ${list}
-url tunnel proxy filter ${dir} ${list}
 usbhost overcurrent duration ${port} ${duration}
 usbhost use ${port} ${switch}
 user attribute ${user} ${attribute}=${value} ${attribute}=${value} ${opt} 
 wins server ${server1} ${server2} 
 wol send -i ${interval} -c ${count} ${interface} ${mac_address} ${ip_address} udp ${port} 
 wol send -i ${interval} -c ${count} ${interface} ${mac_address} ethernet ${type}
-ysc connection timeout ${time}
-ysc request timeout ${time}
-ysc retry ${count}
