@@ -1,3 +1,8 @@
+command_extract.sh
+
+
+
+
 rtcommand.sh
 	機能調査のキモです。機種依存コマンドと機種非依存コマンドを教えてくれます。
 	【動作】
