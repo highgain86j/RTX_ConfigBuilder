@@ -1,80 +1,24 @@
-address
 administrator password encrypted
 administrator radius auth
 alarm batch
-alarm connection analog
-alarm connection data
 alarm http revision-up
 alarm http upload
-alarm intrusion
 alarm lua
 alarm mobile
-alarm mp
 alarm sd
 alarm startup
 alarm usbhost
-analog arrive another-device permit
-analog arrive global permit
 analog arrive ignore-subaddress permit
-analog arrive incoming-signal
 analog arrive incoming-signal timing pb
-analog arrive inumber-port
-analog arrive number display
-analog arrive priority
-analog arrive restrict
-analog arrive restrict list
-analog arrive ring-while-talking permit
 analog arrive ringer-type list
-analog arrive without-calling-number
-analog arrive without-subaddress permit
-analog call route
-analog call route-table
-analog device type
-analog disc-signal
-analog dtmf level
-analog end-of-dialing-code
-analog extension address refer
-analog extension address refer pp
-analog extension dial prefix
 analog extension emergency-call-dial type
-analog extension incoming ringer
-analog extension log
-analog extension machine-id
-analog extension master
-analog extension mode
-analog extension other-dial-tone
-analog extension sip address
-analog extension slave permit
-analog hooking inhibit timer
-analog hooking timer
-analog hooking wait timer
-analog http revision-up permit
-analog local address
-analog local address notice
-analog mp prior
 analog off-hook mask
-analog pad receive
-analog pad rtp receive
-analog pad rtp send
-analog pad send
 analog pause timer
 analog power
-analog rapid call
-analog re-ringing-timer
-analog sip arrive incoming-signal
-analog sip arrive myaddress
-analog sip arrive permit
-analog sip call display name
-analog sip call myname
-analog sip call permit
-analog supplementary-service
-analog supplementary-service call-deflection
 analog supplementary-service call-deflection address
 analog supplementary-service call-deflection reject
 analog supplementary-service call-deflection ringer
 analog supplementary-service call-deflection talkie
-analog use
-analog wait dial timer
 analog_supplementary-service
 ap config directory
 ap config filename
@@ -86,11 +30,7 @@ ap control firmware update go
 ap control http proxy timeout
 ap control http proxy use
 ap select
-audio echo-canceller
 audio echo-canceller disabler
-audio echo-canceller nlp threshold
-audio hold-tone type
-audio jitter-buffer
 audio rtp port
 audio rtp segsize
 auth user
@@ -116,7 +56,6 @@ bridge learning
 bridge learning bridge_interface static
 bridge learning bridge_interface timer
 bridge member
-clear account analog
 clear account mobile
 clear account ngn data
 clear account ngn tel
@@ -139,7 +78,6 @@ clear ip traffic list pp
 clear ip traffic list tunnel
 clear ipv6 inbound filter
 clear ipv6 policy filter
-clear mail-check info
 clear mobile access limitation
 clear mobile access limitation pp
 clear nat descriptor interface dynamic tunnel
@@ -175,7 +113,6 @@ dhcp manual lease
 dhcp manual release
 dhcp scope lease type
 dhcp server rfc2131 cmdpliant
-dhcp server rfc2131 compliant
 diagnose config port access
 diagnose config port map
 diagnosis config port history-num
@@ -186,7 +123,6 @@ disconnect user
 dns cache max entry
 dns cache use
 dns host
-dns private name
 dns service fallback
 ethernet filter
 ethernet interface filter
@@ -245,9 +181,7 @@ ip flow limit
 ip flow timer
 ip forward filter
 ip fragment remove df-bit
-ip fragment remove df-bit filter
 ip icmp echo-reply send-only-linkup
-ip icmp error-decrypted-ipsec send
 ip icmp unreachable-for-truncated send
 ip implicit-route preference
 ip inbound filter
@@ -327,75 +261,38 @@ ip tunnel rip force-to-advertise
 ip tunnel secure filter name
 ip tunnel traffic list
 ip tunnel traffic list threshold
-ipsec auto refresh
-ipsec ike always-on
 ipsec ike auth method
 ipsec ike backward-cmdpatibility
-ipsec ike duration
 ipsec ike eap myname
 ipsec ike eap request
 ipsec ike eap send certreq
-ipsec ike encryption
-ipsec ike esp-encapsulation
-ipsec ike group
-ipsec ike hash
-ipsec ike keepalive log
-ipsec ike keepalive use
 ipsec ike license-key
 ipsec ike license-key use
-ipsec ike local address
-ipsec ike local id
-ipsec ike local name
-ipsec ike log
 ipsec ike message-id-control
 ipsec ike mode-cfg address
 ipsec ike mode-cfg address pool
 ipsec ike mode-cfg method
 ipsec ike nat-traversal
-ipsec ike negotiate-strictly
-ipsec ike payload type
-ipsec ike pfs
 ipsec ike pki file
-ipsec ike pre-shared-key
 ipsec ike proposal-limitation
-ipsec ike queue length
-ipsec ike remote address
-ipsec ike remote id
-ipsec ike remote name
-ipsec ike restrict-dangling-sa
-ipsec ike retry
-ipsec ike send info
 ipsec ike version
-ipsec ike xauth myname
 ipsec ike xauth request
 ipsec ipcmdp type
-ipsec ipcomp type
 ipsec log illegal-spi
-ipsec refresh sa
-ipsec sa delete
-ipsec sa policy
-ipsec transport
 ipsec transport template
-ipsec tunnel
 ipsec tunnel fastpath-fragment-function follow df-bit
-ipsec tunnel outer df-bit
-ipsec use
 ipv6 icmp echo-reply send-only-linkup
-ipv6 icmp error-decrypted-ipsec send
 ipv6 icmp packet-too-big-for-truncated send
 ipv6 inbound filter
 ipv6 interface inbound filter list
 ipv6 interface mld
 ipv6 interface mld static
-ipv6 interface mld static group
-ipv6 interface mld type
 ipv6 interface ospf area
 ipv6 interface prefix change log
 ipv6 interface vrrp
 ipv6 interface vrrp shutdown trigger
 ipv6 max auto address
 ipv6 multicast routing process
-ipv6 multicast routing process mode
 ipv6 nd ns-trigger-dad
 ipv6 ospf area
 ipv6 ospf area network
@@ -432,25 +329,6 @@ ipv6 tunnel mld
 ipv6 tunnel mld static
 ipv6 tunnel ospf area
 ipv6 tunnel prefix change log
-isdn arrive global permit
-isdn arrive inumber-port
-isdn arrive priority
-isdn auto disconnect
-isdn call prohibit auth-error count
-isdn call prohibit mp-error count
-isdn calling-number
-isdn dial prefix
-isdn dsu
-isdn layer2 structure
-isdn sip arrive incoming-signal
-isdn sip arrive myaddress
-isdn sip arrive permit
-isdn sip call display name
-isdn sip call myname
-isdn sip call permit
-isdn terminator
-isdn use
-isdn use bri1
 jate number
 l2tp always-on
 l2tp hostname
@@ -484,7 +362,6 @@ less config switch
 less config tunnel
 less exec list
 line masterclock
-line type 
 login password encrypted
 login radius use
 login user
@@ -499,16 +376,6 @@ mail server pop
 mail server smtp
 mail server timeout
 mail template
-mail-check go
-mail-check led
-mail-check prohibit
-mail-check server
-mail-check timeout
-mail-notify charset
-mail-notify go
-mail-notify intrusion
-mail-notify intrusion go
-mail-notify intrusion subject
 mail-notify status exec
 mail-notify status from
 mail-notify status server
@@ -517,17 +384,6 @@ mail-notify status timeout
 mail-notify status to
 mail-notify status type
 mail-notify status use
-mail-notify subject
-mail-transfer filter
-mail-transfer go
-mail-transfer prohibit
-mail-transfer receive from
-mail-transfer receive maxlength
-mail-transfer receive restrict
-mail-transfer send maxlength
-mail-transfer send to
-mail-transfer server
-mail-transfer timeout
 make directory
 mobile access limit connection length
 mobile access limit connection time
@@ -548,13 +404,9 @@ mobile signal-strength go
 mobile syslog
 mobile use
 nat descriptor backward-cmdpatibility
-nat descriptor delete
 nat descriptor masquerade incmding
-nat descriptor masquerade incoming
 nat descriptor masquerade session limit
 nat descriptor masquerade session limit total
-nat descriptor masquerade ttl hold
-nat descriptor masquerade unconvertible
 nat descriptor masquerade unconvertible port
 nat descriptor sip
 netvolante-dns auto save
@@ -562,8 +414,6 @@ netvolante-dns register timer
 netvolante-dns server update address port
 netvolante-dns server update address use
 netvolante-dns set hostname
-netvolante-dns sip use
-netvolante-dns sip use pp
 ngn radius account callee
 ngn radius account caller
 ngn radius auth password
@@ -605,21 +455,13 @@ ospf use
 ospf virtual-link
 packetdump
 packetdump pp
-password reenter
 pki certificate file
 pki crl file
-port
-pp auth accept
-pp auth accept 
-pp auth request 
+pp auth accept 133,
 pp backup
 pp backup pp
 pp backup recovery time
 pp backup tunnel
-pp bind  
-pp bind   
-pp connect count threshold
-pp connect time threshold
 pp encapsulation
 ppp bacp maxconfigure
 ppp bacp maxfailure
@@ -629,25 +471,12 @@ ppp bap maxretry
 ppp bap restart
 ppp ipcp remote address check
 ppp lcp accm
-pppoe
-pppoe call prohibit auth-error count
 pppoe invalid-session forced close
-pptp call-id mode
 pri leased channel
 pri loopback active
 pri loopback passive
 provider interface bind
-provider isdn account nighttime
-provider isdn auto disconnect off
-provider isdn disconnect daytime
-provider isdn disconnect interval daytime
-provider isdn disconnect interval nighttime
-provider isdn disconnect interval nighttime 
-provider isdn disconnect nighttime
-provider netvolante-dns hostname sip
 provider pp bind
-provider ppp mp use on
-provider sip 050-number
 pstn dial type
 pstn hooking timer
 pstn modem signal timer
@@ -686,9 +515,7 @@ radius auth server
 radius retry
 radius secret
 radius server
-reject
 rename
-ringer
 rip filter rule
 rip preference
 rip timer
@@ -704,7 +531,6 @@ set-default-exec
 set-serial-baudrate
 sftpd host
 show
-show account analog
 show account mobile
 show account ngn data
 show account ngn tel
@@ -714,8 +540,6 @@ show account tunnel
 show acl
 show bridge learning
 show cmdmand
-show command
-show config analog extension
 show config ap
 show config switch
 show config tunnel
@@ -731,8 +555,6 @@ show ip secure filter tunnel
 show ip traffic list
 show ip traffic list pp
 show ip traffic list tunnel
-show ipsec sa
-show ipsec sa gateway
 show ipv6 address pp
 show ipv6 address tunnel
 show ipv6 mroute fib
@@ -748,14 +570,12 @@ show pki certificate summary
 show pki crl
 show sshd public key
 show ssl public key
-show status analog
 show status analog extension
 show status backup
 show status bgp neighbor
 show status boot all
 show status boot list
 show status cooperation
-show status dtcp
 show status ethernet filter
 show status external-memory
 show status heartbeat
@@ -775,7 +595,6 @@ show status isdn switch
 show status l2tp
 show status lua
 show status mail service
-show status mail-check
 show status mobile signal-strength
 show status ngn
 show status onfs
@@ -791,8 +610,6 @@ show status qos
 show status remote setup
 show status rtfs
 show status sd
-show status sip presence
-show status sip server
 show status status-led
 show status switch control
 show status switch control route backup
@@ -801,7 +618,6 @@ show status usbhost
 show status user
 show status user history
 show status vlan
-show status voice call
 show status voice process
 show status vrrp
 show techinfo
@@ -811,17 +627,9 @@ show url filter tunnel
 sip arrive address check
 sip arrive name-display default
 sip arrive session timer method
-sip codec permit
-sip codec permit pp
-sip codec permit tunnel
-sip netvolante dial domain
-sip netvolante dial figure
 sip outer address
-sip request retransmit timer
 sip server analog service
-sip server arrive number display
 sip server call mode
-sip server call no-dial-info username
 sip server call own permit
 sip server call server error
 sip server dial number-only
@@ -829,30 +637,14 @@ sip server pilot address
 sip user agent
 snmp cmdmunity read-only
 snmp cmdmunity read-write
-snmp community read-only
-snmp community read-write
-snmp display ipcp force
-snmp host
 snmp ifindex switch static index
-snmp local address
-snmp syscontact
-snmp syslocation
-snmp sysname
 snmp trap cmdmunity
-snmp trap community
-snmp trap enable snmp
 snmp trap enable switch
 snmp trap enable switch cmdmon
 snmp trap enable switch common
-snmp trap host
 snmp trap link-updown separate-l2switch-port
 snmp trap mobile signal-strength
-snmp trap send linkdown
-snmp trap send linkdown pp
-snmp trap send linkdown tunnel
-snmp yrifppdisplayatmib2
 snmp yrifswitchdisplayatmib2
-snmp yriftunneldisplayatmib2
 snmp yrswindex switch static index
 snmpv2c cmdmunity read-only
 snmpv2c cmdmunity read-write
@@ -1007,18 +799,13 @@ system packet-scheduling filter
 system packet-scheduling filter list
 system temperature threshold
 take lan-map snapshot
-talkie
 tcp session limit
 telnetd session
 terminate lua
 terminate lua file
-tunnel
 tunnel backup
 tunnel backup pp
 tunnel backup tunnel
-tunnel dtcp
-tunnel dtcp connect
-tunnel dtcp disconnect
 tunnel ngn arrive permit
 tunnel ngn bandwidth
 tunnel ngn call permit

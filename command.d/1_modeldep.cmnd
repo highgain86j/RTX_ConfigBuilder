@@ -1,14 +1,9 @@
-account threshold
-account threshold pp
 address
-administrator
-administrator password
 administrator password encrypted
 administrator radius auth
 alarm batch
 alarm connection analog
 alarm connection data
-alarm entire
 alarm http revision-up
 alarm http upload
 alarm intrusion
@@ -121,43 +116,32 @@ bridge learning
 bridge learning bridge_interface static
 bridge learning bridge_interface timer
 bridge member
-clear account
 clear account analog
 clear account mobile
 clear account ngn data
 clear account ngn tel
-clear account pp
 clear account pstn
 clear account sip
 clear account tunnel
 clear acl
-clear arp
 clear boot list
 clear bridge learning
 clear diagnosis config port
-clear dns cache
 clear external-memory syslog
 clear heartbeat2
 clear heartbeat2 id
 clear heartbeat2 name
 clear inarp
-clear ip dynamic routing
 clear ip inbound filter
 clear ip policy filter
 clear ip traffic list
 clear ip traffic list pp
 clear ip traffic list tunnel
-clear ipv6 dynamic routing
 clear ipv6 inbound filter
-clear ipv6 neighbor cache
 clear ipv6 policy filter
-clear log
 clear mail-check info
 clear mobile access limitation
 clear mobile access limitation pp
-clear nat descriptor dynamic
-clear nat descriptor interface dynamic
-clear nat descriptor interface dynamic pp
 clear nat descriptor interface dynamic tunnel
 clear pri status
 clear status
@@ -165,15 +149,8 @@ clear switching-hub macaddress
 clear url filter
 clear url filter pp
 clear url filter tunnel
-cold start
-connect
 connect pp
 connect tunnel
-console character
-console columns
-console info
-console lines
-console prompt
 cooperation
 cooperation bandwidth-measuring remote
 cooperation load-watch control
@@ -185,68 +162,37 @@ copy
 copy config
 copy exec
 dashboard accumulate
-date
 delete
-delete config
 delete exec
 delete pki file
-description
-dhcp client client-identifier
-dhcp client client-identifier pool
-dhcp client client-identifier pp
-dhcp client hostname
 dhcp client hostname pool
 dhcp client hostname pp
-dhcp client option
 dhcp client option pool
 dhcp client option pp
 dhcp client release linkdown
 dhcp convert lease to bind
-dhcp duplicate check
 dhcp manual lease
 dhcp manual release
-dhcp relay select
-dhcp relay server
-dhcp relay threshold
-dhcp scope
-dhcp scope bind
 dhcp scope lease type
-dhcp scope option
 dhcp server rfc2131 cmdpliant
 dhcp server rfc2131 compliant
-dhcp service
 diagnose config port access
 diagnose config port map
 diagnosis config port history-num
 diagnosis config port max-detect
-disconnect
-disconnect ip connection
-disconnect ipv6 connection
 disconnect pp
 disconnect tunnel
 disconnect user
 dns cache max entry
 dns cache use
-dns domain
 dns host
-dns notice order
-dns private address spoof
 dns private name
-dns server
-dns server dhcp
-dns server pp
-dns server select
-dns service
 dns service fallback
-dns srcport
-dns static
-dns syslog resolv
 ethernet filter
 ethernet interface filter
 execute at-cmdmand
 execute at-command
 execute batch
-exit
 external-memory accelerator cache size
 external-memory auto-search time
 external-memory batch filename
@@ -281,14 +227,8 @@ heartbeat2 transmit
 heartbeat2 transmit enable
 heartbeat2 transmit interval
 heartbeat2 transmit log
-help
 http revision-down permit
-http revision-up go
-http revision-up permit
-http revision-up proxy
 http revision-up schedule
-http revision-up timeout
-http revision-up url
 http upload
 http upload go
 http upload permit
@@ -300,82 +240,41 @@ httpd custom-gui api password
 httpd custom-gui api use
 httpd custom-gui use
 httpd custom-gui user
-httpd host
-httpd listen
-httpd service
-httpd timeout
-interface reset
-interface reset pp
 ip arp timer
-ip filter
-ip filter directed-broadcast
-ip filter dynamic
-ip filter dynamic timer
-ip filter set
-ip filter source-route
 ip flow limit
 ip flow timer
 ip forward filter
 ip fragment remove df-bit
 ip fragment remove df-bit filter
-ip host
-ip icmp echo-reply send
 ip icmp echo-reply send-only-linkup
 ip icmp error-decrypted-ipsec send
-ip icmp log
-ip icmp mask-reply send
-ip icmp parameter-problem send
-ip icmp redirect receive
-ip icmp redirect send
-ip icmp time-exceeded send
-ip icmp timestamp-reply send
-ip icmp unreachable send
 ip icmp unreachable-for-truncated send
 ip implicit-route preference
 ip inbound filter
-ip interface address
 ip interface arp log
 ip interface arp mtu discovery
-ip interface arp queue length
 ip interface arp static
-ip interface dhcp lease time
-ip interface dhcp retry
 ip interface dhcp service
 ip interface forward filter
 ip interface igmp
 ip interface igmp static
 ip interface inbound filter list
-ip interface intrusion detection
 ip interface intrusion detection notice-interval
 ip interface intrusion detection repeat-control
 ip interface intrusion detection report
 ip interface intrusion detection threshold
-ip interface mtu
-ip interface nat descriptor
 ip interface ospf area
 ip interface ospf neighbor
 ip interface pim sparse
-ip interface proxyarp
 ip interface proxyarp vrrp
 ip interface rebound
-ip interface rip auth key
 ip interface rip auth key text
-ip interface rip auth type
-ip interface rip filter
 ip interface rip force-to-advertise
-ip interface rip hop
-ip interface rip receive
-ip interface rip send
-ip interface rip trust gateway
-ip interface secondary address
-ip interface secure filter
 ip interface secure filter name
-ip interface tcp mss limit
 ip interface traffic list
 ip interface traffic list threshold
 ip interface vrrp
 ip interface vrrp shutdown trigger
-ip interface wol relay
 ip keepalive
 ip local forward filter
 ip pim sparse join-prune send
@@ -392,80 +291,40 @@ ip policy filter timer
 ip policy interface group
 ip policy service
 ip policy service group
-ip pp address
 ip pp forward filter
 ip pp igmp
 ip pp igmp static
 ip pp inbound filter list
-ip pp intrusion detection
 ip pp intrusion detection notice-interval
 ip pp intrusion detection repeat-control
 ip pp intrusion detection report
 ip pp intrusion detection threshold
-ip pp mtu
-ip pp nat descriptor
 ip pp ospf area
 ip pp ospf neighbor
 ip pp pim sparse
 ip pp rebound
-ip pp remote address
-ip pp remote address pool
-ip pp rip auth key
 ip pp rip auth key text
-ip pp rip auth type
 ip pp rip backup interface
-ip pp rip connect interval
-ip pp rip connect send
-ip pp rip disconnect interval
-ip pp rip disconnect send
-ip pp rip filter
 ip pp rip force-to-advertise
-ip pp rip hold routing
-ip pp rip hop
-ip pp rip receive
-ip pp rip send
-ip pp rip trust gateway
-ip pp secure filter
 ip pp secure filter name
-ip pp tcp mss limit
 ip pp traffic list
 ip pp traffic list threshold
-ip route
-ip route change log
-ip routing
-ip routing process
-ip simple-service
-ip stealth
 ip tos supersede
-ip tunnel address
 ip tunnel forward filter
 ip tunnel igmp
 ip tunnel igmp static
 ip tunnel inbound filter list
-ip tunnel intrusion detection
 ip tunnel intrusion detection notice-interval
 ip tunnel intrusion detection repeat-control
 ip tunnel intrusion detection report
 ip tunnel intrusion detection threshold
-ip tunnel mtu
-ip tunnel nat descriptor
 ip tunnel ospf area
 ip tunnel ospf neighbor
 ip tunnel pim sparse
 ip tunnel rebound
-ip tunnel remote address
-ip tunnel rip auth key
 ip tunnel rip auth key text
-ip tunnel rip auth type
-ip tunnel rip filter
 ip tunnel rip force-to-advertise
-ip tunnel rip hop
-ip tunnel rip receive
-ip tunnel rip send
-ip tunnel rip trust gateway
-ip tunnel secure filter
 ip tunnel secure filter name
-ip tunnel tcp mss limit
 ip tunnel traffic list
 ip tunnel traffic list threshold
 ipsec auto refresh
@@ -521,40 +380,17 @@ ipsec tunnel
 ipsec tunnel fastpath-fragment-function follow df-bit
 ipsec tunnel outer df-bit
 ipsec use
-ipv6 filter
-ipv6 filter dynamic
-ipv6 icmp echo-reply send
 ipv6 icmp echo-reply send-only-linkup
 ipv6 icmp error-decrypted-ipsec send
-ipv6 icmp log
-ipv6 icmp packet-too-big send
 ipv6 icmp packet-too-big-for-truncated send
-ipv6 icmp parameter-problem send
-ipv6 icmp redirect receive
-ipv6 icmp redirect send
-ipv6 icmp time-exceeded send
-ipv6 icmp unreachable send
 ipv6 inbound filter
-ipv6 interface address
-ipv6 interface dad retry count
-ipv6 interface dhcp service
 ipv6 interface inbound filter list
 ipv6 interface mld
 ipv6 interface mld static
 ipv6 interface mld static group
 ipv6 interface mld type
-ipv6 interface mtu
 ipv6 interface ospf area
-ipv6 interface prefix
 ipv6 interface prefix change log
-ipv6 interface rip filter
-ipv6 interface rip hop
-ipv6 interface rip receive
-ipv6 interface rip send
-ipv6 interface rip trust gateway
-ipv6 interface rtadv send
-ipv6 interface secure filter
-ipv6 interface tcp mss limit
 ipv6 interface vrrp
 ipv6 interface vrrp shutdown trigger
 ipv6 max auto address
@@ -581,86 +417,31 @@ ipv6 policy filter set switch
 ipv6 policy interface group
 ipv6 policy service
 ipv6 policy service group
-ipv6 pp address
 ipv6 pp dad retry count
-ipv6 pp dhcp service
 ipv6 pp inbound filter list
 ipv6 pp mld
 ipv6 pp mld static
-ipv6 pp mtu
 ipv6 pp ospf area
-ipv6 pp prefix
 ipv6 pp prefix change log
-ipv6 pp rip connect interval
-ipv6 pp rip connect send
-ipv6 pp rip disconnect interval
-ipv6 pp rip disconnect send
-ipv6 pp rip filter
-ipv6 pp rip hold routing
-ipv6 pp rip hop
-ipv6 pp rip receive
-ipv6 pp rip send
-ipv6 pp rip trust gateway
-ipv6 pp rtadv send
-ipv6 pp secure filter
-ipv6 pp tcp mss limit
-ipv6 prefix
 ipv6 rh0 discard
 ipv6 rip preference
-ipv6 rip use
-ipv6 route
-ipv6 routing
 ipv6 routing process
 ipv6 source address selection rule
-ipv6 stealth
-ipv6 tunnel address
-ipv6 tunnel dhcp service
 ipv6 tunnel inbound filter list
 ipv6 tunnel mld
 ipv6 tunnel mld static
 ipv6 tunnel ospf area
-ipv6 tunnel prefix
 ipv6 tunnel prefix change log
-ipv6 tunnel rip filter
-ipv6 tunnel rip receive
-ipv6 tunnel rip send
-ipv6 tunnel secure filter
-ipv6 tunnel tcp mss limit
 isdn arrive global permit
 isdn arrive inumber-port
-isdn arrive permit
 isdn arrive priority
-isdn auto connect
 isdn auto disconnect
-isdn call block time
-isdn call permit
 isdn call prohibit auth-error count
 isdn call prohibit mp-error count
-isdn call prohibit time
-isdn callback mscbcp user-specify
-isdn callback permit
-isdn callback permit type
-isdn callback request
-isdn callback request type
-isdn callback response time
-isdn callback wait time
 isdn calling-number
 isdn dial prefix
-isdn disconnect input time
-isdn disconnect interval time
-isdn disconnect output time
-isdn disconnect policy
-isdn disconnect time
 isdn dsu
-isdn fast disconnect time
-isdn forced disconnect time
 isdn layer2 structure
-isdn local address
-isdn piafs arrive
-isdn piafs call
-isdn piafs control
-isdn remote address
-isdn remote call order
 isdn sip arrive incoming-signal
 isdn sip arrive myaddress
 isdn sip arrive permit
@@ -693,28 +474,18 @@ lan linkup send-wait-time
 lan port-mirroring
 lan receive-buffer-size
 lan shutdown
-lan type
 lan-map log
 lan-map snapshot use
 lan-map terminal watch interval
 leased backup
-leased keepalive down
 less
-less config
 less config ap
-less config list
-less config pp
 less config switch
 less config tunnel
 less exec list
-less file list
-less log
 line masterclock
-line type
-login password
 login password encrypted
 login radius use
-login timer
 login user
 lua
 lua use
@@ -775,52 +546,23 @@ mobile signal-strength
 mobile signal-strength go
 mobile syslog
 mobile use
-nat descriptor address inner
-nat descriptor address outer
 nat descriptor backward-cmdpatibility
 nat descriptor delete
-nat descriptor ftp port
-nat descriptor log
 nat descriptor masquerade incmding
 nat descriptor masquerade incoming
-nat descriptor masquerade port range
-nat descriptor masquerade remove df-bit
-nat descriptor masquerade rlogin
 nat descriptor masquerade session limit
 nat descriptor masquerade session limit total
-nat descriptor masquerade static
 nat descriptor masquerade ttl hold
 nat descriptor masquerade unconvertible
 nat descriptor masquerade unconvertible port
 nat descriptor sip
-nat descriptor static
-nat descriptor timer
-nat descriptor type
-netvolante-dns auto hostname
-netvolante-dns auto hostname pp
 netvolante-dns auto save
-netvolante-dns delete go
-netvolante-dns delete go pp
-netvolante-dns get hostname list
-netvolante-dns get hostname list pp
-netvolante-dns go
-netvolante-dns go pp
-netvolante-dns hostname host
-netvolante-dns hostname host pp
-netvolante-dns port
 netvolante-dns register timer
-netvolante-dns retry interval
-netvolante-dns retry interval pp
-netvolante-dns server
 netvolante-dns server update address port
 netvolante-dns server update address use
 netvolante-dns set hostname
 netvolante-dns sip use
 netvolante-dns sip use pp
-netvolante-dns timeout
-netvolante-dns timeout pp
-netvolante-dns use
-netvolante-dns use pp
 ngn radius account callee
 ngn radius account caller
 ngn radius auth password
@@ -829,7 +571,6 @@ nslookup
 ntp backward-cmdpatibility
 ntp backward-compatibility
 ntp local address
-ntpdate
 onfs bind
 onfs mirroring contact node
 onfs mirroring go
@@ -864,113 +605,34 @@ ospf virtual-link
 packetdump
 packetdump pp
 password reenter
-ping
-ping6
 pki certificate file
 pki crl file
 port
-pp always-on
 pp auth accept
 pp auth accept 133,
-pp auth multi connect prohibit
-pp auth myname
-pp auth request
-pp auth username
 pp backup
 pp backup pp
 pp backup recovery time
 pp backup tunnel
-pp bind
 pp connect count threshold
 pp connect time threshold
-pp disable
-pp enable
 pp encapsulation
-pp keepalive interval
-pp keepalive log
-pp keepalive use
-pp name
-pp select
 ppp bacp maxconfigure
 ppp bacp maxfailure
 ppp bacp maxterminate
 ppp bacp restart
 ppp bap maxretry
 ppp bap restart
-ppp ccp maxconfigure
-ppp ccp maxfailure
-ppp ccp maxterminate
-ppp ccp no-encryption
-ppp ccp restart
-ppp ccp type
-ppp chap maxchallenge
-ppp chap restart
-ppp ipcp ipaddress
-ppp ipcp maxconfigure
-ppp ipcp maxfailure
-ppp ipcp maxterminate
-ppp ipcp msext
 ppp ipcp remote address check
-ppp ipcp restart
-ppp ipcp vjc
-ppp ipv6cp use
 ppp lcp accm
-ppp lcp acfc
-ppp lcp magicnumber
-ppp lcp maxconfigure
-ppp lcp maxfailure
-ppp lcp maxterminate
-ppp lcp mru
-ppp lcp pfc
-ppp lcp restart
-ppp lcp silent
-ppp mp control
-ppp mp divide
-ppp mp interleave
-ppp mp load threshold
-ppp mp maxlink
-ppp mp minlink
-ppp mp timer
-ppp mp use
-ppp mscbcp maxretry
-ppp mscbcp restart
-ppp pap maxauthreq
-ppp pap restart
 pppoe
-pppoe access concentrator
-pppoe auto connect
-pppoe auto disconnect
 pppoe call prohibit auth-error count
-pppoe disconnect time
 pppoe invalid-session forced close
-pppoe padi maxretry
-pppoe padi restart
-pppoe padr maxretry
-pppoe padr restart
-pppoe service-name
-pppoe tcp mss limit
-pppoe use
 pptp call-id mode
-pptp hostname
-pptp keepalive interval
-pptp keepalive log
-pptp keepalive use
-pptp service
-pptp service type
-pptp syslog
-pptp tunnel disconnect time
-pptp window size
 pri leased channel
 pri loopback active
 pri loopback passive
-provider auto connect forced disable
-provider dns server
-provider dns server pp
-provider filter routing
 provider interface bind
-provider interface dns server
-provider interface name
-provider ipv6 connect pp
 provider isdn account nighttime
 provider isdn auto disconnect off
 provider isdn disconnect daytime
@@ -978,14 +640,9 @@ provider isdn disconnect interval daytime
 provider isdn disconnect interval nighttime
 provider isdn disconnect nighttime
 provider netvolante-dns hostname sip
-provider ntp server
-provider ntpdate
 provider pp bind
 provider ppp mp use on
-provider select
-provider set
 provider sip 050-number
-provider type
 pstn dial type
 pstn hooking timer
 pstn modem signal timer
@@ -1009,22 +666,12 @@ qac-tm unqualified client access control
 qac-tm use
 qac-tm version margin
 qac-tm warning url
-queue class filter
 queue interface class control
-queue interface class filter list
 queue interface class property
-queue interface default class
 queue interface default class secondary
-queue interface length
 queue interface length secondary
-queue interface type
-queue pp class filter list
 queue pp class property
-queue pp default class
-queue pp length
-queue pp type
 queue tunnel class filter list
-quit
 radius account
 radius account port
 radius account server
@@ -1034,25 +681,17 @@ radius auth server
 radius retry
 radius secret
 radius server
-rdate
 reject
-remote setup
-remote setup accept
 rename
-restart
 ringer
 rip filter rule
 rip preference
 rip timer
-rip use
 rotate external-memory syslog
 rtfs format
 rtfs garbage-collect
-save
-schedule at
 scp
 sd use
-security class
 set
 set-acl
 set-default-config
@@ -1060,44 +699,27 @@ set-default-exec
 set-serial-baudrate
 sftpd host
 show
-show account
 show account analog
 show account mobile
 show account ngn data
 show account ngn tel
-show account pp
 show account pstn
 show account sip
 show account tunnel
 show acl
-show arp
 show bridge learning
 show cmdmand
 show command
-show config
 show config analog extension
 show config ap
-show config list
-show config pp
 show config switch
 show config tunnel
 show diagnosis config port access
 show diagnosis config port map
 show dlci
 show dns cache
-show environment
 show exec list
-show file list
-show history
-show ip connection
-show ip connection pp
-show ip connection tunnel
-show ip intrusion detection
-show ip intrusion detection pp
-show ip intrusion detection tunnel
 show ip mroute
-show ip rip table
-show ip route
 show ip secure filter
 show ip secure filter pp
 show ip secure filter tunnel
@@ -1106,45 +728,28 @@ show ip traffic list pp
 show ip traffic list tunnel
 show ipsec sa
 show ipsec sa gateway
-show ipv6 address
 show ipv6 address pp
 show ipv6 address tunnel
-show ipv6 connection
-show ipv6 connection pp
-show ipv6 connection tunnel
 show ipv6 mroute fib
-show ipv6 neighbor cache
 show ipv6 ospf
-show ipv6 rip table
-show ipv6 route
 show lan-map
 show line masterclock
-show log
-show nat descriptor address
-show nat descriptor interface address
-show nat descriptor interface address pp
 show nat descriptor interface address tunnel
-show nat descriptor interface bind
 show nat descriptor interface bind pp
 show nat descriptor interface bind tunnel
 show nat descriptor masquerade port summary
 show nat descriptor masquerade session summary
 show pki certificate summary
 show pki crl
-show pp connect time
 show sshd public key
 show ssl public key
-show status
 show status analog
 show status analog extension
 show status backup
 show status bgp neighbor
-show status boot
 show status boot all
 show status boot list
 show status cooperation
-show status dhcp
-show status dhcpc
 show status dtcp
 show status ethernet filter
 show status external-memory
@@ -1158,9 +763,7 @@ show status ip keepalive
 show status ip pim sparse
 show status ip policy filter
 show status ip policy service
-show status ipv6 dhcp
 show status ipv6 inbound filter
-show status ipv6 mld
 show status ipv6 policy filter
 show status ipv6 policy service
 show status isdn switch
@@ -1169,15 +772,11 @@ show status lua
 show status mail service
 show status mail-check
 show status mobile signal-strength
-show status netvolante-dns
-show status netvolante-dns pp
 show status ngn
 show status onfs
 show status ospf
 show status packet-buffer
 show status packet-scheduling
-show status pp
-show status pptp
 show status qac-tm
 show status qac-tm client
 show status qac-tm qualified
@@ -1193,8 +792,6 @@ show status status-led
 show status switch control
 show status switch control route backup
 show status switching-hub macaddress
-show status tunnel
-show status upnp
 show status usbhost
 show status user
 show status user history
@@ -1206,43 +803,24 @@ show techinfo
 show url filter
 show url filter pp
 show url filter tunnel
-sip 100rel
 sip arrive address check
 sip arrive name-display default
-sip arrive ringing p-n-uatype
 sip arrive session timer method
-sip arrive session timer refresher
 sip codec permit
 sip codec permit pp
 sip codec permit tunnel
-sip ip protocol
-sip log
 sip netvolante dial domain
 sip netvolante dial figure
 sip outer address
 sip request retransmit timer
-sip response code busy
-sip server
-sip server 100rel
 sip server analog service
 sip server arrive number display
 sip server call mode
 sip server call no-dial-info username
 sip server call own permit
-sip server call remote domain
 sip server call server error
-sip server connect
 sip server dial number-only
-sip server disconnect
-sip server display name
 sip server pilot address
-sip server privacy
-sip server qvalue
-sip server register request-uri
-sip server register timer
-sip server session timer
-sip session timer
-sip use
 sip user agent
 snmp cmdmunity read-only
 snmp cmdmunity read-write
@@ -1288,7 +866,6 @@ snmpv3 vacm access
 snmpv3 vacm view
 sntpd host
 sntpd service
-speed
 speed pp
 ssh
 ssh encrypt algorithm
@@ -1415,15 +992,9 @@ switch control route backup
 switch control use
 switch control watch interval
 switch select
-syslog debug
 syslog execute cmdmand
 syslog execute command
-syslog facility
-syslog host
-syslog info
 syslog local address
-syslog notice
-syslog srcport
 system led brightness
 system packet-buffer
 system packet-scheduling
@@ -1432,33 +1003,17 @@ system packet-scheduling filter list
 system temperature threshold
 take lan-map snapshot
 talkie
-tcp log
 tcp session limit
-telnet
-telnetd host
-telnetd listen
-telnetd service
 telnetd session
 terminate lua
 terminate lua file
-tftp host
-time
-timezone
-traceroute
-traceroute6
 tunnel
 tunnel backup
 tunnel backup pp
 tunnel backup tunnel
-tunnel disable
 tunnel dtcp
 tunnel dtcp connect
 tunnel dtcp disconnect
-tunnel enable
-tunnel encapsulation
-tunnel endpoint address
-tunnel endpoint name
-tunnel name
 tunnel ngn arrive permit
 tunnel ngn bandwidth
 tunnel ngn call permit
@@ -1466,14 +1021,7 @@ tunnel ngn disconnect time
 tunnel ngn fallback
 tunnel ngn interface
 tunnel ngn radius auth
-tunnel select
 tunnel template
-upnp external address refer
-upnp external address refer pp
-upnp port mapping timer
-upnp port mapping timer type
-upnp syslog
-upnp use
 url filter
 url filter log
 url filter port
@@ -1505,5 +1053,3 @@ wan bind
 wan disconnect input time
 wan disconnect output time
 wan disconnect time
-wins server
-wol send

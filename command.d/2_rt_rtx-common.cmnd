@@ -265,7 +265,6 @@ pp auth myname
 pp auth request
 pp auth username
 pp bind
-pp bind  
 pp disable
 pp enable
 pp keepalive interval
