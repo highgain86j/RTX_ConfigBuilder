@@ -100,8 +100,10 @@ clear boot list
 clear external-memory syslog
 clear mobile access limitation
 clear mobile access limitation pp
-clear nat descriptor interface dynamic pp
-clear nat descriptor interface dynamic tunnel
+clear nat descriptor dynamic
+clear nat descriptor _if_ dynamic
+clear nat descriptor _if_ dynamic pp
+clear nat descriptor _if_ dynamic tunnel
 clear status
 clear switching-hub macaddress
 connect pp
@@ -144,7 +146,7 @@ dns private name
 dns service fallback
 dns srcport
 ethernet filter
-ethernet interface filter
+ethernet _if_ filter
 execute at-command
 execute batch
 external-memory accelerator cache size
@@ -170,43 +172,58 @@ httpd custom-gui api use
 httpd custom-gui use
 httpd custom-gui user
 httpd timeout
-interface reset
-interface reset pp
+_if_ reset
+_if_ reset pp
 ip arp timer
+ip filter
+ip filter directed-broadcast
+ip filter dynamic
+ip filter dynamic timer
 ip filter set
+ip filter source-route
 ip flow timer
 ip fragment remove df-bit
+ip host
+ip icmp echo-reply send
 ip icmp echo-reply send-only-linkup
-ip interface address
-ip interface arp log
-ip interface arp queue length
-ip interface arp static
-ip interface dhcp lease time
-ip interface dhcp retry
-ip interface dhcp service
-ip interface intrusion detection
-ip interface intrusion detection notice-interval
-ip interface intrusion detection repeat-control
-ip interface intrusion detection report
-ip interface intrusion detection threshold
-ip interface mtu
-ip interface nat descriptor
-ip interface proxyarp
-ip interface rebound
-ip interface rip auth key
-ip interface rip auth key text
-ip interface rip auth type
-ip interface rip filter
-ip interface rip force-to-advertise
-ip interface rip hop
-ip interface rip receive
-ip interface rip send
-ip interface rip trust gateway
-ip interface secondary address
-ip interface secure filter
-ip interface secure filter name
-ip interface tcp mss limit
-ip interface wol relay
+ip icmp log
+ip icmp mask-reply send
+ip icmp parameter-problem send
+ip icmp redirect receive
+ip icmp redirect send
+ip icmp time-exceeded send
+ip icmp timestamp-reply send
+ip icmp unreachable send
+ip _if_ address
+ip _if_ arp log
+ip _if_ arp queue length
+ip _if_ arp static
+ip _if_ dhcp lease time
+ip _if_ dhcp retry
+ip _if_ dhcp service
+ip _if_ intrusion detection
+ip _if_ intrusion detection notice-interval
+ip _if_ intrusion detection repeat-control
+ip _if_ intrusion detection report
+ip _if_ intrusion detection threshold
+ip _if_ mtu
+ip _if_ nat descriptor
+ip _if_ proxyarp
+ip _if_ rebound
+ip _if_ rip auth key
+ip _if_ rip auth key text
+ip _if_ rip auth type
+ip _if_ rip filter
+ip _if_ rip force-to-advertise
+ip _if_ rip hop
+ip _if_ rip receive
+ip _if_ rip send
+ip _if_ rip trust gateway
+ip _if_ secondary address
+ip _if_ secure filter
+ip _if_ secure filter name
+ip _if_ tcp mss limit
+ip _if_ wol relay
 ip keepalive
 ip pp address
 ip pp intrusion detection notice-interval
@@ -244,14 +261,33 @@ ip tunnel rip send
 ip tunnel rip trust gateway
 ip tunnel secure filter name
 ip tunnel tcp mss limit
+ipv6 filter
+ipv6 filter dynamic
+ipv6 icmp echo-reply send
 ipv6 icmp echo-reply send-only-linkup
-ipv6 interface dad retry count
-ipv6 interface dhcp service
-ipv6 interface mld
-ipv6 interface mld static
-ipv6 interface prefix change log
-ipv6 interface rip hop
-ipv6 interface tcp mss limit
+ipv6 icmp log
+ipv6 icmp packet-too-big send
+ipv6 icmp parameter-problem send
+ipv6 icmp redirect receive
+ipv6 icmp redirect send
+ipv6 icmp time-exceeded send
+ipv6 icmp unreachable send
+ipv6 _if_ address
+ipv6 _if_ dad retry count
+ipv6 _if_ dhcp service
+ipv6 _if_ mld
+ipv6 _if_ mld static
+ipv6 _if_ mtu
+ipv6 _if_ prefix
+ipv6 _if_ prefix change log
+ipv6 _if_ rip filter
+ipv6 _if_ rip hop
+ipv6 _if_ rip receive
+ipv6 _if_ rip send
+ipv6 _if_ rip trust gateway
+ipv6 _if_ rtadv send
+ipv6 _if_ secure filter
+ipv6 _if_ tcp mss limit
 ipv6 max auto address
 ipv6 nd ns-trigger-dad
 ipv6 pp address
@@ -420,9 +456,9 @@ pppoe invalid-session forced close
 pptp service
 pptp syslog
 provider auto connect forced disable
-provider interface bind
-provider interface dns server
-provider interface name
+provider _if_ bind
+provider _if_ dns server
+provider _if_ name
 provider isdn account nighttime
 provider isdn auto disconnect off
 provider isdn disconnect daytime
@@ -445,10 +481,10 @@ pstn ringing signal threshold
 pstn supplementary-service
 pstn use
 queue class filter
-queue interface class filter list
-queue interface default class
-queue interface length
-queue interface type
+queue _if_ class filter list
+queue _if_ default class
+queue _if_ length
+queue _if_ type
 queue pp class filter list
 queue pp default class
 queue pp length
@@ -499,10 +535,13 @@ show ipv6 address tunnel
 show ipv6 connection pp
 show ipv6 connection tunnel
 show ipv6 mroute fib
-show nat descriptor interface address pp
-show nat descriptor interface address tunnel
-show nat descriptor interface bind pp
-show nat descriptor interface bind tunnel
+show nat descriptor address
+show nat descriptor _if_ address
+show nat descriptor _if_ address pp
+show nat descriptor _if_ address tunnel
+show nat descriptor _if_ bind
+show nat descriptor _if_ bind pp
+show nat descriptor _if_ bind tunnel
 show nat descriptor masquerade port summary
 show sshd public key
 show ssl public key
@@ -756,7 +795,7 @@ tunnel ngn bandwidth
 tunnel ngn call permit
 tunnel ngn disconnect time
 tunnel ngn fallback
-tunnel ngn interface
+tunnel ngn _if_
 upnp port mapping timer
 upnp port mapping timer type
 upnp syslog
@@ -765,7 +804,7 @@ usbhost modem initialize
 usbhost overcurrent duration
 usbhost use
 user attribute
-vlan interface 802.1q
+vlan _if_ 802.1q
 wan access limit connection length
 wan access limit connection time
 wan access limit duration

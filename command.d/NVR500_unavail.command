@@ -1,3 +1,6 @@
+_if_ reset
+_if_ reset pp
+_if_ transmit timeout
 address
 administrator radius auth
 alarm http upload
@@ -59,6 +62,8 @@ clear ip traffic list tunnel
 clear ipv6 inbound filter
 clear ipv6 policy filter
 clear mail-check info
+clear nat descriptor dynamic
+clear nat descriptor interface dynamic
 clear pri status
 clear url filter
 clear url filter pp
@@ -66,11 +71,11 @@ clear url filter tunnel
 dashboard accumulate
 delete exec
 delete pki file
-dhcp client client-identifier lan_if primary
-dhcp client client-identifier lan_if secondary
+dhcp client client-identifier _if_ primary
+dhcp client client-identifier _if_ secondary
 dhcp client client-identifier type
-dhcp client hostname lan_if primary
-dhcp client hostname lan_if secondary
+dhcp client hostname _if_ primary
+dhcp client hostname _if_ secondary
 dhcp delete scope
 dhcp scope unbind
 dhcp server duplicate check
@@ -81,6 +86,7 @@ diagnosis config port history-num
 diagnosis config port max-detect
 dns server select delete
 dns static delete
+ethernet filter
 execute at-cmdmand
 external-memory statistics filename prefix
 fr backup
@@ -113,63 +119,72 @@ http upload retry interval
 http upload timeout
 http upload url
 httpd frame use
-iii
+interface reset
+interface reset pp
+ip _if_ arp mtu discovery
+ip _if_ broadcast
+ip _if_ forward filter
+ip _if_ igmp
+ip _if_ igmp static
+ip _if_ inbound filter list
+ip _if_ netmask
+ip _if_ ospf area
+ip _if_ ospf neighbor
+ip _if_ pim sparse
+ip _if_ proxyarp vrrp
+ip _if_ rip listen
+ip _if_ routing protocol
+ip _if_ traffic list
+ip _if_ traffic list threshold
+ip _if_ vrrp
+ip _if_ vrrp shutdown trigger
+ip arp timer
+ip filter
 ip filter comment
 ip filter comment delete
 ip filter delete
+ip filter directed-broadcast
+ip filter dynamic
 ip filter dynamic comment
 ip filter dynamic comment delete
 ip filter dynamic delete
+ip filter dynamic timer
+ip filter set
+ip filter source-route
 ip flow limit
+ip flow timer
 ip forward filter
+ip fragment remove df-bit
 ip fragment remove df-bit filter
+ip host
 ip host delete
+ip icmp echo-reply send
+ip icmp echo-reply send-only-linkup
 ip icmp error-decrypted-ipsec send
+ip icmp log
+ip icmp mask-reply send
+ip icmp parameter-problem send
+ip icmp redirect receive
+ip icmp redirect send
+ip icmp time-exceeded send
+ip icmp timestamp-reply send
+ip icmp unreachable send
 ip icmp unreachable-for-truncated send
 ip implicit-route preference
 ip inbound filter
-ip interface arp mtu discovery
-ip interface forward filter
-ip interface igmp
-ip interface igmp static
-ip interface inbound filter list
-ip interface ospf area
-ip interface ospf neighbor
-ip interface pim sparse
-ip interface proxyarp vrrp
-ip interface traffic list
-ip interface traffic list threshold
-ip interface vrrp
-ip interface vrrp shutdown trigger
-ip lan_if address
-ip lan_if broadcast
-ip lan_if dhcp lease time
-ip lan_if dhcp retry
-ip lan_if intrusion detection
-ip lan_if mtu
-ip lan_if nat descriptor
-ip lan_if netmask
-ip lan_if proxyarp
-ip lan_if rip auth key
-ip lan_if rip auth type
-ip lan_if rip filter
-ip lan_if rip listen
-ip lan_if routing protocol
-ip lan_if secondary address
-ip lan_if secure filter
 ip local forward filter
 ip pim sparse join-prune send
 ip pim sparse log
 ip pim sparse periodic-prune send
 ip pim sparse register-checksum
 ip pim sparse rendezvous-point static
+ip policy _if_ group
 ip policy address group
 ip policy filter
 ip policy filter set
 ip policy filter set enable
 ip policy filter set switch
 ip policy filter timer
-ip policy interface group
 ip policy service
 ip policy service group
 ip pp forward filter
@@ -253,19 +268,39 @@ ipsec tunnel
 ipsec tunnel fastpath-fragment-function follow df-bit
 ipsec tunnel outer df-bit
 ipsec use
+ipv6 _if_ inbound filter list
+ipv6 _if_ mld static group
+ipv6 _if_ mld type
+ipv6 _if_ ospf area
+ipv6 _if_ vrrp
+ipv6 _if_ vrrp shutdown trigger
+ipv6 filter
 ipv6 filter delete
+ipv6 filter dynamic
 ipv6 filter dynamic delete
+ipv6 icmp echo-reply send
+ipv6 icmp echo-reply send-only-linkup
 ipv6 icmp error-decrypted-ipsec send
+ipv6 icmp log
+ipv6 icmp packet-too-big send
 ipv6 icmp packet-too-big-for-truncated send
+ipv6 icmp parameter-problem send
+ipv6 icmp redirect receive
+ipv6 icmp redirect send
+ipv6 icmp time-exceeded send
+ipv6 icmp unreachable send
 ipv6 inbound filter
+ipv6 interface address
 ipv6 interface addrress delete
-ipv6 interface inbound filter list
-ipv6 interface mld static group
-ipv6 interface mld type
-ipv6 interface ospf area
+ipv6 interface mtu
+ipv6 interface prefix
 ipv6 interface prefix delete
-ipv6 interface vrrp
-ipv6 interface vrrp shutdown trigger
+ipv6 interface rip filter
+ipv6 interface rip receive
+ipv6 interface rip send
+ipv6 interface rip trust gateway
+ipv6 interface rtadv send
+ipv6 interface secure filter
 ipv6 multicast routing process
 ipv6 multicast routing process mode
 ipv6 ospf area
@@ -280,12 +315,12 @@ ipv6 ospf preference
 ipv6 ospf router id
 ipv6 ospf use
 ipv6 ospf virtual-link
+ipv6 policy _if_ group
 ipv6 policy address group
 ipv6 policy filter
 ipv6 policy filter set
 ipv6 policy filter set enable
 ipv6 policy filter set switch
-ipv6 policy interface group
 ipv6 policy service
 ipv6 policy service group
 ipv6 pp inbound filter list
@@ -332,7 +367,6 @@ lan-map snapshot use
 lan-map terminal watch interval
 lan1 type auto-crossover
 lan2 type
-lan_if transmit timeout
 leased backup
 line masterclock
 login radius use
@@ -392,7 +426,7 @@ ospf preference
 ospf router id
 ospf use
 ospf virtual-link
-packetdump lan_if
+packetdump _if_
 pki certificate file
 pki crl file
 port
@@ -419,8 +453,9 @@ pptp clear hostname
 pri leased channel
 pri loopback active
 pri loopback passive
-provider lan_if dns server
-provider lan_if name
+provider _if_ bind
+provider _if_ dns server
+provider _if_ name
 provider set off
 provider set on
 provider sip 050-number
@@ -438,10 +473,11 @@ qac-tm unqualified client access control
 qac-tm use
 qac-tm version margin
 qac-tm warning url
-queue interface class control
-queue interface class property
-queue interface default class secondary
-queue interface length secondary
+queue _if_ class control
+queue _if_ class property
+queue _if_ default class secondary
+queue _if_ length secondary
+queue class filter
 queue pp class property
 queue tunnel class filter list
 radius account
@@ -476,11 +512,11 @@ show diagnosis config port map
 show dlci
 show dns
 show dns static
+show ip _if_
 show ip filter
 show ip filter list
 show ip host
 show ip icmp
-show ip lan_if
 show ip mroute
 show ip pp
 show ip traffic list
@@ -492,7 +528,10 @@ show ipv6 ospf
 show lan-map
 show line masterclock
 show mail-check status
+show nat descriptor address
 show nat descriptor config
+show nat descriptor interface address
+show nat descriptor interface bind
 show nat descriptor masquerade session summary
 show pki certificate summary
 show pki crl
@@ -505,6 +544,7 @@ show ppp lcp
 show ppp mscbcp
 show ppp pap
 show schedule
+show status _if_
 show status backup
 show status bgp neighbor
 show status dtcp
@@ -522,7 +562,6 @@ show status ipv6 inbound filter
 show status ipv6 policy filter
 show status ipv6 policy service
 show status l2tp
-show status lan_if
 show status mail-check
 show status ospf
 show status packet-scheduling
@@ -568,14 +607,16 @@ tunnel dtcp
 tunnel dtcp connect
 tunnel dtcp disconnect
 tunnel endpoint clear name
+tunnel ngn _if_
+tunnel ngn interface
 tunnel ngn radius auth
 tunnel template
+url _if_ filter
 url filter
 url filter log
 url filter port
 url filter reject
 url filter use
-url interface filter
 url pp filter
 url tunnel filter
 usbhost config filename

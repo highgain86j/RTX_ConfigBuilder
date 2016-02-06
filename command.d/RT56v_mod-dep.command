@@ -41,11 +41,13 @@ analog sip use call
 analog use
 analog wait dial timer
 clear analog account
-dhcp client client-identifier lan_if primary
-dhcp client client-identifier lan_if secondary
+clear nat descriptor dynamic
+clear nat descriptor interface dynamic
+dhcp client client-identifier _if_ primary
+dhcp client client-identifier _if_ secondary
 dhcp client client-identifier type
-dhcp client hostname lan_if primary
-dhcp client hostname lan_if secondary
+dhcp client hostname _if_ primary
+dhcp client hostname _if_ secondary
 dhcp client hostname pool
 dhcp client hostname pp
 dhcp delete scope
@@ -56,30 +58,44 @@ dns private name
 dns server select delete
 dns static delete
 httpd frame use
-iii
+ip filter
 ip filter comment
 ip filter comment delete
 ip filter delete
+ip filter directed-broadcast
+ip filter dynamic
 ip filter dynamic comment
 ip filter dynamic comment delete
 ip filter dynamic delete
+ip filter dynamic timer
+ip filter source-route
+ip host
 ip host delete
-ip lan_if address
-ip lan_if broadcast
-ip lan_if dhcp lease time
-ip lan_if dhcp retry
-ip lan_if intrusion detection
-ip lan_if mtu
-ip lan_if nat descriptor
-ip lan_if netmask
-ip lan_if proxyarp
-ip lan_if rip auth key
-ip lan_if rip auth type
-ip lan_if rip filter
-ip lan_if rip listen
-ip lan_if routing protocol
-ip lan_if secondary address
-ip lan_if secure filter
+ip icmp echo-reply send
+ip icmp log
+ip icmp mask-reply send
+ip icmp parameter-problem send
+ip icmp redirect receive
+ip icmp redirect send
+ip icmp time-exceeded send
+ip icmp timestamp-reply send
+ip icmp unreachable send
+ip _if_ address
+ip _if_ broadcast
+ip _if_ dhcp lease time
+ip _if_ dhcp retry
+ip _if_ intrusion detection
+ip _if_ mtu
+ip _if_ nat descriptor
+ip _if_ netmask
+ip _if_ proxyarp
+ip _if_ rip auth key
+ip _if_ rip auth type
+ip _if_ rip filter
+ip _if_ rip listen
+ip _if_ routing protocol
+ip _if_ secondary address
+ip _if_ secure filter
 ip pp hide static route
 ip pp hold routing
 ip pp local address
@@ -88,12 +104,31 @@ ip pp rip listen
 ip pp routing protocol
 ip route delete
 ip routing cache
+ipv6 filter
 ipv6 filter delete
+ipv6 filter dynamic
 ipv6 filter dynamic delete
+ipv6 icmp echo-reply send
+ipv6 icmp log
+ipv6 icmp packet-too-big send
+ipv6 icmp parameter-problem send
+ipv6 icmp redirect receive
+ipv6 icmp redirect send
+ipv6 icmp time-exceeded send
+ipv6 icmp unreachable send
+ipv6 interface address
 ipv6 interface addrress delete
+ipv6 interface mtu
+ipv6 interface prefix
 ipv6 interface prefix delete
+ipv6 interface rip filter
+ipv6 interface rip receive
+ipv6 interface rip send
+ipv6 interface rip trust gateway
+ipv6 interface rtadv send
+ipv6 interface secure filter
 ipv6 route delete
-lan_if transmit timeout
+_if_ transmit timeout
 lan1 type auto-crossover
 lan2 type
 mail-check go
@@ -123,7 +158,7 @@ nat descriptor masquerade unconvertible port
 nat descriptor static delete
 netvolante-dns sip use
 netvolante-dns sip use pp
-packetdump lan_if
+packetdump _if_
 packetdump pp
 password reenter
 pp auth accept
@@ -135,8 +170,8 @@ pp default
 pppoe
 pptp call-id mode
 pptp clear hostname
-provider lan_if dns server
-provider lan_if name
+provider _if_ dns server
+provider _if_ name
 provider netvolante-dns hostname sip
 provider set off
 provider set on
@@ -165,10 +200,13 @@ show ip filter
 show ip filter list
 show ip host
 show ip icmp
-show ip lan_if
+show ip _if_
 show ip pp
 show mail-check status
+show nat descriptor address
 show nat descriptor config
+show nat descriptor interface address
+show nat descriptor interface bind
 show pp config
 show pp queue
 show ppp ccp
@@ -179,7 +217,7 @@ show ppp mscbcp
 show ppp pap
 show schedule
 show status analog
-show status lan_if
+show status _if_
 show status rtp
 show status sip presence
 show syslog

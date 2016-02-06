@@ -1,3 +1,6 @@
+_if_ reset
+_if_ reset pp
+_if_ transmit timeout
 administrator password encrypted
 administrator radius auth
 alarm batch
@@ -94,7 +97,9 @@ clear ipv6 inbound filter
 clear ipv6 policy filter
 clear mobile access limitation
 clear mobile access limitation pp
-clear nat descriptor interface dynamic tunnel
+clear nat descriptor _if_ dynamic tunnel
+clear nat descriptor dynamic
+clear nat descriptor interface dynamic
 clear pri status
 clear status
 clear switching-hub macaddress
@@ -117,11 +122,11 @@ dashboard accumulate
 delete
 delete exec
 delete pki file
-dhcp client client-identifier lan_if primary
-dhcp client client-identifier lan_if secondary
+dhcp client client-identifier _if_ primary
+dhcp client client-identifier _if_ secondary
 dhcp client client-identifier type
-dhcp client hostname lan_if primary
-dhcp client hostname lan_if secondary
+dhcp client hostname _if_ primary
+dhcp client hostname _if_ secondary
 dhcp client hostname pool
 dhcp client hostname pp
 dhcp client option pool
@@ -148,8 +153,8 @@ dns host
 dns server select delete
 dns service fallback
 dns static delete
+ethernet _if_ filter
 ethernet filter
-ethernet interface filter
 execute at-cmdmand
 execute at-command
 execute batch
@@ -201,77 +206,84 @@ httpd custom-gui api use
 httpd custom-gui use
 httpd custom-gui user
 httpd frame use
-iii
+interface reset
+interface reset pp
+ip _if_ arp log
+ip _if_ arp mtu discovery
+ip _if_ arp static
+ip _if_ broadcast
+ip _if_ dhcp service
+ip _if_ forward filter
+ip _if_ igmp
+ip _if_ igmp static
+ip _if_ inbound filter list
+ip _if_ intrusion detection notice-interval
+ip _if_ intrusion detection repeat-control
+ip _if_ intrusion detection report
+ip _if_ intrusion detection threshold
+ip _if_ netmask
+ip _if_ ospf area
+ip _if_ ospf neighbor
+ip _if_ pim sparse
+ip _if_ proxyarp vrrp
+ip _if_ rebound
+ip _if_ rip auth key text
+ip _if_ rip force-to-advertise
+ip _if_ rip listen
+ip _if_ routing protocol
+ip _if_ secure filter name
+ip _if_ traffic list
+ip _if_ traffic list threshold
+ip _if_ vrrp
+ip _if_ vrrp shutdown trigger
 ip arp timer
+ip filter
 ip filter comment
 ip filter comment delete
 ip filter delete
+ip filter directed-broadcast
+ip filter dynamic
 ip filter dynamic comment
 ip filter dynamic comment delete
 ip filter dynamic delete
+ip filter dynamic timer
+ip filter set
+ip filter source-route
 ip flow limit
 ip flow timer
 ip forward filter
 ip fragment remove df-bit
+ip fragment remove df-bit filter
+ip host
 ip host delete
+ip icmp echo-reply send
 ip icmp echo-reply send-only-linkup
+ip icmp error-decrypted-ipsec send
+ip icmp log
+ip icmp mask-reply send
+ip icmp parameter-problem send
+ip icmp redirect receive
+ip icmp redirect send
+ip icmp time-exceeded send
+ip icmp timestamp-reply send
+ip icmp unreachable send
 ip icmp unreachable-for-truncated send
 ip implicit-route preference
 ip inbound filter
-ip interface arp log
-ip interface arp mtu discovery
-ip interface arp static
-ip interface dhcp service
-ip interface forward filter
-ip interface igmp
-ip interface igmp static
-ip interface inbound filter list
-ip interface intrusion detection notice-interval
-ip interface intrusion detection repeat-control
-ip interface intrusion detection report
-ip interface intrusion detection threshold
-ip interface ospf area
-ip interface ospf neighbor
-ip interface pim sparse
-ip interface proxyarp vrrp
-ip interface rebound
-ip interface rip auth key text
-ip interface rip force-to-advertise
-ip interface secure filter name
-ip interface traffic list
-ip interface traffic list threshold
-ip interface vrrp
-ip interface vrrp shutdown trigger
 ip keepalive
-ip lan_if address
-ip lan_if broadcast
-ip lan_if dhcp lease time
-ip lan_if dhcp retry
-ip lan_if intrusion detection
-ip lan_if mtu
-ip lan_if nat descriptor
-ip lan_if netmask
-ip lan_if proxyarp
-ip lan_if rip auth key
-ip lan_if rip auth type
-ip lan_if rip filter
-ip lan_if rip listen
-ip lan_if routing protocol
-ip lan_if secondary address
-ip lan_if secure filter
 ip local forward filter
 ip pim sparse join-prune send
 ip pim sparse log
 ip pim sparse periodic-prune send
 ip pim sparse register-checksum
 ip pim sparse rendezvous-point static
+ip policy _if_ group
 ip policy address group
 ip policy filter
 ip policy filter set
 ip policy filter set enable
 ip policy filter set switch
 ip policy filter timer
-ip policy interface group
 ip policy service
 ip policy service group
 ip pp forward filter
@@ -338,20 +350,40 @@ ipsec ipcmdp type
 ipsec log illegal-spi
 ipsec transport template
 ipsec tunnel fastpath-fragment-function follow df-bit
+ipv6 _if_ inbound filter list
+ipv6 _if_ mld
+ipv6 _if_ mld static
+ipv6 _if_ ospf area
+ipv6 _if_ prefix change log
+ipv6 _if_ vrrp
+ipv6 _if_ vrrp shutdown trigger
+ipv6 filter
 ipv6 filter delete
+ipv6 filter dynamic
 ipv6 filter dynamic delete
+ipv6 icmp echo-reply send
 ipv6 icmp echo-reply send-only-linkup
+ipv6 icmp error-decrypted-ipsec send
+ipv6 icmp log
+ipv6 icmp packet-too-big send
 ipv6 icmp packet-too-big-for-truncated send
+ipv6 icmp parameter-problem send
+ipv6 icmp redirect receive
+ipv6 icmp redirect send
+ipv6 icmp time-exceeded send
+ipv6 icmp unreachable send
 ipv6 inbound filter
+ipv6 interface address
 ipv6 interface addrress delete
-ipv6 interface inbound filter list
-ipv6 interface mld
-ipv6 interface mld static
-ipv6 interface ospf area
-ipv6 interface prefix change log
+ipv6 interface mtu
+ipv6 interface prefix
 ipv6 interface prefix delete
-ipv6 interface vrrp
-ipv6 interface vrrp shutdown trigger
+ipv6 interface rip filter
+ipv6 interface rip receive
+ipv6 interface rip send
+ipv6 interface rip trust gateway
+ipv6 interface rtadv send
+ipv6 interface secure filter
 ipv6 max auto address
 ipv6 multicast routing process
 ipv6 nd ns-trigger-dad
@@ -367,12 +399,12 @@ ipv6 ospf preference
 ipv6 ospf router id
 ipv6 ospf use
 ipv6 ospf virtual-link
+ipv6 policy _if_ group
 ipv6 policy address group
 ipv6 policy filter
 ipv6 policy filter set
 ipv6 policy filter set enable
 ipv6 policy filter set switch
-ipv6 policy interface group
 ipv6 policy service
 ipv6 policy service group
 ipv6 pp dad retry count
@@ -419,7 +451,6 @@ lan-map snapshot use
 lan-map terminal watch interval
 lan1 type auto-crossover
 lan2 type
-lan_if transmit timeout
 leased backup
 less
 less config ap
@@ -521,7 +552,7 @@ ospf router id
 ospf use
 ospf virtual-link
 packetdump
-packetdump lan_if
+packetdump _if_
 packetdump pp
 pki certificate file
 pki crl file
@@ -549,9 +580,9 @@ pptp clear hostname
 pri leased channel
 pri loopback active
 pri loopback passive
-provider interface bind
-provider lan_if dns server
-provider lan_if name
+provider _if_ bind
+provider _if_ dns server
+provider _if_ name
 provider pp bind
 provider set off
 provider set on
@@ -580,10 +611,11 @@ qac-tm unqualified client access control
 qac-tm use
 qac-tm version margin
 qac-tm warning url
-queue interface class control
-queue interface class property
-queue interface default class secondary
-queue interface length secondary
+queue _if_ class control
+queue _if_ class property
+queue _if_ default class secondary
+queue _if_ length secondary
+queue class filter
 queue pp class property
 queue tunnel class filter list
 radius account
@@ -639,11 +671,11 @@ show dns
 show dns cache
 show dns static
 show exec list
+show ip _if_
 show ip filter
 show ip filter list
 show ip host
 show ip icmp
-show ip lan_if
 show ip mroute
 show ip pp
 show ip secure filter
@@ -659,10 +691,13 @@ show ipv6 ospf
 show lan-map
 show line masterclock
 show mail-check status
+show nat descriptor _if_ address tunnel
+show nat descriptor _if_ bind pp
+show nat descriptor _if_ bind tunnel
+show nat descriptor address
 show nat descriptor config
-show nat descriptor interface address tunnel
-show nat descriptor interface bind pp
-show nat descriptor interface bind tunnel
+show nat descriptor interface address
+show nat descriptor interface bind
 show nat descriptor masquerade port summary
 show nat descriptor masquerade session summary
 show pki certificate summary
@@ -678,6 +713,7 @@ show ppp pap
 show schedule
 show sshd public key
 show ssl public key
+show status _if_
 show status analog extension
 show status backup
 show status bgp neighbor
@@ -701,7 +737,6 @@ show status ipv6 policy filter
 show status ipv6 policy service
 show status isdn switch
 show status l2tp
-show status lan_if
 show status lua
 show status mail service
 show status mobile signal-strength
@@ -921,6 +956,7 @@ tunnel backup pp
 tunnel backup tunnel
 tunnel default
 tunnel endpoint clear name
+tunnel ngn _if_
 tunnel ngn arrive permit
 tunnel ngn bandwidth
 tunnel ngn call permit
@@ -929,12 +965,12 @@ tunnel ngn fallback
 tunnel ngn interface
 tunnel ngn radius auth
 tunnel template
+url _if_ filter
 url filter
 url filter log
 url filter port
 url filter reject
 url filter use
-url interface filter
 url pp filter
 url tunnel filter
 usbhost config filename
@@ -946,7 +982,7 @@ usbhost statistics filename prefix
 usbhost syslog filename
 usbhost use
 user attribute
-vlan interface 802.1q
+vlan _if_ 802.1q
 wan access limit connection length
 wan access limit connection time
 wan access limit duration

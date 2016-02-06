@@ -74,8 +74,10 @@ clear account pp
 clear account pstn
 clear account sip
 clear mail-check info
-clear nat descriptor interface dynamic pp
-clear nat descriptor interface dynamic tunnel
+clear nat descriptor dynamic
+clear nat descriptor _if_ dynamic
+clear nat descriptor _if_ dynamic pp
+clear nat descriptor _if_ dynamic tunnel
 cooperation
 cooperation bandwidth-measuring remote
 cooperation load-watch control
@@ -101,7 +103,7 @@ dns host
 dns private name
 dns srcport
 ethernet filter
-ethernet interface filter
+ethernet _if_ filter
 http revision-down permit
 http revision-up go
 http revision-up permit
@@ -109,36 +111,51 @@ http revision-up proxy
 http revision-up timeout
 http revision-up url
 httpd timeout
-interface reset
-interface reset pp
+_if_ reset
+_if_ reset pp
 ip arp timer
+ip filter
+ip filter directed-broadcast
+ip filter dynamic
+ip filter dynamic timer
 ip filter set
+ip filter source-route
 ip fragment remove df-bit filter
+ip host
+ip icmp echo-reply send
 ip icmp echo-reply send-only-linkup
-ip interface address
-ip interface arp queue length
-ip interface arp static
-ip interface dhcp lease time
-ip interface dhcp retry
-ip interface intrusion detection
-ip interface intrusion detection notice-interval
-ip interface intrusion detection repeat-control
-ip interface intrusion detection report
-ip interface intrusion detection threshold
-ip interface mtu
-ip interface nat descriptor
-ip interface proxyarp
-ip interface rip auth key
-ip interface rip auth type
-ip interface rip filter
-ip interface rip hop
-ip interface rip receive
-ip interface rip send
-ip interface rip trust gateway
-ip interface secondary address
-ip interface secure filter
-ip interface tcp mss limit
-ip interface wol relay
+ip icmp log
+ip icmp mask-reply send
+ip icmp parameter-problem send
+ip icmp redirect receive
+ip icmp redirect send
+ip icmp time-exceeded send
+ip icmp timestamp-reply send
+ip icmp unreachable send
+ip _if_ address
+ip _if_ arp queue length
+ip _if_ arp static
+ip _if_ dhcp lease time
+ip _if_ dhcp retry
+ip _if_ intrusion detection
+ip _if_ intrusion detection notice-interval
+ip _if_ intrusion detection repeat-control
+ip _if_ intrusion detection report
+ip _if_ intrusion detection threshold
+ip _if_ mtu
+ip _if_ nat descriptor
+ip _if_ proxyarp
+ip _if_ rip auth key
+ip _if_ rip auth type
+ip _if_ rip filter
+ip _if_ rip hop
+ip _if_ rip receive
+ip _if_ rip send
+ip _if_ rip trust gateway
+ip _if_ secondary address
+ip _if_ secure filter
+ip _if_ tcp mss limit
+ip _if_ wol relay
 ip keepalive
 ip pp address
 ip pp intrusion detection notice-interval
@@ -168,13 +185,32 @@ ip tunnel rip receive
 ip tunnel rip send
 ip tunnel rip trust gateway
 ip tunnel tcp mss limit
+ipv6 filter
+ipv6 filter dynamic
+ipv6 icmp echo-reply send
 ipv6 icmp echo-reply send-only-linkup
-ipv6 interface dad retry count
-ipv6 interface dhcp service
-ipv6 interface mld
-ipv6 interface mld static
-ipv6 interface rip hop
-ipv6 interface tcp mss limit
+ipv6 icmp log
+ipv6 icmp packet-too-big send
+ipv6 icmp parameter-problem send
+ipv6 icmp redirect receive
+ipv6 icmp redirect send
+ipv6 icmp time-exceeded send
+ipv6 icmp unreachable send
+ipv6 _if_ address
+ipv6 _if_ dad retry count
+ipv6 _if_ dhcp service
+ipv6 _if_ mld
+ipv6 _if_ mld static
+ipv6 _if_ mtu
+ipv6 _if_ prefix
+ipv6 _if_ rip filter
+ipv6 _if_ rip hop
+ipv6 _if_ rip receive
+ipv6 _if_ rip send
+ipv6 _if_ rip trust gateway
+ipv6 _if_ rtadv send
+ipv6 _if_ secure filter
+ipv6 _if_ tcp mss limit
 ipv6 multicast routing process mode
 ipv6 pp address
 ipv6 pp dad retry count
@@ -294,8 +330,8 @@ pptp call-id mode
 pptp service
 pptp syslog
 provider auto connect forced disable
-provider interface dns server
-provider interface name
+provider _if_ dns server
+provider _if_ name
 provider isdn account nighttime
 provider isdn auto disconnect off
 provider isdn disconnect daytime
@@ -316,10 +352,10 @@ pstn pause timer
 pstn supplementary-service
 pstn use
 queue class filter
-queue interface class filter list
-queue interface default class
-queue interface length
-queue interface type
+queue _if_ class filter list
+queue _if_ default class
+queue _if_ length
+queue _if_ type
 queue pp class filter list
 queue pp default class
 queue pp length
@@ -347,7 +383,10 @@ show ip intrusion detection tunnel
 show ip rip table
 show ipv6 connection pp
 show ipv6 connection tunnel
-show nat descriptor interface address pp
+show nat descriptor address
+show nat descriptor _if_ address
+show nat descriptor _if_ address pp
+show nat descriptor _if_ bind
 show sshd public key
 show status
 show status analog
