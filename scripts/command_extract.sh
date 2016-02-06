@@ -23,7 +23,7 @@ for file in `ls */*.html`
 	| sed -e 's|</span>||g' \
 	| sed -e 's|<li>||g' \
 	| sed -e 's|</li>||g' \
-	| sed -e 's|[\.]{2,5}| \$\{opt\}|g' \
+	| sed -e 's|\.\{2,5\}| \$\{opt\}|g' \
 	| sed -e 's|  *| |g' >> ${tmpfile}
 	#echo $1
 done
