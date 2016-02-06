@@ -1,5 +1,5 @@
 bgp aggregate ${ip_address}/${mask} filter ${filter_num} ${opt}
-no bgp aggregate ${ip_address}/${mask} filter ${filter_num}${opt} 
+no bgp aggregate ${ip_address}/${mask} filter ${filter_num} ${opt} 
 bgp aggregate filter ${filter_num} ${protocol} reject ${kind} ${ip_address}/${mask} ${opt}
 no bgp aggregate filter ${filter_num} ${protocol} reject ${kind} ${ip_address}/${mask} ${opt} 
 bgp autonomous-system ${as}
@@ -18,8 +18,8 @@ bgp import filter ${filter_num} reject ${kind} ${ip_address}/${mask} ${opt} ${pa
 no bgp import filter ${filter_num} reject ${kind} ${ip_address}/${mask} ${opt} ${parameter} ${opt} 
 bgp log ${log} ${log} 
 no bgp log ${log} ${opt} 
-bgp neighbor ${neighbor_id} ${remote_as} ${remote_address} ${parameter}${opt} 
-no bgp neighbor ${neighbor_id} ${remote_as} ${remote_address} ${parameter}${opt} 
+bgp neighbor ${neighbor_id} ${remote_as} ${remote_address} ${parameter} ${opt} 
+no bgp neighbor ${neighbor_id} ${remote_as} ${remote_address} ${parameter} ${opt} 
 bgp preference ${preference}
 no bgp preference ${preference} 
 bgp router id ${ip_address}
@@ -49,7 +49,7 @@ no httpd custom-gui api use ${use}
 httpd custom-gui use ${use}
 no httpd custom-gui use ${use} 
 httpd custom-gui user ${user} directory=${path} index=${name} 
-no httpd custom-gui user ${user}${opt} 
+no httpd custom-gui user ${user} ${opt} 
 dashboard accumulate ${type} ${sw}
 no dashboard accumulate ${type} ${sw} 
 dhcp client client-identifier pp ${peer_num} type ${type} ${id}
@@ -71,7 +71,7 @@ no dhcp client release linkdown ${switch} ${time}
 dhcp manual lease ${ip_address} ${type} ${id}
 no dhcp relay select ${type} 
 no dhcp relay threshold ${time} 
-no dhcp scope ${scope_num} ${ip_address-ip_address}/${netmask} except ${ex_ip}${opt} gateway ${gw_ip} expire ${time} maxexpire ${time} 
+no dhcp scope ${scope_num} ${ip_address-ip_address}/${netmask} except ${ex_ip} ${opt} gateway ${gw_ip} expire ${time} maxexpire ${time} 
 dhcp scope bind ${scope_num} ${ip_address} ${type} ${id}
 no dhcp scope bind ${scope_num} ${ip_address}
 dhcp scope lease type ${scope_num} ${type} qac-tm=${switch} fallback=${fallback_scope_num} 
@@ -93,7 +93,7 @@ no dns cache use ${switch}
 no dns domain ${domain_name} 
 no dns notice order ${protocol} ${server} ${server} 
 no dns private address spoof ${spoof} 
-no dns server ${ip_address}${opt} 
+no dns server ${ip_address} ${opt} 
 dns server dhcp ${interface}
 no dns server pp ${peer_num} 
 dns server select ${id} pp ${peer_num} ${default-server} ${type} ${query} ${original-sender} restrict pp ${connection-pp} 
@@ -182,7 +182,7 @@ show status heartbeat2 name ${string}
 show ${opt} | grep -i -v -w ${pattern}
 show ${opt} &gt; ${name}
 show ${opt} &gt;&gt; ${name}
-httpd host ${ip_range} ${ip_range}${opt} 
+httpd host ${ip_range} ${ip_range} ${opt} 
 httpd host ${any}
 httpd host ${none}
 httpd host ${lan}
@@ -194,15 +194,15 @@ pp name ${name}
 tunnel name ${name}
 provider auto connect forced disable ${switch}
 no provider auto connect forced disable ${switch} 
-provider dns server ${peer_num} ${ip_address} ${ip_address}${opt} 
-no provider dns server ${peer_num} ${ip_address}${opt} 
+provider dns server ${peer_num} ${ip_address} ${ip_address} ${opt} 
+no provider dns server ${peer_num} ${ip_address} ${opt} 
 provider dns server pp ${peer_num} ${dns_peer_num}
 no provider dns server pp ${peer_num} ${dns_peer_num} 
 provider filter routing ${type}
 no provider filter routing ${type} 
-provider ${interface} bind ${tunnel_num}${opt}
-no provider ${interface} bind ${tunnel_num}${opt} 
-provider ${interface} dns server ${ip_address} ${ip_address}${opt} 
+provider ${interface} bind ${tunnel_num} ${opt}
+no provider ${interface} bind ${tunnel_num} ${opt} 
+provider ${interface} dns server ${ip_address} ${ip_address} ${opt} 
 no provider ${interface} dns server ${ip_address} ${ip_address} 
 provider ${interface} name ${type}:${name}
 no provider ${interface} name ${type}:${name} 
@@ -255,7 +255,7 @@ ip icmp unreachable send ${send} rebound=${sw}
 no ip icmp unreachable send ${send} rebound=${sw} 
 ip ${interface} arp mtu discovery ${sw} minimum=${min_mtu} 
 no ip ${interface} arp mtu discovery ${sw} minimum=${min_mtu} 
-ip stealth ${interface} ${interface}${opt} 
+ip stealth ${interface} ${interface} ${opt} 
 ipv6 icmp echo-reply send-only-linkup ${send}
 no ipv6 icmp echo-reply send-only-linkup ${send} 
 ipv6 icmp echo-reply send ${send}
@@ -278,13 +278,13 @@ ipv6 icmp time-exceeded send ${send} rebound=${sw}
 no ipv6 icmp time-exceeded send ${send} rebound=${sw} 
 ipv6 icmp unreachable send ${send} rebound=${sw} 
 no ipv6 icmp unreachable send ${send} rebound=${sw} 
-ipv6 stealth ${interface} ${interface}${opt} 
+ipv6 stealth ${interface} ${interface} ${opt} 
 ip inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol} ${src_port} ${dst_port} 
 ipv6 inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol} ${src_port} ${dst_port} 
 no ip inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol} ${src_port} ${dst_port} 
 no ipv6 inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol} ${src_port} ${dst_port} 
-ip ${interface} inbound filter list ${id}${opt}
-ipv6 ${interface} inbound filter list ${id}${opt}
+ip ${interface} inbound filter list ${id} ${opt}
+ipv6 ${interface} inbound filter list ${id} ${opt}
 ip pp inbound filter list ${id} ${opt}
 ipv6 pp inbound filter list ${id} ${opt}
 ip tunnel inbound filter list ${id} ${opt}
@@ -305,9 +305,9 @@ no ip filter ${filter_num} ${pass_reject}
 ip filter directed-broadcast ${filter_out}
 ip filter directed-broadcast filter ${filter_num} ${filter_num} ${opt} 
 ip filter dynamic ${dyn_filter_num} ${srcaddr} /${mask} ${dstaddr} /${mask} ${protocol} ${option} ${opt} 
-ip filter dynamic ${dyn_filter_num} ${srcaddr} /${mask} ${dstaddr} /${mask} filter ${filter_list} in ${filter_list} out ${filter_list} ${option}${opt} 
+ip filter dynamic ${dyn_filter_num} ${srcaddr} /${mask} ${dstaddr} /${mask} filter ${filter_list} in ${filter_list} out ${filter_list} ${option} ${opt} 
 no ip filter dynamic ${dyn_filter_num}
-ip filter dynamic timer ${option}=${timeout} ${option}=${timeout}${opt} 
+ip filter dynamic timer ${option}=${timeout} ${option}=${timeout} ${opt} 
 ip filter set ${name} ${direction} ${filter_list} ${filter_list} ${opt} 
 no ip filter set ${name} ${direction} ${opt} 
 ip filter source-route ${filter_out}
@@ -347,17 +347,17 @@ no ip pp forward filter ${id}
 no ip tunnel forward filter ${id} 
 no ip local forward filter ${id} 
 ip ${interface} igmp ${type} ${option} ${opt} 
-ip pp igmp ${type} ${option}${opt} 
-ip tunnel igmp ${type} ${option}${opt} 
-no ip ${interface} igmp ${type} ${option}${opt} 
-no ip pp igmp ${type} ${option}${opt} 
-no ip tunnel igmp ${type} ${option}${opt} 
+ip pp igmp ${type} ${option} ${opt} 
+ip tunnel igmp ${type} ${option} ${opt} 
+no ip ${interface} igmp ${type} ${option} ${opt} 
+no ip pp igmp ${type} ${option} ${opt} 
+no ip tunnel igmp ${type} ${option} ${opt} 
 ip ${interface} igmp static ${group} ${filter_mode} ${source} ${opt} 
-ip pp igmp static ${group} ${filter_mode} ${source}${opt} 
-ip tunnel igmp static ${group} ${filter_mode} ${source}${opt} 
-no ip ${interface} igmp static ${group} ${filter_mode} ${source}${opt} 
-no ip pp igmp static ${group} ${filter_mode} ${source}${opt} 
-no ip tunnel igmp static ${group} ${filter_mode} ${source}${opt} 
+ip pp igmp static ${group} ${filter_mode} ${source} ${opt} 
+ip tunnel igmp static ${group} ${filter_mode} ${source} ${opt} 
+no ip ${interface} igmp static ${group} ${filter_mode} ${source} ${opt} 
+no ip pp igmp static ${group} ${filter_mode} ${source} ${opt} 
+no ip tunnel igmp static ${group} ${filter_mode} ${source} ${opt} 
 ip pp intrusion detection ${direction} ${type} ${switch} ${option} 
 ip tunnel intrusion detection ${direction} ${type} ${switch} ${option} 
 no ip ${interface} intrusion detection ${direction} ${type} ${switch} ${option} 
@@ -383,11 +383,11 @@ no ip ${interface} mtu ${mtu0}
 no ip pp mtu ${mtu1} 
 no ip tunnel mtu ${mtu2} 
 ip ${interface} pim sparse ${switch} ${option} ${opt} 
-ip pp pim sparse ${switch} ${option}${opt} 
-ip tunnel pim sparse ${switch} ${option}${opt} 
-no ip ${interface} pim sparse ${switch} ${option}${opt} 
-no ip pp pim sparse ${switch} ${option}${opt} 
-no ip tunnel pim sparse ${switch} ${option}${opt} 
+ip pp pim sparse ${switch} ${option} ${opt} 
+ip tunnel pim sparse ${switch} ${option} ${opt} 
+no ip ${interface} pim sparse ${switch} ${option} ${opt} 
+no ip pp pim sparse ${switch} ${option} ${opt} 
+no ip tunnel pim sparse ${switch} ${option} ${opt} 
 ip ${interface} proxyarp vrrp ${vrid}
 no ip ${interface} proxyarp ${proxyarp} 
 ip pp rebound ${switch}
@@ -423,22 +423,22 @@ no ip pp rip hop ${direction} ${hop}
 no ip tunnel rip hop ${direction} ${hop}
 ip pp rip receive ${receive} version ${version} ${version} 
 ip tunnel rip receive ${receive} version ${version} ${version} 
-no ip ${interface} rip receive ${receive}${opt} 
-no ip pp rip receive ${receive}${opt} 
-no ip tunnel rip receive ${receive}${opt} 
+no ip ${interface} rip receive ${receive} ${opt} 
+no ip pp rip receive ${receive} ${opt} 
+no ip tunnel rip receive ${receive} ${opt} 
 ip pp rip send ${send} version ${version} ${broadcast} 
 ip tunnel rip send ${send} version ${version} ${broadcast} 
-no ip ${interface} rip send ${send}${opt} 
-no ip pp rip send ${send}${opt} 
-no ip tunnel rip send ${send}${opt} 
-ip pp rip trust gateway except ${gateway} ${gateway}${opt} 
-ip tunnel rip trust gateway except ${gateway} ${gateway}${opt} 
-no ip ${interface} rip trust gateway except ${gateway} ${gateway}${opt} 
-no ip pp rip trust gateway except ${gateway} ${gateway}${opt} 
-no ip tunnel rip trust gateway except ${gateway} ${gateway}${opt} 
+no ip ${interface} rip send ${send} ${opt} 
+no ip pp rip send ${send} ${opt} 
+no ip tunnel rip send ${send} ${opt} 
+ip pp rip trust gateway except ${gateway} ${gateway} ${opt} 
+ip tunnel rip trust gateway except ${gateway} ${gateway} ${opt} 
+no ip ${interface} rip trust gateway except ${gateway} ${gateway} ${opt} 
+no ip pp rip trust gateway except ${gateway} ${gateway} ${opt} 
+no ip tunnel rip trust gateway except ${gateway} ${gateway} ${opt} 
 no ip ${interface} secondary address ${ip_address}/${mask} 
-ip pp secure filter ${direction} ${filter_list}${opt} dynamic ${filter_list}${opt} 
-ip tunnel secure filter ${direction} ${filter_list}${opt} dynamic ${filter_list}${opt} 
+ip pp secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} ${opt} 
+ip tunnel secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} ${opt} 
 ip pp secure filter name ${set_name}
 ip tunnel secure filter name ${set_name}
 no ip ${interface} secure filter ${direction} ${filter_list} 
@@ -465,7 +465,7 @@ no ip ${interface} traffic list threshold ${value}
 no ip pp traffic list threshold ${value} 
 no ip tunnel traffic list threshold ${value} 
 ip ${interface} vrrp ${vrid} ${ip_address} priority=${priority} preempt=${preempt} auth=${auth} advertise-interval=${time1} down-interval=${time2} 
-no ip ${interface} vrrp ${vrid} ${vrid}${opt} 
+no ip ${interface} vrrp ${vrid} ${vrid} ${opt} 
 ip ${interface} vrrp shutdown trigger ${vrid} ${interface}
 ip ${interface} vrrp shutdown trigger ${vrid} pp ${peer_num} dlci=${dlci} 
 ip ${interface} vrrp shutdown trigger ${vrid} route ${network} ${nexthop} 
@@ -487,7 +487,7 @@ no ip pim sparse rendezvous-point static ${group} ${rendezvous_point}
 ip pp remote address ${ip_address}
 ip pp remote address dhcpc ${interface} 
 no ip pp remote address ${ip_address} 
-ip pp remote address pool ${ip_address} ${ip_address}${opt} 
+ip pp remote address pool ${ip_address} ${ip_address} ${opt} 
 ip pp remote address pool ${ip_address-ip_address}
 ip pp rip backup interface ${switch}
 no ip pp rip connect interval ${time} 
@@ -495,7 +495,7 @@ no ip pp rip connect send ${rip_action}
 no ip pp rip disconnect interval ${time} 
 no ip pp rip disconnect send ${rip_action} 
 no ip pp rip hold routing ${rip_hold} 
-no ip route ${network} gateway${opt} 
+no ip route ${network} gateway ${opt} 
 no ip route change log ${log} 
 no ip routing ${routing} 
 no ip simple-service ${service} 
@@ -512,9 +512,9 @@ lan keepalive interval ${interface} ${interval} ${count}
 no lan keepalive interval ${interface}
 lan keepalive log ${interface} ${log}
 no lan keepalive log ${interface}
-lan keepalive use ${interface} icmp-echo ${dest_ip} ${option}=${value}${opt} ${dest_ip} ${option}=${value}${opt} ${opt} 
-lan keepalive use ${interface} arp ${dest_ip} ${dest_ip}${opt} 
-lan keepalive use ${interface} icmp-echo ${dest_ip} ${option}=${value}${opt} ${dest_ip} ${option}=${value}${opt} ${opt} arp ${dest_ip} ${dest_ip}${opt} 
+lan keepalive use ${interface} icmp-echo ${dest_ip} ${option}=${value} ${opt} ${dest_ip} ${option}=${value} ${opt} ${opt} 
+lan keepalive use ${interface} arp ${dest_ip} ${dest_ip} ${opt} 
+lan keepalive use ${interface} icmp-echo ${dest_ip} ${option}=${value} ${opt} ${dest_ip} ${option}=${value} ${opt} ${opt} arp ${dest_ip} ${dest_ip} ${opt} 
 lan keepalive use ${interface} off
 no lan keepalive use ${interface} ${opt} 
 leased keepalive down ${action}
@@ -528,8 +528,8 @@ pp keepalive interval ${interval} retry-interval=${retry-interval} count=${count
 no pp keepalive interval ${interval} ${count} 
 pp keepalive log ${log}
 no pp keepalive log ${log} 
-pp keepalive use icmp-echo ${dest_ip} ${option}=${value}${opt} ${dest_ip} ${option}=${value}${opt} ${opt} 
-pp keepalive use lcp-echo icmp-echo ${dest_ip} ${option}=${value}${opt} ${dest_ip} ${option}=${value}${opt} ${opt} 
+pp keepalive use icmp-echo ${dest_ip} ${option}=${value} ${opt} ${dest_ip} ${option}=${value} ${opt} ${opt} 
+pp keepalive use lcp-echo icmp-echo ${dest_ip} ${option}=${value} ${opt} ${dest_ip} ${option}=${value} ${opt} ${opt} 
 rip filter rule ${rule}
 no rip filter rule ${rule} 
 rip preference ${preference} invalid-route-reactivate=${switch} 
@@ -605,7 +605,7 @@ ipsec ike mode-cfg address pool ${pool_id} ${ip_address} /${mask}
 ipsec ike mode-cfg address pool ${pool_id} ${ip_address-ip_address} /${mask} 
 no ipsec ike mode-cfg address pool ${pool_id} ${ip_address} ${opt} 
 ipsec ike mode-cfg method ${gateway_id} ${method} ${option} 
-no ipsec ike mode-cfg method ${gateway_id} ${method}${opt} 
+no ipsec ike mode-cfg method ${gateway_id} ${method} ${opt} 
 ipsec ike nat-traversal ${gateway} ${switch} keepalive=${interval} force=${force_switch} 
 no ipsec ike nat-traversal ${gateway} ${switch} ${opt} 
 ipsec ike negotiate-strictly ${gateway_id} ${switch}
@@ -699,11 +699,11 @@ ipv6 tunnel mld ${type} ${option} ${opt}
 no ipv6 ${interface} mld ${type} ${option} ${opt} 
 no ipv6 pp mld ${type} ${option} ${opt} 
 no ipv6 tunnel mld ${type} ${option} ${opt} 
-ipv6 pp mld static ${group} ${filter_mode} ${source}${opt} 
-ipv6 tunnel mld static ${group} ${filter_mode} ${source}${opt} 
-no ipv6 ${interface} mld static ${group} ${filter_mode} ${source}${opt} 
-no pv6 pp mld static ${group} ${filter_mode} ${source}${opt} 
-no ipv6 tunnel mld static ${group} ${filter_mode} ${source}${opt} 
+ipv6 pp mld static ${group} ${filter_mode} ${source} ${opt} 
+ipv6 tunnel mld static ${group} ${filter_mode} ${source} ${opt} 
+no ipv6 ${interface} mld static ${group} ${filter_mode} ${source} ${opt} 
+no pv6 pp mld static ${group} ${filter_mode} ${source} ${opt} 
+no ipv6 tunnel mld static ${group} ${filter_mode} ${source} ${opt} 
 ipv6 pp mtu ${mtu}
 no ipv6 ${interface} mtu ${mtu} 
 no ipv6 pp mtu ${mtu} 
@@ -722,8 +722,8 @@ ipv6 tunnel prefix change log ${log}
 no ipv6 ${interface} prefix change log ${log}
 no ipv6 pp prefix change log ${log}
 no ipv6 tunnel prefix change log ${log}
-ipv6 pp rip filter ${direction} ${filter_list} ${filter_list}${opt} 
-ipv6 tunnel rip filter ${direction} ${filter_list} ${filter_list}${opt} 
+ipv6 pp rip filter ${direction} ${filter_list} ${filter_list} ${opt} 
+ipv6 tunnel rip filter ${direction} ${filter_list} ${filter_list} ${opt} 
 no ipv6 ${interface} rip filter ${direction}
 no ipv6 pp rip filter ${direction}
 no ipv6 tunnel rip filter ${direction}
@@ -736,13 +736,13 @@ no ipv6 ${interface} rip receive
 ipv6 pp rip send ${send}
 ipv6 tunnel rip send ${send}
 no ipv6 ${interface} rip send
-ipv6 pp rip trust gateway except ${gateway} ${gateway}${opt} 
-no ipv6 ${interface} rip trust gateway except ${gateway} ${gateway}${opt} 
-no ipv6 pp rip trust gateway except ${gateway} ${gateway}${opt} 
-ipv6 pp rtadv send ${prefix_id} ${prefix_id}${opt} ${option}=${value}${opt} 
+ipv6 pp rip trust gateway except ${gateway} ${gateway} ${opt} 
+no ipv6 ${interface} rip trust gateway except ${gateway} ${gateway} ${opt} 
+no ipv6 pp rip trust gateway except ${gateway} ${gateway} ${opt} 
+ipv6 pp rtadv send ${prefix_id} ${prefix_id} ${opt} ${option}=${value} ${opt} 
 no ipv6 ${interface} rtadv send ${opt} 
-ipv6 pp secure filter ${direction} ${filter_list}${opt} dynamic ${filter_list} 
-ipv6 tunnel secure filter ${direction} ${filter_list}${opt} dynamic ${filter_list} 
+ipv6 pp secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} 
+ipv6 tunnel secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} 
 no ipv6 ${interface} secure filter ${direction}
 no ipv6 pp secure filter ${direction}
 no ipv6 tunnel secure filter ${direction}
@@ -752,7 +752,7 @@ no ipv6 ${interface} tcp mss limit ${mss}
 no ipv6 pp tcp mss limit ${mss} 
 no ipv6 tunnel tcp mss limit ${mss} 
 ipv6 ${interface} vrrp ${vrid} ${ipv6_address} priority=${priority} preempt=${preempt} auth=${auth} advertise-interval=${time1} down-interval=${time2} 
-no ipv6 ${interface} vrrp ${vrid} ${vrid}${opt} 
+no ipv6 ${interface} vrrp ${vrid} ${vrid} ${opt} 
 ipv6 ${interface} vrrp shutdown trigger ${vrid} ${interface}
 ipv6 ${interface} vrrp shutdown trigger ${vrid} pp ${peer_num} dlci=${dlci} 
 ipv6 ${interface} vrrp shutdown trigger ${vrid} route ${network} ${nexthop} 
@@ -764,7 +764,7 @@ ipv6 multicast routing process ${mode}
 no ipv6 prefix ${prefix_id}
 ipv6 rip preference ${preference}
 no ipv6 rip preference ${preference} 
-no ipv6 route ${network} gateway${opt} 
+no ipv6 route ${network} gateway ${opt} 
 no ipv6 routing ${routing} 
 no ipv6 source address selection rule ${rule} 
 account threshold ${interface} ${yen}
@@ -850,7 +850,7 @@ mail-notify status subject ${subject}
 mail-notify status timeout ${timeout}
 mail-notify status to ${id} ${address} ${option} 
 no mail-notify status to ${id}
-mail-notify status type ${info} ${info}${opt} 
+mail-notify status type ${info} ${info} ${opt} 
 mail-notify status use ${use}
 mail notify ${id} ${template_id} trigger backup ${if_b} ${range_b} ${if_b} ${opt} 
 mail notify ${id} ${template_id} trigger route ${route} ${route} ${opt} 
@@ -927,7 +927,7 @@ no nat descriptor address inner ${nat_descriptor} ${inner_ipaddress_list}
 no nat descriptor address outer ${nat_descriptor} ${outer_ipaddress_list} 
 nat descriptor backward-compatibility ${type}
 no nat descriptor backward-compatibility ${type} 
-no nat descriptor ftp port ${nat_descriptor} ${port}${opt} 
+no nat descriptor ftp port ${nat_descriptor} ${port} ${opt} 
 no nat descriptor masquerade incoming ${nat_descriptor}
 nat descriptor masquerade port range ${nat_descriptor} ${port_range1} ${port_range2} ${port_range3} ${port_range4} 
 no nat descriptor masquerade port range ${nat_descriptor} ${port_range1} ${port_range2} ${port_range3} ${port_range4} 
@@ -1046,12 +1046,12 @@ traceroute6 ${destination}
 tunnel select ${tunnel_num}
 wol send -i ${interval} -c ${count} ${interface} ${mac_address} ${ip_address} udp ${port} 
 wol send -i ${interval} -c ${count} ${interface} ${mac_address} ethernet ${type}
-ip ${interface} ospf area ${area} ${parameters}${opt} 
-ip pp ospf area ${area} ${parameters}${opt} 
-ip tunnel ospf area ${area} ${parameters}${opt} 
-no ip ${interface} ospf ${area} ${area} ${parameters}${opt} 
-no ip pp ospf area ${area} ${parameters}${opt} 
-no ip tunnel ospf area ${area} ${parameters}${opt} 
+ip ${interface} ospf area ${area} ${parameters} ${opt} 
+ip pp ospf area ${area} ${parameters} ${opt} 
+ip tunnel ospf area ${area} ${parameters} ${opt} 
+no ip ${interface} ospf ${area} ${area} ${parameters} ${opt} 
+no ip pp ospf area ${area} ${parameters} ${opt} 
+no ip tunnel ospf area ${area} ${parameters} ${opt} 
 ip ${interface} ospf neighbor ${ip_address} eligible 
 ip pp ospf neighbor ${ip_address} eligible 
 ip tunnel ospf neighbor ${ip_address} eligible 
@@ -1064,16 +1064,16 @@ ospf area network ${area} ${network}/${mask} restrict
 no ospf area network ${area} ${network}/${mask} restrict 
 ospf area stubhost ${area} ${host} cost ${cost} 
 no ospf area stubhost ${area} ${host}
-ospf export filter ${filter_num} ${nr} ${kind} ${ip_address}/${mask}${opt}
+ospf export filter ${filter_num} ${nr} ${kind} ${ip_address}/${mask} ${opt}
 no ospf export filter ${filter_num} ${opt} 
-ospf export from ospf filter ${filter_num}${opt} 
-no ospf export from ospf filter ${filter_num}${opt} 
-ospf import filter ${filter_num} ${nr} ${kind} ${ip_address}/${mask}${opt} ${parameter}${opt} ${opt}
-no ospf import filter ${filter_num} not ${kind} ${ip_address}/${mask}${opt} ${parameter}${opt} 
-ospf import from ${protocol} filter ${filter_num}${opt} 
-no ospf import from ${protocol} filter ${filter_num}${opt} 
-ospf log ${log} ${log}${opt} 
-no ospf log ${log}${opt} 
+ospf export from ospf filter ${filter_num} ${opt} 
+no ospf export from ospf filter ${filter_num} ${opt} 
+ospf import filter ${filter_num} ${nr} ${kind} ${ip_address}/${mask} ${opt} ${parameter} ${opt} ${opt}
+no ospf import filter ${filter_num} not ${kind} ${ip_address}/${mask} ${opt} ${parameter} ${opt} 
+ospf import from ${protocol} filter ${filter_num} ${opt} 
+no ospf import from ${protocol} filter ${filter_num} ${opt} 
+ospf log ${log} ${log} ${opt} 
+no ospf log ${log} ${opt} 
 ospf merge equal cost stub ${merge}
 ospf preference ${preference}
 no ospf preference ${preference} 
@@ -1081,14 +1081,14 @@ ospf router id ${router-id}
 no ospf router id ${router-id} 
 ospf use ${use}
 no ospf use ${use} 
-ospf virtual-link ${router_id} ${area} ${parameters}${opt} 
-no ospf virtual-link ${router_id} ${area} ${parameters}${opt} 
+ospf virtual-link ${router_id} ${area} ${parameters} ${opt} 
+no ospf virtual-link ${router_id} ${area} ${parameters} ${opt} 
 ipv6 ${interface} ospf area ${area} ${parameters} ${opt} 
-ipv6 pp ospf area ${area} ${parameters}${opt} 
-ipv6 tunnel ospf area ${area} ${parameters}${opt} 
-no ipv6 ${interface} ospf area ${area} ${parameters}${opt} 
-no ipv6 pp ospf area ${area} ${parameters}${opt} 
-no ipv6 tunnel ospf area ${area} ${parameters}${opt} 
+ipv6 pp ospf area ${area} ${parameters} ${opt} 
+ipv6 tunnel ospf area ${area} ${parameters} ${opt} 
+no ipv6 ${interface} ospf area ${area} ${parameters} ${opt} 
+no ipv6 pp ospf area ${area} ${parameters} ${opt} 
+no ipv6 tunnel ospf area ${area} ${parameters} ${opt} 
 ipv6 ospf area ${area} stub cost=${cost} 
 no ipv6 ospf area ${area} stub cost=${cost} 
 ipv6 ospf area network ${area} ${ipv6_prefix}/${prefix_len} restrict 
@@ -1096,13 +1096,13 @@ no ipv6 ospf area network ${area} ${ipv6_prefix}/${prefix_len} restrict
 ipv6 ospf export filter ${filter_num} ${nr} ${kind} ${ipv6_prefix}/${prefix_len} ${opt}
 no ipv6 ospf export filter ${filter_num} ${opt} 
 ipv6 ospf export from ospf filter ${filter_num} ${opt}
-no ipv6 ospf export from ospf filter ${filter_num}${opt} 
+no ipv6 ospf export from ospf filter ${filter_num} ${opt} 
 ipv6 ospf import filter ${filter_num} ${nr} ${kind} ${ipv6_prefix}/${prefix_len} ${opt} ${parameters} ${opt} 
-no ipv6 ospf import filter ${filter_num} ${nr} ${kind} ${ipv6_prefix}/${prefix_len} ${opt} ${parameters}${opt} 
+no ipv6 ospf import filter ${filter_num} ${nr} ${kind} ${ipv6_prefix}/${prefix_len} ${opt} ${parameters} ${opt} 
 ipv6 ospf import from ${protocol} filter ${filter_num} ${opt} 
-no ipv6 ospf import from ${protocol} filter ${filter_num}${opt} 
+no ipv6 ospf import from ${protocol} filter ${filter_num} ${opt} 
 ipv6 ospf log ${log} ${opt}
-no ipv6 ospf log ${log}${opt} 
+no ipv6 ospf log ${log} ${opt} 
 ipv6 ospf preference ${preference}
 no ipv6 ospf preference ${preference} 
 ipv6 ospf router id ${router-id}
@@ -1110,7 +1110,7 @@ no ipv6 ospf router id ${router-id}
 ipv6 ospf use ${use}
 no ipv6 ospf use ${use} 
 ipv6 ospf virtual-link ${router_id} ${area} ${parameters} ${opt} 
-no ipv6 ospf virtual-link ${router_id} ${area} ${parameters}${opt} 
+no ipv6 ospf virtual-link ${router_id} ${area} ${parameters} ${opt} 
 ip policy address group ${id} name=${name} ${address} ${opt} group ${group_id} ${opt} 
 ipv6 policy address group ${id} name=${name} ${address} ${opt} group ${group_id} ${opt} 
 no ip policy address group ${id} name=${name} ${address} ${opt} group ${group_id} ${opt} 
@@ -1141,14 +1141,14 @@ ipv6 policy service ${id} ${service_name} ${protocol} ${source_port} ${destinati
 no ip policy service ${id} ${service_name} ${protocol} ${source_port} ${destination_port} 
 no ipv6 policy service ${id} ${service_name} ${protocol} ${source_port} ${destination_port} 
 ip policy service group ${id} name=${name} ${service} ${opt} group ${group_id} ${opt} 
-ipv6 policy service group ${id} name=${name} ${service}${opt} group ${group_id} ${opt} 
+ipv6 policy service group ${id} name=${name} ${service} ${opt} group ${group_id} ${opt} 
 no ip policy service group ${id} name=${name} ${service} ${opt} group ${group_id} ${opt} 
 no ipv6 policy service group ${id} name=${name} ${service} ${opt} group ${group_id} ${opt} 
 no pp auth multi connect prohibit ${prohibit} 
 no pp auth myname ${myname} ${password} 
-pp auth username ${username} ${password} myname ${myname} ${mypass} ${isdn1} clid ${isdn2}${opt} mscbcp ${ip_address} ${ip6_prefix} 
+pp auth username ${username} ${password} myname ${myname} ${mypass} ${isdn1} clid ${isdn2} ${opt} mscbcp ${ip_address} ${ip6_prefix} 
 pp auth username ${username} ${password} myname ${myname} ${mypass} ${ip_address} ${ip6_prefix} 
-no pp auth username ${username} ${password}${opt} 
+no pp auth username ${username} ${password} ${opt} 
 ppp bacp maxconfigure ${count}
 no ppp bacp maxconfigure ${count} 
 ppp bacp maxfailure ${count}
@@ -1251,10 +1251,10 @@ pp bind ${interface} /${info} ${interface} /${info}
 no pp bind ${interface}/${info} 
 qac-tm client permit ${mac_address}
 no qac-tm client permit ${mac_address}
-qac-tm client_port ${port} ${port}${opt} 
+qac-tm client_port ${port} ${port} ${opt} 
 qac-tm client refresh go ${ip_address} ${prompt} 
 qac-tm client update ${sw} ${port} 
-qac-tm port ${port} ${port}${opt} 
+qac-tm port ${port} ${port} ${opt} 
 qac-tm redirect ${url}
 qac-tm server ${ip_address} ${port} protocol=${protocol} 
 qac-tm unqualified client access control ${type} server-error=${server_error_type} dhcp-not-bind=${dhcp_not_bind_type} 
@@ -1265,13 +1265,13 @@ ppp mp interleave ${delay} ${switch}
 no ppp mp interleave ${delay} ${switch} 
 queue class filter ${num} ${class1} /${class2} cos=${cos} ip ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
 queue class filter ${num} ${class1} /${class2} cos=${cos} ipv6 ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
-queue class filter ${num} precedence mapping=${prec}:${class} ,${prec}:${class}${opt} cos=${cos} ip ${src_dssr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
-queue class filter ${num} precedence mapping=${prec}:${class} ,${prec}:${class}${opt} cos=${cos} ipv6 ${src_dssr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
+queue class filter ${num} precedence mapping=${prec}:${class} ,${prec}:${class} ${opt} cos=${cos} ip ${src_dssr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
+queue class filter ${num} precedence mapping=${prec}:${class} ,${prec}:${class} ${opt} cos=${cos} ipv6 ${src_dssr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
 queue class filter ${num} dscp cos=${cos} ip ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
 queue class filter ${num} dscp cos=${cos} ipv6 ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
 no queue class filter ${num} ${opt} 
 queue ${interface} class control ${class} ${except} ${ip_address} ${opt} ${option}=${value} ${opt} 
-no queue ${interface} class control ${class} ${except} ${ip_address}${opt} 
+no queue ${interface} class control ${class} ${except} ${ip_address} ${opt} 
 queue ${interface} class filter list ${filter_list}
 queue pp class filter list ${filter_list}
 queue tunnel class filter list ${filter_list}
@@ -1282,19 +1282,19 @@ queue ${interface} class property ${class} bandwidth=${bandwidth}
 queue ${interface} class property ${class} type=${type}
 queue pp class property ${class} bandwidth=${bandwidth} parent=${parent} borrow=${borrow} maxburst=${maxburst} minburst=${minburst} packetsize=${packetsize} 
 no queue ${interface} class property ${class} ${opt} 
-no queue pp class property ${class} bandwidth=${bandwidth}${opt} 
+no queue pp class property ${class} bandwidth=${bandwidth} ${opt} 
 queue ${interface} default class ${class}
 queue pp default class ${class}
 no queue ${interface} default class ${class} 
 no queue pp default class ${class} 
 queue ${interface} default class secondary primary=${primary_class} ${class}
-no queue ${interface} default class secondary primary=${primary_class}${opt} 
-queue ${interface} length ${len1} ${len2}${opt}${lenN} drop-threshold=${dthreshold-mid} ,${dthreshold-high} 
-queue pp length ${len1} ${len2}${opt}${len16} 
-no queue ${interface} length ${len1}${opt} 
-no queue pp length ${len1}${opt} 
+no queue ${interface} default class secondary primary=${primary_class} ${opt} 
+queue ${interface} length ${len1} ${len2} ${opt}${lenN} drop-threshold=${dthreshold-mid} ,${dthreshold-high} 
+queue pp length ${len1} ${len2} ${opt}${len16} 
+no queue ${interface} length ${len1} ${opt} 
+no queue pp length ${len1} ${opt} 
 queue ${interface} length secondary primary=${primary_class} ${len1} ${len2} ${opt}${len4} 
-no queue ${interface} length secondary primary=${primary_class}${opt} 
+no queue ${interface} length secondary primary=${primary_class} ${opt} 
 queue ${interface} type ${type} shaping-level=${level} 
 queue pp type ${type}
 no queue ${interface} type ${type} 
@@ -1321,10 +1321,10 @@ radius secret ${secret}
 no radius secret ${secret} 
 radius server ${ip1} ${ip2} 
 no radius server ${ip1} ${ip2} 
-schedule at ${id} ${date} ${time} * ${command}${opt}
-schedule at ${id} ${date} ${time} pp ${peer_num} ${command}${opt}
-schedule at ${id} ${date} ${time} tunnel ${tunnel_num} ${command}${opt}
-schedule at ${id} ${date} ${time} switch ${switch} ${command}${opt}
+schedule at ${id} ${date} ${time} * ${command} ${opt}
+schedule at ${id} ${date} ${time} pp ${peer_num} ${command} ${opt}
+schedule at ${id} ${date} ${time} tunnel ${tunnel_num} ${command} ${opt}
+schedule at ${id} ${date} ${time} switch ${switch} ${command} ${opt}
 no schedule at ${id} ${date} ${opt} 
 administrator radius auth ${use}
 no administrator radius auth ${use} 
@@ -1379,11 +1379,11 @@ lan port-mirroring ${interface} ${mirror} ${direction} ${port} ${opt} ${directio
 no lan port-mirroring ${interface}
 lan receive-buffer-size ${interface} ${size}
 no lan receive-buffer-size ${interface}
-lan shutdown ${interface} ${port}${opt} 
-no lan shutdown ${interface} ${port}${opt} 
-lan type ${interface_with_swhub} ${speed} ${port} ${speed} ${port} ${opt} ${option}=${value}${opt} 
+lan shutdown ${interface} ${port} ${opt} 
+no lan shutdown ${interface} ${port} ${opt} 
+lan type ${interface_with_swhub} ${speed} ${port} ${speed} ${port} ${opt} ${option}=${value} ${opt} 
 lan type ${interface_with_swhub} ${option}=${value}
-lan type ${interface_without_swhub} ${speed} ${option}=${value}${opt} 
+lan type ${interface_without_swhub} ${speed} ${option}=${value} ${opt} 
 lan type ${interface_without_swhub} ${option}=${value}
 no lan type ${interface} ${opt} 
 line masterclock ${interface} ${interface} 
@@ -1402,10 +1402,10 @@ no operation http revision-up permit ${permit}
 rdate ${host} syslog 
 no security class ${level} ${forget} ${telnet} ${ssh} 
 no set ${name} =${value} 
-no sftpd host ${ip_range}${opt} 
+no sftpd host ${ip_range} ${opt} 
 ssh -p ${port} -e ${escape} ${user}@ ${host}
-ssh encrypt algorithm ${algorithm}${opt} 
-no ssh encrypt algorithm ${algorithm}${opt} 
+ssh encrypt algorithm ${algorithm} ${opt} 
+no ssh encrypt algorithm ${algorithm} ${opt} 
 ssh known hosts ${file}
 no ssh known hosts ${file} 
 sshd client alive ${switch} ${interval} ${count} 
@@ -1414,7 +1414,7 @@ sshd encrypt algorithm ${algorithm} ${opt}
 sshd hide openssh version ${use}
 no sshd hide openssh version ${use} 
 sshd host ${ip_range} ${ip_range} ${opt} 
-no sshd host ${ip_range}${opt} 
+no sshd host ${ip_range} ${opt} 
 sshd host key generate ${seed} 
 no sshd host key generate ${seed} 
 sshd listen ${port}
@@ -1454,7 +1454,7 @@ no system packet-scheduling filter list ${filter_list}
 system temperature threshold ${t1} ${t2}
 no system temperature threshold ${t1} ${t2} 
 tcp log ${switch} ${src_addr} /${mask} ${dst_addr} /${mask} ${tcpflag} ${src_port_list} ${dst_port_list} 
-telnetd host ${ip_range} ${ip_range}${opt} 
+telnetd host ${ip_range} ${ip_range} ${opt} 
 telnetd listen ${port}
 telnetd service ${service}
 telnetd session ${num}
@@ -1463,8 +1463,8 @@ no tftp host ${host}
 time ${time}
 timezone ${timezone}
 no timezone ${timezone} 
-user attribute ${user} ${attribute}=${value} ${attribute}=${value}${opt} 
-no user attribute ${user}${opt} 
+user attribute ${user} ${attribute}=${value} ${attribute}=${value} ${opt} 
+no user attribute ${user} ${opt} 
 less config ${filename}
 less config ap ${ap} 
 show config pp ${peer_num} 
@@ -1727,6 +1727,6 @@ usbhost syslog filename ${name} ${crypto} ${password}
 no usbhost syslog filename ${name} 
 usbhost use ${switch}
 no usbhost use ${switch} 
-no vlan ${interface}/${sub_interface} 802${opt}1q
+no vlan ${interface}/${sub_interface} 802 ${opt}1q
 vlan port mapping ${sw_port} ${vlan_interface}
 no vlan port mapping ${sw_port} ${vlan_interface} 
