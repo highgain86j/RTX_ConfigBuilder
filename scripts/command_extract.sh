@@ -24,11 +24,11 @@ for file in `ls */*.html`
 	| sed -e 's|<li>||g' \
 	| sed -e 's|</li>||g' \
 	| sed -e 's|\.\.*|\$\{opt\}|g' \
-	| sed -e 's|  *| |g' #>> ${tmpfile}
+	| sed -e 's|  *| |g' >> ${tmpfile}
 	#echo $1
 done
 
-#cat ${tmpfile} > ../$2.command
+cat ${tmpfile} > ../$2.command
 cd ..
 rm -rf html/
 rm ${tmpfile}
