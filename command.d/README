@@ -18,7 +18,7 @@ B.その他のファイルについて
 	2.)上記"0_all_known.cmnd"と"<機種名>.command"を比較し、各機種に存在しないコマンド一覧を"<機種名>_unavail.command"として出力
 	3.)"*_unavail.command"を統合しアルファベット順に並べた後、重複を消去して機種依存コマンド一覧(1_modeldep.cmnd)として出力
 	4.)"0_all_known.cmnd"と"1_modeldep.cmnd"を比較し"1_modeldep.cmnd"に存在しないコマンドを全機種共通コマンド候補（※注１）一覧(2_rt_rtx-common.cmnd)として出力
-	4.)"2_rt_rtx-common.cmnd"と"<機種名>.command"を比較し"<機種名>.command"にのみ存在するものを機種依存コマンド一覧"<機種名>_mod-dep.command"として出力
+	5.)"2_rt_rtx-common.cmnd"と"<機種名>.command"を比較し"<機種名>.command"にのみ存在するものを機種依存コマンド一覧"<機種名>_mod-dep.command"として出力
 
 (ii)"*.cmnd"たち
 	↑(i)に書いてあります。
