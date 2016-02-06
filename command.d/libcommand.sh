@@ -8,9 +8,12 @@ modeldep=1_modeldep.cmnd
 common=2_rt_rtx-common.cmnd
 
 
-if [ -n "`ls unavail_*`" ]
+if [ -n "`ls *${unavailstr}${exten}`" ]
 	then
-	rm unavail_*
+	for file in `ls *${unavailstr}${exten}`
+		do
+		rm ${file}
+	done
 fi
 
 for file in `ls *${exten}`
