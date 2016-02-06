@@ -1,6 +1,7 @@
 #!/bin/bash
 tmpfile=`mktemp`
 unavailstr=_unavail
+modldepstr=_mod-dep
 
 exten=.command
 known=0_all_known.cmnd
@@ -39,5 +40,15 @@ done
 cat ${tmpfile} | sort | uniq > ${modeldep}
 
 diff ${modeldep} ${known} | grep '^>' | sed -e "s/> //g" > ${common}
+
+for file in `ls *${exten}`
+	do
+	if [ -n `echo ${file} | grep -v ${unavailstr}` ]
+		then
+		name=`echo ${file} | awk -F. '{print $1}'`
+		diff ${common} ${file} | grep '^>' | sed -e "s/> //g" > ${name}${modldepstr}${exten}
+	fi
+done
+
 
 rm ${tmpfile}
