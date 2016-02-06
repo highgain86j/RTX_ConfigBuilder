@@ -120,6 +120,7 @@ auth user ${userid} ${username} ${password}
 auth user attribute ${userid} ${attribute}=${value} ${attribute}=${value} ${opt} 
 auth user group ${groupid} ${userid} ${userid} ${opt} 
 auth user group attribute ${groupid} ${attribute}=${value} ${attribute}=${value} ${opt} 
+bgp force-to-advertise ${remote_as} ${ip_address}/${mask} ${parameter} ${opt} 
 clear account ${interface}
 clear account analog ${port} 
 clear account pp ${peer_num} 
@@ -168,6 +169,7 @@ copy config ${from} ${to}
 copy config ${from} ${to} ${crypto} ${password} 
 copy config ${from} ${to} ${password} 
 copy exec ${from} ${to}
+dashboard accumulate ${type} ${sw}
 date ${date}
 delete ${path}
 delete config ${filename}
@@ -194,56 +196,91 @@ dns syslog resolv ${resolv}
 ethernet ${interface} filter ${dir} ${list}
 execute at-command ${interface} ${command}
 external-memory syslog filename ${storage_if}:${name} ${crypto} ${password} limit=${size} backup=${num} 
+fr backup dlci=${dlci_num} ${peer_num}
+fr cir dlci=${dlci_num} ${cir} slowstart-idle=${idle} bc=${bc_size} be=${be_size} s=${step_count} 
+fr compression use dlci=${dlci_num} ${type}
+fr congestion control ${control}
+fr de ${protocol} filter dlci=${dlci_num} ${filter_num_list}
+fr dlci ${dlci_num}
+fr inarp ${inarp}
+fr lmi ${lmi}
+fr pp dequeue type ${type}
 heartbeat2 receive monitor ${time}
 http revision-down permit ${permit}
 http revision-up permit ${permit}
 http revision-up schedule ${period} ${time1} ${time2}
 http revision-up timeout ${time}
 http revision-up url ${url}
+http upload ${type} ${config_no} ${directory}/ ${filename}
+http upload permit ${switch}
+http upload proxy ${proxy} ${port} 
+http upload retry interval ${interval} ${count}
+http upload timeout ${time}
+http upload url ${url}
 http_revision-up_proxy ${proxy_server} ${port} 
 httpd custom-gui api password ${password}
 httpd custom-gui api use ${use}
 httpd custom-gui use ${use}
 httpd custom-gui user ${user} directory=${path} index=${name} 
-httpd host ${any}
 httpd host ${ip_range}
 httpd host ${ip_range} ${ip_range} ${opt} 
-httpd host ${lan}
 httpd host ${none}
-httpd listen ${port}
-httpd service ${switch}
-httpd timeout ${time}
 interface reset ${interface} ${interface} ${opt} 
 interface reset pp ${peer_num} 
+ip ${bridge_interface} address ${ip_address}/${mask} broadcast ${broadcast_ip} 
+ip ${bridge_interface} address dhcp autoip=${switch} 
 ip ${bridge_interface} secondary address ${ip_address}/${mask}
 ip ${bridge_interface} secondary address dhcp
 ip ${interface} address ${ip_address}/${mask} broadcast ${broadcast_ip} 
 ip ${interface} address dhcp
+ip ${interface} arp log ${switch}
 ip ${interface} arp mtu discovery ${sw} minimum=${min_mtu} 
+ip ${interface} arp queue length ${len}
 ip ${interface} arp static ${ip_address} ${mac_address}
+ip ${interface} arp static ${ip_address} ${mac_address} mtu=${mtu} 
 ip ${interface} dhcp lease time ${time}
 ip ${interface} dhcp retry ${retry} ${interval}
 ip ${interface} dhcp service ${type} ${host1} ${host2} ${host3} ${host4} 
-ip ${interface} inbound filter list ${id} ${opt}
+ip ${interface} forward filter ${id}
+ip ${interface} igmp ${type} ${option} ${opt} 
+ip ${interface} igmp static ${group} ${filter_mode} ${source} ${opt} 
+ip ${interface} intrusion detection ${direction} ${type} ${switch} ${option} 
+ip ${interface} intrusion detection notice-interval ${frequency}
+ip ${interface} intrusion detection repeat-control ${time}
+ip ${interface} intrusion detection report ${num}
+ip ${interface} intrusion detection threshold ${type} ${count}
+ip ${interface} mtu ${mtu0}
 ip ${interface} nat descriptor ${nat_descriptor_list} reverse ${nat_descriptor_list} 
 ip ${interface} ospf area ${area} ${parameters} ${opt} 
 ip ${interface} ospf neighbor ${ip_address} eligible 
+ip ${interface} pim sparse ${switch} ${option} ${opt} 
+ip ${interface} proxyarp ${proxyarp}
+ip ${interface} proxyarp vrrp ${vrid}
+ip ${interface} rebound ${switch}
+ip ${interface} rip auth key ${hex_key}
+ip ${interface} rip auth key text ${text_key}
+ip ${interface} rip auth type ${type}
+ip ${interface} rip filter ${direction} ${filter_list}
+ip ${interface} rip force-to-advertise ${ip-address}/${netmask} metric ${metric} 
+ip ${interface} rip hop ${direction} ${hop}
+ip ${interface} rip receive ${receive} version ${version} ${version} 
+ip ${interface} rip send ${send} version ${version} ${broadcast} 
+ip ${interface} rip trust gateway except ${gateway} ${gateway} ${opt} 
+ip ${interface} secondary address ${ip_address} /${mask} 
+ip ${interface} secondary address dhcp
+ip ${interface} secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} ${opt} 
+ip ${interface} secure filter name ${set_name}
+ip ${interface} tcp mss limit ${mss}
+ip ${interface} traffic list ${sw}
+ip ${interface} traffic list threshold ${value}
+ip ${interface} vrrp ${vrid} ${ip_address} priority=${priority} preempt=${preempt} auth=${auth} advertise-interval=${time1} down-interval=${time2} 
+ip ${interface} vrrp shutdown trigger ${vrid} ${interface}
 ip ${interface} vrrp shutdown trigger ${vrid} pp ${peer_num}
+ip ${interface} vrrp shutdown trigger ${vrid} pp ${peer_num} dlci=${dlci} 
+ip ${interface} vrrp shutdown trigger ${vrid} route ${network} ${nexthop} 
 ip ${interface} wol relay ${relay}
 ip ${loopback} address ${ip_address} /${mask} 
-ip arp timer ${timer} ${retry} 
-ip filter ${filter_num} ${pass_reject} ${src_addr} /${mask} ${dest_addr} /${mask} ${protocol} ${src_port_list} ${dest_port_list} 
-ip filter directed-broadcast ${filter_out}
-ip filter directed-broadcast filter ${filter_num} ${filter_num} ${opt} 
-ip filter dynamic ${dyn_filter_num} ${srcaddr} /${mask} ${dstaddr} /${mask} ${protocol} ${option} ${opt} 
-ip filter dynamic ${dyn_filter_num} ${srcaddr} /${mask} ${dstaddr} /${mask} filter ${filter_list} in ${filter_list} out ${filter_list} ${option} ${opt} 
-ip filter dynamic timer ${option}=${timeout} ${option}=${timeout} ${opt} 
-ip filter set ${name} ${direction} ${filter_list} ${filter_list} ${opt} 
-ip filter source-route ${filter_out}
 ip flow limit ${limit}
-ip flow timer ${protocol} ${time}
-ip forward filter ${id} ${order} gateway ${gateway} filter ${filter_id} ${opt} keepalive ${keepalive_id} 
-ip fragment remove df-bit ${rule}
 ip host ${fqdn} ${value} ttl=${ttl} 
 ip icmp echo-reply send ${send}
 ip icmp echo-reply send-only-linkup ${send}
@@ -257,9 +294,14 @@ ip icmp time-exceeded send ${send} rebound=${sw}
 ip icmp timestamp-reply send ${send}
 ip icmp unreachable send ${send} rebound=${sw} 
 ip icmp unreachable-for-truncated send ${send}
-ip implicit-route preference ${preference}
 ip inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol} ${src_port} ${dst_port} 
+ip keepalive ${num} ${kind} ${interval} ${count} ${gateway} ${gateway} ${opt} ${option}=${value} ${opt} 
 ip local forward filter ${id}
+ip pim sparse join-prune send ${cast}
+ip pim sparse log ${option} ${opt} 
+ip pim sparse periodic-prune send ${sw}
+ip pim sparse register-checksum ${size}
+ip pim sparse rendezvous-point static ${group} ${rendezvous_point} priority=${priority} 
 ip policy address group ${id} name=${name} ${address} ${opt} group ${group_id} ${opt} 
 ip policy filter ${id} ${action} ${source_interface} ${dest_interface} ${source_address} ${dest_address} ${service} 
 ip policy filter set ${id} name=${name} ${filter_set} ${opt}
@@ -269,28 +311,25 @@ ip policy filter timer ${option}=${timeout} ${opt}
 ip policy interface group ${id} name=${name} ${interface} ${opt} group ${group_id} ${opt} 
 ip policy service ${id} ${service_name} ${protocol} ${source_port} ${destination_port} 
 ip policy service group ${id} name=${name} ${service} ${opt} group ${group_id} ${opt} 
-ip pp address ${ip_address} /${mask} 
-ip pp forward filter ${id}
 ip pp igmp ${type} ${option} ${opt} 
 ip pp igmp static ${group} ${filter_mode} ${source} ${opt} 
 ip pp inbound filter list ${id} ${opt}
-ip pp intrusion detection ${direction} ${type} ${switch} ${option} 
-ip pp intrusion detection notice-interval ${frequency}
-ip pp intrusion detection repeat-control ${time}
-ip pp intrusion detection report ${num}
-ip pp intrusion detection threshold ${type} ${count}
-ip pp mtu ${mtu1}
 ip pp nat descriptor ${nat_descriptor_list} reverse ${nat_descriptor_list} 
 ip pp ospf area ${area} ${parameters} ${opt} 
 ip pp ospf neighbor ${ip_address} eligible 
 ip pp pim sparse ${switch} ${option} ${opt} 
-ip pp rebound ${switch}
+ip pp remote address ${ip_address}
+ip pp remote address dhcpc ${interface} 
+ip pp remote address pool ${ip_address-ip_address}
 ip pp remote address pool ${ip_address} ${ip_address} ${opt} 
-ip pp rip auth key ${hex_key}
-ip pp rip auth key text ${text_key}
-ip pp rip auth type ${type}
-ip pp rip filter ${direction} ${filter_list}
+ip pp remote address pool dhcpc ${interface} 
+ip pp rip backup interface ${switch}
+ip pp rip connect interval ${time}
+ip pp rip connect send ${rip_action}
+ip pp rip disconnect interval ${time}
+ip pp rip disconnect send ${rip_action}
 ip pp rip force-to-advertise ${ip-address}/${netmask} metric ${metric} 
+ip pp rip hold routing ${rip_hold}
 ip pp rip hop ${direction} ${hop}
 ip pp rip receive ${receive} version ${version} ${version} 
 ip pp rip send ${send} version ${version} ${broadcast} 
@@ -300,8 +339,13 @@ ip pp secure filter name ${set_name}
 ip pp tcp mss limit ${mss}
 ip pp traffic list ${sw}
 ip pp traffic list threshold ${value}
+ip route ${network} gateway ${gateway1} ${parameter} gateway ${gateway2} ${parameter} ${opt} 
+ip route change log ${log}
+ip routing ${routing}
 ip routing process ${process}
+ip simple-service ${service}
 ip stealth ${interface} ${interface} ${opt} 
+ip tos supersede ${id} ${tos} precedence=${precedence} ${filter_num} ${filter_num_list} 
 ip tunnel address ${ip_address} /${mask} 
 ip tunnel forward filter ${id}
 ip tunnel igmp ${type} ${option} ${opt} 
@@ -333,16 +377,97 @@ ip tunnel secure filter name ${set_name}
 ip tunnel tcp mss limit ${mss}
 ip tunnel traffic list ${sw}
 ip tunnel traffic list threshold ${value}
+ipsec auto refresh ${gateway_id} ${switch}
+ipsec ike always-on ${gateway_id} ${switch}
+ipsec ike auth method ${gateway_id} ${method}
+ipsec ike backward-compatibility ${gateway_id} ${type}
+ipsec ike duration ${sa} ${gateway_id} ${second} ${kbytes} rekey ${rekey} 
+ipsec ike eap myname ${gateway_id} ${name} ${password}
+ipsec ike eap request ${gateway_id} ${sw} ${group_id}
+ipsec ike eap send certreq ${gateway_id} ${switch}
+ipsec ike encryption ${gateway_id} ${algorithm}
+ipsec ike esp-encapsulation ${gateway_id} ${encap}
+ipsec ike group ${gateway_id} ${group} ${group} 
+ipsec ike hash ${gateway_id} ${algorithm}
+ipsec ike keepalive log ${gateway_id} ${log}
 ipsec ike keepalive use ${gateway_id} ${switch} down=disconnect 
+ipsec ike keepalive use ${gateway_id} ${switch} down=disconnect send-only-new-sa=${send} 
 ipsec ike keepalive use ${gateway_id} ${switch} dpd ${interval} ${count} ${upwait} 
 ipsec ike keepalive use ${gateway_id} ${switch} heartbeat ${interval} ${count} ${upwait} down=disconnect 
+ipsec ike keepalive use ${gateway_id} ${switch} heartbeat ${interval} ${count} ${upwait} down=disconnect send-only-new-sa=${send} 
+ipsec ike keepalive use ${gateway_id} ${switch} icmp-echo ${ip_address} length=${length} ${interval} ${count} ${upwait} down=disconnect 
+ipsec ike keepalive use ${gateway_id} ${switch} rfc4306 ${interval} ${count} ${upwait} 
+ipsec ike license-key ${license_id} ${key}
+ipsec ike license-key use ${gateway_id} ${sw}
+ipsec ike local address ${gateway_id} ${ip_address}
+ipsec ike local address ${gateway_id} ipcp pp ${pp_num}
 ipsec ike local address ${gateway_id} ipv6 prefix ${prefix} on ${interface}
 ipsec ike local address ${gateway_id} vrrp ${interface} ${vrid}
+ipsec ike local id ${gateway_id} ${ip_address} /${mask} 
+ipsec ike local name ${gateway_id} ${name} ${type} 
+ipsec ike log ${gateway_id} ${type} ${type} 
+ipsec ike message-id-control ${gateway_id} ${switch}
+ipsec ike mode-cfg address ${gateway_id} ${pool_id}
+ipsec ike mode-cfg address pool ${pool_id} ${ip_address-ip_address} /${mask} 
 ipsec ike mode-cfg address pool ${pool_id} ${ip_address} /${mask} 
+ipsec ike mode-cfg method ${gateway_id} ${method} ${option} 
+ipsec ike nat-traversal ${gateway} ${switch} keepalive=${interval} force=${force_switch} 
+ipsec ike negotiate-strictly ${gateway_id} ${switch}
+ipsec ike payload type ${gateway_id} ${type1} ${type2} 
+ipsec ike pfs ${gateway_id} ${pfs}
+ipsec ike pki file ${gateway_id} certificate=${cert_id} crl=${crl_id} 
+ipsec ike pre-shared-key ${gateway_id} ${key}
+ipsec ike pre-shared-key ${gateway_id} text ${text}
+ipsec ike proposal-limitation ${gateway_id} ${switch}
+ipsec ike queue length ${length}
+ipsec ike remote address ${gateway_id} ${ip_address}
+ipsec ike remote id ${gateway_id} ${ip_address} /${mask} 
+ipsec ike remote name ${gateway} ${name} ${type} 
+ipsec ike restrict-dangling-sa ${gateway_id} ${action}
+ipsec ike retry ${count} ${interval} ${max_session} 
+ipsec ike send info ${gateway_id} ${info}
+ipsec ike version ${gateway_id} ${version}
+ipsec ike xauth myname ${gateway_id} ${name} ${password}
+ipsec ike xauth request ${gateway_id} ${auth} ${group_id} 
+ipsec ipcomp type ${type}
+ipsec log illegal-spi ${switch}
+ipsec sa delete ${id}
+ipsec sa policy ${policy_id} ${gateway_id} ah ${ah_algorithm} local-id=${local-id} remote-id=${remote-id} anti-replay-check=${check} 
+ipsec sa policy ${policy_id} ${gateway_id} esp ${esp_algorithm} ${ah_algorithm} anti-replay-check=${check} 
+ipsec transport ${id} ${policy_id} ${proto} ${src_port_list} ${dst_port_list} 
+ipsec transport template ${id1} ${id2} ${id2} ${opt} 
+ipsec tunnel ${policy_id}
+ipsec tunnel fastpath-fragment-function follow df-bit ${switch}
+ipsec tunnel outer df-bit ${mode}
+ipsec use ${use}
+ipv6 ${interface} address ${ipv6_address}/${prefix_len} ${address_type} 
 ipv6 ${interface} address ${proxy}
+ipv6 ${interface} address auto
+ipv6 ${interface} address dhcp
+ipv6 ${interface} dad retry count ${count}
+ipv6 ${interface} dhcp service ${type}
+ipv6 ${interface} dhcp service client ir=${value} 
 ipv6 ${interface} inbound filter list ${id} ${opt}
+ipv6 ${interface} mld ${type} ${option} ${opt} 
+ipv6 ${interface} mld static ${group} ${filter_mode} ${source} ${opt} 
+ipv6 ${interface} mtu ${mtu}
 ipv6 ${interface} ospf area ${area} ${parameters} ${opt} 
+ipv6 ${interface} prefix ${ipv6_prefix}/${prefix_len}
+ipv6 ${interface} prefix ${proxy}
+ipv6 ${interface} prefix change log ${log}
+ipv6 ${interface} rip filter ${direction} ${filter_list} ${filter_list} ${opt} 
+ipv6 ${interface} rip hop ${direction} ${hop}
+ipv6 ${interface} rip receive ${receive}
+ipv6 ${interface} rip send ${send}
+ipv6 ${interface} rip trust gateway except ${gateway} ${gateway} ${opt} 
+ipv6 ${interface} rtadv send ${prefix_id} ${prefix_id} ${opt} ${option}=${value} ${opt} 
+ipv6 ${interface} secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} 
+ipv6 ${interface} tcp mss limit ${mss}
+ipv6 ${interface} vrrp ${vrid} ${ipv6_address} priority=${priority} preempt=${preempt} auth=${auth} advertise-interval=${time1} down-interval=${time2} 
+ipv6 ${interface} vrrp shutdown trigger ${vrid} ${interface}
 ipv6 ${interface} vrrp shutdown trigger ${vrid} pp ${peer_num}
+ipv6 ${interface} vrrp shutdown trigger ${vrid} pp ${peer_num} dlci=${dlci} 
+ipv6 ${interface} vrrp shutdown trigger ${vrid} route ${network} ${nexthop} 
 ipv6 filter ${filter_num} ${pass_reject} ${src_addr} /${prefix_len} ${dest_addr} /${prefix_len} ${protocol} ${src_port_list} ${dest_port_list} 
 ipv6 filter dynamic ${dyn_filter_num} ${srcaddr} /${prefix_len} ${dstaddr} /${prefix_len} ${protocol} ${option} ${opt} 
 ipv6 filter dynamic ${dyn_filter_num} ${srcaddr} /${prefix_len} ${dstaddr} /${prefix_len} filter ${filter_list} in ${filter_list} out ${filter_list} ${option} ${opt} 
@@ -359,6 +484,9 @@ ipv6 icmp time-exceeded send ${send} rebound=${sw}
 ipv6 icmp unreachable send ${send} rebound=${sw} 
 ipv6 inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol6} ${src_port} ${dst_port6} 
 ipv6 inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol} ${src_port} ${dst_port} 
+ipv6 max auto address ${max}
+ipv6 multicast routing process ${mode}
+ipv6 nd ns-trigger-dad on ${option}=${value} 
 ipv6 ospf area ${area} stub cost=${cost} 
 ipv6 ospf area network ${area} ${ipv6_prefix}/${prefix_len} restrict 
 ipv6 ospf export filter ${filter_num} ${nr} ${kind} ${ipv6_prefix}/${prefix_len} ${opt}
@@ -391,7 +519,12 @@ ipv6 pp ospf area ${area} ${parameters} ${opt}
 ipv6 pp prefix ${ipv6_prefix}/${prefix_len}
 ipv6 pp prefix ${proxy}
 ipv6 pp prefix change log ${log}
+ipv6 pp rip connect interval ${time}
+ipv6 pp rip connect send ${action}
+ipv6 pp rip disconnect interval ${time}
+ipv6 pp rip disconnect send ${action}
 ipv6 pp rip filter ${direction} ${filter_list} ${filter_list} ${opt} 
+ipv6 pp rip hold routing ${hold}
 ipv6 pp rip hop ${direction} ${hop}
 ipv6 pp rip receive ${receive}
 ipv6 pp rip send ${send}
@@ -399,6 +532,15 @@ ipv6 pp rip trust gateway except ${gateway} ${gateway} ${opt}
 ipv6 pp rtadv send ${prefix_id} ${prefix_id} ${opt} ${option}=${value} ${opt} 
 ipv6 pp secure filter ${direction} ${filter_list} ${opt} dynamic ${filter_list} 
 ipv6 pp tcp mss limit ${mss}
+ipv6 prefix ${prefix_id} ${prefix}/${prefix_len} preferred_lifetime=${time} valid_lifetime=${time} l_flag=${switch} a_flag=${switch} 
+ipv6 prefix ${prefix_id} ${proxy} preferred_lifetime=${time} valid_lifetime=${time} l_flag=${switch} a_flag=${switch} 
+ipv6 rh0 discard ${switch}
+ipv6 rip preference ${preference}
+ipv6 rip use ${use}
+ipv6 route ${network} gateway ${gateway} ${parameter} gateway ${gateway} ${parameter} 
+ipv6 routing ${routing}
+ipv6 routing process ${process}
+ipv6 source address selection rule ${rule}
 ipv6 stealth ${interface} ${interface} ${opt} 
 ipv6 tunnel address ${ipv6_address}/${prefix_len} ${address_type} 
 ipv6 tunnel address ${proxy}
@@ -419,12 +561,51 @@ ipv6 tunnel tcp mss limit ${mss}
 ipv6_rip preference ${preference}
 isdn arrive inumber-port ${interface} ${inum_port} ${inum_port} ${opt} 
 isdn arrive permit ${arrive}
+isdn arrive permit ${arrive} vrrp ${interface} ${vrid} slave 
+isdn auto connect ${auto}
 isdn auto disconnect ${auto}
+isdn call block time ${time}
+isdn call permit ${permit}
 isdn call prohibit auth-error count ${count}
 isdn call prohibit mp-error count ${times}
+isdn call prohibit time ${time}
+isdn callback mscbcp user-specify ${specify}
+isdn callback permit ${callback_permit}
+isdn callback permit type ${type1} ${type2} 
+isdn callback request ${callback_request}
+isdn callback request type ${type}
+isdn callback response time ${type} ${time}
+isdn callback wait time ${time}
+isdn disconnect input time ${time}
+isdn disconnect interval time ${unit} ${watch} ${spare}
+isdn disconnect output time ${time}
+isdn disconnect policy ${type}
+isdn disconnect time ${time}
+isdn dsu ${interface} ${switch}
+isdn fast disconnect time ${time}
+isdn forced disconnect time ${time}
+isdn local address ${interface} ${isdn_num} /${sub_address} 
+isdn local address ${interface} /${sub_address}
+isdn piafs arrive ${arrive}
+isdn piafs call ${speed} ${64kmode} 
+isdn piafs control ${switch}
+isdn remote address ${call_arrive} ${isdn_num} ${isdn_num_list} 
 isdn remote address ${call_arrive} ${isdn_num} /${sub_address} ${isdn_num_list} 
+isdn remote call order ${order}
+isdn terminator ${interface} ${terminator}
 isdn use ${interface} ${use}
+l2tp always-on ${sw}
+l2tp hostname ${hostname}
+l2tp keepalive log ${log}
+l2tp keepalive use ${switch} ${intarval} ${count} 
+l2tp local router-id ${ipv4_address}
+l2tp remote end-id ${end-id}
+l2tp remote router-id ${ipv4_address}
 l2tp service ${service}
+l2tp service ${service} ${version} ${version} 
+l2tp syslog ${syslog}
+l2tp tunnel auth ${switch} ${password} 
+l2tp tunnel disconnect time ${time}
 lan backup ${interface} ${backup_interface} ${ip_address}
 lan backup ${interface} none
 lan backup ${interface} pp ${peer_num}
@@ -475,6 +656,7 @@ mail notify ${id} ${template_id} trigger account
 mail notify ${id} ${template_id} trigger backup ${if_b} ${range_b} ${if_b} ${opt} 
 mail notify ${id} ${template_id} trigger filter ethernet ${if_f} ${dir_f} ${if_f} ${dir_f} ${opt} 
 mail notify ${id} ${template_id} trigger intrusion ${if_i} ${range_i} ${dir_i} ${if_i} ${range_i} ${dir_i} ${opt} 
+mail notify ${id} ${template_id} trigger lan-map
 mail notify ${id} ${template_id} trigger qac-tm ${qac_type}
 mail notify ${id} ${template_id} trigger route ${route} ${route} ${opt} 
 mail notify ${id} ${template_id} trigger status ${type} ${type} ${opt} 
@@ -495,6 +677,11 @@ mail security use ${sw}
 mail security white-list pattern ${id} from=${keyword} to=${keyword} 
 mail security white-list set ${id} ${list_num} ${opt}
 mail security white-list set enable ${id}
+mail server name ${id} ${name}
+mail server pop ${id} ${address} port=${port} ${protocol} ${username} ${password}
+mail server smtp ${id} ${address} port=${port} smtp-auth ${username} ${password} ${auth_protocol} pop-before-smtp 
+mail server timeout ${id} ${timeout}
+mail template ${template_id} ${mailserver_id} From:${from_address} To:${to_address} Subject:${subject} Date:${date} MIME-Version:${mime_version} Content-Type:${content_type} notify-log=${switch} notify-wait-time=${sec} 
 mail-notify status from ${address}
 mail-notify status server ${server}
 mail-notify status subject ${subject}
@@ -503,12 +690,73 @@ mail-notify status to ${id} ${address} ${option}
 mail-notify status type ${info} ${info} ${opt} 
 mail-notify status use ${use}
 make directory ${path}
+mobile access limit connection length ${length} alert=${alert} 
+mobile access limit connection time ${time} alert=${alert} 
+mobile access limit duration ${duration}
+mobile access limit length ${length} alert=${alert} ,${alert_cancel} 
+mobile access limit time ${time} alert=${alert} ,${alert_cancel} unit=${unit} 
 mobile access-point name ${apn} cid=${cid} pdp=${type} 
+mobile auto connect ${auto}
+mobile call prohibit auth-error count ${count}
+mobile dial number ${dial_string}
+mobile disconnect input time ${time}
+mobile disconnect output time ${time}
+mobile disconnect time ${time}
+mobile display caller id ${switch}
+mobile pin code ${interface} ${pin}
+mobile signal-strength ${switch} ${option}=${value} 
+mobile syslog ${switch}
+mobile use ${interface} ${use} first-connect-wait-time=${time} 
+nat descriptor address inner ${nat_descriptor} ${inner_ipaddress_list}
+nat descriptor address outer ${nat_descriptor} ${outer_ipaddress_list}
+nat descriptor backward-compatibility ${type}
+nat descriptor ftp port ${nat_descriptor} ${port} ${port} ${opt} 
+nat descriptor log ${switch}
+nat descriptor masquerade incoming ${nat_descriptor} ${action} ${ip_address} 
 nat descriptor masquerade port range ${nat_descriptor} ${port_range1} ${port_range2} ${port_range3} 
+nat descriptor masquerade port range ${nat_descriptor} ${port_range1} ${port_range2} ${port_range3} ${port_range4} 
 nat descriptor masquerade port range ${nat_descriptor} ${port_range}
+nat descriptor masquerade remove df-bit ${remove}
+nat descriptor masquerade rlogin ${nat_descriptor} ${use}
+nat descriptor masquerade session limit ${nat_descriptor} ${id} ${limit}
+nat descriptor masquerade session limit total ${nat_descriptor} ${limit}
+nat descriptor masquerade static ${nat_descriptor} ${id} ${inner_ip} ${protocol} ${outer_port}= ${inner_port}
+nat descriptor masquerade ttl hold ${type}
+nat descriptor masquerade unconvertible port ${nat_descriptor} ${protocol} ${port}
 nat descriptor masquerade unconvertible port ${nat_descriptor} if-possible
+nat descriptor sip ${nat_descriptor} ${sip}
+nat descriptor static ${nat_descriptor} ${id} ${outer_ip}=${inner_ip} ${count} 
+nat descriptor static ${nat_descriptor} ${id} ${outer_ip}=${inner_ip}/${netmask}
+nat descriptor timer ${nat_descriptor} ${time}
+nat descriptor timer ${nat_descriptor} protocol=${protocol} port=${port_range} ${time}
+nat descriptor timer ${nat_descriptor} tcpfin ${time2}
+nat descriptor type ${nat_descriptor} ${type}
+netvolante-dns auto hostname ${interface} ${switch}
+netvolante-dns auto hostname pp ${switch}
+netvolante-dns auto save server=${server_num} ${file}
+netvolante-dns delete go ${interface} ${host} 
+netvolante-dns delete go pp ${peer_num} ${host} 
+netvolante-dns get hostname list ${interface}
+netvolante-dns get hostname list pp ${peer_num}
+netvolante-dns go ${interface}
+netvolante-dns go pp ${peer_num}
+netvolante-dns hostname host ${interface} ${host} duplicate 
+netvolante-dns hostname host pp ${host} duplicate 
+netvolante-dns port ${port}
+netvolante-dns register timer server=${server_num} ${time}
+netvolante-dns retry interval ${interface} ${interval} ${count}
+netvolante-dns retry interval pp ${interval} ${count}
+netvolante-dns server ${ip_address}
+netvolante-dns server ${name}
+netvolante-dns server update address port server=${server_num} ${port}
+netvolante-dns server update address use server=${server_num} ${switch}
+netvolante-dns set hostname ${interface} serial
 netvolante-dns sip use ${interface} server=${server_num} ${switch} duplicate 
 netvolante-dns sip use pp server=${server_num} ${switch} duplicate 
+netvolante-dns timeout ${interface} ${time}
+netvolante-dns timeout pp ${time}
+netvolante-dns use ${interface} ${switch}
+netvolante-dns use pp ${switch}
 ngn radius account callee ${use}
 ngn radius account caller ${use}
 ngn radius auth password ${password}
@@ -750,22 +998,6 @@ no ip ${interface} rebound ${switch}
 no ip ${interface} rip auth key
 no ip ${interface} rip auth key text
 no ip ${interface} rip auth type ${type} 
-no ip ${interface} rip filter ${direction} ${filter_list} 
-no ip ${interface} rip force-to-advertise ${ip-address}/${netmask} metric ${metric} 
-no ip ${interface} rip hop ${direction} ${hop}
-no ip ${interface} rip receive ${receive} ${opt} 
-no ip ${interface} rip send ${send} ${opt} 
-no ip ${interface} rip trust gateway except ${gateway} ${gateway} ${opt} 
-no ip ${interface} secondary address ${ip_address}/${mask} 
-no ip ${interface} secure filter ${direction} ${filter_list} 
-no ip ${interface} secure filter name ${set_name} 
-no ip ${interface} tcp mss limit ${mss} 
-no ip ${interface} traffic list ${sw} 
-no ip ${interface} traffic list threshold ${value} 
-no ip ${interface} vrrp ${vrid} ${vrid} ${opt} 
-no ip ${interface} vrrp shutdown trigger ${vrid} ${interface}
-no ip ${interface} vrrp shutdown trigger ${vrid} pp ${peer_num} ${opt} 
-no ip ${interface} vrrp shutdown trigger ${vrid} route ${network}
 no ip ${interface} wol relay
 no ip ${loopback} address ${ip_address} /${mask} 
 no ip arp timer ${timer} ${retry} 
@@ -793,7 +1025,6 @@ no ip icmp unreachable send ${send} rebound=${sw}
 no ip icmp unreachable-for-truncated send ${send} 
 no ip implicit-route preference ${preference} 
 no ip inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol} ${src_port} ${dst_port} 
-no ip keepalive ${num}
 no ip local forward filter ${id} 
 no ip pim sparse join-prune send ${cast} 
 no ip pim sparse log ${option} ${opt} 
@@ -821,15 +1052,9 @@ no ip pp ospf area ${area} ${parameters} ${opt}
 no ip pp ospf neighbor ${ip_address} eligible 
 no ip pp pim sparse ${switch} ${option} ${opt} 
 no ip pp rebound ${switch} 
-no ip pp remote address ${ip_address} 
 no ip pp rip auth type ${type} 
-no ip pp rip connect interval ${time} 
-no ip pp rip connect send ${rip_action} 
-no ip pp rip disconnect interval ${time} 
-no ip pp rip disconnect send ${rip_action} 
 no ip pp rip filter ${direction} ${filter_list}
 no ip pp rip force-to-advertise ${ip-address}/${netmask} metric ${metric} 
-no ip pp rip hold routing ${rip_hold} 
 no ip pp rip hop ${direction} ${hop}
 no ip pp rip receive ${receive} ${opt} 
 no ip pp rip send ${send} ${opt} 
@@ -839,11 +1064,6 @@ no ip pp secure filter name ${set_name}
 no ip pp tcp mss limit ${mss} 
 no ip pp traffic list ${sw} 
 no ip pp traffic list threshold ${value} 
-no ip route ${network} gateway ${opt} 
-no ip route change log ${log} 
-no ip routing ${routing} 
-no ip simple-service ${service} 
-no ip tos supersede ${id} ${tos} 
 no ip tunnel address ${ip_address} /${mask} 
 no ip tunnel forward filter ${id} 
 no ip tunnel igmp ${type} ${option} ${opt} 
@@ -854,6 +1074,7 @@ no ip tunnel intrusion detection threshold ${type}
 no ip tunnel mtu ${mtu2} 
 no ip tunnel nat descriptor ${nat_descriptor_list} reverse ${nat_descriptor_list} 
 no ip tunnel ospf area ${area} ${parameters} ${opt} 
+no ip tunnel ospf neighbor ${ip_address} eligible 
 no ip tunnel pim sparse ${switch} ${option} ${opt} 
 no ip tunnel rebound ${switch} 
 no ip tunnel remote address ${ip_address} 
@@ -869,81 +1090,15 @@ no ip tunnel secure filter name ${set_name}
 no ip tunnel tcp mss limit ${mss} 
 no ip tunnel traffic list ${sw} 
 no ip tunnel traffic list threshold ${value} 
-no ipsec auto refresh ${gateway_id} 
-no ipsec ike always-on ${gateway_id}
-no ipsec ike auth method ${gateway_id} ${method} 
-no ipsec ike backward-compatibility ${gateway_id} ${type} 
-no ipsec ike duration ${sa} ${gateway_id} ${second} ${kbytes} rekey ${rekey} 
-no ipsec ike eap myname ${gateway_id} ${opt} 
-no ipsec ike eap request ${gateway_id} ${opt} 
-no ipsec ike eap send certreq ${gateway_id} ${switch} 
-no ipsec ike encryption ${gateway_id} ${algorithm} 
-no ipsec ike esp-encapsulation ${gateway_id}
-no ipsec ike group ${gateway_id} ${group} ${group} 
-no ipsec ike hash ${gateway_id} ${algorithm} 
-no ipsec ike keepalive log ${gateway_id} ${log} 
-no ipsec ike keepalive use ${gateway_id} ${switch} ${opt} 
 no ipsec ike license-key ${license_id} ${opt} 
 no ipsec ike license-key use ${gateway_id} ${opt} 
-no ipsec ike local address ${gateway_id} ${ip_address} 
-no ipsec ike local id ${gateway_id} ${ip_address} /${mask} 
-no ipsec ike local name ${gateway_id} ${name} 
-no ipsec ike log ${gateway_id} ${type} 
-no ipsec ike message-id-control ${gateway_id} ${switch} 
-no ipsec ike mode-cfg address ${gateway_id} ${pool_id} 
-no ipsec ike mode-cfg address pool ${pool_id} ${ip_address} ${opt} 
-no ipsec ike mode-cfg method ${gateway_id} ${method} ${opt} 
-no ipsec ike nat-traversal ${gateway} ${switch} ${opt} 
-no ipsec ike negotiate-strictly ${gateway_id}
-no ipsec ike payload type ${gateway_id} ${type1} ${opt} 
-no ipsec ike pfs ${gateway_id} ${pfs} 
-no ipsec ike pki file ${gateway_id} ${opt} 
-no ipsec ike pre-shared-key ${gateway_id} ${opt} 
-no ipsec ike proposal-limitation ${gateway_id} ${switch} 
-no ipsec ike queue length ${length} 
-no ipsec ike remote address ${gateway_id} ${ip_address} 
-no ipsec ike remote id ${gateway_id} ${ip_address} /${mask} 
-no ipsec ike remote name ${gateway} ${name} 
-no ipsec ike restrict-dangling-sa ${gateway_id} ${action} 
 no ipsec ike retry ${count} ${interval} ${max_session} 
 no ipsec ike send info ${gateway_id} ${info} 
-no ipsec ike xauth myname ${gateway_id}
-no ipsec ike xauth request ${gateway_id} ${auth} ${opt} 
-no ipsec ipcomp type ${type} 
-no ipsec sa policy ${policy_id} ${gateway_id} 
-no ipsec transport ${id1} ${id2} ${opt} 
 no ipsec transport ${id} ${policy_id} ${proto} ${src_port_list} ${dst_port_list} 
-no ipsec tunnel ${policy_id} 
-no ipsec tunnel fastpath-fragment-function follow df-bit ${switch} 
-no ipsec tunnel outer df-bit ${mode} 
-no ipsec use ${use} 
 no ipsec version ${gateway_id} ${version} 
-no ipv6 ${interface} address ${ipv6_address}/${prefix_len} ${address_type} 
 no ipv6 ${interface} address ${proxy}
-no ipv6 ${interface} address auto
-no ipv6 ${interface} address dhcp
-no ipv6 ${interface} dad retry count ${count} 
-no ipv6 ${interface} dhcp service
 no ipv6 ${interface} inbound filter list ${id} ${opt} 
-no ipv6 ${interface} mld ${type} ${option} ${opt} 
-no ipv6 ${interface} mld static ${group} ${filter_mode} ${source} ${opt} 
-no ipv6 ${interface} mtu ${mtu} 
 no ipv6 ${interface} ospf area ${area} ${parameters} ${opt} 
-no ipv6 ${interface} prefix ${ipv6_prefix}/${prefix_len}
-no ipv6 ${interface} prefix ${proxy}
-no ipv6 ${interface} prefix change log ${log}
-no ipv6 ${interface} rip filter ${direction}
-no ipv6 ${interface} rip hop ${direction}
-no ipv6 ${interface} rip receive
-no ipv6 ${interface} rip send
-no ipv6 ${interface} rip trust gateway except ${gateway} ${gateway} ${opt} 
-no ipv6 ${interface} rtadv send ${opt} 
-no ipv6 ${interface} secure filter ${direction}
-no ipv6 ${interface} tcp mss limit ${mss} 
-no ipv6 ${interface} vrrp ${vrid} ${vrid} ${opt} 
-no ipv6 ${interface} vrrp shutdown trigger ${vrid} ${interface}
-no ipv6 ${interface} vrrp shutdown trigger ${vrid} pp ${peer_num} ${opt} 
-no ipv6 ${interface} vrrp shutdown trigger ${vrid} route ${network}
 no ipv6 filter ${filter_num} ${pass_reject} 
 no ipv6 filter dynamic ${dyn_filter_num} ${srcaddr} ${opt} 
 no ipv6 icmp echo-reply send ${send} 
@@ -959,7 +1114,6 @@ no ipv6 icmp time-exceeded send ${send} rebound=${sw}
 no ipv6 icmp unreachable send ${send} rebound=${sw} 
 no ipv6 inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol6} ${src_port} ${dst_port6} 
 no ipv6 inbound filter ${id} ${action} ${src_address} /${mask} ${dst_address} /${mask} ${protocol} ${src_port} ${dst_port} 
-no ipv6 max auto address ${max} 
 no ipv6 ospf area ${area} stub cost=${cost} 
 no ipv6 ospf area network ${area} ${ipv6_prefix}/${prefix_len} restrict 
 no ipv6 ospf export filter ${filter_num} ${opt} 
@@ -994,11 +1148,6 @@ no ipv6 pp rip hop ${direction}
 no ipv6 pp rip trust gateway except ${gateway} ${gateway} ${opt} 
 no ipv6 pp secure filter ${direction}
 no ipv6 pp tcp mss limit ${mss} 
-no ipv6 prefix ${prefix_id}
-no ipv6 rip preference ${preference} 
-no ipv6 route ${network} gateway ${opt} 
-no ipv6 routing ${routing} 
-no ipv6 source address selection rule ${rule} 
 no ipv6 tunnel address ${ipv6_address}/${prefix_len} ${address_type} 
 no ipv6 tunnel address ${proxy}
 no ipv6 tunnel inbound filter list ${id} ${opt} 
@@ -1040,16 +1189,10 @@ no isdn terminator ${interface} ${terminator}
 no isdn use ${interface}
 no l2tp always-on ${sw} 
 no l2tp hostname ${name} 
-no l2tp keepalive log ${log} 
-no l2tp keepalive use ${switch} ${opt} 
 no l2tp local router-id ${ipv4_address} 
 no l2tp remote end-id ${end-id} 
 no l2tp remote router-id ${ipv4_address} 
-no l2tp service ${service} 
 no l2tp service ${service} ${version} ${version} 
-no l2tp syslog ${syslog} 
-no l2tp tunnel auth ${switch} ${opt} 
-no l2tp tunnel disconnect time ${time} 
 no lan backup ${interface}
 no lan backup recovery time ${interface} ${time} 
 no lan count-hub-overflow ${switch} ${interval} 
@@ -1071,80 +1214,19 @@ no line type ${interface} ${line}
 no line type ${interface} ${line} ${channels} 
 no login timer ${time} 
 no login user ${user} ${password} 
-no lua use ${switch} 
-no mail notify ${id} ${opt} 
-no mail security max size ${size} 
-no mail security port pop ${list} 
-no mail security port smtp ${list} 
-no mail security prefix ${type} ${prefix} 
-no mail security smtp detect illegal mail ${action} 
-no mail security smtp size overflow ${type} 
-no mail security spam level ${level} 
-no mail security use ${sw} 
-no mail security white-list pattern ${id} ${opt} 
-no mail security white-list set ${id} ${list_num} ${opt} 
-no mail security white-list set enable ${id} 
 no mail server name ${id} ${name} 
 no mail server pop ${id} ${opt} 
 no mail server smtp ${id} ${opt} 
 no mail server timeout ${id} ${timeout} 
 no mail template ${template_id} ${opt} 
 no mail-notify status to ${id}
-no mobile access limit connection length ${length} 
-no mobile access limit connection time ${time} 
-no mobile access limit duration ${duration} 
-no mobile access limit length ${length} 
-no mobile access limit time ${time} 
 no mobile access-point name ${apn} cid=${cid} 
-no mobile auto connect ${auto} 
-no mobile call prohibit auth-error count ${count} 
-no mobile dial number ${dial_string} 
-no mobile disconnect input time ${time} 
-no mobile disconnect output time ${time} 
-no mobile disconnect time ${time} 
-no mobile display caller id ${switch} 
-no mobile pin code ${interface} ${pin} 
-no mobile syslog ${switch} 
-no mobile use ${interface} ${use} 
-no nat descriptor address inner ${nat_descriptor} ${inner_ipaddress_list} 
-no nat descriptor address outer ${nat_descriptor} ${outer_ipaddress_list} 
 no nat descriptor backward-compatibility ${type} 
-no nat descriptor ftp port ${nat_descriptor} ${port} ${opt} 
-no nat descriptor masquerade incoming ${nat_descriptor}
-no nat descriptor masquerade port range ${nat_descriptor} ${port_range1} ${port_range2} ${port_range3} 
 no nat descriptor masquerade port range ${nat_descriptor} ${port_range1} ${port_range2} ${port_range3} ${port_range4} 
 no nat descriptor masquerade port range ${nat_descriptor} ${port_range} 
-no nat descriptor masquerade remove df-bit ${remove} 
-no nat descriptor masquerade rlogin ${nat_descriptor} ${use} 
-no nat descriptor masquerade session limit ${nat_descriptor} ${id}
 no nat descriptor masquerade session limit total ${nat_descriptor}
-no nat descriptor masquerade static ${nat_descriptor} ${id} ${inner_ip} ${protocol} ${outer_port}= ${inner_port} 
-no nat descriptor masquerade unconvertible port ${nat_descriptor} ${protocol} ${port} 
-no nat descriptor sip ${nat_descriptor}
-no nat descriptor static ${nat_descriptor} ${id} ${outer_ip}=${inner_ip} ${count} 
-no nat descriptor timer ${nat_descriptor} ${time} 
-no nat descriptor timer ${nat_descriptor} protocol=${protocol} port=${port_range} ${time} 
-no nat descriptor timer ${nat_descriptor} tcpfin ${time2} 
-no nat descriptor type ${nat_descriptor} ${type} 
-no netvolante-dns auto hostname ${interface} ${switch} 
-no netvolante-dns auto hostname pp ${switch} 
-no netvolante-dns auto save server=${server_num} 
-no netvolante-dns hostname host ${interface} ${host} duplicate 
-no netvolante-dns hostname host pp ${host} duplicate 
-no netvolante-dns port ${port} 
-no netvolante-dns register timer server=${server_num} 
-no netvolante-dns retry interval ${interface} ${interval} ${count} 
-no netvolante-dns retry interval pp ${interval} ${count} 
-no netvolante-dns server ${ip_address} 
-no netvolante-dns server ${name} 
-no netvolante-dns server update address port server=${server_num} 
-no netvolante-dns server update address use server=${server_num} 
 no netvolante-dns sip use ${interface} server=${server_num} ${switch} duplicate 
 no netvolante-dns sip use pp server=${server_num} ${switch} duplicate 
-no netvolante-dns timeout ${interface} ${time} 
-no netvolante-dns timeout pp ${time} 
-no netvolante-dns use ${interface} ${switch} 
-no netvolante-dns use pp ${switch} 
 no ngn type ${interface} ${type} 
 no no isdn callback mscbcp user-specify ${specify} 
 no no isdn fast disconnect time ${time} 
@@ -1439,7 +1521,6 @@ no ysc connection timeout ${time}
 no ysc request timeout ${time} 
 no ysc retry ${count} 
 noisdn local address ${interface}
-nslookup ${host}
 ntp backward-compatibility ${comp}
 ntp local address ${ip_address}
 ntpdate ${ntp_server} syslog 
@@ -1501,10 +1582,27 @@ pp keepalive use lcp-echo icmp-echo ${dest_ip} ${option}=${value} ${opt} ${dest_
 pp name ${name}
 pp name ${type}:${name}
 pp select ${peer_num}
+ppp bacp maxconfigure ${count}
+ppp bacp maxfailure ${count}
+ppp bacp maxterminate ${count}
+ppp bacp restart ${time}
+ppp bap maxretry ${count}
+ppp bap restart ${time}
 ppp ccp no-encryption ${mode}
 ppp lcp accm ${accm}
+ppp mp control ${type}
+ppp mp divide ${divide}
 ppp mp interleave ${delay} ${switch}
+ppp mp load threshold ${call_load} ${call_count} ${disc_load} ${disc_count}
+ppp mp maxlink ${number}
+ppp mp minlink ${number}
+ppp mp timer ${time}
+ppp mp use ${use}
 pppoe call prohibit auth-error count ${count}
+pppoe tcp mss limit ${length}
+pppoe use ${interface}
+pptp call-id mode ${mode}
+pri leased channel ${pri}/${info} ${timeslot_head} ${timeslot_num}
 pri loopback active ${pri} a ${data}
 pri loopback active ${pri} timeslot ${head} ${num} ${data}
 pri loopback passive ${pri} off
@@ -1547,9 +1645,22 @@ pstn ringing signal frequency ${MIN} ${MAX}
 pstn ringing signal threshold ${T1} ${T2} ${T3} ${T4}
 pstn supplementary-service ${sw}
 pstn use ${sw}
+qac-tm client permit ${mac_address}
+qac-tm client refresh go ${ip_address} ${prompt} 
+qac-tm client update ${sw} ${port} 
 qac-tm client_port ${port} ${port} ${opt} 
+qac-tm port ${port} ${port} ${opt} 
+qac-tm redirect ${url}
+qac-tm server ${ip_address} ${port} protocol=${protocol} 
+qac-tm unqualified client access control ${type} server-error=${server_error_type} dhcp-not-bind=${dhcp_not_bind_type} 
+qac-tm use ${type}
+qac-tm version margin ${pattern} ${engine} os=${os} 
+qqac-tm warning url ${url}
+queue ${interface} class property ${class} type=${type}
+queue ${interface} default class secondary primary=${primary_class} ${class}
 queue ${interface} length ${len1} ${len2} ${opt}${len4} 
-queue ${interface} length ${len1} ${len2} ${opt}${lenN} 
+queue ${interface} length ${len1} ${len2} ${opt}${lenN} drop-threshold=${dthreshold-mid} ,${dthreshold-high} 
+queue ${interface} length secondary primary=${primary_class} ${len1} ${len2} ${opt}${len4} 
 queue class filter ${num} ${class1} /${class2} cos=${cos} ip ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
 queue class filter ${num} ${class1} /${class2} cos=${cos} ipv6 ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
 queue class filter ${num} ${class1} cos=${cos} ip ${src_addr} ${dest_addr} ${protocol} ${src_port} ${dest_port} 
@@ -1595,16 +1706,18 @@ show account tunnel ${tunnel_num}
 show acl ${storage_if}:${path} all 
 show arp ${interface} /${sub_interface} 
 show bridge learning ${bridge_interface}
-show config pp ${peer_num} 
+show config pp ${peer_num-peer_num} 
+show config tunnel ${tunnel_num-tunnel_num} expand 
 show config tunnel ${tunnel_num} 
-show config tunnel ${tunnel_num} expand 
+show dlci ${peer_num} 
 show file list ${location} ${all} ${file-only} 
-show file list ${location} all file-only 
-show ip connection ${interface} ${direction} 
-show ip connection pp ${peer_num} ${direction} 
+show ip connection ${interface} ${direction} ${ip_address} 
+show ip connection detail ${interface} ${direction} 
+show ip connection detail pp ${peer_num} ${direction} 
+show ip connection detail tunnel ${tunnel_num} ${direction} 
 show ip connection pp ${peer_num} ${direction} ${ip_address} 
-show ip connection tunnel ${tunnel_num} ${direction} 
 show ip connection tunnel ${tunnel_num} ${direction} ${ip_address} 
+show ip mroute ${option} 
 show ip secure filter ${interface} ${dir} 
 show ip secure filter pp ${peer_num} ${dir} 
 show ip secure filter tunnel ${tunnel_num} ${dir} 
@@ -1617,16 +1730,17 @@ show ipv6 address tunnel ${tunnel_num}
 show ipv6 connection ${interface} ${direction} ${ipv6_address} 
 show ipv6 connection pp ${peer_num} ${direction} ${ipv6_address} 
 show ipv6 connection tunnel ${tunnel_num} ${direction} ${ipv6_address} 
+show ipv6 ospf ${info}
+show lan-map ${interface} detail 
 show log external-memory backup ${fileid} 
-show pki crl ${crl_id} 
+show nat descriptor masquerade session ${nat_descriptor} summary
 show show pki crl ${crl_id} 
 show status analog ${port} 
 show status ethernet filter ${type} ${scope} 
 show status heartbeat2 id ${recv_id}
 show status heartbeat2 name ${string}
-show status ip policy filter all ${type}
 show status ipv6 inbound filter ${type} 
-show status ipv6 policy filter all ${type}
+show status l2tp tunnel ${tunnel_num} 
 show status lua ${info} 
 show status mobile signal-strength ${interface} reverse 
 show status onfs ${info} 
@@ -1637,6 +1751,8 @@ show status usbhost modem ${port}
 show url filter https-proxy ${interface}
 show url filter https-proxy pp ${peer_num} 
 show url filter https-proxy tunnel ${tunnel_num} 
+show url filter pp ${peer_num} 
+show url filter tunnel ${tunnel_num} 
 sip arrive address check ${SW}
 sip arrive name-display default ${mode}
 sip codec permit ${interface} ${codec} ${codec} ${opt} 
@@ -1645,13 +1761,18 @@ sip codec permit tunnel ${tunnel_num} ${codec} ${codec} ${opt}
 sip netvolante dial domain ${name}
 sip netvolante dial figure ${figure}
 sip request retransmit timer ${timer1} ${timer2} 
+sip server ${number} ${address} ${type} ${protocol} ${sip_uri} ${username} ${password} 
 sip server ${number} ${address} ${type} ${protocol} ${sip_uri} ${username} ${password} name=${name} 
+sip server 100rel ${number} ${switch}
 sip server analog service ${number} off
 sip server analog service ${number} rule=${rule}
 sip server arrive number display server=${number} rule=${rule}
 sip server call mode ${number} ${mode}
+sip server call own permit server=${number} ${sw}
+sip server call remote domain ${number} ${domain}
 sip server call server error server=${number} ${sw}
 sip server connect ${number}
+sip server dial number-only server=${number} ${sw}
 sip server disconnect ${number}
 sip server display name ${number} ${displayname}
 sip server pilot address ${number} ${sipaddress}
@@ -1660,9 +1781,6 @@ sip server qvalue ${number} ${value}
 sip server register request-uri ${number} ${sip_address}
 sip server register timer server=${number} ${OK_time} ${NG_time}
 sip server session timer ${number} ${time} update=${update} refresher=${refresher} 
-sip session timer ${time} update=${update} refresher=${refresher} 
-sip use ${use}
-sip user agent ${sw} ${user-agent} 
 speed ${interface} ${speed}
 speed pp ${speed}
 ssh -p ${port} -e ${escape} ${user}@ ${host}
@@ -1723,7 +1841,7 @@ switch control function set vlan-multiple ${port} ${group_num} ${mode}
 switch control function set vlan-multiple-use ${mode}
 switch control function set vlan-port-mode ${port} ${mode}
 switch control function set vlan-trunk ${port} ${vlan_register_num} ${mode}
-switch control use ${interface} ${use}
+switch control use ${interface} ${use} terminal=${terminal} 
 syslog debug ${debug}
 syslog execute command ${switch}
 syslog facility ${facility}
@@ -1739,6 +1857,7 @@ system packet-scheduling filter ${filter_num} ${cpu_num} ip ${src_ipv4_address} 
 system packet-scheduling filter ${filter_num} ${cpu_num} ipv6 ${src_ipv6_address} /${prefix_len} ${dest_ipv6_address} /${prefix_len} ${protocol} ${src_port} ${dest_port} 
 system packet-scheduling filter list ${filter_list}
 system temperature threshold ${t1} ${t2}
+take lan-map snapshot ${interface} update 
 tcp log ${switch} ${src_addr} /${mask} ${dst_addr} /${mask} ${tcpflag} ${src_port_list} ${dst_port_list} 
 tcp session limit ${limit}
 telnet ${host} ${port} ${mode} ${negotiation} ${abort} 
@@ -1768,12 +1887,13 @@ tunnel select ${tunnel_num}
 tunnel template ${tunnel} ${tunnel} ${opt} 
 url ${interface} filter ${dir} ${list}
 url ${interface} proxy filter ${dir} ${list}
-url filter https-proxy listen ${port}
-url filter https-proxy use ${switch}
 url filter https-proxy_curl ${url} dhcp-scope=${scope_num} ${opt} 
-url pp proxy filter ${dir} ${list}
-url tunnel proxy filter ${dir} ${list}
+url tunnel filter ${dir} ${list}
+usbhost config filename ${from} ${to} ${password} 
+usbhost exec filename ${from} ${to}
 usbhost overcurrent duration ${port} ${duration}
+usbhost statistics filename prefix ${prefix} ${term} ${crypto} ${password} 
+usbhost syslog filename ${name} ${crypto} ${password} 
 usbhost use ${port} ${switch}
 user attribute ${user} ${attribute}=${value} ${attribute}=${value} ${opt} 
 wins server ${server1} ${server2} 
