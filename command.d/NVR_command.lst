@@ -1,0 +1,1684 @@
+analog arrive another-device permit VAR#port VAR#permit
+no analog arrive another-device permit VAR#port
+analog arrive global permit VAR#port VAR#permit
+no analog arrive global permit VAR#port
+analog arrive ignore-subaddress permit VAR#port VAR#permit
+no analog arrive ignore-subaddress permit VAR#port
+analog arrive incoming-signal VAR#port VAR#number VAR#address VAR#type VAR#signal VAR#dial_in-num
+no analog arrive incoming-signal VAR#port VAR#number
+analog arrive incoming-signal timing pb VAR#port VAR#mode
+no analog arrive incoming-signal timing pb VAR#port
+analog arrive inumber-port VAR#port VAR#inum_port [VAR#inum_port...]
+no analog arrive inumber-port VAR#port
+analog arrive number display VAR#port VAR#mode
+no analog arrive number display VAR#port
+analog arrive priority VAR#port VAR#priority
+no analog arrive priority VAR#port
+analog arrive restrict VAR#port VAR#restrict
+no analog arrive restrict VAR#port
+analog arrive restrict list VAR#port VAR#number VAR#dial_num [/VAR#sub_address]
+no analog arrive restrict list VAR#port VAR#number
+analog arrive ring-while-talking permit VAR#port VAR#permit
+no analog arrive ring-while-talking permit VAR#port
+analog arrive ringer-type list VAR#port VAR#type VAR#number VAR#dial_num [/VAR#sub_address]
+no analog arrive ringer-type list VAR#port VAR#type VAR#number
+analog arrive without-calling-number VAR#port VAR#type [VAR#option1 [VAR#option2 [VAR#option3]]]
+no analog arrive without-calling-number VAR#port
+analog arrive without-subaddress permit VAR#port VAR#permit
+no analog arrive without-subaddress permit VAR#port
+analog device type VAR#port VAR#type
+no analog device type VAR#port
+analog disc-signal VAR#port VAR#use
+no analog disc-signal VAR#port
+analog dtmf level VAR#port VAR#level
+no analog dtmf level VAR#port
+analog end-of-dialing-code VAR#port VAR#switch
+no analog end-of-dialing-code VAR#port
+analog extension emergency-call-dial type VAR#type
+analog extension incoming ringer VAR#mode
+analog extension other-dial-tone VAR#switch
+analog hooking inhibit timer VAR#port VAR#time
+no analog hooking inhibit timer VAR#port
+analog hooking timer VAR#port VAR#time
+no analog hooking timer VAR#port
+analog hooking wait timer VAR#port VAR#time
+no analog hooking wait timer VAR#port
+analog local address VAR#port VAR#dialin_num [/VAR#sub_address] [VAR#dialin_num_list]
+no analog local address VAR#port
+analog local address notice VAR#port VAR#notice
+no analog local address notice VAR#port
+analog mp prior VAR#port VAR#down
+no analog mp prior VAR#port
+analog off-hook mask VAR#port VAR#mask_open VAR#mask_ring
+no analog off-hook mask VAR#port
+analog pad receive VAR#port VAR#pad
+no analog pad receive VAR#port
+analog pad rtp receive VAR#port VAR#pad
+no analog pad rtp receive VAR#port
+analog pad rtp send VAR#port VAR#pad
+no analog pad rtp send VAR#port
+analog pad send VAR#port VAR#pad
+no analog pad send VAR#port
+analog pause timer VAR#port VAR#time
+no analog pause timer VAR#port
+analog power VAR#port VAR#sw
+no analog power VAR#port
+analog rapid call VAR#port VAR#rapid
+no analog rapid call VAR#port
+analog re-ringing-timer VAR#port VAR#time
+no analog re-ringing-timer VAR#port
+analog supplementary-service [network] VAR#func [VAR#func...]
+analog supplementary-service pseudo VAR#func [VAR#func...]
+analog supplementary-service call-deflection address VAR#port VAR#dial_num [/VAR#sub_address]
+no analog supplementary-service call-deflection address VAR#port
+analog supplementary-service call-deflection reject VAR#port VAR#action
+no analog supplementary-service call-deflection reject VAR#port
+analog supplementary-service call-deflection ringer VAR#port VAR#count
+no analog supplementary-service call-deflection ringer VAR#port
+analog supplementary-service call-deflection talkie VAR#port VAR#transfer VAR#originator
+no analog supplementary-service call-deflection talkie VAR#port
+analog use VAR#port VAR#use
+no analog use VAR#port
+analog wait dial timer VAR#port VAR#time
+no analog wait dial timer VAR#port
+audio hold-tone type VAR#type
+pstn dial type VAR#type
+pstn hooking timer VAR#time
+pstn modem signal timer VAR#time
+pstn number display VAR#sw
+pstn pad receive VAR#pad
+pstn pad send VAR#pad
+pstn pause timer VAR#time
+pstn ringing signal frequency VAR#MIN VAR#MAX
+pstn ringing signal threshold VAR#T1 VAR#T2 VAR#T3 VAR#T4
+pstn supplementary-service VAR#sw
+pstn use VAR#sw
+analog extension address refer VAR#interface
+analog extension address refer pp VAR#peer_num
+no analog extension address refer pp VAR#peer_num
+analog extension log VAR#switch
+analog extension machine-id VAR#id VAR#mac_address
+no analog extension machine-id VAR#id
+analog extension master VAR#master
+analog extension mode VAR#mode
+analog extension slave permit VAR#mode
+cooperation VAR#type VAR#role VAR#sw
+no cooperation VAR#type VAR#role [VAR#sw]
+cooperation bandwidth-measuring remote VAR#id VAR#role VAR#address [VAR#option=VAR#value]
+no cooperation bandwidth-measuring remote VAR#id [VAR#role VAR#address [VAR#option=VAR#value]]
+cooperation load-watch control VAR#id high=VAR#high [raise=VAR#raise] low=VAR#low [lower=VAR#lower] [VAR#option=VAR#value]
+no cooperation load-watch control VAR#id [high=VAR#high [raise=VAR#raise] low=VAR#low [lower=VAR#lower] [VAR#option=VAR#value]]
+cooperation load-watch remote VAR#id VAR#role VAR#address [VAR#option=VAR#value]
+no cooperation load-watch remote VAR#id [VAR#role VAR#address [VAR#option=VAR#value]]
+cooperation load-watch trigger VAR#id VAR#point high=VAR#high [, VAR#count] low=VAR#low [, VAR#count] [VAR#option=VAR#value]
+no cooperation load-watch trigger VAR#id [VAR#point high=VAR#high [, VAR#count] low=VAR#low [, VAR#count] [VAR#option=VAR#value]]
+cooperation port VAR#port
+no cooperation port [VAR#port]
+cooperation bandwidth-measuring go VAR#id
+cooperation load-watch go VAR#id VAR#type
+httpd custom-gui api password VAR#password
+no httpd custom-gui api password [VAR#password]
+httpd custom-gui api use VAR#use
+no httpd custom-gui api use [VAR#use]
+httpd custom-gui use VAR#use
+no httpd custom-gui use [VAR#use]
+httpd custom-gui user [VAR#user] directory=VAR#path [index=VAR#name]
+no httpd custom-gui user [VAR#user...]
+tunnel ngn arrive permit VAR#permit
+no tunnel ngn arrive permit [VAR#permit]
+tunnel ngn bandwidth VAR#bandwidth [arrivepermit=VAR#sw]
+no tunnel ngn bandwidth [VAR#bandwidth arrivepermit=VAR#sw]
+tunnel ngn call permit VAR#permit
+no tunnel ngn call permit [VAR#permit]
+tunnel ngn disconnect time VAR#time
+no tunnel ngn disconnect time [VAR#time]
+tunnel ngn fallback VAR#remote_tel ...
+no tunnel ngn fallback [VAR#remote_tel ...]
+tunnel ngn interface VAR#lan
+no tunnel ngn interface [VAR#lan]
+dhcp client client-identifier VAR#interface primary [type VAR#type] VAR#id
+dhcp client client-identifier VAR#interface secondary [type VAR#type] VAR#id
+dhcp client client-identifier pp VAR#peer_num [type VAR#type] VAR#id
+dhcp client client-identifier pool VAR#pool_num [type VAR#type] VAR#id
+no dhcp client client-identifier VAR#interface primary
+no dhcp client client-identifier VAR#interface secondarye
+no dhcp client client-identifier pp VAR#peer_num
+no dhcp client client-identifier pool VAR#pool_num
+dhcp client hostname VAR#interface primary VAR#host
+dhcp client hostname VAR#interface secondary VAR#host
+dhcp client hostname pp VAR#peer_num VAR#host
+dhcp client hostname pool VAR#pool_num VAR#host
+no dhcp client hostname VAR#interface primary [VAR#host]
+no dhcp client hostname VAR#interface secondary [VAR#host]
+no dhcp client hostname pp VAR#peer_num [VAR#host]
+no dhcp client hostname pool VAR#pool_num [VAR#host]
+dhcp client option VAR#interface primary VAR#option=VAR#value
+dhcp client option VAR#interface secondary VAR#option=VAR#value
+dhcp client option pp VAR#peer_num VAR#option=VAR#value
+dhcp client option pool VAR#pool_num VAR#option=VAR#value
+no dhcp client option VAR#interface primary [VAR#option=VAR#value]
+no dhcp client option VAR#interface secondary [VAR#option=VAR#value]
+no dhcp client option pp VAR#peer_num [VAR#option=VAR#value]
+no dhcp client option pool VAR#pool_num [VAR#option=VAR#value]
+dhcp client release linkdown VAR#switch [VAR#time]
+no dhcp client release linkdown [VAR#switch [VAR#time]]
+dhcp convert lease to bind VAR#scope_n [except] [VAR#idx [...]]
+dhcp duplicate check VAR#check1 VAR#check2
+dhcp manual lease VAR#ip_address [VAR#type] VAR#id
+dhcp manual lease VAR#ip_address VAR#mac_address
+dhcp manual lease VAR#ip_address ipcp
+dhcp manual release VAR#ip_address
+dhcp relay select VAR#type
+no dhcp relay select [VAR#type]
+dhcp relay server VAR#host1 [VAR#host2 [VAR#host3 [VAR#host4]]]
+dhcp relay threshold VAR#time
+no dhcp relay threshold [VAR#time]
+dhcp scope VAR#scope_num VAR#ip_address-ip_address/VAR#netmask [except VAR#ex_ip ...] [gateway VAR#gw_ip] [expire VAR#time] [maxexpire VAR#time]
+no dhcp scope VAR#scope_num [VAR#ip_address-ip_address/VAR#netmask [except VAR#ex_ip...] [gateway VAR#gw_ip] [expire VAR#time] [maxexpire VAR#time]]
+dhcp scope bind VAR#scope_num VAR#ip_address [VAR#type] VAR#id
+dhcp scope bind VAR#scope_num VAR#ip_address VAR#mac_address
+dhcp scope bind VAR#scope_num VAR#ip_address ipcp
+no dhcp scope bind VAR#scope_num VAR#ip_address
+dhcp scope lease type VAR#scope_num VAR#type [fallback=VAR#fallback_scope_num]
+no dhcp scope lease type VAR#scope_num [VAR#type ...]
+dhcp scope option VAR#scope_num VAR#option=VAR#value
+no dhcp scope option VAR#scope_num [VAR#option=VAR#value]
+dhcp server rfc2131 compliant VAR#comp
+dhcp server rfc2131 compliant [except] VAR#function [VAR#function..]
+dhcp service VAR#type
+no dhcp service [VAR#type]
+dns server dhcp VAR#interface
+ip VAR#interface dhcp lease time VAR#time
+no ip VAR#interface dhcp lease time [VAR#time]
+ip VAR#interface dhcp retry VAR#retry VAR#interval
+no ip VAR#interface dhcp retry [VAR#retry VAR#interval]
+ip VAR#interface dhcp service VAR#type [VAR#host1 [VAR#host2 [VAR#host3 [VAR#host4]]]]
+no ip VAR#interface dhcp service
+dns cache max entry VAR#num
+no dns cache max entry [VAR#num]
+dns cache use VAR#switch
+no dns cache use [VAR#switch]
+dns domain VAR#domain_name
+no dns domain [VAR#domain_name]
+dns host VAR#ip_range [VAR#ip_range [...]]
+dns notice order VAR#protocol VAR#server [VAR#server]
+no dns notice order VAR#protocol [VAR#server [VAR#server]]
+dns private address spoof VAR#spoof
+no dns private address spoof [VAR#spoof]
+dns private name VAR#name
+no dns private name [VAR#name]
+dns server VAR#ip_address [VAR#ip_address...]
+no dns server [VAR#ip_address...]
+dns server pp VAR#peer_num
+no dns server pp [VAR#peer_num]
+dns server select VAR#id VAR#server [VAR#server2] [VAR#type] VAR#query [VAR#original-sender] [restrict pp VAR#connection-pp]
+dns server select VAR#id pp VAR#peer_num [VAR#default-server] [VAR#type] VAR#query [VAR#original-sender] [restrict pp VAR#connection-pp]
+dns server select VAR#id dhcp VAR#interface [VAR#default-server] [VAR#type] VAR#query [VAR#original-sender] [restrict pp VAR#connection-pp]
+dns server select VAR#id reject [VAR#type] VAR#query [VAR#original-sender]
+no dns server select VAR#id
+dns service VAR#service
+no dns service [VAR#service]
+dns service fallback VAR#switch
+no dns service fallback [VAR#switch]
+dns srcport VAR#port[VAR#port]
+no dns srcport [VAR#port-[VAR#port]]
+dns syslog resolv VAR#resolv
+no dns syslog resolv [VAR#resolv]
+ip host VAR#fqdn VAR#value [ttl=VAR#ttl]
+dns static VAR#type VAR#name VAR#value [ttl=VAR#ttl]
+no ip host VAR#fqdn [VAR#value]
+no dns static VAR#type VAR#name [VAR#value]
+ethernet filter VAR#num VAR#kind VAR#src_mac [VAR#dst_mac [VAR#offset VAR#byte_list]]
+ethernet filter VAR#num VAR#kind VAR#type [VAR#scope] [VAR#offset VAR#byte_list]
+no ethernet filter VAR#num [VAR#kind ...]
+ethernet VAR#interface filter VAR#dir VAR#list
+no ethernet VAR#interface filter VAR#dir [VAR#list]
+external-memory accelerator cache size VAR#interface VAR#size
+no external-memory accelerator cache size VAR#interface [VAR#size]
+external-memory auto-search time VAR#time
+no external-memory auto-search time [VAR#time]
+external-memory batch filename VAR#batchfile [VAR#logfile]
+no external-memory batch filename [VAR#batchfile [VAR#logfile]]
+external-memory boot permit VAR#switch
+no external-memory boot permit [VAR#switch]
+external-memory boot timeout VAR#time
+no external-memory boot timeout [VAR#time]
+external-memory cache mode VAR#mode
+no external-memory cache mode [VAR#mode]
+external-memory config filename VAR#from[,VAR#from] [VAR#to] [VAR#password]
+no external-memory config filename [VAR#from] [VAR#to] [VAR#password]
+external-memory exec filename VAR#from [VAR#to]
+no external-memory exec filename [VAR#from] [VAR#to]
+external-memory performance-test go VAR#interface
+external-memory syslog filename VAR#storage_if:VAR#name [VAR#crypto VAR#password] [limit=VAR#size] [backup=VAR#num]
+no external-memory syslog filename [VAR#storage_if:VAR#name]
+operation button function download VAR#function [VAR#script_file [VAR#args ...]]
+no operation button function download [VAR#function [VAR#script_file [VAR#args ...]]]
+operation execute batch permit VAR#permit
+no operation execute batch permit [VAR#permit]
+operation external-memory download permit VAR#switch
+no operation external-memory download permit [VAR#switch]
+sd use VAR#switch
+no sd use [VAR#switch]
+show [...] | grep [-i] [-v] [-w] VAR#pattern
+show [...] &gt; VAR#name
+show [...] &gt;&gt; VAR#name
+httpd host VAR#ip_range
+httpd listen VAR#port
+httpd service VAR#switch
+httpd timeout VAR#time
+no httpd timeout [VAR#time]
+pp name VAR#type:VAR#name
+tunnel name VAR#name
+provider auto connect forced disable VAR#switch
+no provider auto connect forced disable [VAR#switch]
+provider dns server VAR#peer_num VAR#ip_address [VAR#ip_address..]
+no provider dns server VAR#peer_num [VAR#ip_address..]
+provider dns server pp VAR#peer_num VAR#dns_peer_num
+no provider dns server pp VAR#peer_num [VAR#dns_peer_num]
+provider filter routing VAR#type
+no provider filter routing [VAR#type]
+provider VAR#interface bind VAR#tunnel_num...
+no provider VAR#interface bind [VAR#tunnel_num...]
+provider VAR#interface dns server VAR#ip_address [VAR#ip_address..]
+no provider VAR#interface dns server [VAR#ip_address [VAR#ip_address]]
+provider VAR#interface name [VAR#protocol] VAR#type:VAR#name
+no provider VAR#interface name [VAR#protocol] [VAR#type:VAR#name]
+provider ipv6 connect pp VAR#peer_num VAR#connect
+no provider ipv6 connect pp VAR#peer_num [VAR#connect]
+provider isdn account nighttime VAR#peer_num VAR#from VAR#to
+no provider isdn account nighttime VAR#peer_num
+provider isdn auto disconnect off VAR#peer_num VAR#from VAR#to
+no provider isdn auto disconnect off VAR#peer_num
+provider isdn disconnect daytime VAR#peer_num VAR#unit
+no provider isdn disconnect daytime VAR#peer_num
+provider isdn disconnect interval daytime VAR#peer_num VAR#unit VAR#watch VAR#spare
+no provider isdn disconnect interval daytime VAR#peer_num
+provider isdn disconnect interval nighttime VAR#peer_num VAR#unit VAR#watch VAR#spare
+no provider isdn disconnect interval nighttime VAR#peer_num
+provider isdn disconnect nighttime VAR#peer_num VAR#unit
+no provider isdn disconnect nighttime VAR#peer_num
+provider netvolante-dns hostname sip VAR#name
+provider ntp server VAR#peer_num VAR#ip_address
+no provider ntp server VAR#peer_num [VAR#ip_address]
+provider ntpdate VAR#server_name
+no provider ntpdate [VAR#server_name]
+provider pp bind VAR#pp_num VAR#tunnel_num...
+no provider pp bind VAR#pp_num [VAR#tunnel_num...]
+provider ppp mp use on VAR#peer_num VAR#from VAR#to
+no provider ppp mp use on VAR#peer_num
+provider select VAR#peer_num
+provider select VAR#interface
+no provider select VAR#peer_num
+no provider select VAR#interface
+provider set VAR#peer_num [VAR#name]
+provider set VAR#interface [VAR#name]
+no provider set VAR#peer_num [VAR#name]
+no provider set VAR#interface [VAR#name]
+provider type VAR#provider_type
+no provider type [VAR#provider_type]
+ip icmp echo-reply send-only-linkup VAR#send
+no ip icmp echo-reply send-only-linkup [VAR#send]
+ip icmp echo-reply send VAR#send
+no ip icmp echo-reply send [VAR#send]
+ip icmp log VAR#log
+no ip icmp log [VAR#log]
+ip icmp mask-reply send VAR#send
+no ip icmp mask-reply send [VAR#send]
+ip icmp parameter-problem send VAR#send
+no ip icmp parameter-problem send [VAR#send]
+ip icmp redirect receive VAR#action
+no ip icmp redirect receive [VAR#action]
+ip icmp redirect send VAR#send
+no ip icmp redirect send [VAR#send]
+ip icmp time-exceeded send VAR#send [rebound=VAR#sw]
+no ip icmp time-exceeded send [VAR#send rebound=VAR#sw]
+ip icmp timestamp-reply send VAR#send
+no ip icmp timestamp-reply send [VAR#send]
+ip icmp unreachable send VAR#send [rebound=VAR#sw]
+no ip icmp unreachable send [VAR#send rebound=VAR#sw]
+ip stealth VAR#interface [VAR#interface...]
+ipv6 icmp echo-reply send-only-linkup VAR#send
+no ipv6 icmp echo-reply send-only-linkup [VAR#send]
+ipv6 icmp echo-reply send VAR#send
+no ipv6 icmp echo-reply send [VAR#send]
+ipv6 icmp log VAR#log
+no ipv6 icmp log [VAR#log]
+ipv6 icmp packet-too-big send VAR#send
+no ipv6 icmp packet-too-big send [VAR#send]
+ipv6 icmp parameter-problem send VAR#send
+no ipv6 icmp parameter-problem send [VAR#send]
+ipv6 icmp redirect receive VAR#action
+no ipv6 icmp redirect receive [VAR#action]
+ipv6 icmp redirect send VAR#send
+no ipv6 icmp redirect send [VAR#send]
+ipv6 icmp time-exceeded send VAR#send [rebound=VAR#sw]
+no ipv6 icmp time-exceeded send [VAR#send rebound=VAR#sw]
+ipv6 icmp unreachable send VAR#send [rebound=VAR#sw]
+no ipv6 icmp unreachable send [VAR#send rebound=VAR#sw]
+ipv6 stealth VAR#interface [VAR#interface...]
+ip arp timer VAR#timer [VAR#retry]
+no ip arp timer [VAR#timer [VAR#retry]]
+ip filter VAR#filter_num VAR#pass_reject VAR#src_addr[/VAR#mask] [VAR#dest_addr[/VAR#mask] [VAR#protocol [VAR#src_port_list [VAR#dest_port_list]]]]
+no ip filter VAR#filter_num [VAR#pass_reject]
+ip filter directed-broadcast VAR#filter_out
+ip filter directed-broadcast filter VAR#filter_num [VAR#filter_num ...]
+ip filter dynamic VAR#dyn_filter_num VAR#srcaddr[/VAR#mask] VAR#dstaddr[/VAR#mask] VAR#protocol [VAR#option ...]
+ip filter dynamic VAR#dyn_filter_num VAR#srcaddr[/VAR#mask] VAR#dstaddr[/VAR#mask] filter [VAR#filter_list [in VAR#filter_list] [out VAR#filter_list] [VAR#option...]
+no ip filter dynamic VAR#dyn_filter_num [VAR#dyn_filter_num...]
+ip filter dynamic timer VAR#option=VAR#timeout [VAR#option=VAR#timeout...]
+ip filter set VAR#name VAR#direction VAR#filter_list [VAR#filter_list ...]
+no ip filter set VAR#name [VAR#direction ...]
+ip filter source-route VAR#filter_out
+no ip filter source-route [VAR#filter_out]
+ip flow timer VAR#protocol VAR#time
+no ip flow timer VAR#protocol [VAR#time]
+ip fragment remove df-bit VAR#rule
+no ip fragment remove df-bit [VAR#rule]
+ip VAR#interface address VAR#ip_address/VAR#mask [broadcast VAR#broadcast_ip]
+ip VAR#interface address dhcp
+ip pp address VAR#ip_address[/VAR#mask]
+ip VAR#loopback address VAR#ip_address[/VAR#mask]
+no ip VAR#interface address [VAR#ip_address/VAR#mask [broadcast VAR#broadcast_ip]]
+no ip pp address [VAR#ip_address[/VAR#mask]]
+no ip VAR#loopback address [VAR#ip_address[/VAR#mask]]
+ip VAR#interface arp log VAR#switch
+no ip VAR#interface arp log [VAR#switch]
+ip VAR#interface arp queue length VAR#len
+no ip VAR#interface arp queue length [VAR#len]
+ip VAR#interface arp static VAR#ip_address VAR#mac_address
+no ip VAR#interface arp static VAR#ip_address[...]
+ip VAR#interface intrusion detection VAR#direction [VAR#type] VAR#switch [VAR#option]
+ip pp intrusion detection VAR#direction [VAR#type] VAR#switch [VAR#option]
+ip tunnel intrusion detection VAR#direction [VAR#type] VAR#switch [VAR#option]
+no ip VAR#interface intrusion detection VAR#direction [VAR#type] VAR#switch [VAR#option]
+no ip pp intrusion detection VAR#direction [VAR#type] VAR#switch [VAR#option]
+no ip tunnel intrusion detection VAR#direction [VAR#type] VAR#switch [VAR#option]
+ip VAR#interface intrusion detection notice-interval VAR#frequency
+ip pp intrusion detection notice-interval VAR#frequency
+ip tunnel intrusion detection notice-interval VAR#frequency
+no ip VAR#interface intrusion detection notice-interval
+ip VAR#interface intrusion detection repeat-control VAR#time
+ip pp intrusion detection repeat-control VAR#time
+ip tunnel intrusion detection repeat-control VAR#time
+no ip VAR#interface intrusion detection repeat-control
+ip VAR#interface intrusion detection report VAR#num
+ip pp intrusion detection report VAR#num
+ip tunnel intrusion detection report VAR#num
+no ip VAR#interface intrusion detection report
+ip VAR#interface intrusion detection threshold VAR#type VAR#count
+ip pp intrusion detection threshold VAR#type VAR#count
+ip tunnel intrusion detection threshold VAR#type VAR#count
+no ip VAR#interface intrusion detection threshold VAR#type
+no ip pp intrusion detection threshold VAR#type
+no ip tunnel intrusion detection threshold VAR#type
+ip VAR#interface mtu VAR#mtu0
+ip pp mtu VAR#mtu1
+ip tunnel mtu VAR#mtu2
+no ip VAR#interface mtu [VAR#mtu0]
+no ip pp mtu [VAR#mtu1]
+no ip tunnel mtu [VAR#mtu2]
+ip VAR#interface proxyarp VAR#proxyarp
+no ip VAR#interface proxyarp [VAR#proxyarp]
+ip VAR#interface rebound VAR#switch
+ip pp rebound VAR#switch
+ip tunnel rebound VAR#switch
+no ip VAR#interface rebound [VAR#switch]
+no ip pp rebound [VAR#switch]
+no ip tunnel rebound [VAR#switch]
+ip VAR#interface rip auth key VAR#hex_key
+ip pp rip auth key VAR#hex_key
+ip tunnel rip auth key VAR#hex_key
+ip VAR#interface rip auth key text VAR#text_key
+ip pp rip auth key text VAR#text_key
+ip tunnel rip auth key text VAR#text_key
+no ip VAR#interface rip auth key
+no ip VAR#interface rip auth key text
+ip VAR#interface rip auth type VAR#type
+ip pp rip auth type VAR#type
+ip tunnel rip auth type VAR#type
+no ip VAR#interface rip auth type [VAR#type]
+no ip pp rip auth type [VAR#type]
+no ip tunnel rip auth type [VAR#type]
+ip VAR#interface rip filter VAR#direction VAR#filter_list
+ip pp rip filter VAR#direction VAR#filter_list
+ip tunnel rip filter VAR#direction VAR#filter_list
+no ip VAR#interface rip filter VAR#direction [VAR#filter_list]
+no ip pp rip filter VAR#direction VAR#filter_list
+no ip tunnel rip filter VAR#direction VAR#filter_list
+ip VAR#interface rip force-to-advertise VAR#ip-address/VAR#netmask [metric VAR#metric]
+ip pp rip force-to-advertise VAR#ip-address/VAR#netmask [metric VAR#metric]
+ip tunnel rip force-to-advertise VAR#ip-address/VAR#netmask [metric VAR#metric]
+no ip VAR#interface rip force-to-advertise VAR#ip-address/VAR#netmask [metric VAR#metric]
+no ip pp rip force-to-advertise VAR#ip-address/VAR#netmask [metric VAR#metric]
+no ip tunnel rip force-to-advertise VAR#ip-address/VAR#netmask [metric VAR#metric]
+ip VAR#interface rip hop VAR#direction VAR#hop
+ip pp rip hop VAR#direction VAR#hop
+ip tunnel rip hop VAR#direction VAR#hop
+no ip VAR#interface rip hop VAR#direction VAR#hop
+no ip pp rip hop VAR#direction VAR#hop
+no ip tunnel rip hop VAR#direction VAR#hop
+ip VAR#interface rip receive VAR#receive [version VAR#version [VAR#version]]
+ip pp rip receive VAR#receive [version VAR#version [VAR#version]]
+ip tunnel rip receive VAR#receive [version VAR#version [VAR#version]]
+no ip VAR#interface rip receive [VAR#receive...]
+no ip pp rip receive [VAR#receive...]
+no ip tunnel rip receive [VAR#receive...]
+ip VAR#interface rip send VAR#send [version VAR#version [VAR#broadcast]]
+ip pp rip send VAR#send [version VAR#version [VAR#broadcast]]
+ip tunnel rip send VAR#send [version VAR#version [VAR#broadcast]]
+no ip VAR#interface rip send [VAR#send...]
+no ip pp rip send [VAR#send...]
+no ip tunnel rip send [VAR#send...]
+ip VAR#interface rip trust gateway [except] VAR#gateway [VAR#gateway...]
+ip pp rip trust gateway [except] VAR#gateway [VAR#gateway...]
+ip tunnel rip trust gateway [except] VAR#gateway [VAR#gateway...]
+no ip VAR#interface rip trust gateway [[except] VAR#gateway [VAR#gateway...]]
+no ip pp rip trust gateway [[except] VAR#gateway [VAR#gateway...]]
+no ip tunnel rip trust gateway [[except] VAR#gateway [VAR#gateway...]]
+ip VAR#interface secondary address VAR#ip_address[/VAR#mask]
+ip VAR#interface secondary address dhcp
+no ip VAR#interface secondary address [VAR#ip_address/VAR#mask]
+ip VAR#interface secure filter VAR#direction [VAR#filter_list...] [dynamic VAR#filter_list...]
+ip pp secure filter VAR#direction [VAR#filter_list...] [dynamic VAR#filter_list...]
+ip tunnel secure filter VAR#direction [VAR#filter_list...] [dynamic VAR#filter_list...]
+ip VAR#interface secure filter name VAR#set_name
+ip pp secure filter name VAR#set_name
+ip tunnel secure filter name VAR#set_name
+no ip VAR#interface secure filter VAR#direction [VAR#filter_list]
+no ip pp secure filter VAR#direction [VAR#filter_list]
+no ip tunnel secure filter VAR#direction [VAR#filter_list]
+no ip VAR#interface secure filter name [VAR#set_name]
+no ip pp secure filter name [VAR#set_name]
+no ip tunnel secure filter name [VAR#set_name]
+ip VAR#interface tcp mss limit VAR#mss
+ip pp tcp mss limit VAR#mss
+ip tunnel tcp mss limit VAR#mss
+no ip VAR#interface tcp mss limit [VAR#mss]
+no ip pp tcp mss limit [VAR#mss]
+no ip tunnel tcp mss limit [VAR#mss]
+ip keepalive VAR#num VAR#kind VAR#interval VAR#count VAR#gateway [VAR#gateway ...] [VAR#option=VAR#value ...]
+no ip keepalive VAR#num
+ip pp remote address VAR#ip_address
+ip pp remote address dhcpc [VAR#interface]
+no ip pp remote address [VAR#ip_address]
+ip pp remote address pool VAR#ip_address [VAR#ip_address...]
+ip pp remote address pool VAR#ip_address-ip_address
+ip pp remote address pool dhcpc [VAR#interface]
+ip pp rip connect interval VAR#time
+no ip pp rip connect interval [VAR#time]
+ip pp rip connect send VAR#rip_action
+no ip pp rip connect send [VAR#rip_action]
+ip pp rip disconnect interval VAR#time
+no ip pp rip disconnect interval [VAR#time]
+ip pp rip disconnect send VAR#rip_action
+no ip pp rip disconnect send [VAR#rip_action]
+ip pp rip hold routing VAR#rip_hold
+no ip pp rip hold routing [VAR#rip_hold]
+ip route VAR#network gateway VAR#gateway1 [VAR#parameter] [gateway VAR#gateway2 [VAR#parameter]...]
+no ip route VAR#network [gateway...]
+ip route change log VAR#log
+no ip route change log [VAR#log]
+ip routing VAR#routing
+no ip routing [VAR#routing]
+ip simple-service VAR#service
+no ip simple-service [VAR#service]
+leased keepalive down VAR#action
+no leased keepalive down [VAR#action]
+pp keepalive interval VAR#interval [retry-interval=VAR#retry-interval] [count=VAR#count] [time=VAR#time]
+no pp keepalive interval [VAR#interval [VAR#count]]
+pp keepalive log VAR#log
+no pp keepalive log [VAR#log]
+pp keepalive use icmp-echo VAR#dest_ip [VAR#option=VAR#value...] [VAR#dest_ip [VAR#option=VAR#value...]...]
+pp keepalive use lcp-echo icmp-echo VAR#dest_ip [VAR#option=VAR#value...] [VAR#dest_ip [VAR#option=VAR#value...]...]
+rip filter rule VAR#rule
+no rip filter rule [VAR#rule]
+rip preference VAR#preference [invalid-route-reactivate=VAR#switch]
+no rip preference [VAR#preference [invalid-route-reactivate=VAR#switch]]
+rip timer VAR#update [VAR#invalid [VAR#holddown]]
+no rip timer [VAR#update]
+rip use VAR#use
+no rip use [VAR#use]
+tcp session limit VAR#limit
+no tcp session limit [VAR#limit]
+ipv6 filter VAR#filter_num VAR#pass_reject VAR#src_addr[/VAR#prefix_len] [VAR#dest_addr[/VAR#prefix_len] [VAR#protocol [VAR#src_port_list [VAR#dest_port_list]]]]
+no ipv6 filter VAR#filter_num [VAR#pass_reject]
+ipv6 filter dynamic VAR#dyn_filter_num VAR#srcaddr[/VAR#prefix_len] VAR#dstaddr[/VAR#prefix_len] VAR#protocol [VAR#option ...]
+ipv6 filter dynamic VAR#dyn_filter_num VAR#srcaddr[/VAR#prefix_len] VAR#dstaddr[/VAR#prefix_len] filter VAR#filter_list [in VAR#filter_list] [out VAR#filter_list] [VAR#option ...]
+no ipv6 filter dynamic VAR#dyn_filter_num [VAR#srcaddr ...]
+ipv6 VAR#interface address VAR#ipv6_address/VAR#prefix_len [VAR#address_type]
+ipv6 VAR#interface address auto
+ipv6 VAR#interface address dhcp
+ipv6 VAR#interface address VAR#proxy
+ipv6 pp address VAR#ipv6_address/VAR#prefix_len [VAR#address_type]
+ipv6 pp address VAR#proxy
+ipv6 tunnel address VAR#ipv6_address/VAR#prefix_len [VAR#address_type]
+ipv6 tunnel address VAR#proxy
+no ipv6 VAR#interface address VAR#ipv6_address/VAR#prefix_len [VAR#address_type]
+no ipv6 VAR#interface address auto
+no ipv6 VAR#interface address dhcp
+no ipv6 VAR#interface address VAR#proxy
+no ipv6 pp address VAR#ipv6_address/VAR#prefix_len [VAR#address_type]
+no ipv6 pp address VAR#proxy
+no ipv6 tunnel address VAR#ipv6_address/VAR#prefix_len [VAR#address_type]
+no ipv6 tunnel address VAR#proxy
+ipv6 VAR#interface dad retry count VAR#count
+ipv6 pp dad retry count VAR#count
+no ipv6 VAR#interface dad retry count [VAR#count]
+no ipv6 pp dad retry count [VAR#count]
+ipv6 VAR#interface dhcp service VAR#type
+ipv6 VAR#interface dhcp service client [ir=VAR#value]
+ipv6 pp dhcp service VAR#type
+ipv6 pp dhcp service client [ir=VAR#value]
+ipv6 tunnel dhcp service VAR#type
+ipv6 tunnel dhcp service client [ir=VAR#value]
+no ipv6 VAR#interface dhcp service
+ipv6 VAR#interface mld VAR#type [VAR#option ...]
+ipv6 pp mld VAR#type [VAR#option ...]
+ipv6 tunnel mld VAR#type [VAR#option ...]
+no ipv6 VAR#interface mld [VAR#type [VAR#option ...]]
+no ipv6 pp mld [VAR#type [VAR#option ...]]
+no ipv6 tunnel mld [VAR#type [VAR#option ...]]
+ipv6 VAR#interface mld static VAR#group [VAR#filter_mode [VAR#source...]]
+ipv6 pp mld static VAR#group [VAR#filter_mode [VAR#source...]]
+ipv6 tunnel mld static VAR#group [VAR#filter_mode [VAR#source...]]
+no ipv6 VAR#interface mld static VAR#group [VAR#filter_mode VAR#source...]
+no pv6 pp mld static VAR#group [VAR#filter_mode VAR#source...]
+no ipv6 tunnel mld static VAR#group [VAR#filter_mode VAR#source...]
+ipv6 VAR#interface mtu VAR#mtu
+ipv6 pp mtu VAR#mtu
+no ipv6 VAR#interface mtu [VAR#mtu]
+no ipv6 pp mtu [VAR#mtu]
+ipv6 VAR#interface prefix VAR#ipv6_prefix/VAR#prefix_len
+ipv6 VAR#interface prefix VAR#proxy
+ipv6 pp prefix VAR#ipv6_prefix/VAR#prefix_len
+ipv6 pp prefix VAR#proxy
+ipv6 tunnel prefix VAR#ipv6_prefix/VAR#prefix_len
+ipv6 tunnel prefix VAR#proxy
+no ipv6 VAR#interface prefix VAR#ipv6_prefix/VAR#prefix_len
+no ipv6 VAR#interface prefix VAR#proxy
+no ipv6 pp prefix VAR#ipv6_prefix/VAR#prefix_len
+no ipv6 pp prefix VAR#proxy
+no ipv6 tunnel prefix VAR#ipv6_prefix/VAR#prefix_len
+no ipv6 tunnel prefix VAR#proxy
+ipv6 VAR#interface prefix change log VAR#log
+ipv6 pp prefix change log VAR#log
+ipv6 tunnel prefix change log VAR#log
+no ipv6 VAR#interface prefix change log VAR#log
+no ipv6 pp prefix change log VAR#log
+no ipv6 tunnel prefix change log VAR#log
+ipv6 VAR#interface rip filter VAR#direction VAR#filter_list [VAR#filter_list...]
+ipv6 pp rip filter VAR#direction VAR#filter_list [VAR#filter_list...]
+ipv6 tunnel rip filter VAR#direction VAR#filter_list [VAR#filter_list...]
+no ipv6 VAR#interface rip filter VAR#direction
+no ipv6 pp rip filter VAR#direction
+no ipv6 tunnel rip filter VAR#direction
+ipv6 VAR#interface rip hop VAR#direction VAR#hop
+ipv6 pp rip hop VAR#direction VAR#hop
+no ipv6 VAR#interface rip hop VAR#direction
+no ipv6 pp rip hop VAR#direction
+ipv6 VAR#interface rip receive VAR#receive
+ipv6 pp rip receive VAR#receive
+ipv6 tunnel rip receive VAR#receive
+no ipv6 VAR#interface rip receive
+ipv6 VAR#interface rip send VAR#send
+ipv6 pp rip send VAR#send
+ipv6 tunnel rip send VAR#send
+no ipv6 VAR#interface rip send
+ipv6 VAR#interface rip trust gateway [except] VAR#gateway [VAR#gateway...]
+ipv6 pp rip trust gateway [except] VAR#gateway [VAR#gateway...]
+no ipv6 VAR#interface rip trust gateway [[except] VAR#gateway [VAR#gateway...]]
+no ipv6 pp rip trust gateway [[except] VAR#gateway [VAR#gateway...]]
+ipv6 VAR#interface rtadv send VAR#prefix_id [VAR#prefix_id...] [VAR#option=VAR#value...]
+ipv6 pp rtadv send VAR#prefix_id [VAR#prefix_id...] [VAR#option=VAR#value...]
+no ipv6 VAR#interface rtadv send [...]
+ipv6 VAR#interface secure filter VAR#direction [VAR#filter_list...] [dynamic VAR#filter_list]
+ipv6 pp secure filter VAR#direction [VAR#filter_list...] [dynamic VAR#filter_list]
+ipv6 tunnel secure filter VAR#direction [VAR#filter_list...] [dynamic VAR#filter_list]
+no ipv6 VAR#interface secure filter VAR#direction
+no ipv6 pp secure filter VAR#direction
+no ipv6 tunnel secure filter VAR#direction
+ipv6 VAR#interface tcp mss limit VAR#mss
+ipv6 pp tcp mss limit VAR#mss
+ipv6 tunnel tcp mss limit VAR#mss
+no ipv6 VAR#interface tcp mss limit [VAR#mss]
+no ipv6 pp tcp mss limit [VAR#mss]
+no ipv6 tunnel tcp mss limit [VAR#mss]
+ipv6 max auto address VAR#max
+no ipv6 max auto address [VAR#max]
+ipv6 nd ns-trigger-dad on [VAR#option=VAR#value]
+ipv6 pp rip connect interval VAR#time
+ipv6 pp rip connect send VAR#action
+ipv6 pp rip disconnect interval VAR#time
+ipv6 pp rip disconnect send VAR#action
+ipv6 pp rip hold routing VAR#hold
+ipv6 prefix VAR#prefix_id VAR#prefix/VAR#prefix_len [preferred_lifetime=VAR#time] [valid_lifetime=VAR#time] [l_flag=VAR#switch] [a_flag=VAR#switch]
+ipv6 prefix VAR#prefix_id VAR#proxy [preferred_lifetime=VAR#time] [valid_lifetime=VAR#time] [l_flag=VAR#switch] [a_flag=VAR#switch]
+no ipv6 prefix VAR#prefix_id
+ipv6 rh0 discard VAR#switch
+ipv6_rip preference VAR#preference
+no ipv6_rip preference [VAR#preference]
+ipv6 rip use VAR#use
+ipv6 route VAR#network gateway VAR#gateway [VAR#parameter] [gateway VAR#gateway [VAR#parameter]]
+no ipv6 route VAR#network [gateway...]
+ipv6 routing VAR#routing
+no ipv6 routing [VAR#routing]
+ipv6 routing process VAR#process
+ipv6 source address selection rule VAR#rule
+no ipv6 source address selection rule [VAR#rule]
+account threshold [VAR#interface] VAR#yen
+account threshold pp VAR#yen
+no account threshold VAR#interface [VAR#yen]
+no account threshold [VAR#yen]
+no account threshold pp [VAR#yen]
+isdn arrive inumber-port VAR#interface VAR#inum_port [VAR#inum_port...]
+no isdn arrive inumber-port VAR#interface
+isdn arrive permit VAR#arrive
+no isdn arrive permit [VAR#arrive]
+isdn auto connect VAR#auto
+no isdn auto connect [VAR#auto]
+isdn auto disconnect VAR#auto
+no isdn auto disconnect [VAR#auto]
+isdn call block time VAR#time
+no isdn call block time [VAR#time]
+isdn call permit VAR#permit
+no isdn call permit [VAR#permit]
+isdn call prohibit auth-error count VAR#count
+isdn call prohibit mp-error count VAR#times
+isdn call prohibit time VAR#time
+no isdn call prohibit time [VAR#time]
+isdn callback mscbcp user-specify VAR#specify
+no no isdn callback mscbcp user-specify [VAR#specify]
+isdn callback permit VAR#callback_permit
+no isdn callback permit [VAR#callback_permit]
+isdn callback permit type VAR#type1 [VAR#type2]
+no isdn callback permit type [VAR#type1 [VAR#type2]]
+isdn callback request VAR#callback_request
+no isdn callback request [VAR#callback_request]
+isdn callback request type VAR#type
+no isdn callback request type [VAR#type]
+isdn callback response time VAR#type VAR#time
+no isdn callback response time [VAR#type]
+isdn callback wait time VAR#time
+no isdn callback wait time [VAR#time]
+isdn disconnect input time VAR#time
+no isdn disconnect input time [VAR#time]
+isdn disconnect interval time VAR#unit VAR#watch VAR#spare
+no isdn disconnect interval time [VAR#unit VAR#watch VAR#spare]
+isdn disconnect output time VAR#time
+no isdn disconnect output time [VAR#time]
+isdn disconnect policy VAR#type
+no isdn disconnect policy [VAR#type]
+isdn disconnect time VAR#time
+no isdn disconnect time [VAR#time]
+isdn fast disconnect time VAR#time
+no no isdn fast disconnect time [VAR#time]
+isdn forced disconnect time VAR#time
+no isdn forced disconnect time [VAR#time]
+line type VAR#interface VAR#line [VAR#channels]
+no line type VAR#interface VAR#line [VAR#channels]
+isdn local address VAR#interface VAR#isdn_num[/VAR#sub_address]]
+isdn local address VAR#interface /VAR#sub_address
+noisdn local address VAR#interface
+isdn piafs arrive VAR#arrive
+no isdn piafs arrive [VAR#arrive]
+isdn piafs call VAR#speed [VAR#64kmode]
+no isdn piafs call [VAR#speed [VAR#64kmode]]
+isdn piafs control VAR#switch
+pp bind VAR#interface
+no pp bind [VAR#interface]
+isdn remote address VAR#call_arrive VAR#isdn_num [/VAR#sub_address] [VAR#isdn_num_list]
+isdn remote address VAR#call_arrive VAR#isdn_num [VAR#isdn_num_list]
+no isdn remote address VAR#call_arrive [VAR#isdn_num [/VAR#sub_address] [VAR#isdn_num_list]]
+isdn remote call order VAR#order
+no isdn remote call order [VAR#order]
+isdn use VAR#interface VAR#use
+no isdn use VAR#interface
+pp always-on VAR#switch [VAR#time]
+pp connect count threshold VAR#count
+pp connect time threshold VAR#time
+packetdump VAR#lan-interface [VAR#count]
+packetdump pp VAR#pp_num [VAR#count]
+show account VAR#interface
+show account pp [VAR#peer_num]
+show account analog [VAR#port]
+show log external-memory [backup [VAR#fileid]]
+alarm lua VAR#switch
+no alarm lua [VAR#switch]
+lua [-e VAR#stat] [-l VAR#module] [-v] [--] [VAR#script_file [VAR#args ...]]
+lua use VAR#switch
+no lua use [VAR#switch]
+luac [-l] [-o VAR#output_file] [-p] [-s] [-v] [--] VAR#script_file [VAR#script_file ..]
+show status lua [VAR#info]
+terminate lua VAR#task_id
+terminate lua file VAR#script_file
+mail notify VAR#id VAR#template_id trigger filter ethernet VAR#if_f VAR#dir_f [VAR#if_f VAR#dir_f [...]]
+mail notify VAR#id VAR#template_id trigger status VAR#type [VAR#type [...]]
+mail notify VAR#id VAR#template_id trigger intrusion VAR#if_i [VAR#range_i] VAR#dir_i [VAR#if_i [VAR#range_i] VAR#dir_i [...]]
+mail notify VAR#id VAR#template_id trigger account
+no mail notify VAR#id [...]
+mail server name VAR#id VAR#name
+no mail server name VAR#id [VAR#name]
+mail server pop VAR#id VAR#address [port=VAR#port] VAR#protocol VAR#username VAR#password
+no mail server pop VAR#id [...]
+mail server smtp VAR#id VAR#address [port=VAR#port] [smtp-auth VAR#username VAR#password [VAR#auth_protocol]] [pop-before-smtp]
+no mail server smtp VAR#id [...]
+mail server timeout VAR#id VAR#timeout
+no mail server timeout VAR#id [VAR#timeout]
+mail template VAR#template_id VAR#mailserver_id From:VAR#from_address To:VAR#to_address [Subject:VAR#subject] [Date:VAR#date MIME-Version:VAR#mime_version] [Content-Type:VAR#content_type] [notify-log=VAR#switch] [notify-wait-time=VAR#sec]
+no mail template VAR#template_id [...]
+clear mobile access limitation [VAR#interface]
+clear mobile access limitation pp [VAR#peer_num]
+execute at-command VAR#interface VAR#command
+mobile access-point name VAR#apn cid=VAR#cid [pdp=VAR#type]
+no mobile access-point name [VAR#apn cid=VAR#cid]
+mobile access limit connection length VAR#length [alert=VAR#alert]
+no mobile access limit connection length [VAR#length]
+mobile access limit connection time VAR#time [alert=VAR#alert]
+no mobile access limit connection time [VAR#time]
+mobile access limit duration VAR#duration
+no mobile access limit duration [VAR#duration]
+mobile access limit length VAR#length [alert=VAR#alert[,VAR#alert_cancel]]
+no mobile access limit length [VAR#length]
+mobile access limit time VAR#time [alert=VAR#alert[,VAR#alert_cancel]] [unit=VAR#unit]
+no mobile access limit time [VAR#time]
+mobile auto connect VAR#auto
+no mobile auto connect [VAR#auto]
+mobile call prohibit auth-error count VAR#count
+no mobile call prohibit auth-error count [VAR#count]
+mobile dial number VAR#dial_string
+no mobile dial number [VAR#dial_string]
+mobile disconnect input time VAR#time
+no mobile disconnect input time [VAR#time]
+mobile disconnect output time VAR#time
+no mobile disconnect output time [VAR#time]
+mobile disconnect time VAR#time
+no mobile disconnect time [VAR#time]
+mobile display caller id VAR#switch
+no mobile display caller id [VAR#switch]
+pp bind VAR#interface
+no pp bind [VAR#interface]
+mobile pin code VAR#interface VAR#pin
+no mobile pin code VAR#interface [VAR#pin]
+mobile signal-strength VAR#switch [VAR#option=VAR#value]
+mobile syslog VAR#switch
+no mobile syslog [VAR#switch]
+mobile use VAR#interface VAR#use [first-connect-wait-time=VAR#time]
+no mobile use VAR#interface [VAR#use]
+ppp lcp accm VAR#accm
+no ppp lcp accm [VAR#accm]
+show status mobile signal-strength [VAR#interface] [reverse]
+VAR#wan access-point name VAR#apn
+no VAR#wan access-point name [VAR#apn]
+VAR#wan access limit connection length VAR#length [alert=VAR#alert]
+no VAR#wan access limit connection length [VAR#length]
+VAR#wan access limit connection time VAR#time [alert=VAR#alert]
+no VAR#wan access limit connection time [VAR#time]
+VAR#wan access limit duration VAR#duration
+no VAR#wan access limit duration [VAR#duration]
+VAR#wan access limit length VAR#length [alert=VAR#alert[,VAR#alert_cancel]]
+no VAR#wan access limit length [VAR#length]
+VAR#wan access limit time VAR#time [alert=VAR#alert[,VAR#alert_cancel]] [unit=VAR#unit]
+no VAR#wan access limit time [VAR#time]
+VAR#wan always-on VAR#switch [VAR#time]
+no VAR#wan always-on
+VAR#wan auth myname VAR#myname VAR#password
+no VAR#wan auth myname [VAR#myname VAR#password]
+VAR#wan auto connect VAR#auto
+no VAR#wan auto connect [VAR#auto]
+VAR#wan bind VAR#interface
+no VAR#wan bind [VAR#interface]
+VAR#wan disconnect input time VAR#time
+no VAR#wan disconnect input time [VAR#time]
+VAR#wan disconnect output time VAR#time
+no VAR#wan disconnect output time [VAR#time]
+VAR#wan disconnect time VAR#time
+no VAR#wan disconnect time [VAR#time]
+ip VAR#interface nat descriptor VAR#nat_descriptor_list [reverse VAR#nat_descriptor_list]
+ip pp nat descriptor VAR#nat_descriptor_list [reverse VAR#nat_descriptor_list]
+ip tunnel nat descriptor VAR#nat_descriptor_list [reverse VAR#nat_descriptor_list]
+no ip VAR#interface nat descriptor [VAR#nat_descriptor_list [reverse VAR#nat_descriptor_list]]
+no ip pp nat descriptor [VAR#nat_descriptor_list [reverse VAR#nat_descriptor_list]]
+no ip tunnel nat descriptor [VAR#nat_descriptor_list [reverse VAR#nat_descriptor_list]]
+nat descriptor address inner VAR#nat_descriptor VAR#inner_ipaddress_list
+no nat descriptor address inner VAR#nat_descriptor [VAR#inner_ipaddress_list]
+nat descriptor address outer VAR#nat_descriptor VAR#outer_ipaddress_list
+no nat descriptor address outer VAR#nat_descriptor [VAR#outer_ipaddress_list]
+nat descriptor ftp port VAR#nat_descriptor VAR#port [VAR#port...]
+no nat descriptor ftp port VAR#nat_descriptor [VAR#port...]
+nat descriptor log VAR#switch
+nat descriptor masquerade incoming VAR#nat_descriptor VAR#action [VAR#ip_address]
+no nat descriptor masquerade incoming VAR#nat_descriptor
+nat descriptor masquerade port range VAR#nat_descriptor VAR#port_range
+no nat descriptor masquerade port range VAR#nat_descriptor [VAR#port_range]
+nat descriptor masquerade remove df-bit VAR#remove
+no nat descriptor masquerade remove df-bit [VAR#remove]
+nat descriptor masquerade rlogin VAR#nat_descriptor VAR#use
+no nat descriptor masquerade rlogin VAR#nat_descriptor [VAR#use]
+nat descriptor masquerade session limit VAR#nat_descriptor VAR#id VAR#limit
+no nat descriptor masquerade session limit VAR#nat_descriptor VAR#id
+nat descriptor masquerade static VAR#nat_descriptor VAR#id VAR#inner_ip VAR#protocol [VAR#outer_port=]VAR#inner_port
+no nat descriptor masquerade static VAR#nat_descriptor VAR#id [VAR#inner_ip VAR#protocol [VAR#outer_port=]VAR#inner_port]
+nat descriptor masquerade unconvertible port VAR#nat_descriptor if-possible
+nat descriptor masquerade unconvertible port VAR#nat_descriptor VAR#protocol VAR#port
+no nat descriptor masquerade unconvertible port VAR#nat_descriptor VAR#protocol [VAR#port]
+nat descriptor sip VAR#nat_descriptor VAR#sip
+no nat descriptor sip VAR#nat_descriptor
+nat descriptor static VAR#nat_descriptor VAR#id VAR#outer_ip=VAR#inner_ip [VAR#count]
+nat descriptor static VAR#nat_descriptor VAR#id VAR#outer_ip=VAR#inner_ip/VAR#netmask
+no nat descriptor static VAR#nat_descriptor VAR#id [VAR#outer_ip=VAR#inner_ip [VAR#count]]
+nat descriptor timer VAR#nat_descriptor VAR#time
+nat descriptor timer VAR#nat_descriptor protocol=VAR#protocol [port=VAR#port_range] VAR#time
+nat descriptor timer VAR#nat_descriptor tcpfin VAR#time2
+no nat descriptor timer VAR#nat_descriptor [VAR#time]
+no nat descriptor timer VAR#nat_descriptor protocol=VAR#protocol [port=VAR#port_range] [VAR#time]
+no nat descriptor timer VAR#nat_descriptor tcpfin [VAR#time2]
+nat descriptor type VAR#nat_descriptor VAR#type
+no nat descriptor type VAR#nat_descriptor [VAR#type]
+netvolante-dns auto hostname VAR#interface VAR#switch
+netvolante-dns auto hostname pp VAR#switch
+no netvolante-dns auto hostname VAR#interface [VAR#switch]
+no netvolante-dns auto hostname pp [VAR#switch]
+netvolante-dns auto save [server=VAR#server_num] VAR#file
+no netvolante-dns auto save [server=VAR#server_num]
+netvolante-dns delete go VAR#interface [VAR#host]
+netvolante-dns delete go pp VAR#peer_num [VAR#host]
+netvolante-dns get hostname list VAR#interface
+netvolante-dns get hostname list pp VAR#peer_num
+netvolante-dns go VAR#interface
+netvolante-dns go pp VAR#peer_num
+netvolante-dns hostname host VAR#interface VAR#host [duplicate]
+netvolante-dns hostname host pp VAR#host [duplicate]
+no netvolante-dns hostname host VAR#interface [VAR#host [duplicate]]
+no netvolante-dns hostname host pp [VAR#host [duplicate]]
+netvolante-dns port VAR#port
+no netvolante-dns port [VAR#port]
+netvolante-dns register timer [server=VAR#server_num] VAR#time
+no netvolante-dns register timer [server=VAR#server_num]
+netvolante-dns retry interval VAR#interface VAR#interval VAR#count
+netvolante-dns retry interval pp VAR#interval VAR#count
+no netvolante-dns retry interval VAR#interface [VAR#interval VAR#count]
+no netvolante-dns retry interval pp [VAR#interval VAR#count]
+netvolante-dns server VAR#ip_address
+netvolante-dns server VAR#name
+no netvolante-dns server [VAR#ip_address]
+no netvolante-dns server [VAR#name]
+netvolante-dns server update address port [server=VAR#server_num] VAR#port
+no netvolante-dns server update address port [server=VAR#server_num]
+netvolante-dns server update address use [server=VAR#server_num] VAR#switch
+no netvolante-dns server update address use [server=VAR#server_num]
+netvolante-dns set hostname VAR#interface serial
+netvolante-dns sip use VAR#interface [server=VAR#server_num] VAR#switch [duplicate]
+netvolante-dns sip use pp [server=VAR#server_num] VAR#switch [duplicate]
+no netvolante-dns sip use VAR#interface [server=VAR#server_num] [VAR#switch [duplicate]]
+no netvolante-dns sip use pp [server=VAR#server_num] [VAR#switch [duplicate]]
+netvolante-dns timeout VAR#interface VAR#time
+netvolante-dns timeout pp VAR#time
+no netvolante-dns timeout VAR#interface [VAR#time]
+no netvolante-dns timeout pp [VAR#time]
+netvolante-dns use VAR#interface VAR#switch
+netvolante-dns use pp VAR#switch
+no netvolante-dns use VAR#interface [VAR#switch]
+no netvolante-dns use pp [VAR#switch]
+clear acl VAR#storage_if:VAR#path [all]
+onfs bind VAR#storage_if
+no onfs bind [VAR#storage_if]
+onfs mirroring contact node VAR#id VAR#address [VAR#port]
+no onfs mirroring contact node VAR#id
+onfs mirroring id VAR#name VAR#address [VAR#option=VAR#value ...]
+onfs mirroring pre-shared-key VAR#binary_key
+onfs mirroring pre-shared-key text VAR#text
+onfs mirroring use VAR#switch
+onfs reset [VAR#password [VAR#new_password]]
+onfs sharing acl VAR#switch
+no onfs sharing acl [VAR#switch]
+onfs sharing group VAR#id VAR#group_name VAR#user_list
+no onfs sharing group VAR#id [VAR#group_name ...]
+onfs sharing host VAR#host
+no onfs sharing host [VAR#host]
+onfs sharing service VAR#switch [VAR#option=VAR#value ...]
+no onfs sharing service [VAR#switch ...]
+onfs sharing user VAR#id VAR#user_name [VAR#password]
+no onfs sharing user VAR#id [VAR#user_name ...]
+set-acl VAR#storage_if:VAR#path VAR#acl [VAR#acl ...]
+show acl VAR#storage_if:VAR#path [all]
+show status onfs [VAR#info] 
+clear account VAR#interface
+clear account pp [VAR#peer_num]
+clear account analog [VAR#port]
+clear nat descriptor dynamic VAR#nat_descriptor
+clear nat descriptor interface dynamic VAR#interface
+clear nat descriptor interface dynamic pp [VAR#peer_num]
+clear nat descriptor interface dynamic tunnel [VAR#tunnel_num]
+clear status VAR#interface
+clear status pp VAR#peer_num
+clear status tunnel VAR#tunnel_num
+clear switching-hub macaddress [VAR#interface]
+connect VAR#interface
+connect VAR#peer_num
+connect pp VAR#peer_num
+connect tunnel VAR#tunnel_num
+copy VAR#path1 VAR#path2
+copy config VAR#from VAR#to
+copy config VAR#from VAR#to VAR#crypto [VAR#password]
+copy config VAR#from VAR#to [VAR#password]
+copy exec VAR#from VAR#to
+delete VAR#path
+delete config VAR#filename
+disconnect VAR#interface
+disconnect VAR#peer_num
+disconnect pp VAR#peer_num
+disconnect tunnel VAR#tunnel_num
+disconnect ip connection VAR#session_id [VAR#channel_id]
+disconnect ipv6 connection VAR#session_id [VAR#channel_id]
+interface reset VAR#interface [VAR#interface ...]
+interface reset pp [VAR#peer_num]
+mail notify account exec VAR#id
+mail notify status exec VAR#id
+make directory VAR#path
+nslookup VAR#host
+ping [-s VAR#datalen] [-c VAR#count] [-sa VAR#ip_address] [-w VAR#wait] VAR#host
+ping6 [-s VAR#datalen] [-c VAR#count] [-sa VAR#ipv6_address] [-w VAR#wait] VAR#destination
+ping6 [-s VAR#datalen] [-c VAR#count] [-sa VAR#ipv6_address] [-w VAR#wait] VAR#destination%scope_id
+ping6 [-s VAR#datalen] [-c VAR#count] [-sa VAR#ipv6_address] [-w VAR#wait] VAR#destination VAR#interface
+ping6 [-s VAR#datalen] [-c VAR#count] [-sa VAR#ipv6_address] [-w VAR#wait] VAR#destination pp VAR#peer_num
+ping6 [-s VAR#datalen] [-c VAR#count] [-sa VAR#ipv6_address] [-w VAR#wait] VAR#destination tunnel VAR#tunnel_num
+ping6 VAR#destination [VAR#count]
+ping6 VAR#destination%scope_id [VAR#count]
+ping6 VAR#destination VAR#interface [VAR#count]
+ping6 VAR#destination pp VAR#peer_num [VAR#count]
+ping6 VAR#destination tunnel VAR#tunnel_num [VAR#count]
+pp disable VAR#peer_num
+pp enable VAR#peer_num
+no pp enable VAR#peer_num
+pp select VAR#peer_num
+remote setup VAR#interface [VAR#number [/VAR#sub_address]] [VAR#type]
+remote setup accept VAR#tel_num [VAR#tel_num_list]
+rename VAR#path VAR#name
+restart VAR#config_name
+save [VAR#filename [VAR#comment]]
+sip server connect VAR#number
+sip server disconnect VAR#number
+ssl public key generate [VAR#SEED]
+telnet VAR#host [VAR#port [VAR#mode [VAR#negotiation [VAR#abort]]]]
+ traceroute VAR#host [noresolv] [-sa VAR#source]
+traceroute6 VAR#destination
+tunnel select VAR#tunnel_num
+wol send [-i VAR#interval] [-c VAR#count] VAR#interface VAR#mac_address [VAR#ip_address [udp VAR#port]]
+wol send [-i VAR#interval] [-c VAR#count] VAR#interface VAR#mac_address ethernet VAR#type
+pp auth multi connect prohibit VAR#prohibit
+no pp auth multi connect prohibit [VAR#prohibit]
+pp auth myname VAR#myname VAR#password
+no pp auth myname [VAR#myname VAR#password]
+pp auth username VAR#username VAR#password [myname VAR#myname VAR#mypass] [VAR#isdn1] [clid [VAR#isdn2...]] [mscbcp] [VAR#ip_address] [VAR#ip6_prefix]
+no pp auth username VAR#username [VAR#password...]
+ppp ccp maxconfigure VAR#count
+no ppp ccp maxconfigure [VAR#count]
+ppp ccp maxfailure VAR#count
+no ppp ccp maxfailure [VAR#count]
+ppp ccp maxterminate VAR#count
+no ppp ccp maxterminate [VAR#count]
+ppp ccp restart VAR#time
+no ppp ccp restart [VAR#time]
+ppp ccp type VAR#type
+no ppp ccp type [VAR#type]
+ppp chap maxchallenge VAR#count
+no ppp chap maxchallenge [VAR#count]
+ppp chap restart VAR#time
+no ppp chap restart [VAR#time]
+ppp ipcp ipaddress VAR#negotiation
+no ppp ipcp ipaddress [VAR#negotiation]
+ppp ipcp maxconfigure VAR#count
+no ppp ipcp maxconfigure [VAR#count]
+ppp ipcp maxfailure VAR#count
+no ppp ipcp maxfailure [VAR#count]
+ppp ipcp maxterminate VAR#count
+no ppp ipcp maxterminate [VAR#count]
+ppp ipcp msext VAR#msext
+no ppp ipcp msext [VAR#msext]
+ppp ipcp remote address check VAR#sw
+no ppp ipcp remote address check [VAR#sw]
+ppp ipcp restart VAR#time
+no ppp ipcp restart [VAR#time]
+ppp ipcp vjc VAR#compression
+no ppp ipcp vjc [VAR#compression]
+ppp ipv6cp use VAR#use
+no ppp ipv6cp use [VAR#use]
+ppp lcp acfc VAR#acfc
+no ppp lcp acfc [VAR#acfc]
+ppp lcp magicnumber VAR#magicnumber
+no ppp lcp magicnumber [VAR#magicnumber]
+ppp lcp maxconfigure VAR#count
+no ppp lcp maxconfigure [VAR#count]
+ppp lcp maxfailure VAR#count
+no ppp lcp maxfailure [VAR#count]
+ppp lcp maxterminate VAR#count
+no ppp lcp maxterminate [VAR#count]
+ppp lcp mru VAR#mru [VAR#length]
+no ppp lcp mru [VAR#mru[VAR#length]]
+ppp lcp pfc VAR#pfc
+no ppp lcp pfc [VAR#pfc]
+ppp lcp restart VAR#time
+no ppp lcp restart [VAR#time]
+ppp lcp silent VAR#switch
+no ppp lcp silent [VAR#switch]
+ppp mp control VAR#type
+no ppp mp control [VAR#type]
+ppp mp divide VAR#divide
+no ppp mp divide [VAR#divide]
+ppp mp load threshold VAR#call_load VAR#call_count VAR#disc_load VAR#disc_count
+no ppp mp load threshold [VAR#call_load VAR#call_count VAR#disc_load VAR#disc_count]
+ppp mp maxlink VAR#number
+no ppp mp maxlink [VAR#number]
+ppp mp minlink VAR#number
+no ppp mp minlink [VAR#number]
+ppp mp timer VAR#time
+no ppp mp timer [VAR#time]
+ppp mp use VAR#use
+no ppp mp use [VAR#use]
+ppp mscbcp maxretry VAR#count
+no ppp mscbcp maxretry [VAR#count]
+ppp mscbcp restart VAR#time
+no ppp mscbcp restart [VAR#time]
+ppp pap maxauthreq VAR#count
+no ppp pap maxauthreq [VAR#count]
+ppp pap restart VAR#time
+no ppp pap restart [VAR#time]
+pp auth accept VAR#accept [VAR#accept]
+no pp auth accept [VAR#accept]
+pp auth request VAR#auth [arrive-only]
+no pp auth request [VAR#auth[arrive-only]]
+pppoe access concentrator VAR#name
+pppoe auto connect VAR#switch
+pppoe auto disconnect VAR#switch
+pppoe call prohibit auth-error count VAR#count
+pppoe disconnect time VAR#time
+pppoe invalid-session forced close VAR#sw
+pppoe padi maxretry VAR#times
+pppoe padi restart VAR#time
+pppoe padr maxretry VAR#times
+pppoe padr restart VAR#time
+pppoe service-name VAR#name
+pppoe tcp mss limit VAR#length
+pppoe use VAR#interface
+wins server VAR#server1 [VAR#server2]
+no wins server [VAR#server1 [VAR#server2]]
+ppp ccp no-encryption VAR#mode
+no ppp ccp no-encryption [VAR#mode]
+pptp hostname VAR#name
+no pptp hostname [VAR#name]
+pptp keepalive interval VAR#interval [VAR#count]
+no pptp keepalive interval [VAR#interval VAR#count]
+pptp keepalive log VAR#log
+no pptp keepalive log [VAR#log]
+pptp keepalive use VAR#use
+no pptp keepalive use [VAR#use]
+pp auth accept VAR#auth [VAR#auth]
+no pp auth accept [VAR#auth VAR#auth]
+pp auth request VAR#auth [arrive-only]
+no pp auth request [VAR#auth]
+pp bind VAR#interface [VAR#interface ...]
+no pp bind [VAR#interface]
+pptp service VAR#service
+no pptp service [VAR#service]
+pptp service type VAR#type
+no pptp service type [VAR#type]
+pptp syslog VAR#syslog
+no pptp syslog [VAR#syslog]
+pptp tunnel disconnect time VAR#time
+no pptp tunnel disconnect time [VAR#time]
+pptp window size VAR#size
+no pptp window size [VAR#size]
+ppp mp interleave [VAR#delay] VAR#switch
+no ppp mp interleave [[VAR#delay] VAR#switch]
+queue class filter VAR#num VAR#class [cos=VAR#cos] ip VAR#src_addr [VAR#dest_addr [VAR#protocol [VAR#src_port [VAR#dest_port]]]]
+queue class filter VAR#num VAR#class [cos=VAR#cos] ipv6	 VAR#src_addr [VAR#dest_addr [VAR#protocol [VAR#src_port [VAR#dest_port]]]]
+no queue class filter VAR#num [...]
+queue VAR#interface class filter list VAR#filter_list
+queue pp class filter list VAR#filter_list
+no queue VAR#interface class filter list [VAR#filter_list]
+no queue pp class filter list [VAR#filter_list]
+queue VAR#interface default class VAR#class
+queue pp default class VAR#class
+no queue VAR#interface default class [VAR#class]
+no queue pp default class [VAR#class]
+queue VAR#interface length VAR#len1 [VAR#len2...VAR#len4]
+queue pp length VAR#len1 [VAR#len2...VAR#len4]
+no queue VAR#interface length [VAR#len1...]
+no queue pp length [VAR#len1...]
+queue VAR#interface type VAR#type [shaping-level=VAR#level]
+queue pp type VAR#type
+no queue VAR#interface type [VAR#type]
+no queue pp type [VAR#type]
+speed VAR#interface VAR#speed
+no speed VAR#interface [VAR#speed]
+schedule at VAR#id [VAR#date] VAR#time * VAR#command...
+schedule at VAR#id [VAR#date] VAR#time pp VAR#peer_num VAR#command...
+schedule at VAR#id [VAR#date] VAR#time tunnel VAR#tunnel_num VAR#command...
+schedule at VAR#id [VAR#date] VAR#time switch VAR#switch VAR#command...
+no schedule at VAR#id [[VAR#date]...]
+alarm batch VAR#switch
+alarm connection analog VAR#switch
+alarm connection data VAR#switch
+alarm entire VAR#switch
+alarm http revision-up VAR#switch
+no alarm http revision-up [VAR#switch]
+alarm intrusion VAR#switch
+alarm mp VAR#switch
+alarm sd VAR#switch
+no alarm sd [VAR#switch]
+alarm startup VAR#switch [VAR#pattern]
+no alarm startup [VAR#switch]
+alarm usbhost VAR#switch
+audio echo-canceller port=VAR#port [route=VAR#route] VAR#mode [VAR#length [nlp=VAR#nlp] [cng=VAR#cng]]
+no audio echo-canceller port=VAR#port [route=VAR#route VAR#mode [VAR#length [nlp=VAR#nlp] [cng=VAR#cng]]]
+audio echo-canceller disabler VAR#mode
+audio echo-canceller nlp threshold port=VAR#port VAR#threshold
+no audio echo-canceller nlp threshold port=VAR#port
+audio jitter-buffer port=VAR#port VAR#mode VAR#length
+no audio jitter-buffer port=VAR#port
+audio rtp port VAR#port
+audio rtp segsize VAR#length
+console character VAR#code
+no console character [VAR#code]
+console columns VAR#col
+no console columns [VAR#col]
+console info VAR#info
+no console info [VAR#info]
+console lines VAR#lines
+no console lines [VAR#lines]
+console prompt VAR#prompt
+no console prompt [VAR#prompt]
+date VAR#date
+description VAR#id VAR#description
+no description VAR#id [VAR#description]
+description VAR#interface VAR#description
+no description VAR#interface [VAR#description]
+disconnect user VAR#user [/VAR#connection[VAR#no]]
+disconnect user [VAR#user]/VAR#connection[VAR#no]
+http revision-down permit VAR#permit
+no http revision-down permit [VAR#permit]
+http revision-up permit VAR#permit
+no http revision-up permit [VAR#permit]
+http_revision-up_proxy VAR#proxy_server [VAR#port]
+no http revision-up proxy [VAR#proxy_server [VAR#port]]
+http revision-up schedule VAR#period VAR#time1 VAR#time2
+no http revision-up schedule [VAR#period VAR#time1 VAR#time2]
+http revision-up timeout VAR#time
+no http revision-up timeout [VAR#time]
+http revision-up url VAR#url
+no http revision-up url [VAR#url]
+ip VAR#interface wol relay VAR#relay
+no ip VAR#interface wol relay
+ip routing process VAR#process
+lan count-hub-overflow VAR#switch [VAR#interval]
+no lan count-hub-overflow [VAR#switch [VAR#interval]]
+lan linkup send-wait-time VAR#interface VAR#time
+no lan linkup send-wait-time VAR#interface [VAR#time]
+lan shutdown VAR#interface [VAR#port...]
+no lan shutdown VAR#interface [VAR#port...]
+lan type VAR#interface_with_swhub VAR#speed [VAR#port] [VAR#speed [VAR#port]...] [VAR#option=VAR#value...]
+lan type VAR#interface_with_swhub VAR#option=VAR#value
+lan type VAR#interface_without_swhub VAR#speed [VAR#option=VAR#value...]
+lan type VAR#interface_without_swhub VAR#option=VAR#value
+no lan type VAR#interface [...]
+login timer VAR#time
+no login timer [VAR#time]
+login user VAR#user [VAR#password]
+login user VAR#user encrypted VAR#password
+no login user VAR#user [VAR#password]
+ntp backward-compatibility VAR#comp
+no ntp backward-compatibility [VAR#comp]
+ntp local address VAR#ip_address
+ntpdate VAR#ntp_server [syslog]
+operation http revision-up permit VAR#permit
+no operation http revision-up permit [VAR#permit]
+password reenter VAR#reenter
+rdate VAR#host [syslog]
+scp [[VAR#user@]VAR#host:]VAR#file1 [[VAR#user@]VAR#host:]VAR#file2 [VAR#port]
+security class VAR#level VAR#forget [VAR#telnet [VAR#ssh]]
+no security class [VAR#level VAR#forget [VAR#telnet [VAR#ssh]]]
+set VAR#name=VAR#value
+no set VAR#name[=VAR#value]
+sftpd host VAR#ip_range [VAR#ip_range ...]
+no sftpd host [VAR#ip_range...]
+ssh [-p VAR#port] [-e VAR#escape] [VAR#user@]VAR#host
+ssh encrypt algorithm [VAR#algorithm...]
+no ssh encrypt algorithm [VAR#algorithm...]
+ssh known hosts VAR#file
+no ssh known hosts [VAR#file]
+sshd client alive VAR#switch [VAR#interval [VAR#count]]
+no sshd client alive [VAR#switch ...]
+sshd encrypt algorithm [VAR#algorithm ...]
+sshd hide openssh version VAR#use
+no sshd hide openssh version [VAR#use]
+sshd host VAR#ip_range [VAR#ip_range ...]
+no sshd host [VAR#ip_range...]
+sshd host key generate [VAR#seed]
+no sshd host key generate [VAR#seed]
+sshd listen VAR#port
+no sshd listen [VAR#port]
+sshd service VAR#service
+no sshd service [VAR#service]
+sshd session VAR#num
+no sshd session [VAR#num]
+syslog debug VAR#debug
+no syslog debug [VAR#debug]
+syslog execute command VAR#switch
+no syslog execute command [VAR#switch]
+syslog facility VAR#facility
+no syslog facility [VAR#facility]
+syslog host VAR#host
+no syslog host [VAR#host]
+syslog info VAR#info
+no syslog info [VAR#info]
+syslog local address VAR#address
+no syslog local address [VAR#address]
+syslog notice VAR#notice
+no syslog notice [VAR#notice]
+syslog srcport VAR#port
+no syslog srcport [VAR#port]
+system led brightness VAR#mode
+no system led brightness [VAR#mode]
+system packet-buffer VAR#group VAR#parameter=VAR#value [VAR#parameter=VAR#value ...]
+no system packet-buffer VAR#group [VAR#parameter=VAR#value ...]
+tcp log VAR#switch [VAR#src_addr[/VAR#mask] [VAR#dst_addr[/VAR#mask] [VAR#tcpflag[VAR#src_port_list [VAR#dst_port_list]]]]]
+telnetd host VAR#ip_range [VAR#ip_range...]
+telnetd listen VAR#port
+telnetd service VAR#service
+telnetd session VAR#num
+tftp host VAR#host
+no tftp host [VAR#host]
+time VAR#time
+timezone VAR#timezone
+no timezone [VAR#timezone]
+user attribute [VAR#user] VAR#attribute=VAR#value [VAR#attribute=VAR#value...]
+no user attribute [VAR#user...]
+show config VAR#filename
+less config VAR#filename
+show config ap [VAR#ap]
+less config ap [VAR#ap]
+show config pp [VAR#peer_num]
+less config pp [VAR#peer_num]
+show config switch [VAR#switch]
+less config switch [VAR#switch]
+show config tunnel [VAR#tunnel_num]
+less config tunnel [VAR#tunnel_num]
+show file list VAR#location [VAR#all] [VAR#file-only]
+less file list VAR#location [VAR#all] [VAR#file-only]
+show ip secure filter VAR#interface [VAR#dir]
+show ip secure filter pp [VAR#peer_num] [VAR#dir]
+show ip secure filter tunnel [VAR#tunnel_num] [VAR#dir]
+show ipv6 address [VAR#interface]
+show ipv6 address pp [VAR#peer_num]
+show ipv6 address tunnel [VAR#tunnel_num]
+show arp [VAR#interface[/VAR#sub_interface]]
+show ip connection [VAR#interface [VAR#direction]]
+show ip connection pp [VAR#peer_num [VAR#direction]]
+show ip connection tunnel [VAR#tunnel_num [VAR#direction]]
+show ip intrusion detection VAR#interface [VAR#direction]
+show ip intrusion detection pp [VAR#peer_num [VAR#direction]]
+show ip intrusion detection tunnel [VAR#tunnel_num [VAR#direction]]
+show ip route [VAR#destination]
+show ipv6 connection VAR#interface [VAR#direction]
+show ipv6 connection pp [VAR#peer_num [VAR#direction]]
+show ipv6 connection tunnel [VAR#tunnel_num [VAR#direction]]
+show nat descriptor address [VAR#nat_descriptor] [detail]
+show nat descriptor interface address VAR#interface
+show nat descriptor interface address pp VAR#peer_num
+show nat descriptor interface address tunnel VAR#tunnel_num
+show nat descriptor interface bind VAR#interface
+show nat descriptor masquerade port [VAR#nat_descriptor] summary
+show pp connect time [VAR#peer_num]
+show status VAR#interface
+show status analog [VAR#port]
+show status boot [VAR#num]
+show status cooperation VAR#type [VAR#id]
+show status dhcp [summary] [VAR#scope_n]
+show status mail service [VAR#template_id] [debug]
+show status netvolante-dns VAR#interface
+show status netvolante-dns pp [VAR#peer_num]
+show status packet-buffer [VAR#group]
+show status pp [VAR#peer_num]
+show status qos VAR#info [VAR#interface [VAR#class]]
+show status sip server [VAR#server_num]
+show status switch control VAR#interface
+show status switch control route backup VAR#route
+show status switching-hub macaddress [VAR#interface [VAR#port]] [VAR#mac_address]
+show status tunnel [VAR#tunnel_num]
+show status usbhost [VAR#port]
+show status usbhost modem [VAR#port]
+show status vlan [VAR#interface/VAR#sub_interface]
+snmp community read-only VAR#name
+snmp community read-write VAR#name
+snmp display ipcp force VAR#switch
+snmp host VAR#host [VAR#ro_community [VAR#rw_community]]
+no snmp host [VAR#host]
+snmp ifindex switch static index VAR#index VAR#switch
+no snmp ifindex switch static index VAR#index [VAR#switch]
+snmp local address VAR#ip_address
+snmp syscontact VAR#name
+snmp syslocation VAR#name
+snmp sysname VAR#name
+snmp trap community VAR#name
+snmp trap enable snmp VAR#trap [VAR#trap...]
+snmp trap enable switch VAR#switch VAR#trap [VAR#trap...]
+snmp trap enable switch VAR#switch all
+snmp trap enable switch VAR#switch none
+no snmp trap enable switch VAR#switch
+snmp trap enable switch common VAR#trap [VAR#trap...]
+snmp trap host VAR#host [VAR#community]
+no snmp trap host VAR#host
+snmp trap link-updown separate-l2switch-port VAR#interface VAR#switch
+no snmp trap link-updown separate-l2switch-port VAR#interface
+snmp trap mobile signal-strength VAR#switch [VAR#level]
+no snmp trap mobile signal-strength [VAR#switch [VAR#level]]
+snmp trap send linkdown VAR#interface VAR#switch
+snmp trap send linkdown pp VAR#peer_num VAR#switch
+snmp trap send linkdown tunnel VAR#tunnel_num VAR#switch
+no snmp trap send linkdown VAR#interface
+no snmp trap send linkdown pp VAR#peer_num
+no snmp trap send linkdown tunnel VAR#tunnel_num
+snmp yrifppdisplayatmib2 VAR#switch
+snmp yrifswitchdisplayatmib2 VAR#switch
+snmp yriftunneldisplayatmib2 VAR#switch
+snmp yrswindex switch static index VAR#index VAR#switch
+no snmp yrswindex switch static index VAR#index [VAR#switch]
+snmpv2c community read-only VAR#name
+snmpv2c community read-write VAR#name
+snmpv2c host VAR#host [VAR#ro_community [VAR#rw_community]]
+no snmpv2c host [VAR#host]
+snmpv2c trap community VAR#name
+snmpv2c trap host VAR#host [VAR#type [VAR#community]]
+no snmpv2c trap host VAR#host
+snmpv3 context name VAR#name
+snmpv3 engine id VAR#engine_id
+snmpv3 host VAR#host user VAR#user_id ...
+no snmpv3 host [VAR#host]
+snmpv3 trap host VAR#host [VAR#type] user VAR#user_id
+no snmpv3 trap host VAR#host
+snmpv3 usm user VAR#user_id VAR#name [group VAR#group_id] [VAR#auth VAR#auth_pass [VAR#priv VAR#priv_pass]]
+no snmpv3 usm user VAR#user_id
+snmpv3 vacm access VAR#group_id read VAR#read_view write VAR#write_view
+no snmpv3 vacm access VAR#group_id
+snmpv3 vacm view VAR#view_id VAR#type VAR#oid [VAR#type VAR#oid ...]
+no snmpv3 vacm view VAR#view_id
+sntpd host VAR#host
+sntpd service VAR#switch
+ap config directory VAR#path
+no ap config directory [VAR#path]
+ap config filename VAR#name
+no ap config filename [VAR#name]
+ap control config-auto-set use VAR#use
+no ap control config-auto-set use [VAR#use]
+ap control config delete [VAR#ap]
+ap control config get [VAR#ap]
+ap control config get [[VAR#interface] all]
+ap control config set [VAR#ap]
+ap control config set [[VAR#interface] all]
+ap control firmware update go [VAR#ap]
+ap control http proxy timeout VAR#time
+no ap control http proxy timeout [VAR#time]
+ap control http proxy use VAR#use
+no ap control http proxy use [VAR#use]
+ap select VAR#ap
+switch control function get boot-rom-version [VAR#switch]
+switch control function execute clear-counter [VAR#switch]
+switch control function execute clear-macaddress-table [VAR#switch]
+switch control function set counter-frame-rx-type VAR#port VAR#counter VAR#type
+no switch control function set counter-frame-rx-type VAR#port VAR#counter
+switch control function get counter-frame-rx-type VAR#port VAR#counter [VAR#switch]
+switch control function set counter-frame-tx-type VAR#port VAR#counter VAR#type
+no switch control function set counter-frame-tx-type VAR#port VAR#counter
+switch control function get counter-frame-tx-type VAR#port VAR#counter [VAR#switch]
+switch control function set energy-saving VAR#mode
+switch control function get energy-saving [VAR#switch]
+switch control function get firmware-revision [VAR#switch]
+switch control function set led-brightness VAR#mode
+switch control function get led-brightness [VAR#switch]
+switch control function set loopdetect-count VAR#count
+no switch control function set loopdetect-count VAR#count
+switch control function get loopdetect-count [VAR#switch]
+switch control function set loopdetect-linkdown VAR#action
+switch control function get loopdetect-linkdown [VAR#switch]
+switch control function set loopdetect-port-use VAR#port VAR#mode
+no switch control function set loopdetect-port-use VAR#port
+switch control function get loopdetect-port-use VAR#port [VAR#switch]
+switch control function set loopdetect-recovery-timer VAR#time
+switch control function get loopdetect-recovery-timer [VAR#switch]
+switch control function set loopdetect-time VAR#time
+switch control function get loopdetect-time [VAR#switch]
+switch control function set loopdetect-use-control-packet VAR#mode
+switch control function get loopdetect-use-control-packet [VAR#switch]
+switch control function set macaddress-aging VAR#mode
+switch control function get macaddress-aging [VAR#switch]
+switch control function set macaddress-aging-timer VAR#time
+switch control function get macaddress-aging-timer [VAR#switch]
+switch control function set mirroring-dest VAR#port
+switch control function get mirroring-dest [VAR#switch]
+switch control function set mirroring-src-rx VAR#port VAR#mode
+no switch control function set mirroring-src-rx VAR#port
+switch control function get mirroring-src-rx VAR#port [VAR#switch]
+switch control function set mirroring-src-tx VAR#port VAR#mode
+no switch control function set mirroring-src-tx VAR#port
+switch control function get mirroring-src-tx VAR#port [VAR#switch]
+switch control function set mirroring-use VAR#mode
+switch control function get mirroring-use [VAR#switch]
+switch control function get model-name [VAR#switch]
+switch control function set poe-class VAR#port VAR#class
+no switch control function set poe-class VAR#port VAR#class
+switch control function get poe-class VAR#port [VAR#switch]
+switch control function set port-auto-crossover VAR#port VAR#mode
+no switch control function set port-auto-crossover VAR#port
+switch control function get port-auto-crossover VAR#port [VAR#switch]
+switch control function set port-blocking-control-packet VAR#port VAR#mode
+no switch control function set port-blocking-control-packet VAR#port
+switch control function get port-blocking-control-packet VAR#port [VAR#switch]
+switch control function set port-blocking-data-packet VAR#port VAR#mode
+no switch control function set port-blocking-data-packet VAR#port
+switch control function get port-blocking-data-packet VAR#port [VAR#switch]
+switch control function set port-flow-control VAR#port VAR#mode
+no switch control function set port-flow-control VAR#port
+switch control function get port-flow-control VAR#port [VAR#switch]
+switch control function set port-speed VAR#port VAR#speed
+no switch control function set port-speed VAR#port
+switch control function get port-speed VAR#port [VAR#switch]
+switch control function set port-speed-downshift VAR#port VAR#mode
+no switch control function set port-speed-downshift VAR#port
+switch control function get port-speed-downshift VAR#port [VAR#switch]
+switch control function set port-use VAR#port VAR#mode
+no switch control function set port-use VAR#port
+switch control function get port-use VAR#port [VAR#switch]
+switch control function set qos-dscp-remark-class VAR#port VAR#class
+no switch control function set qos-dscp-remark-class VAR#port
+switch control function get qos-dscp-remark-class VAR#port [VAR#switch]
+switch control function set qos-dscp-remark-type VAR#port VAR#type
+no switch control function set qos-dscp-remark-type VAR#port
+switch control function get qos-dscp-remark-type VAR#port [VAR#switch]
+switch control function set qos-policing-speed VAR#port VAR#level
+no switch control function set qos-policing-speed VAR#port
+switch control function get qos-policing-speed VAR#port [VAR#switch]
+switch control function set qos-policing-use VAR#port VAR#mode
+no switch control function set qos-policing-use VAR#port
+switch control function get qos-policing-use VAR#port [VAR#switch]
+switch control function set qos-shaping-speed VAR#port VAR#level
+no switch control function set qos-shaping-speed VAR#port
+switch control function get qos-shaping-speed VAR#port [VAR#switch]
+switch control function set qos-shaping-use VAR#port VAR#mode
+no switch control function set qos-shaping-use VAR#port
+switch control function get qos-shaping-use VAR#port [VAR#switch]
+switch control function set qos-speed-unit VAR#unit
+switch control function get qos-speed-unit [VAR#switch]
+switch control function execute reset-loopdetect [VAR#switch]
+switch control function execute restart [VAR#switch]
+switch control function execute restart-poe-supply [VAR#switch]
+switch control function get serial-number [VAR#switch]
+switch control function get status-counter-frame-rx VAR#port VAR#counter [VAR#switch]
+switch control function get status-counter-frame-tx VAR#port VAR#counter [VAR#switch]
+switch control function get status-counter-octet-rx VAR#port [VAR#switch]
+switch control function get status-counter-octet-tx VAR#port [VAR#switch]
+switch control function get status-fan [VAR#switch]
+switch control function get status-fan-rpm VAR#FAN [VAR#switch]
+switch control function get status-led-mode [VAR#switch]
+switch control function get status-loopdetect-port VAR#port [VAR#switch]
+switch control function get status-loopdetect-recovery-timer VAR#port [VAR#switch]
+switch control function get status-macaddress-addr VAR#mac_address [VAR#switch]
+switch control function get status-macaddress-port VAR#port [VAR#switch]
+switch control function get status-poe-detect-class VAR#port [VAR#switch]
+switch control function get status-poe-state VAR#port [VAR#switch]
+switch control function get status-poe-supply VAR#port [VAR#switch]
+switch control function get status-poe-temperature [VAR#switch]
+switch control function get status-port-speed VAR#port [VAR#switch]
+switch control function get system-macaddress [VAR#switch]
+switch control function set system-name VAR#name
+switch control function get system-name [VAR#switch]
+switch control function get system-uptime [VAR#switch]
+switch control function set vlan-access VAR#port VAR#vlan_register_num
+no switch control function set vlan-access VAR#port
+switch control function get vlan-access VAR#port [VAR#switch]
+switch control function set vlan-id VAR#vlan_register_num VAR#vid
+no switch control function set vlan-id VAR#vlan_register_num
+switch control function get vlan-id VAR#vlan_register_num [VAR#switch]
+switch control function set vlan-multiple VAR#port VAR#group_num VAR#mode
+no switch control function set vlan-multiple VAR#port VAR#group_num
+switch control function get vlan-multiple VAR#port VAR#group_num [VAR#switch]
+switch control function set vlan-multiple-use VAR#mode
+switch control function get vlan-multiple-use [VAR#switch]
+switch control function set vlan-port-mode VAR#port VAR#mode
+no switch control function set vlan-port-mode VAR#port
+switch control function get vlan-port-mode VAR#port [VAR#switch]
+switch control function set vlan-trunk VAR#port VAR#vlan_register_num VAR#mode
+no switch control function set vlan-trunk VAR#port VAR#vlan_register_num
+switch control function get vlan-trunk VAR#port VAR#vlan_register_num [VAR#switch]
+switch control firmware upload go VAR#file [VAR#switch]
+switch control function default [both] [VAR#switch]
+switch control function execute VAR#function [VAR#index ...] [VAR#switch]
+switch control function get VAR#function [VAR#index ...] [VAR#switch]
+switch control function set VAR#function [VAR#index ...] VAR#value
+no switch control function set VAR#function [VAR#index ...]
+switch control route backup VAR#route VAR#port
+no switch control route backup VAR#route
+switch control use VAR#interface VAR#use
+no switch control use VAR#interface
+switch control watch interval VAR#time [VAR#count]
+switch select VAR#switch
+ip tunnel address VAR#ip_address[/VAR#mask]
+no ip tunnel address [VAR#ip_address[/VAR#mask]]
+ip tunnel remote address VAR#ip_address
+no ip tunnel remote address [VAR#ip_address]
+tunnel disable VAR#tunnel_num
+tunnel enable VAR#tunnel_num
+tunnel encapsulation VAR#type
+tunnel endpoint address [VAR#local] VAR#remote
+no tunnel endpoint address [[VAR#local] VAR#remote]
+tunnel endpoint name [VAR#local_name] VAR#remote_name [VAR#type]
+no tunnel endpoint name [VAR#local_name VAR#remote_name VAR#type]
+upnp external address refer VAR#interface
+upnp external address refer pp VAR#peer_num
+no upnp external address refer [VAR#interface]
+no upnp external address refer pp [VAR#peer_num]
+upnp port mapping timer VAR#time
+upnp port mapping timer type VAR#type
+upnp syslog VAR#syslog
+upnp use VAR#use
+usbhost modem flow control VAR#interface VAR#sw
+no usbhost modem flow control VAR#interface
+usbhost modem initialize VAR#interface VAR#command [VAR#command_list]
+no usbhost modem initialize VAR#interface
+usbhost overcurrent duration [VAR#port] VAR#duration
+no usbhost overcurrent duration [VAR#port]
+usbhost use [VAR#port] VAR#switch
+no usbhost use [VAR#port]
+vlan VAR#interface/VAR#sub_interface 802.1q vid=VAR#vid [name=VAR#name]
+no vlan VAR#interface/VAR#sub_interface 802.1q
+analog call route-table VAR#route_table_num [name=VAR#route_table_name] VAR#route_num_list...
+no analog call route-table VAR#route_table_num
+analog call route VAR#route_num VAR#in_dial [VAR#out_dial1] VAR#route1 [[VAR#out_dial2] VAR#route2]
+no analog call route VAR#route_num
+analog extension dial prefix [port=VAR#port] VAR#route [prefix=VAR#"dial"]
+analog extension dial prefix [port=VAR#port] sip [server=VAR#server_num [phone]] [prefix=VAR#"dial"]
+analog extension dial prefix [port=VAR#port] ngn VAR#lan_interface [prefix=VAR#"dial"]
+analog extension dial prefix [port=VAR#port] routing route-table=VAR#route_table_num server=VAR#server_num[/VAR#server_sign] [phone] [prefix=VAR#"dial"]
+analog extension dial prefix [port=VAR#port] routing route-table=VAR#route_table_num ngn VAR#lan_interface [prefix=VAR#"dial"]
+no analog extension dial prefix [port=VAR#port] VAR#route
+no analog extension dial prefix [port=VAR#port] sip [server=VAR#server_num [phone]]
+no analog extension dial prefix [port=VAR#port] ngn VAR#lan_interface
+no analog extension dial prefix [port=VAR#port] routing route-table=VAR#route_table_num server=VAR#server_num[/VAR#server_sign] [phone]
+no analog extension dial prefix [port=VAR#port] routing route-table=VAR#route_table_num ngn VAR#lan_interface
+analog extension sip address VAR#number VAR#dial_number VAR#sip_address [name=VAR#description]
+analog extension sip address VAR#number VAR#dial_number VAR#sip_address phone [name=VAR#description]
+analog extension sip address VAR#number VAR#dial_number VAR#sip_address presence [name=VAR#description]
+analog extension sip address VAR#number VAR#dial_number VAR#sip_address server=VAR#server_number [phone] [name=VAR#description]
+no analog extension sip address VAR#number
+analog sip arrive incoming-signal VAR#port VAR#number VAR#sip_address VAR#signal VAR#dial_in-num
+analog sip arrive incoming-signal VAR#port VAR#number lastdigit VAR#signal VAR#dial_in-digit
+no analog sip arrive incoming-signal VAR#port VAR#number
+analog sip arrive myaddress VAR#port VAR#number VAR#sip_address
+no analog sip arrive myaddress VAR#port VAR#number
+analog sip arrive permit VAR#port VAR#mode
+analog sip call display name VAR#port VAR#displayname
+no analog sip call display name VAR#port
+analog sip call myname VAR#port VAR#username
+no analog sip call myname VAR#port
+analog sip call permit VAR#port VAR#permit
+no analog sip call permit VAR#port
+ngn type VAR#interface VAR#type
+no ngn type VAR#interface [VAR#type]
+sip 100rel VAR#switch
+sip arrive address check VAR#SW
+sip arrive name-display default VAR#mode
+no sip arrive name-display default [VAR#mode]
+sip arrive ringing p-n-uatype VAR#switch
+sip arrive session timer method VAR#method
+no sip arrive session timer method [VAR#method]
+sip arrive session timer refresher VAR#refresher
+sip codec permit VAR#interface VAR#codec [VAR#codec ...]
+sip codec permit pp VAR#peer_num VAR#codec [VAR#codec ...]
+sip codec permit tunnel VAR#tunnel_num VAR#codec [VAR#codec ...]
+no sip codec permit VAR#interface [VAR#codec ...]
+no sip codec permit pp VAR#peer_num [VAR#codec ...]
+no sip codec permit tunnel VAR#tunnel_num [VAR#codec ...]
+sip ip protocol VAR#protocol
+sip log VAR#switch
+sip netvolante dial domain VAR#name
+sip netvolante dial figure VAR#figure
+sip outer address VAR#ipaddress
+sip request retransmit timer VAR#timer1 [VAR#timer2]
+no sip request retransmit timer [VAR#timer1 [VAR#timer2]]
+sip response code busy VAR#code
+sip server VAR#number VAR#address VAR#type VAR#protocol VAR#sip_uri [VAR#username [VAR#password]] [name=VAR#name]
+no sip server VAR#number
+sip server 100rel VAR#number VAR#switch
+no sip server 100rel VAR#number
+sip server analog service VAR#number rule=VAR#rule
+sip server analog service VAR#number off
+no sip server analog service VAR#number
+sip server arrive number display server=VAR#number rule=VAR#rule
+no sip server arrive number display server=VAR#number
+sip server call mode VAR#number VAR#mode
+no sip server call mode VAR#number
+sip server call own permit server=VAR#number VAR#sw
+no sip server call own permit server=VAR#number
+sip server call remote domain VAR#number VAR#domain
+no sip server call remote domain VAR#number
+sip server call server error server=VAR#number VAR#sw
+no sip server call server error server=VAR#number
+sip server dial number-only server=VAR#number VAR#sw
+no sip server dial number-only server=VAR#number
+sip server display name VAR#number VAR#displayname
+no sip server display name VAR#number
+sip server pilot address VAR#number VAR#sipaddress
+no sip server pilot address VAR#number
+sip server privacy VAR#number VAR#switch [VAR#pattern]
+no sip server privacy VAR#number VAR#switch [VAR#pattern]
+sip server qvalue VAR#number VAR#value
+no sip server qvalue VAR#number
+sip server register request-uri VAR#number VAR#sip_address
+no sip server register request-uri VAR#number
+sip server register timer server=VAR#number VAR#OK_time VAR#NG_time
+no sip server register timer server=VAR#number
+sip server session timer VAR#number VAR#time [update=VAR#update] [refresher=VAR#refresher]
+no sip server session timer VAR#number
+sip session timer VAR#time [update=VAR#update] [refresher=VAR#refresher]
+sip use VAR#use
+sip user agent VAR#sw [VAR#user-agent]
