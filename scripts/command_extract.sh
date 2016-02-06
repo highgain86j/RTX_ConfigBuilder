@@ -13,11 +13,22 @@ cd html
 for file in `ls */*.html`
 	do
 	cat ${file} | sed 's|<br/>|'"$LF"'|g' | grep "kwd" | grep "var" \
-	| sed -e 's|<span class="var">|'$'|g' -e 's|<span class="delim">||g' -e 's|</span>||g' -e 's|<span class="kwd">||g' \
-	-e 's|<ul class="simple">||g' -e 's|<li>||g' -e 's|<span class="synph">||g' -e 's|</li>||g' >> ${tmpfile}
+	| sed -e 's|\[| |g' \
+	| sed -e 's|\]| |g' \
+	| sed -e 's|<ul class="simple">||g' \
+	| sed -e 's|<span class="var">\([-,a-z,A-Z,0-9,_,%,:,"]*\)|\$\{\1\}|g' \
+	| sed -e 's|<span class="delim">||g'  \
+	| sed -e 's|<span class="kwd">||g' \
+	| sed -e 's|<span class="synph">||g'  \
+	| sed -e 's|</span>||g' \
+	| sed -e 's|<li>||g' \
+	| sed -e 's|</li>||g' \
+	| sed -e 's|\.\.*|\$\{opt\}|g' \
+	| sed -e 's|  *| |g' #>> ${tmpfile}
+	#echo $1
 done
 
-cat ${tmpfile} > ../$2.command
+#cat ${tmpfile} > ../$2.command
 cd ..
 rm -rf html/
 rm ${tmpfile}
