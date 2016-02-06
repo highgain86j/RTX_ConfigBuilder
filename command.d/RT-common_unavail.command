@@ -7,14 +7,21 @@ analog arrive another-device permit
 analog arrive global permit
 analog arrive ignore-subaddress permit
 analog arrive incoming-signal
+analog arrive incoming-signal delete
 analog arrive incoming-signal timing pb
 analog arrive inumber-port
+analog arrive modem signal type
 analog arrive number display
+analog arrive prior-port
 analog arrive priority
 analog arrive restrict
 analog arrive restrict list
+analog arrive restrict list add
+analog arrive restrict list delete
 analog arrive ring-while-talking permit
 analog arrive ringer-type list
+analog arrive ringer-type list add
+analog arrive ringer-type list delete
 analog arrive without-calling-number
 analog arrive without-subaddress permit
 analog call route
@@ -30,15 +37,18 @@ analog extension emergency-call-dial type
 analog extension incoming ringer
 analog extension log
 analog extension machine-id
+analog extension machine-id delete
 analog extension master
 analog extension mode
 analog extension other-dial-tone
 analog extension sip address
+analog extension sip address delete
 analog extension slave permit
 analog hooking inhibit timer
 analog hooking timer
 analog hooking wait timer
 analog http revision-up permit
+analog l-mail-service
 analog local address
 analog local address notice
 analog mp prior
@@ -53,10 +63,13 @@ analog rapid call
 analog re-ringing-timer
 analog sip arrive incoming-signal
 analog sip arrive myaddress
+analog sip arrive myaddress delete
 analog sip arrive permit
 analog sip call display name
 analog sip call myname
 analog sip call permit
+analog sip use arrive
+analog sip use call
 analog supplementary-service
 analog supplementary-service call-deflection
 analog supplementary-service call-deflection address
@@ -78,15 +91,64 @@ clear account ngn tel
 clear account pstn
 clear account sip
 clear acl
+clear analog account
 clear mail-check info
+dhcp client client-identifier lan_if primary
+dhcp client client-identifier lan_if secondary
+dhcp client client-identifier type
+dhcp client hostname lan_if primary
+dhcp client hostname lan_if secondary
+dhcp delete scope
+dhcp scope unbind
+dhcp server duplicate check
 dhcp server rfc2131 compliant
 dns private name
+dns server select delete
+dns static delete
 execute at-command
+httpd frame use
+iii
+ip filter comment
+ip filter comment delete
+ip filter delete
+ip filter dynamic comment
+ip filter dynamic comment delete
+ip filter dynamic delete
 ip fragment remove df-bit filter
+ip host delete
+ip lan_if address
+ip lan_if broadcast
+ip lan_if dhcp lease time
+ip lan_if dhcp retry
+ip lan_if intrusion detection
+ip lan_if mtu
+ip lan_if nat descriptor
+ip lan_if netmask
+ip lan_if proxyarp
+ip lan_if rip auth key
+ip lan_if rip auth type
+ip lan_if rip filter
+ip lan_if rip listen
+ip lan_if routing protocol
+ip lan_if secondary address
+ip lan_if secure filter
+ip pp hide static route
+ip pp hold routing
+ip pp local address
+ip pp netmask
+ip pp rip listen
+ip pp routing protocol
+ip route delete
+ip routing cache
 ipsec ipcomp type
+ipv6 filter delete
+ipv6 filter dynamic delete
+ipv6 interface addrress delete
 ipv6 interface mld static group
 ipv6 interface mld type
+ipv6 interface prefix delete
 ipv6 multicast routing process mode
+ipv6 route delete
 isdn arrive global permit
 isdn arrive inumber-port
 isdn arrive priority
@@ -104,6 +166,9 @@ isdn sip call myname
 isdn sip call permit
 isdn use
 isdn use bri1
+lan1 type auto-crossover
+lan2 type
+lan_if transmit timeout
 mail notify account exec
 mail-check go
 mail-check led
@@ -128,7 +193,9 @@ mail-transfer server
 mail-transfer timeout
 nat descriptor delete
 nat descriptor masquerade incoming
+nat descriptor masquerade static delete
 nat descriptor masquerade unconvertible
+nat descriptor static delete
 netvolante-dns sip use
 netvolante-dns sip use pp
 ntp backward-compatibility
@@ -145,25 +212,38 @@ onfs sharing host
 onfs sharing service
 onfs sharing user
 packetdump
+packetdump lan_if
 packetdump pp
 password reenter
 port
 pp auth accept 133,
+pp auth clear myname
+pp auth delete username
+pp bind tunnel
 pp connect count threshold
 pp connect time threshold
+pp copy
+pp default
 pppoe
 pppoe call prohibit auth-error count
+pptp clear hostname
 provider isdn account nighttime
 provider isdn auto disconnect off
 provider isdn disconnect daytime
 provider isdn disconnect interval daytime
 provider isdn disconnect interval nighttime
 provider isdn disconnect nighttime
+provider lan_if dns server
+provider lan_if name
 provider netvolante-dns hostname sip
 provider pp bind
 provider ppp mp use on
+provider set off
+provider set on
 provider sip 050-number
 pstn dial type
+pstn disable
+pstn enable
 pstn hooking timer
 pstn modem signal timer
 pstn number display
@@ -176,6 +256,7 @@ pstn supplementary-service
 pstn use
 reject
 ringer
+schedule delete
 set-acl
 show
 show account analog
@@ -183,19 +264,51 @@ show account ngn tel
 show account pstn
 show account sip
 show acl
+show analog account
+show analog config
+show analog extension
+show analog extension config
+show auth
 show command
 show config analog extension
+show dhcp
+show dhcp status
+show dhcpc status
+show dns
+show dns static
+show ip filter
+show ip filter list
+show ip host
+show ip icmp
+show ip lan_if
+show ip pp
+show mail-check status
+show nat descriptor config
+show pp config
+show pp queue
+show ppp ccp
+show ppp chap
+show ppp ipcp
+show ppp lcp
+show ppp mscbcp
+show ppp pap
+show schedule
 show ssl public key
 show status analog
 show status analog extension
 show status dtcp
 show status isdn switch
+show status lan_if
 show status mail-check
 show status onfs
+show status rtp
 show status sip presence
 show status sip server
 show status voice call
 show status voice process
+show syslog
+show tftp
+show wins
 sip arrive name-display default
 sip codec permit
 sip codec permit pp
@@ -219,6 +332,8 @@ ssl public key generate
 syslog execute command
 talkie
 tunnel
+tunnel default
 tunnel dtcp
 tunnel dtcp connect
 tunnel dtcp disconnect
+tunnel endpoint clear name

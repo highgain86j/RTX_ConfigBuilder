@@ -9,12 +9,25 @@ alarm sd
 alarm startup
 alarm usbhost
 analog arrive ignore-subaddress permit
+analog arrive incoming-signal delete
 analog arrive incoming-signal timing pb
+analog arrive modem signal type
+analog arrive prior-port
+analog arrive restrict list add
+analog arrive restrict list delete
 analog arrive ringer-type list
+analog arrive ringer-type list add
+analog arrive ringer-type list delete
 analog extension emergency-call-dial type
+analog extension machine-id delete
+analog extension sip address delete
+analog l-mail-service
 analog off-hook mask
 analog pause timer
 analog power
+analog sip arrive myaddress delete
+analog sip use arrive
+analog sip use call
 analog supplementary-service call-deflection address
 analog supplementary-service call-deflection reject
 analog supplementary-service call-deflection ringer
@@ -63,6 +76,7 @@ clear account pstn
 clear account sip
 clear account tunnel
 clear acl
+clear analog account
 clear boot list
 clear bridge learning
 clear diagnosis config port
@@ -103,15 +117,23 @@ dashboard accumulate
 delete
 delete exec
 delete pki file
+dhcp client client-identifier lan_if primary
+dhcp client client-identifier lan_if secondary
+dhcp client client-identifier type
+dhcp client hostname lan_if primary
+dhcp client hostname lan_if secondary
 dhcp client hostname pool
 dhcp client hostname pp
 dhcp client option pool
 dhcp client option pp
 dhcp client release linkdown
 dhcp convert lease to bind
+dhcp delete scope
 dhcp manual lease
 dhcp manual release
 dhcp scope lease type
+dhcp scope unbind
+dhcp server duplicate check
 dhcp server rfc2131 cmdpliant
 diagnose config port access
 diagnose config port map
@@ -123,7 +145,9 @@ disconnect user
 dns cache max entry
 dns cache use
 dns host
+dns server select delete
 dns service fallback
+dns static delete
 ethernet filter
 ethernet interface filter
 execute at-cmdmand
@@ -176,11 +200,20 @@ httpd custom-gui api password
 httpd custom-gui api use
 httpd custom-gui use
 httpd custom-gui user
+httpd frame use
+iii
 ip arp timer
+ip filter comment
+ip filter comment delete
+ip filter delete
+ip filter dynamic comment
+ip filter dynamic comment delete
+ip filter dynamic delete
 ip flow limit
 ip flow timer
 ip forward filter
 ip fragment remove df-bit
+ip host delete
 ip icmp echo-reply send-only-linkup
 ip icmp unreachable-for-truncated send
 ip implicit-route preference
@@ -210,6 +243,22 @@ ip interface traffic list threshold
 ip interface vrrp
 ip interface vrrp shutdown trigger
 ip keepalive
+ip lan_if address
+ip lan_if broadcast
+ip lan_if dhcp lease time
+ip lan_if dhcp retry
+ip lan_if intrusion detection
+ip lan_if mtu
+ip lan_if nat descriptor
+ip lan_if netmask
+ip lan_if proxyarp
+ip lan_if rip auth key
+ip lan_if rip auth type
+ip lan_if rip filter
+ip lan_if rip listen
+ip lan_if routing protocol
+ip lan_if secondary address
+ip lan_if secure filter
 ip local forward filter
 ip pim sparse join-prune send
 ip pim sparse log
@@ -226,6 +275,8 @@ ip policy interface group
 ip policy service
 ip policy service group
 ip pp forward filter
+ip pp hide static route
+ip pp hold routing
 ip pp igmp
 ip pp igmp static
 ip pp inbound filter list
@@ -233,6 +284,8 @@ ip pp intrusion detection notice-interval
 ip pp intrusion detection repeat-control
 ip pp intrusion detection report
 ip pp intrusion detection threshold
+ip pp local address
+ip pp netmask
 ip pp ospf area
 ip pp ospf neighbor
 ip pp pim sparse
@@ -240,9 +293,13 @@ ip pp rebound
 ip pp rip auth key text
 ip pp rip backup interface
 ip pp rip force-to-advertise
+ip pp rip listen
+ip pp routing protocol
 ip pp secure filter name
 ip pp traffic list
 ip pp traffic list threshold
+ip route delete
+ip routing cache
 ip tos supersede
 ip tunnel forward filter
 ip tunnel igmp
@@ -281,14 +338,18 @@ ipsec ipcmdp type
 ipsec log illegal-spi
 ipsec transport template
 ipsec tunnel fastpath-fragment-function follow df-bit
+ipv6 filter delete
+ipv6 filter dynamic delete
 ipv6 icmp echo-reply send-only-linkup
 ipv6 icmp packet-too-big-for-truncated send
 ipv6 inbound filter
+ipv6 interface addrress delete
 ipv6 interface inbound filter list
 ipv6 interface mld
 ipv6 interface mld static
 ipv6 interface ospf area
 ipv6 interface prefix change log
+ipv6 interface prefix delete
 ipv6 interface vrrp
 ipv6 interface vrrp shutdown trigger
 ipv6 max auto address
@@ -322,6 +383,7 @@ ipv6 pp ospf area
 ipv6 pp prefix change log
 ipv6 rh0 discard
 ipv6 rip preference
+ipv6 route delete
 ipv6 routing process
 ipv6 source address selection rule
 ipv6 tunnel inbound filter list
@@ -355,6 +417,9 @@ lan shutdown
 lan-map log
 lan-map snapshot use
 lan-map terminal watch interval
+lan1 type auto-crossover
+lan2 type
+lan_if transmit timeout
 leased backup
 less
 less config ap
@@ -407,8 +472,10 @@ nat descriptor backward-cmdpatibility
 nat descriptor masquerade incmding
 nat descriptor masquerade session limit
 nat descriptor masquerade session limit total
+nat descriptor masquerade static delete
 nat descriptor masquerade unconvertible port
 nat descriptor sip
+nat descriptor static delete
 netvolante-dns auto save
 netvolante-dns register timer
 netvolante-dns server update address port
@@ -454,14 +521,20 @@ ospf router id
 ospf use
 ospf virtual-link
 packetdump
+packetdump lan_if
 packetdump pp
 pki certificate file
 pki crl file
 pp auth accept 133,
+pp auth clear myname
+pp auth delete username
 pp backup
 pp backup pp
 pp backup recovery time
 pp backup tunnel
+pp bind tunnel
+pp copy
+pp default
 pp encapsulation
 ppp bacp maxconfigure
 ppp bacp maxfailure
@@ -472,12 +545,19 @@ ppp bap restart
 ppp ipcp remote address check
 ppp lcp accm
 pppoe invalid-session forced close
+pptp clear hostname
 pri leased channel
 pri loopback active
 pri loopback passive
 provider interface bind
+provider lan_if dns server
+provider lan_if name
 provider pp bind
+provider set off
+provider set on
 pstn dial type
+pstn disable
+pstn enable
 pstn hooking timer
 pstn modem signal timer
 pstn number display
@@ -522,6 +602,7 @@ rip timer
 rotate external-memory syslog
 rtfs format
 rtfs garbage-collect
+schedule delete
 scp
 sd use
 set
@@ -538,17 +619,33 @@ show account pstn
 show account sip
 show account tunnel
 show acl
+show analog account
+show analog config
+show analog extension
+show analog extension config
+show auth
 show bridge learning
 show cmdmand
 show config ap
 show config switch
 show config tunnel
+show dhcp
+show dhcp status
+show dhcpc status
 show diagnosis config port access
 show diagnosis config port map
 show dlci
+show dns
 show dns cache
+show dns static
 show exec list
+show ip filter
+show ip filter list
+show ip host
+show ip icmp
+show ip lan_if
 show ip mroute
+show ip pp
 show ip secure filter
 show ip secure filter pp
 show ip secure filter tunnel
@@ -561,6 +658,8 @@ show ipv6 mroute fib
 show ipv6 ospf
 show lan-map
 show line masterclock
+show mail-check status
+show nat descriptor config
 show nat descriptor interface address tunnel
 show nat descriptor interface bind pp
 show nat descriptor interface bind tunnel
@@ -568,6 +667,15 @@ show nat descriptor masquerade port summary
 show nat descriptor masquerade session summary
 show pki certificate summary
 show pki crl
+show pp config
+show pp queue
+show ppp ccp
+show ppp chap
+show ppp ipcp
+show ppp lcp
+show ppp mscbcp
+show ppp pap
+show schedule
 show sshd public key
 show ssl public key
 show status analog extension
@@ -593,6 +701,7 @@ show status ipv6 policy filter
 show status ipv6 policy service
 show status isdn switch
 show status l2tp
+show status lan_if
 show status lua
 show status mail service
 show status mobile signal-strength
@@ -609,6 +718,7 @@ show status qac-tm unqualified
 show status qos
 show status remote setup
 show status rtfs
+show status rtp
 show status sd
 show status status-led
 show status switch control
@@ -620,10 +730,13 @@ show status user history
 show status vlan
 show status voice process
 show status vrrp
+show syslog
 show techinfo
+show tftp
 show url filter
 show url filter pp
 show url filter tunnel
+show wins
 sip arrive address check
 sip arrive name-display default
 sip arrive session timer method
@@ -806,6 +919,8 @@ terminate lua file
 tunnel backup
 tunnel backup pp
 tunnel backup tunnel
+tunnel default
+tunnel endpoint clear name
 tunnel ngn arrive permit
 tunnel ngn bandwidth
 tunnel ngn call permit
