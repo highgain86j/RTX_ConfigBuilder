@@ -1,5 +1,11 @@
 #!/bin/bash
 tmpfile=`mktemp`
+
+if [ -n "`ls unavail_*`" ]
+	then
+	rm unavail_*
+fi
+
 for file in `ls *.command`
 	do
 	cat ${file} >> ${tmpfile}
