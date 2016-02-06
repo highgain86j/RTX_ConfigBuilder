@@ -9,9 +9,9 @@ modeldep=1_modeldep.cmnd
 common=2_rt_rtx-common.cmnd
 
 
-if [ -n "`ls *${unavailstr}${exten}`" ]
+if [ -n "`ls *${unavailstr}${exten} *${modldepstr}${exten}`" ]
 	then
-	for file in `ls *${unavailstr}${exten}`
+	for file in `ls *${unavailstr}${exten} *${modldepstr}${exten}`
 		do
 		rm ${file}
 	done
@@ -43,10 +43,13 @@ diff ${modeldep} ${known} | grep '^>' | sed -e "s/> //g" > ${common}
 
 for file in `ls *${exten}`
 	do
-	if [ -n `echo ${file} | grep -v ${unavailstr}` ]
+	nfile=`echo ${file} | grep -v ${unavailstr}`
+	if [ -z ${nfile} ]
 		then
-		name=`echo ${file} | awk -F. '{print $1}'`
-		diff ${common} ${file} | grep '^>' | sed -e "s/> //g" > ${name}${modldepstr}${exten}
+		echo "Skipping "${file}
+	else
+		name=`echo ${nfile} | awk -F. '{print $1}'`
+		diff ${common} ${name}${exten} | grep '^>' | sed -e "s/> //g" > ${name}${modldepstr}${exten}
 	fi
 done
 
