@@ -2,283 +2,283 @@
 
 cat $1 \
 | sed -e 's|<|\n\<|g' \
-| sed -e 's|>|\>\n|g' \
-| sed -e 's|   *|\n|g' \
-| sed -e 's|0pt||g' \
-| sed -e 's|1.0pt||g' \
-| sed -e 's|10.0pt||g' \
-| sed -e 's|12.0pt||g' \
-| sed -e 's|14.0pt||g' \
-| sed -e 's|15.0pt||g' \
-| sed -e 's|18.0pt||g' \
-| sed -e 's|18.5pt||g' \
-| sed -e 's|20.0pt||g' \
-| sed -e 's|3.0pt||g' \
-| sed -e 's|42.0pt||g' \
-| sed -e 's|5.5pt||g' \
-| sed -e 's|5.85pt||g' \
-| sed -e 's|6.5pt||g' \
-| sed -e 's|7.0pt||g' \
-| sed -e 's|8.0pt||g' \
-| sed -e 's|8.5pt||g' \
-| sed -e 's|9.0pt||g' \
-| sed -e 's|9.5pt||g' \
-| sed -e 's|Accent||g' \
-| sed -e 's|ActiveWritingStyle||g' \
-| sed -e 's|AdjustLineHeightInTable||g' \
-| sed -e 's|align=left||g' \
-| sed -e 's|AllowPNG||g' \
-| sed -e 's|AlwaysShowPlaceholderText||g' \
-| sed -e 's|Author||g' \
-| sed -e 's|BalanceSingleByteDoubleByteWidth||g' \
-| sed -e 's|black||g' \
-| sed -e 's|body||g' \
-| sed -e 's|BreakWrappedTables||g' \
-| sed -e 's|brkBin||g' \
-| sed -e 's|brkBinSub||g' \
-| sed -e 's|Cambria||g' \
-| sed -e 's|Characters||g' \
-| sed -e 's|CharactersWithSpaces||g' \
-| sed -e 's|charset=shift_jis||g' \
-| sed -e 's|class=MsoNormal||g' \
-| sed -e 's|class=WordSection1||g' \
-| sed -e 's|color||g' \
-| sed -e 's|Colorful||g' \
-| sed -e 's|Compatibility||g' \
-| sed -e 's|content="Microsoft||g' \
-| sed -e 's|content="text/html||g' \
-| sed -e 's|content=Word.Document||g' \
-| sed -e 's|Created||g' \
-| sed -e 's|Dark||g' \
-| sed -e 's|Dark||g' \
-| sed -e 's|data="1"||g' \
-| sed -e 's|defJc||g' \
-| sed -e 's|DefLockedState="false"||g' \
-| sed -e 's|DefUnhideWhenUsed="false"||g' \
-| sed -e 's|dispDef||g' \
-| sed -e 's|DisplayHorizontalDrawingGridEvery||g' \
-| sed -e 's|DisplayVerticalDrawingGridEvery||g' \
-| sed -e 's|DLLVersion="131078"||g' \
-| sed -e 's|DocumentProperties||g' \
-| sed -e 's|DoNotExpandShiftReturn||g' \
-| sed -e 's|DoNotLeaveBackslashAlone||g' \
-| sed -e 's|DoNotPromoteQF||g' \
-| sed -e 's|DontFlipMirrorIndents||g' \
-| sed -e 's|DontGrowAutofit||g' \
-| sed -e 's|DrawingGridHorizontalSpacing||g' \
-| sed -e 's|EnableOpenTypeKerning||g' \
-| sed -e 's|ext="edit"||g' \
-| sed -e 's|font-family||g' \
-| sed -e 's|Garamond-Bold||g' \
-| sed -e 's|Garamond-Book||g' \
-| sed -e 's|Garamond-BookItalic||g' \
-| sed -e 's|Garamond-Ultra||g' \
-| sed -e 's|GillSans||g' \
-| sed -e 's|GillSans-Light||g' \
-| sed -e 's|Grid||g' \
-| sed -e 's|Grid||g' \
-| sed -e 's|head||g' \
-| sed -e 's|HeiseiMin-W3-Identity-H||g' \
-| sed -e 's|Helvetica||g' \
-| sed -e 's|html||g' \
-| sed -e 's|http-equiv=Content-Type||g' \
-| sed -e 's|idmap||g' \
-| sed -e 's|IgnoreMixedContent||g' \
-| sed -e 's|inset="5.85pt||g' \
-| sed -e 's|intLim||g' \
-| sed -e 's|ItcEras-Demi||g' \
-| sed -e 's|ItcEras-Medium||g' \
-| sed -e 's|Lang="EN-US"||g' \
-| sed -e 's|Lang="JA"||g' \
-| sed -e 's|lang=EN-US||g' \
-| sed -e 's|lang=JA||g' \
-| sed -e 's|LastAuthor||g' \
-| sed -e 's|LastSaved||g' \
-| sed -e 's|LatentStyles||g' \
-| sed -e 's|left||g' \
-| sed -e 's|LidThemeAsian||g' \
-| sed -e 's|LidThemeComplexScript||g' \
-| sed -e 's|LidThemeOther||g' \
-| sed -e 's|Light||g' \
-| sed -e 's|Lines||g' \
-| sed -e 's|link||g' \
-| sed -e 's|List||g' \
-| sed -e 's|List||g' \
-| sed -e 's|lMargin||g' \
-| sed -e 's|Locked="false"||g' \
-| sed -e 's|LsdException||g' \
-| sed -e 's|m="http||g' \
-| sed -e 's|Math||g' \
-| sed -e 's|mathFont||g' \
-| sed -e 's|mathPr||g' \
-| sed -e 's|meta||g' \
-| sed -e 's|mso-ascii-font-family||g' \
-| sed -e 's|mso-bidi-font-family||g' \
-| sed -e 's|mso-fareast-font-family||g' \
-| sed -e 's|mso-font-kerning||g' \
-| sed -e 's|mso-layout-grid-align||g' \
-| sed -e 's|Name="Book||g' \
-| sed -e 's|Name="Colorful||g' \
-| sed -e 's|Name="Dark||g' \
-| sed -e 's|Name="Emphasis"||g' \
-| sed -e 's|Name="Grid||g' \
-| sed -e 's|Name="heading||g' \
-| sed -e 's|Name="Light||g' \
-| sed -e 's|Name="List||g' \
-| sed -e 's|Name="Medium||g' \
-| sed -e 's|Name="No||g' \
-| sed -e 's|Name="Normal"||g' \
-| sed -e 's|Name="Placeholder||g' \
-| sed -e 's|Name="Plain||g' \
-| sed -e 's|Name="Quote"||g' \
-| sed -e 's|Name="Revision"||g' \
-| sed -e 's|Name="Strong"||g' \
-| sed -e 's|Name="Subtitle"||g' \
-| sed -e 's|Name="Table||g' \
-| sed -e 's|Name="Title"||g' \
-| sed -e 's|name=Generator||g' \
-| sed -e 's|name=Originator||g' \
-| sed -e 's|name=ProgId||g' \
-| sed -e 's|naryLim||g' \
-| sed -e 's|NLCheck="1"||g' \
-| sed -e 's|office||g' \
-| sed -e 's|OfficeDocumentSettings||g' \
-| sed -e 's|OverrideTableStyleHps||g' \
-| sed -e 's|Pages||g' \
-| sed -e 's|Paragraphs||g' \
-| sed -e 's|Priority="0"||g' \
-| sed -e 's|Priority="1"||g' \
-| sed -e 's|Priority="10"||g' \
-| sed -e 's|Priority="11"||g' \
-| sed -e 's|Priority="19"||g' \
-| sed -e 's|Priority="20"||g' \
-| sed -e 's|Priority="21"||g' \
-| sed -e 's|Priority="22"||g' \
-| sed -e 's|Priority="29"||g' \
-| sed -e 's|Priority="30"||g' \
-| sed -e 's|Priority="31"||g' \
-| sed -e 's|Priority="32"||g' \
-| sed -e 's|Priority="33"||g' \
-| sed -e 's|Priority="34"||g' \
-| sed -e 's|Priority="35"||g' \
-| sed -e 's|Priority="37"||g' \
-| sed -e 's|Priority="39"||g' \
-| sed -e 's|Priority="40"||g' \
-| sed -e 's|Priority="41"||g' \
-| sed -e 's|Priority="42"||g' \
-| sed -e 's|Priority="43"||g' \
-| sed -e 's|Priority="44"||g' \
-| sed -e 's|Priority="45"||g' \
-| sed -e 's|Priority="46"||g' \
-| sed -e 's|Priority="47"||g' \
-| sed -e 's|Priority="48"||g' \
-| sed -e 's|Priority="49"||g' \
-| sed -e 's|Priority="50"||g' \
-| sed -e 's|Priority="51"||g' \
-| sed -e 's|Priority="52"||g' \
-| sed -e 's|Priority="59"||g' \
-| sed -e 's|Priority="60"||g' \
-| sed -e 's|Priority="61"||g' \
-| sed -e 's|Priority="62"||g' \
-| sed -e 's|Priority="63"||g' \
-| sed -e 's|Priority="64"||g' \
-| sed -e 's|Priority="65"||g' \
-| sed -e 's|Priority="66"||g' \
-| sed -e 's|Priority="67"||g' \
-| sed -e 's|Priority="68"||g' \
-| sed -e 's|Priority="69"||g' \
-| sed -e 's|Priority="70"||g' \
-| sed -e 's|Priority="71"||g' \
-| sed -e 's|Priority="72"||g' \
-| sed -e 's|Priority="73"||g' \
-| sed -e 's|Priority="9"||g' \
-| sed -e 's|punctuation||g' \
-| sed -e 's|PunctuationKerning||g' \
-| sed -e 's|QFormat="true"||g' \
-| sed -e 's|rel=colorSchemeMapping||g' \
-| sed -e 's|rel=File-List||g' \
-| sed -e 's|rel=themeData||g' \
-| sed -e 's|Revision||g' \
-| sed -e 's|rMargin||g' \
-| sed -e 's|sans-serif||g' \
-| sed -e 's|SaveIfXMLInvalid||g' \
-| sed -e 's|schemas-microsoft-com||g' \
-| sed -e 's|SemiHidden="true"||g' \
-| sed -e 's|serif||g' \
-| sed -e 's|Shading||g' \
-| sed -e 's|Shading||g' \
-| sed -e 's|shapedefaults||g' \
-| sed -e 's|shapelayout||g' \
-| sed -e 's|ShinGo-Bold-Identity-H||g' \
-| sed -e 's|ShinGo-Light-Identity-H||g' \
-| sed -e 's|ShinGo-Medium-Identity-H||g' \
-| sed -e 's|ShinGo-regular-Identity-H||g' \
-| sed -e 's|smallFrac||g' \
-| sed -e 's|SnapToGridInCell||g' \
-| sed -e 's|SpaceForUL||g' \
-| sed -e 's|Spacing||g' \
-| sed -e 's|spidmax="1026"||g' \
-| sed -e 's|SplitPgBreakAndParaMark||g' \
-| sed -e 's|style=||g' \
-| sed -e 's|font-size||g' \
-| sed -e 's|layout-grid||g' \
-| sed -e 's|tab-interval||g' \
-| sed -e 's|text-align||g' \
-| sed -e 's|Table||g' \
-| sed -e 's|Text||g' \
-| sed -e 's|text-autospace||g' \
-| sed -e 's|textbox||g' \
-| sed -e 's|text-justify-trim||g' \
-| sed -e 's|Title||g' \
-| sed -e 's|TotalTime||g' \
-| sed -e 's|TrackFormatting||g' \
-| sed -e 's|TrackMoves||g' \
-| sed -e 's|ULTrailSpace||g' \
-| sed -e 's|UnhideWhenUsed="true"||g' \
-| sed -e 's|UseAsianBreakRules||g' \
-| sed -e 's|UseFELayout||g' \
-| sed -e 's|UseWord2010TableStyleRules||g' \
-| sed -e 's|val="0"||g' \
-| sed -e 's|val="1440"||g' \
-| sed -e 's|val="before"||g' \
-| sed -e 's|val="centerGroup"||g' \
-| sed -e 's|val="off"||g' \
-| sed -e 's|val="subSup"||g' \
-| sed -e 's|val="undOvr"||g' \
-| sed -e 's|ValidateAgainstSchemas||g' \
-| sed -e 's|VendorID="64"||g' \
-| sed -e 's|Version||g' \
-| sed -e 's|white||g' \
-| sed -e 's|Word||g' \
-| sed -e 's|word||g' \
-| sed -e 's|WordDocument||g' \
-| sed -e 's|Words||g' \
-| sed -e 's|wrapIndent||g' \
-| sed -e 's|WrapTextWithPunct||g' \
-| sed -e 's|xmlns||g' \
-| sed -e 's|ShinGo--Identity-H||g' \
-| sed -e 's|<span|\<|g' \
-| sed -e 's|</span>||g' \
-| sed -e 's|<o:p>||g' \
-| sed -e 's|</o:p>||g' \
-| sed -e 's|</p>||g' \
-| sed -e 's|mso-bidi-||g' \
-| sed -e 's|mso-fareast-||g' \
-| sed -e 's|none||g' \
-| sed -e 's|;||g' \
-| sed -e 's|:||g' \
-| sed -e 's|<p |\<|g' \
-| sed -e 's|-||g' \
-| sed -e 's|Italic||g' \
-| sed -e 's|Italic||g' \
-| sed -e 's|msofont[a-z,A-Z]*||g' \
-| sed -e 's|msogeneric[a-z,A-Z]*||g' \
-| sed -e 's|<>||g' \
-| sed -e 's|<\>||g' \
-| sed -e 's|</>||g' \
-| sed -e 's|</div>||g' \
-| sed -e 's|<i>|\$\{|g' \
-| sed -e 's|</i>|\}|g' \
-| sed -e 's|\.\{2,5\}||g' \
+-e 's|>|\>\n|g' \
+-e 's|   *|\n|g' \
+-e 's|0pt||g' \
+-e 's|1.0pt||g' \
+-e 's|10.0pt||g' \
+-e 's|12.0pt||g' \
+-e 's|14.0pt||g' \
+-e 's|15.0pt||g' \
+-e 's|18.0pt||g' \
+-e 's|18.5pt||g' \
+-e 's|20.0pt||g' \
+-e 's|3.0pt||g' \
+-e 's|42.0pt||g' \
+-e 's|5.5pt||g' \
+-e 's|5.85pt||g' \
+-e 's|6.5pt||g' \
+-e 's|7.0pt||g' \
+-e 's|8.0pt||g' \
+-e 's|8.5pt||g' \
+-e 's|9.0pt||g' \
+-e 's|9.5pt||g' \
+-e 's|Accent||g' \
+-e 's|ActiveWritingStyle||g' \
+-e 's|AdjustLineHeightInTable||g' \
+-e 's|align=left||g' \
+-e 's|AllowPNG||g' \
+-e 's|AlwaysShowPlaceholderText||g' \
+-e 's|Author||g' \
+-e 's|BalanceSingleByteDoubleByteWidth||g' \
+-e 's|black||g' \
+-e 's|body||g' \
+-e 's|BreakWrappedTables||g' \
+-e 's|brkBin||g' \
+-e 's|brkBinSub||g' \
+-e 's|Cambria||g' \
+-e 's|Characters||g' \
+-e 's|CharactersWithSpaces||g' \
+-e 's|charset=shift_jis||g' \
+-e 's|class=MsoNormal||g' \
+-e 's|class=WordSection1||g' \
+-e 's|color||g' \
+-e 's|Colorful||g' \
+-e 's|Compatibility||g' \
+-e 's|content="Microsoft||g' \
+-e 's|content="text/html||g' \
+-e 's|content=Word.Document||g' \
+-e 's|Created||g' \
+-e 's|Dark||g' \
+-e 's|Dark||g' \
+-e 's|data="1"||g' \
+-e 's|defJc||g' \
+-e 's|DefLockedState="false"||g' \
+-e 's|DefUnhideWhenUsed="false"||g' \
+-e 's|dispDef||g' \
+-e 's|DisplayHorizontalDrawingGridEvery||g' \
+-e 's|DisplayVerticalDrawingGridEvery||g' \
+-e 's|DLLVersion="131078"||g' \
+-e 's|DocumentProperties||g' \
+-e 's|DoNotExpandShiftReturn||g' \
+-e 's|DoNotLeaveBackslashAlone||g' \
+-e 's|DoNotPromoteQF||g' \
+-e 's|DontFlipMirrorIndents||g' \
+-e 's|DontGrowAutofit||g' \
+-e 's|DrawingGridHorizontalSpacing||g' \
+-e 's|EnableOpenTypeKerning||g' \
+-e 's|ext="edit"||g' \
+-e 's|font-family||g' \
+-e 's|Garamond-Bold||g' \
+-e 's|Garamond-Book||g' \
+-e 's|Garamond-BookItalic||g' \
+-e 's|Garamond-Ultra||g' \
+-e 's|GillSans||g' \
+-e 's|GillSans-Light||g' \
+-e 's|Grid||g' \
+-e 's|Grid||g' \
+-e 's|head||g' \
+-e 's|HeiseiMin-W3-Identity-H||g' \
+-e 's|Helvetica||g' \
+-e 's|html||g' \
+-e 's|http-equiv=Content-Type||g' \
+-e 's|idmap||g' \
+-e 's|IgnoreMixedContent||g' \
+-e 's|inset="5.85pt||g' \
+-e 's|intLim||g' \
+-e 's|ItcEras-Demi||g' \
+-e 's|ItcEras-Medium||g' \
+-e 's|Lang="EN-US"||g' \
+-e 's|Lang="JA"||g' \
+-e 's|lang=EN-US||g' \
+-e 's|lang=JA||g' \
+-e 's|LastAuthor||g' \
+-e 's|LastSaved||g' \
+-e 's|LatentStyles||g' \
+-e 's|left||g' \
+-e 's|LidThemeAsian||g' \
+-e 's|LidThemeComplexScript||g' \
+-e 's|LidThemeOther||g' \
+-e 's|Light||g' \
+-e 's|Lines||g' \
+-e 's|link||g' \
+-e 's|List||g' \
+-e 's|List||g' \
+-e 's|lMargin||g' \
+-e 's|Locked="false"||g' \
+-e 's|LsdException||g' \
+-e 's|m="http||g' \
+-e 's|Math||g' \
+-e 's|mathFont||g' \
+-e 's|mathPr||g' \
+-e 's|meta||g' \
+-e 's|mso-ascii-font-family||g' \
+-e 's|mso-bidi-font-family||g' \
+-e 's|mso-fareast-font-family||g' \
+-e 's|mso-font-kerning||g' \
+-e 's|mso-layout-grid-align||g' \
+-e 's|Name="Book||g' \
+-e 's|Name="Colorful||g' \
+-e 's|Name="Dark||g' \
+-e 's|Name="Emphasis"||g' \
+-e 's|Name="Grid||g' \
+-e 's|Name="heading||g' \
+-e 's|Name="Light||g' \
+-e 's|Name="List||g' \
+-e 's|Name="Medium||g' \
+-e 's|Name="No||g' \
+-e 's|Name="Normal"||g' \
+-e 's|Name="Placeholder||g' \
+-e 's|Name="Plain||g' \
+-e 's|Name="Quote"||g' \
+-e 's|Name="Revision"||g' \
+-e 's|Name="Strong"||g' \
+-e 's|Name="Subtitle"||g' \
+-e 's|Name="Table||g' \
+-e 's|Name="Title"||g' \
+-e 's|name=Generator||g' \
+-e 's|name=Originator||g' \
+-e 's|name=ProgId||g' \
+-e 's|naryLim||g' \
+-e 's|NLCheck="1"||g' \
+-e 's|office||g' \
+-e 's|OfficeDocumentSettings||g' \
+-e 's|OverrideTableStyleHps||g' \
+-e 's|Pages||g' \
+-e 's|Paragraphs||g' \
+-e 's|Priority="0"||g' \
+-e 's|Priority="1"||g' \
+-e 's|Priority="10"||g' \
+-e 's|Priority="11"||g' \
+-e 's|Priority="19"||g' \
+-e 's|Priority="20"||g' \
+-e 's|Priority="21"||g' \
+-e 's|Priority="22"||g' \
+-e 's|Priority="29"||g' \
+-e 's|Priority="30"||g' \
+-e 's|Priority="31"||g' \
+-e 's|Priority="32"||g' \
+-e 's|Priority="33"||g' \
+-e 's|Priority="34"||g' \
+-e 's|Priority="35"||g' \
+-e 's|Priority="37"||g' \
+-e 's|Priority="39"||g' \
+-e 's|Priority="40"||g' \
+-e 's|Priority="41"||g' \
+-e 's|Priority="42"||g' \
+-e 's|Priority="43"||g' \
+-e 's|Priority="44"||g' \
+-e 's|Priority="45"||g' \
+-e 's|Priority="46"||g' \
+-e 's|Priority="47"||g' \
+-e 's|Priority="48"||g' \
+-e 's|Priority="49"||g' \
+-e 's|Priority="50"||g' \
+-e 's|Priority="51"||g' \
+-e 's|Priority="52"||g' \
+-e 's|Priority="59"||g' \
+-e 's|Priority="60"||g' \
+-e 's|Priority="61"||g' \
+-e 's|Priority="62"||g' \
+-e 's|Priority="63"||g' \
+-e 's|Priority="64"||g' \
+-e 's|Priority="65"||g' \
+-e 's|Priority="66"||g' \
+-e 's|Priority="67"||g' \
+-e 's|Priority="68"||g' \
+-e 's|Priority="69"||g' \
+-e 's|Priority="70"||g' \
+-e 's|Priority="71"||g' \
+-e 's|Priority="72"||g' \
+-e 's|Priority="73"||g' \
+-e 's|Priority="9"||g' \
+-e 's|punctuation||g' \
+-e 's|PunctuationKerning||g' \
+-e 's|QFormat="true"||g' \
+-e 's|rel=colorSchemeMapping||g' \
+-e 's|rel=File-List||g' \
+-e 's|rel=themeData||g' \
+-e 's|Revision||g' \
+-e 's|rMargin||g' \
+-e 's|sans-serif||g' \
+-e 's|SaveIfXMLInvalid||g' \
+-e 's|schemas-microsoft-com||g' \
+-e 's|SemiHidden="true"||g' \
+-e 's|serif||g' \
+-e 's|Shading||g' \
+-e 's|Shading||g' \
+-e 's|shapedefaults||g' \
+-e 's|shapelayout||g' \
+-e 's|ShinGo-Bold-Identity-H||g' \
+-e 's|ShinGo-Light-Identity-H||g' \
+-e 's|ShinGo-Medium-Identity-H||g' \
+-e 's|ShinGo-regular-Identity-H||g' \
+-e 's|smallFrac||g' \
+-e 's|SnapToGridInCell||g' \
+-e 's|SpaceForUL||g' \
+-e 's|Spacing||g' \
+-e 's|spidmax="1026"||g' \
+-e 's|SplitPgBreakAndParaMark||g' \
+-e 's|style=||g' \
+-e 's|font-size||g' \
+-e 's|layout-grid||g' \
+-e 's|tab-interval||g' \
+-e 's|text-align||g' \
+-e 's|Table||g' \
+-e 's|Text||g' \
+-e 's|text-autospace||g' \
+-e 's|textbox||g' \
+-e 's|text-justify-trim||g' \
+-e 's|Title||g' \
+-e 's|TotalTime||g' \
+-e 's|TrackFormatting||g' \
+-e 's|TrackMoves||g' \
+-e 's|ULTrailSpace||g' \
+-e 's|UnhideWhenUsed="true"||g' \
+-e 's|UseAsianBreakRules||g' \
+-e 's|UseFELayout||g' \
+-e 's|UseWord2010TableStyleRules||g' \
+-e 's|val="0"||g' \
+-e 's|val="1440"||g' \
+-e 's|val="before"||g' \
+-e 's|val="centerGroup"||g' \
+-e 's|val="off"||g' \
+-e 's|val="subSup"||g' \
+-e 's|val="undOvr"||g' \
+-e 's|ValidateAgainstSchemas||g' \
+-e 's|VendorID="64"||g' \
+-e 's|Version||g' \
+-e 's|white||g' \
+-e 's|Word||g' \
+-e 's|word||g' \
+-e 's|WordDocument||g' \
+-e 's|Words||g' \
+-e 's|wrapIndent||g' \
+-e 's|WrapTextWithPunct||g' \
+-e 's|xmlns||g' \
+-e 's|ShinGo--Identity-H||g' \
+-e 's|<span|\<|g' \
+-e 's|</span>||g' \
+-e 's|<o:p>||g' \
+-e 's|</o:p>||g' \
+-e 's|</p>||g' \
+-e 's|mso-bidi-||g' \
+-e 's|mso-fareast-||g' \
+-e 's|none||g' \
+-e 's|;||g' \
+-e 's|:||g' \
+-e 's|<p |\<|g' \
+-e 's|-||g' \
+-e 's|Italic||g' \
+-e 's|Italic||g' \
+-e 's|msofont[a-z,A-Z]*||g' \
+-e 's|msogeneric[a-z,A-Z]*||g' \
+-e 's|<>||g' \
+-e 's|<\>||g' \
+-e 's|</>||g' \
+-e 's|</div>||g' \
+-e 's|<i>|\$\{|g' \
+-e 's|</i>|\}|g' \
+-e 's|\.\{2,5\}||g' \
 | grep -v "<" \
 | grep -v ">"
