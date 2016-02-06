@@ -60,13 +60,13 @@ console info
 console lines
 console prompt
 date
-dhcp client client-identifier lan_if primary
-dhcp client client-identifier lan_if secondary
+dhcp client client-identifier _if_ primary
+dhcp client client-identifier _if_ secondary
 dhcp client client-identifier pool
 dhcp client client-identifier pp
 dhcp client client-identifier type
-dhcp client hostname lan_if primary
-dhcp client hostname lan_if secondary
+dhcp client hostname _if_ primary
+dhcp client hostname _if_ secondary
 dhcp client hostname pool
 dhcp client hostname pp
 dhcp delete scope
@@ -123,22 +123,22 @@ ip icmp redirect send
 ip icmp time-exceeded send
 ip icmp timestamp-reply send
 ip icmp unreachable send
-ip lan_if address
-ip lan_if broadcast
-ip lan_if dhcp lease time
-ip lan_if dhcp retry
-ip lan_if intrusion detection
-ip lan_if mtu
-ip lan_if nat descriptor
-ip lan_if netmask
-ip lan_if proxyarp
-ip lan_if rip auth key
-ip lan_if rip auth type
-ip lan_if rip filter
-ip lan_if rip listen
-ip lan_if routing protocol
-ip lan_if secondary address
-ip lan_if secure filter
+ip _if_ address
+ip _if_ broadcast
+ip _if_ dhcp lease time
+ip _if_ dhcp retry
+ip _if_ intrusion detection
+ip _if_ mtu
+ip _if_ nat descriptor
+ip _if_ netmask
+ip _if_ proxyarp
+ip _if_ rip auth key
+ip _if_ rip auth type
+ip _if_ rip filter
+ip _if_ rip listen
+ip _if_ routing protocol
+ip _if_ secondary address
+ip _if_ secure filter
 ip pp hide static route
 ip pp hold routing
 ip pp intrusion detection
@@ -202,7 +202,7 @@ ipv6 route
 ipv6 route delete
 ipv6 routing
 ipv6 stealth
-lan_if transmit timeout
+_if_ transmit timeout
 lan1 type auto-crossover
 lan2 type
 less config
@@ -262,7 +262,7 @@ netvolante-dns timeout pp
 netvolante-dns use
 netvolante-dns use pp
 ntpdate
-packetdump lan_if
+packetdump _if_
 packetdump pp
 password reenter
 ping
@@ -336,8 +336,8 @@ provider dns server
 provider dns server pp
 provider filter routing
 provider ipv6 connect pp
-provider lan_if dns server
-provider lan_if name
+provider _if_ dns server
+provider _if_ name
 provider netvolante-dns hostname sip
 provider ntp server
 provider ntpdate
@@ -383,7 +383,7 @@ show ip filter list
 show ip host
 show ip icmp
 show ip intrusion detection
-show ip lan_if
+show ip _if_
 show ip pp
 show ip route
 show ipv6 address
@@ -408,7 +408,7 @@ show ppp mscbcp
 show ppp pap
 show schedule
 show status analog
-show status lan_if
+show status _if_
 show status netvolante-dns
 show status netvolante-dns pp
 show status pp
