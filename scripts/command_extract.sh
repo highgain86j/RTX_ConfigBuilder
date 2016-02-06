@@ -13,11 +13,11 @@ cd html
 for file in `ls */*.html`
 	do
 	cat ${file} | sed 's|<br/>|'"$LF"'|g' | grep "kwd" | grep "var" \
-	| sed -e 's|<span class="var">|'VAR#'|g' -e 's|<span class="delim">||g' -e 's|</span>||g' -e 's|<span class="kwd">||g' \
+	| sed -e 's|<span class="var">|'$'|g' -e 's|<span class="delim">||g' -e 's|</span>||g' -e 's|<span class="kwd">||g' \
 	-e 's|<ul class="simple">||g' -e 's|<li>||g' -e 's|<span class="synph">||g' -e 's|</li>||g' >> ${tmpfile}
 done
 
-cat ${tmpfile} > ../command.lst
+cat ${tmpfile} > ../$2.command
 cd ..
 rm -rf html/
 rm ${tmpfile}
