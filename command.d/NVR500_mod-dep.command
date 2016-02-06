@@ -100,8 +100,8 @@ clear boot list
 clear external-memory syslog
 clear mobile access limitation
 clear mobile access limitation pp
-clear nat descriptor interface dynamic pp
-clear nat descriptor interface dynamic tunnel
+clear nat descriptor <interface> dynamic pp
+clear nat descriptor <interface> dynamic tunnel
 clear status
 clear switching-hub macaddress
 connect pp
@@ -144,7 +144,7 @@ dns private name
 dns service fallback
 dns srcport
 ethernet filter
-ethernet interface filter
+ethernet <interface> filter
 execute at-command
 execute batch
 external-memory accelerator cache size
@@ -177,24 +177,24 @@ ip filter set
 ip flow timer
 ip fragment remove df-bit
 ip icmp echo-reply send-only-linkup
-ip interface arp log
-ip interface arp queue length
-ip interface arp static
-ip interface dhcp service
-ip interface intrusion detection notice-interval
-ip interface intrusion detection repeat-control
-ip interface intrusion detection report
-ip interface intrusion detection threshold
-ip interface rebound
-ip interface rip auth key text
-ip interface rip force-to-advertise
-ip interface rip hop
-ip interface rip receive
-ip interface rip send
-ip interface rip trust gateway
-ip interface secure filter name
-ip interface tcp mss limit
-ip interface wol relay
+ip <interface> arp log
+ip <interface> arp queue length
+ip <interface> arp static
+ip <interface> dhcp service
+ip <interface> intrusion detection notice-interval
+ip <interface> intrusion detection repeat-control
+ip <interface> intrusion detection report
+ip <interface> intrusion detection threshold
+ip <interface> rebound
+ip <interface> rip auth key text
+ip <interface> rip force-to-advertise
+ip <interface> rip hop
+ip <interface> rip receive
+ip <interface> rip send
+ip <interface> rip trust gateway
+ip <interface> secure filter name
+ip <interface> tcp mss limit
+ip <interface> wol relay
 ip keepalive
 ip pp address
 ip pp intrusion detection notice-interval
@@ -233,13 +233,13 @@ ip tunnel rip trust gateway
 ip tunnel secure filter name
 ip tunnel tcp mss limit
 ipv6 icmp echo-reply send-only-linkup
-ipv6 interface dad retry count
-ipv6 interface dhcp service
-ipv6 interface mld
-ipv6 interface mld static
-ipv6 interface prefix change log
-ipv6 interface rip hop
-ipv6 interface tcp mss limit
+ipv6 <interface> dad retry count
+ipv6 <interface> dhcp service
+ipv6 <interface> mld
+ipv6 <interface> mld static
+ipv6 <interface> prefix change log
+ipv6 <interface> rip hop
+ipv6 <interface> tcp mss limit
 ipv6 max auto address
 ipv6 nd ns-trigger-dad
 ipv6 pp address
@@ -408,7 +408,7 @@ pppoe invalid-session forced close
 pptp service
 pptp syslog
 provider auto connect forced disable
-provider interface bind
+provider <interface> bind
 provider ipv6 connect pp
 provider isdn account nighttime
 provider isdn auto disconnect off
@@ -432,10 +432,10 @@ pstn ringing signal threshold
 pstn supplementary-service
 pstn use
 queue class filter
-queue interface class filter list
-queue interface default class
-queue interface length
-queue interface type
+queue <interface> class filter list
+queue <interface> default class
+queue <interface> length
+queue <interface> type
 queue pp class filter list
 queue pp default class
 queue pp length
@@ -487,10 +487,10 @@ show ipv6 address tunnel
 show ipv6 connection pp
 show ipv6 connection tunnel
 show ipv6 mroute fib
-show nat descriptor interface address pp
-show nat descriptor interface address tunnel
-show nat descriptor interface bind pp
-show nat descriptor interface bind tunnel
+show nat descriptor <interface> address pp
+show nat descriptor <interface> address tunnel
+show nat descriptor <interface> bind pp
+show nat descriptor <interface> bind tunnel
 show nat descriptor masquerade port summary
 show sshd public key
 show ssl public key
@@ -753,7 +753,7 @@ usbhost modem initialize
 usbhost overcurrent duration
 usbhost use
 user attribute
-vlan interface 802.1q
+vlan <interface> 802.1q
 wan access limit connection length
 wan access limit connection time
 wan access limit duration

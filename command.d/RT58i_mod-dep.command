@@ -74,8 +74,8 @@ clear account pp
 clear account pstn
 clear account sip
 clear mail-check info
-clear nat descriptor interface dynamic pp
-clear nat descriptor interface dynamic tunnel
+clear nat descriptor <interface> dynamic pp
+clear nat descriptor <interface> dynamic tunnel
 cooperation
 cooperation bandwidth-measuring remote
 cooperation load-watch control
@@ -101,7 +101,7 @@ dns host
 dns private name
 dns srcport
 ethernet filter
-ethernet interface filter
+ethernet <interface> filter
 http revision-down permit
 http revision-up go
 http revision-up permit
@@ -115,18 +115,18 @@ ip arp timer
 ip filter set
 ip fragment remove df-bit filter
 ip icmp echo-reply send-only-linkup
-ip interface arp queue length
-ip interface arp static
-ip interface intrusion detection notice-interval
-ip interface intrusion detection repeat-control
-ip interface intrusion detection report
-ip interface intrusion detection threshold
-ip interface rip hop
-ip interface rip receive
-ip interface rip send
-ip interface rip trust gateway
-ip interface tcp mss limit
-ip interface wol relay
+ip <interface> arp queue length
+ip <interface> arp static
+ip <interface> intrusion detection notice-interval
+ip <interface> intrusion detection repeat-control
+ip <interface> intrusion detection report
+ip <interface> intrusion detection threshold
+ip <interface> rip hop
+ip <interface> rip receive
+ip <interface> rip send
+ip <interface> rip trust gateway
+ip <interface> tcp mss limit
+ip <interface> wol relay
 ip keepalive
 ip pp address
 ip pp intrusion detection notice-interval
@@ -157,12 +157,12 @@ ip tunnel rip send
 ip tunnel rip trust gateway
 ip tunnel tcp mss limit
 ipv6 icmp echo-reply send-only-linkup
-ipv6 interface dad retry count
-ipv6 interface dhcp service
-ipv6 interface mld
-ipv6 interface mld static
-ipv6 interface rip hop
-ipv6 interface tcp mss limit
+ipv6 <interface> dad retry count
+ipv6 <interface> dhcp service
+ipv6 <interface> mld
+ipv6 <interface> mld static
+ipv6 <interface> rip hop
+ipv6 <interface> tcp mss limit
 ipv6 multicast routing process mode
 ipv6 pp address
 ipv6 pp dad retry count
@@ -303,10 +303,10 @@ pstn pause timer
 pstn supplementary-service
 pstn use
 queue class filter
-queue interface class filter list
-queue interface default class
-queue interface length
-queue interface type
+queue <interface> class filter list
+queue <interface> default class
+queue <interface> length
+queue <interface> type
 queue pp class filter list
 queue pp default class
 queue pp length
@@ -335,7 +335,7 @@ show ip intrusion detection tunnel
 show ip rip table
 show ipv6 connection pp
 show ipv6 connection tunnel
-show nat descriptor interface address pp
+show nat descriptor <interface> address pp
 show sshd public key
 show status
 show status analog

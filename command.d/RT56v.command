@@ -51,7 +51,7 @@ clear ipv6 dynamic routing
 clear ipv6 neighbor cache
 clear log
 clear nat descriptor dynamic
-clear nat descriptor interface dynamic
+clear nat descriptor <interface> dynamic
 cold start
 connect
 console character
@@ -60,13 +60,13 @@ console info
 console lines
 console prompt
 date
-dhcp client client-identifier interface primary
-dhcp client client-identifier interface secondary
+dhcp client client-identifier <interface> primary
+dhcp client client-identifier <interface> secondary
 dhcp client client-identifier pool
 dhcp client client-identifier pp
 dhcp client client-identifier type
-dhcp client hostname interface primary
-dhcp client hostname interface secondary
+dhcp client hostname <interface> primary
+dhcp client hostname <interface> secondary
 dhcp client hostname pool
 dhcp client hostname pp
 dhcp delete scope
@@ -123,22 +123,22 @@ ip icmp redirect send
 ip icmp time-exceeded send
 ip icmp timestamp-reply send
 ip icmp unreachable send
-ip interface address
-ip interface broadcast
-ip interface dhcp lease time
-ip interface dhcp retry
-ip interface intrusion detection
-ip interface mtu
-ip interface nat descriptor
-ip interface netmask
-ip interface proxyarp
-ip interface rip auth key
-ip interface rip auth type
-ip interface rip filter
-ip interface rip listen
-ip interface routing protocol
-ip interface secondary address
-ip interface secure filter
+ip <interface> address
+ip <interface> broadcast
+ip <interface> dhcp lease time
+ip <interface> dhcp retry
+ip <interface> intrusion detection
+ip <interface> mtu
+ip <interface> nat descriptor
+ip <interface> netmask
+ip <interface> proxyarp
+ip <interface> rip auth key
+ip <interface> rip auth type
+ip <interface> rip filter
+ip <interface> rip listen
+ip <interface> routing protocol
+ip <interface> secondary address
+ip <interface> secure filter
 ip pp hide static route
 ip pp hold routing
 ip pp intrusion detection
@@ -179,17 +179,17 @@ ipv6 icmp redirect receive
 ipv6 icmp redirect send
 ipv6 icmp time-exceeded send
 ipv6 icmp unreachable send
-ipv6 interface address
-ipv6 interface addrress delete
-ipv6 interface mtu
-ipv6 interface prefix
-ipv6 interface prefix delete
-ipv6 interface rip filter
-ipv6 interface rip receive
-ipv6 interface rip send
-ipv6 interface rip trust gateway
-ipv6 interface rtadv send
-ipv6 interface secure filter
+ipv6 <interface> address
+ipv6 <interface> addrress delete
+ipv6 <interface> mtu
+ipv6 <interface> prefix
+ipv6 <interface> prefix delete
+ipv6 <interface> rip filter
+ipv6 <interface> rip receive
+ipv6 <interface> rip send
+ipv6 <interface> rip trust gateway
+ipv6 <interface> rtadv send
+ipv6 <interface> secure filter
 ipv6 pp rip connect interval
 ipv6 pp rip connect send
 ipv6 pp rip disconnect interval
@@ -336,8 +336,8 @@ provider dns server
 provider dns server pp
 provider filter routing
 provider ipv6 connect pp
-provider interface dns server
-provider interface name
+provider <interface> dns server
+provider <interface> name
 provider netvolante-dns hostname sip
 provider ntp server
 provider ntpdate
@@ -395,8 +395,8 @@ show log
 show mail-check status
 show nat descriptor address
 show nat descriptor config
-show nat descriptor interface address
-show nat descriptor interface bind
+show nat descriptor <interface> address
+show nat descriptor <interface> bind
 show pp config
 show pp connect time
 show pp queue

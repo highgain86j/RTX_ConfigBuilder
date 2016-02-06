@@ -75,9 +75,9 @@ clear log
 clear mobile access limitation
 clear mobile access limitation pp
 clear nat descriptor dynamic
-clear nat descriptor interface dynamic
-clear nat descriptor interface dynamic pp
-clear nat descriptor interface dynamic tunnel
+clear nat descriptor <interface> dynamic
+clear nat descriptor <interface> dynamic pp
+clear nat descriptor <interface> dynamic tunnel
 clear pri status
 clear status
 clear switching-hub macaddress
@@ -159,7 +159,7 @@ dns srcport
 dns static
 dns syslog resolv
 ethernet filter
-ethernet interface filter
+ethernet <interface> filter
 execute at-cmdmand
 execute batch
 exit
@@ -248,49 +248,49 @@ ip icmp unreachable send
 ip icmp unreachable-for-truncated send
 ip implicit-route preference
 ip inbound filter
-ip interface address
-ip interface arp log
-ip interface arp mtu discovery
-ip interface arp queue length
-ip interface arp static
-ip interface dhcp lease time
-ip interface dhcp retry
-ip interface dhcp service
-ip interface forward filter
-ip interface igmp
-ip interface igmp static
-ip interface inbound filter list
-ip interface intrusion detection
-ip interface intrusion detection notice-interval
-ip interface intrusion detection repeat-control
-ip interface intrusion detection report
-ip interface intrusion detection threshold
-ip interface mtu
-ip interface nat descriptor
-ip interface ospf area
-ip interface ospf neighbor
-ip interface pim sparse
-ip interface proxyarp
-ip interface proxyarp vrrp
-ip interface rebound
-ip interface rip auth key
-ip interface rip auth key text
-ip interface rip auth type
-ip interface rip filter
-ip interface rip force-to-advertise
-ip interface rip hop
-ip interface rip receive
-ip interface rip send
-ip interface rip trust gateway
-ip interface secondary address
-ip interface secure filter
-ip interface secure filter name
-ip interface tcp mss limit
-ip interface traffic list
-ip interface traffic list threshold
-ip interface vrrp
-ip interface vrrp shutdown trigger
-ip interface wol relay
+ip <interface> address
+ip <interface> arp log
+ip <interface> arp mtu discovery
+ip <interface> arp queue length
+ip <interface> arp static
+ip <interface> dhcp lease time
+ip <interface> dhcp retry
+ip <interface> dhcp service
+ip <interface> forward filter
+ip <interface> igmp
+ip <interface> igmp static
+ip <interface> inbound filter list
+ip <interface> intrusion detection
+ip <interface> intrusion detection notice-interval
+ip <interface> intrusion detection repeat-control
+ip <interface> intrusion detection report
+ip <interface> intrusion detection threshold
+ip <interface> mtu
+ip <interface> nat descriptor
+ip <interface> ospf area
+ip <interface> ospf neighbor
+ip <interface> pim sparse
+ip <interface> proxyarp
+ip <interface> proxyarp vrrp
+ip <interface> rebound
+ip <interface> rip auth key
+ip <interface> rip auth key text
+ip <interface> rip auth type
+ip <interface> rip filter
+ip <interface> rip force-to-advertise
+ip <interface> rip hop
+ip <interface> rip receive
+ip <interface> rip send
+ip <interface> rip trust gateway
+ip <interface> secondary address
+ip <interface> secure filter
+ip <interface> secure filter name
+ip <interface> tcp mss limit
+ip <interface> traffic list
+ip <interface> traffic list threshold
+ip <interface> vrrp
+ip <interface> vrrp shutdown trigger
+ip <interface> wol relay
 ip keepalive
 ip local forward filter
 ip pim sparse join-prune send
@@ -304,7 +304,7 @@ ip policy filter set
 ip policy filter set enable
 ip policy filter set switch
 ip policy filter timer
-ip policy interface group
+ip policy <interface> group
 ip policy service
 ip policy service group
 ip pp address
@@ -449,26 +449,26 @@ ipv6 icmp redirect send
 ipv6 icmp time-exceeded send
 ipv6 icmp unreachable send
 ipv6 inbound filter
-ipv6 interface address
-ipv6 interface dad retry count
-ipv6 interface dhcp service
-ipv6 interface inbound filter list
-ipv6 interface mld
-ipv6 interface mld static
-ipv6 interface mtu
-ipv6 interface ospf area
-ipv6 interface prefix
-ipv6 interface prefix change log
-ipv6 interface rip filter
-ipv6 interface rip hop
-ipv6 interface rip receive
-ipv6 interface rip send
-ipv6 interface rip trust gateway
-ipv6 interface rtadv send
-ipv6 interface secure filter
-ipv6 interface tcp mss limit
-ipv6 interface vrrp
-ipv6 interface vrrp shutdown trigger
+ipv6 <interface> address
+ipv6 <interface> dad retry count
+ipv6 <interface> dhcp service
+ipv6 <interface> inbound filter list
+ipv6 <interface> mld
+ipv6 <interface> mld static
+ipv6 <interface> mtu
+ipv6 <interface> ospf area
+ipv6 <interface> prefix
+ipv6 <interface> prefix change log
+ipv6 <interface> rip filter
+ipv6 <interface> rip hop
+ipv6 <interface> rip receive
+ipv6 <interface> rip send
+ipv6 <interface> rip trust gateway
+ipv6 <interface> rtadv send
+ipv6 <interface> secure filter
+ipv6 <interface> tcp mss limit
+ipv6 <interface> vrrp
+ipv6 <interface> vrrp shutdown trigger
 ipv6 max auto address
 ipv6 multicast routing process
 ipv6 nd ns-trigger-dad
@@ -489,7 +489,7 @@ ipv6 policy filter
 ipv6 policy filter set
 ipv6 policy filter set enable
 ipv6 policy filter set switch
-ipv6 policy interface group
+ipv6 policy <interface> group
 ipv6 policy service
 ipv6 policy service group
 ipv6 pp address
@@ -812,9 +812,9 @@ provider auto connect forced disable
 provider dns server
 provider dns server pp
 provider filter routing
-provider interface bind
-provider interface dns server
-provider interface name
+provider <interface> bind
+provider <interface> dns server
+provider <interface> name
 provider ipv6 connect pp
 provider ntp server
 provider ntpdate
@@ -834,14 +834,14 @@ qac-tm use
 qac-tm version margin
 qac-tm warning url
 queue class filter
-queue interface class control
-queue interface class filter list
-queue interface class property
-queue interface default class
-queue interface default class secondary
-queue interface length
-queue interface length secondary
-queue interface type
+queue <interface> class control
+queue <interface> class filter list
+queue <interface> class property
+queue <interface> default class
+queue <interface> default class secondary
+queue <interface> length
+queue <interface> length secondary
+queue <interface> type
 queue pp class filter list
 queue pp class property
 queue pp default class
@@ -934,12 +934,12 @@ show lan-map
 show line masterclock
 show log
 show nat descriptor address
-show nat descriptor interface address
-show nat descriptor interface address pp
-show nat descriptor interface address tunnel
-show nat descriptor interface bind
-show nat descriptor interface bind pp
-show nat descriptor interface bind tunnel
+show nat descriptor <interface> address
+show nat descriptor <interface> address pp
+show nat descriptor <interface> address tunnel
+show nat descriptor <interface> bind
+show nat descriptor <interface> bind pp
+show nat descriptor <interface> bind tunnel
 show nat descriptor masquerade port summary
 show nat descriptor masquerade session summary
 show pki certificate summary
@@ -1255,7 +1255,7 @@ url filter log
 url filter port
 url filter reject
 url filter use
-url interface filter
+url <interface> filter
 url pp filter
 url tunnel filter
 usbhost config filename
@@ -1267,7 +1267,7 @@ usbhost statistics filename prefix
 usbhost syslog filename
 usbhost use
 user attribute
-vlan interface 802.1q
+vlan <interface> 802.1q
 wan access limit connection length
 wan access limit connection time
 wan access limit duration

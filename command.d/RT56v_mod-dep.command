@@ -41,11 +41,11 @@ analog sip use call
 analog use
 analog wait dial timer
 clear analog account
-dhcp client client-identifier interface primary
-dhcp client client-identifier interface secondary
+dhcp client client-identifier <interface> primary
+dhcp client client-identifier <interface> secondary
 dhcp client client-identifier type
-dhcp client hostname interface primary
-dhcp client hostname interface secondary
+dhcp client hostname <interface> primary
+dhcp client hostname <interface> secondary
 dhcp client hostname pool
 dhcp client hostname pp
 dhcp delete scope
@@ -63,10 +63,10 @@ ip filter dynamic comment
 ip filter dynamic comment delete
 ip filter dynamic delete
 ip host delete
-ip interface broadcast
-ip interface netmask
-ip interface rip listen
-ip interface routing protocol
+ip <interface> broadcast
+ip <interface> netmask
+ip <interface> rip listen
+ip <interface> routing protocol
 ip pp hide static route
 ip pp hold routing
 ip pp local address
@@ -77,8 +77,8 @@ ip route delete
 ip routing cache
 ipv6 filter delete
 ipv6 filter dynamic delete
-ipv6 interface addrress delete
-ipv6 interface prefix delete
+ipv6 <interface> addrress delete
+ipv6 <interface> prefix delete
 ipv6 route delete
 interface transmit timeout
 lan1 type auto-crossover

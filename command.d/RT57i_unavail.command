@@ -94,7 +94,7 @@ clear ipv6 inbound filter
 clear ipv6 policy filter
 clear mobile access limitation
 clear mobile access limitation pp
-clear nat descriptor interface dynamic tunnel
+clear nat descriptor <interface> dynamic tunnel
 clear pri status
 clear status
 clear switching-hub macaddress
@@ -117,11 +117,11 @@ dashboard accumulate
 delete
 delete exec
 delete pki file
-dhcp client client-identifier interface primary
-dhcp client client-identifier interface secondary
+dhcp client client-identifier <interface> primary
+dhcp client client-identifier <interface> secondary
 dhcp client client-identifier type
-dhcp client hostname interface primary
-dhcp client hostname interface secondary
+dhcp client hostname <interface> primary
+dhcp client hostname <interface> secondary
 dhcp client hostname pool
 dhcp client hostname pp
 dhcp client option pool
@@ -149,7 +149,7 @@ dns server select delete
 dns service fallback
 dns static delete
 ethernet filter
-ethernet interface filter
+ethernet <interface> filter
 execute at-cmdmand
 execute at-command
 execute batch
@@ -218,34 +218,34 @@ ip icmp echo-reply send-only-linkup
 ip icmp unreachable-for-truncated send
 ip implicit-route preference
 ip inbound filter
-ip interface arp log
-ip interface arp mtu discovery
-ip interface arp static
-ip interface broadcast
-ip interface dhcp service
-ip interface forward filter
-ip interface igmp
-ip interface igmp static
-ip interface inbound filter list
-ip interface intrusion detection notice-interval
-ip interface intrusion detection repeat-control
-ip interface intrusion detection report
-ip interface intrusion detection threshold
-ip interface netmask
-ip interface ospf area
-ip interface ospf neighbor
-ip interface pim sparse
-ip interface proxyarp vrrp
-ip interface rebound
-ip interface rip auth key text
-ip interface rip force-to-advertise
-ip interface rip listen
-ip interface routing protocol
-ip interface secure filter name
-ip interface traffic list
-ip interface traffic list threshold
-ip interface vrrp
-ip interface vrrp shutdown trigger
+ip <interface> arp log
+ip <interface> arp mtu discovery
+ip <interface> arp static
+ip <interface> broadcast
+ip <interface> dhcp service
+ip <interface> forward filter
+ip <interface> igmp
+ip <interface> igmp static
+ip <interface> inbound filter list
+ip <interface> intrusion detection notice-interval
+ip <interface> intrusion detection repeat-control
+ip <interface> intrusion detection report
+ip <interface> intrusion detection threshold
+ip <interface> netmask
+ip <interface> ospf area
+ip <interface> ospf neighbor
+ip <interface> pim sparse
+ip <interface> proxyarp vrrp
+ip <interface> rebound
+ip <interface> rip auth key text
+ip <interface> rip force-to-advertise
+ip <interface> rip listen
+ip <interface> routing protocol
+ip <interface> secure filter name
+ip <interface> traffic list
+ip <interface> traffic list threshold
+ip <interface> vrrp
+ip <interface> vrrp shutdown trigger
 ip keepalive
 ip local forward filter
 ip pim sparse join-prune send
@@ -259,7 +259,7 @@ ip policy filter set
 ip policy filter set enable
 ip policy filter set switch
 ip policy filter timer
-ip policy interface group
+ip policy <interface> group
 ip policy service
 ip policy service group
 ip pp forward filter
@@ -331,15 +331,15 @@ ipv6 filter dynamic delete
 ipv6 icmp echo-reply send-only-linkup
 ipv6 icmp packet-too-big-for-truncated send
 ipv6 inbound filter
-ipv6 interface addrress delete
-ipv6 interface inbound filter list
-ipv6 interface mld
-ipv6 interface mld static
-ipv6 interface ospf area
-ipv6 interface prefix change log
-ipv6 interface prefix delete
-ipv6 interface vrrp
-ipv6 interface vrrp shutdown trigger
+ipv6 <interface> addrress delete
+ipv6 <interface> inbound filter list
+ipv6 <interface> mld
+ipv6 <interface> mld static
+ipv6 <interface> ospf area
+ipv6 <interface> prefix change log
+ipv6 <interface> prefix delete
+ipv6 <interface> vrrp
+ipv6 <interface> vrrp shutdown trigger
 ipv6 max auto address
 ipv6 multicast routing process
 ipv6 nd ns-trigger-dad
@@ -360,7 +360,7 @@ ipv6 policy filter
 ipv6 policy filter set
 ipv6 policy filter set enable
 ipv6 policy filter set switch
-ipv6 policy interface group
+ipv6 policy <interface> group
 ipv6 policy service
 ipv6 policy service group
 ipv6 pp dad retry count
@@ -536,7 +536,7 @@ pptp clear hostname
 pri leased channel
 pri loopback active
 pri loopback passive
-provider interface bind
+provider <interface> bind
 provider pp bind
 provider set off
 provider set on
@@ -565,10 +565,10 @@ qac-tm unqualified client access control
 qac-tm use
 qac-tm version margin
 qac-tm warning url
-queue interface class control
-queue interface class property
-queue interface default class secondary
-queue interface length secondary
+queue <interface> class control
+queue <interface> class property
+queue <interface> default class secondary
+queue <interface> length secondary
 queue pp class property
 queue tunnel class filter list
 radius account
@@ -645,9 +645,9 @@ show lan-map
 show line masterclock
 show mail-check status
 show nat descriptor config
-show nat descriptor interface address tunnel
-show nat descriptor interface bind pp
-show nat descriptor interface bind tunnel
+show nat descriptor <interface> address tunnel
+show nat descriptor <interface> bind pp
+show nat descriptor <interface> bind tunnel
 show nat descriptor masquerade port summary
 show nat descriptor masquerade session summary
 show pki certificate summary
@@ -919,7 +919,7 @@ url filter log
 url filter port
 url filter reject
 url filter use
-url interface filter
+url <interface> filter
 url pp filter
 url tunnel filter
 usbhost config filename
@@ -931,7 +931,7 @@ usbhost statistics filename prefix
 usbhost syslog filename
 usbhost use
 user attribute
-vlan interface 802.1q
+vlan <interface> 802.1q
 wan access limit connection length
 wan access limit connection time
 wan access limit duration

@@ -66,11 +66,11 @@ clear url filter tunnel
 dashboard accumulate
 delete exec
 delete pki file
-dhcp client client-identifier interface primary
-dhcp client client-identifier interface secondary
+dhcp client client-identifier <interface> primary
+dhcp client client-identifier <interface> secondary
 dhcp client client-identifier type
-dhcp client hostname interface primary
-dhcp client hostname interface secondary
+dhcp client hostname <interface> primary
+dhcp client hostname <interface> secondary
 dhcp delete scope
 dhcp scope unbind
 dhcp server duplicate check
@@ -128,23 +128,23 @@ ip icmp error-decrypted-ipsec send
 ip icmp unreachable-for-truncated send
 ip implicit-route preference
 ip inbound filter
-ip interface arp mtu discovery
-ip interface broadcast
-ip interface forward filter
-ip interface igmp
-ip interface igmp static
-ip interface inbound filter list
-ip interface netmask
-ip interface ospf area
-ip interface ospf neighbor
-ip interface pim sparse
-ip interface proxyarp vrrp
-ip interface rip listen
-ip interface routing protocol
-ip interface traffic list
-ip interface traffic list threshold
-ip interface vrrp
-ip interface vrrp shutdown trigger
+ip <interface> arp mtu discovery
+ip <interface> broadcast
+ip <interface> forward filter
+ip <interface> igmp
+ip <interface> igmp static
+ip <interface> inbound filter list
+ip <interface> netmask
+ip <interface> ospf area
+ip <interface> ospf neighbor
+ip <interface> pim sparse
+ip <interface> proxyarp vrrp
+ip <interface> rip listen
+ip <interface> routing protocol
+ip <interface> traffic list
+ip <interface> traffic list threshold
+ip <interface> vrrp
+ip <interface> vrrp shutdown trigger
 ip local forward filter
 ip pim sparse join-prune send
 ip pim sparse log
@@ -157,7 +157,7 @@ ip policy filter set
 ip policy filter set enable
 ip policy filter set switch
 ip policy filter timer
-ip policy interface group
+ip policy <interface> group
 ip policy service
 ip policy service group
 ip pp forward filter
@@ -246,14 +246,14 @@ ipv6 filter dynamic delete
 ipv6 icmp error-decrypted-ipsec send
 ipv6 icmp packet-too-big-for-truncated send
 ipv6 inbound filter
-ipv6 interface addrress delete
-ipv6 interface inbound filter list
-ipv6 interface mld static group
-ipv6 interface mld type
-ipv6 interface ospf area
-ipv6 interface prefix delete
-ipv6 interface vrrp
-ipv6 interface vrrp shutdown trigger
+ipv6 <interface> addrress delete
+ipv6 <interface> inbound filter list
+ipv6 <interface> mld static group
+ipv6 <interface> mld type
+ipv6 <interface> ospf area
+ipv6 <interface> prefix delete
+ipv6 <interface> vrrp
+ipv6 <interface> vrrp shutdown trigger
 ipv6 multicast routing process
 ipv6 multicast routing process mode
 ipv6 ospf area
@@ -273,7 +273,7 @@ ipv6 policy filter
 ipv6 policy filter set
 ipv6 policy filter set enable
 ipv6 policy filter set switch
-ipv6 policy interface group
+ipv6 policy <interface> group
 ipv6 policy service
 ipv6 policy service group
 ipv6 pp inbound filter list
@@ -423,10 +423,10 @@ qac-tm unqualified client access control
 qac-tm use
 qac-tm version margin
 qac-tm warning url
-queue interface class control
-queue interface class property
-queue interface default class secondary
-queue interface length secondary
+queue <interface> class control
+queue <interface> class property
+queue <interface> default class secondary
+queue <interface> length secondary
 queue pp class property
 queue tunnel class filter list
 radius account
@@ -560,7 +560,7 @@ url filter log
 url filter port
 url filter reject
 url filter use
-url interface filter
+url <interface> filter
 url pp filter
 url tunnel filter
 usbhost config filename

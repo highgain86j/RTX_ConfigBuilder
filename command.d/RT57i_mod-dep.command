@@ -68,8 +68,8 @@ clear account
 clear account analog
 clear account pp
 clear mail-check info
-clear nat descriptor interface dynamic
-clear nat descriptor interface dynamic pp
+clear nat descriptor <interface> dynamic
+clear nat descriptor <interface> dynamic pp
 delete config
 description
 dhcp client client-identifier
@@ -91,13 +91,13 @@ interface reset pp
 ip filter set
 ip fragment remove df-bit filter
 ip icmp error-decrypted-ipsec send
-ip interface arp queue length
-ip interface rip hop
-ip interface rip receive
-ip interface rip send
-ip interface rip trust gateway
-ip interface tcp mss limit
-ip interface wol relay
+ip <interface> arp queue length
+ip <interface> rip hop
+ip <interface> rip receive
+ip <interface> rip send
+ip <interface> rip trust gateway
+ip <interface> tcp mss limit
+ip <interface> wol relay
 ip pp address
 ip pp rip hold routing
 ip pp rip receive
@@ -152,12 +152,12 @@ ipsec tunnel
 ipsec tunnel outer df-bit
 ipsec use
 ipv6 icmp error-decrypted-ipsec send
-ipv6 interface dad retry count
-ipv6 interface dhcp service
-ipv6 interface mld static group
-ipv6 interface mld type
-ipv6 interface rip hop
-ipv6 interface tcp mss limit
+ipv6 <interface> dad retry count
+ipv6 <interface> dhcp service
+ipv6 <interface> mld static group
+ipv6 <interface> mld type
+ipv6 <interface> rip hop
+ipv6 <interface> tcp mss limit
 ipv6 multicast routing process mode
 ipv6 pp address
 ipv6 pp dhcp service
@@ -294,10 +294,10 @@ provider ppp mp use on
 provider set
 provider sip 050-number
 queue class filter
-queue interface class filter list
-queue interface default class
-queue interface length
-queue interface type
+queue <interface> class filter list
+queue <interface> default class
+queue <interface> length
+queue <interface> type
 queue pp class filter list
 queue pp default class
 queue pp length
@@ -324,7 +324,7 @@ show ipsec sa
 show ipsec sa gateway
 show ipv6 connection pp
 show ipv6 connection tunnel
-show nat descriptor interface address pp
+show nat descriptor <interface> address pp
 show status
 show status analog
 show status boot

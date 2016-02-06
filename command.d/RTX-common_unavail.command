@@ -93,11 +93,11 @@ clear account sip
 clear acl
 clear analog account
 clear mail-check info
-dhcp client client-identifier interface primary
-dhcp client client-identifier interface secondary
+dhcp client client-identifier <interface> primary
+dhcp client client-identifier <interface> secondary
 dhcp client client-identifier type
-dhcp client hostname interface primary
-dhcp client hostname interface secondary
+dhcp client hostname <interface> primary
+dhcp client hostname <interface> secondary
 dhcp delete scope
 dhcp scope unbind
 dhcp server duplicate check
@@ -116,10 +116,10 @@ ip filter dynamic comment delete
 ip filter dynamic delete
 ip fragment remove df-bit filter
 ip host delete
-ip interface broadcast
-ip interface netmask
-ip interface rip listen
-ip interface routing protocol
+ip <interface> broadcast
+ip <interface> netmask
+ip <interface> rip listen
+ip <interface> routing protocol
 ip pp hide static route
 ip pp hold routing
 ip pp local address
@@ -131,10 +131,10 @@ ip routing cache
 ipsec ipcomp type
 ipv6 filter delete
 ipv6 filter dynamic delete
-ipv6 interface addrress delete
-ipv6 interface mld static group
-ipv6 interface mld type
-ipv6 interface prefix delete
+ipv6 <interface> addrress delete
+ipv6 <interface> mld static group
+ipv6 <interface> mld type
+ipv6 <interface> prefix delete
 ipv6 multicast routing process mode
 ipv6 route delete
 isdn arrive global permit
