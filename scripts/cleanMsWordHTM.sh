@@ -1,9 +1,11 @@
 #!/bin/bash
 
 cat $1 \
-| sed -e 's|<|\n\<|g' \
+| sed \
+-r -e ':loop;N;$!b loop;s/\n/ /g' \
+-e 's/ +/ /g' \
+-e 's|<|\n\<|g' \
 -e 's|>|\>\n|g' \
--e 's|   *|\n|g' \
 -e 's|0pt||g' \
 -e 's|1.0pt||g' \
 -e 's|10.0pt||g' \
@@ -270,7 +272,6 @@ cat $1 \
 -e 's|<p |\<|g' \
 -e 's|-||g' \
 -e 's|Italic||g' \
--e 's|Italic||g' \
 -e 's|msofont[a-z,A-Z]*||g' \
 -e 's|msogeneric[a-z,A-Z]*||g' \
 -e 's|<>||g' \
@@ -279,6 +280,9 @@ cat $1 \
 -e 's|</div>||g' \
 -e 's|<i>|\$\{|g' \
 -e 's|</i>|\}|g' \
--e 's|\.\{2,5\}||g' \
+-e 's|\.+[A-Z,0-9]+||g' \
 | grep -v "<" \
-| grep -v ">"
+| grep -v ">" \
+| sed \
+-r -e ':loop;N;$!b loop;s/\n/ /g' \
+-e 's/ {3}+/\n/g'
