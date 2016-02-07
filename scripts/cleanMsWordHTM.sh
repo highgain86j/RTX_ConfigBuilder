@@ -285,4 +285,5 @@ cat $1 \
 | grep -v ">" \
 | sed \
 -r -e ':loop;N;$!b loop;s/\n/ /g' \
--e 's/ {3}+/\n/g'
+-e 's/^[ ]*//g' \
+-e 's/[ ]+/ /g'
