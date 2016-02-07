@@ -2,21 +2,13 @@
 
 cat $1 \
 | sed \
+-e 's/$/ /g' \
+| sed \
 -r -e ':loop;N;$!b loop;s/\n/ /g' \
 -e 's/ +/ /g' \
 -e 's|<|\n\<|g' \
 -e 's|>|\>\n|g' \
--e 's|0pt||g' \
--e 's|1.0pt||g' \
--e 's|10.0pt||g' \
--e 's|12.0pt||g' \
--e 's|14.0pt||g' \
--e 's|15.0pt||g' \
--e 's|18.0pt||g' \
--e 's|18.5pt||g' \
--e 's|20.0pt||g' \
 -e 's|3.0pt||g' \
--e 's|42.0pt||g' \
 -e 's|5.5pt||g' \
 -e 's|5.85pt||g' \
 -e 's|6.5pt||g' \
@@ -25,6 +17,15 @@ cat $1 \
 -e 's|8.5pt||g' \
 -e 's|9.0pt||g' \
 -e 's|9.5pt||g' \
+-e 's|10.0pt||g' \
+-e 's|12.0pt||g' \
+-e 's|14.0pt||g' \
+-e 's|15.0pt||g' \
+-e 's|18.0pt||g' \
+-e 's|18.5pt||g' \
+-e 's|20.0pt||g' \
+-e 's|42.0pt||g' \
+-e 's|[0-9,\.]+pt||g' \
 -e 's|Accent||g' \
 -e 's|ActiveWritingStyle||g' \
 -e 's|AdjustLineHeightInTable||g' \
@@ -286,4 +287,9 @@ cat $1 \
 | sed \
 -r -e ':loop;N;$!b loop;s/\n/ /g' \
 -e 's/^[ ]*//g' \
--e 's/[ ]+/ /g'
+-e 's/[ ]+/ /g' \
+| sed --ctype=sjis 's|書式||g' \
+| sed \
+-e 's/[ ]+/ /g' \
+-e 's|\[\]|\n|g'
+
