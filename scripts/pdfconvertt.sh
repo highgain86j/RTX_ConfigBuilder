@@ -51,6 +51,10 @@ done
 #cat ${temp1} | grep "^<b>[a-z][a-z]*" | grep -v "あ\|い\|う\|え\|お\|か\|き\|く\|け\|こ\|さ\|し\|す\|せ\|そ\|た\|ち\|つ\|て\|と\|な\|に\|ぬ\|ね\|の\|は\|ひ\|ふ\|へ\|ほ\|ま\|み\|む\|め\|も\|や\|ゆ\|よ\|ら\|り\|る\|れ\|ろ\|わ\|ゐ\|ゑ\|を\|ん\|コマン\|href" | sort | uniq > ${temp2}
 
 
-cat ${temp1} > ${comdir}/frompdf/RT-`date +%Y%m%d`.html
+cat ${temp1} \
+|sed -r \
+-e 's|(<span)([a-z]*)|\1 \2|g' \
+-e 's|(<[a-z]*) [^>]*>|\1>|g' \
+> ${comdir}/frompdf/RT-`date +%Y%m%d`.html
 
 rm ${temp1} ${temp2}
